@@ -16,6 +16,8 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 
+use \Crud\Controller\ControllerTrait;
+
 /**
  * Application Controller
  *
@@ -34,6 +36,7 @@ class AppController extends Controller
      *
      * @return void
      */
+
     public function initialize()
     {
         parent::initialize();
