@@ -12,66 +12,121 @@ MySQL - 5.5.42 : Database - iestrascolar_db
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`iestrascolar_db` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+/*Table structure for table `actividad` */
 
-USE `iestrascolar_db`;
+DROP TABLE IF EXISTS `actividad`;
 
-/*Table structure for table `activities` */
-
-DROP TABLE IF EXISTS `activities`;
-
-CREATE TABLE `activities` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(40) CHARACTER SET utf8 NOT NULL,
-  `objetivos` varchar(250) CHARACTER SET utf8 NOT NULL,
-  `trimestre` enum('1','2','3') CHARACTER SET utf8 NOT NULL,
-  `fecha` date DEFAULT NULL,
-  `hora_ini` time DEFAULT NULL,
-  `hora_fin` time DEFAULT NULL,
+CREATE TABLE `actividad` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `objetivos` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `fecha_ini` datetime DEFAULT NULL,
+  `fecha_fin` datetime DEFAULT NULL,
   `financiacion` tinyint(1) NOT NULL,
+  `esta_evaluada` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `attachment` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `attachment_dir` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-/*Data for the table `activities` */
+/*Data for the table `actividad` */
 
-insert  into `activities`(`id`,`nombre`,`objetivos`,`trimestre`,`fecha`,`hora_ini`,`hora_fin`,`financiacion`) values (1,'Actividad de prueba Cáke ñññ','asdasdasd','1',NULL,NULL,NULL,0),(2,'actividad de prueba 2','asdljkasd','1',NULL,NULL,NULL,0),(3,'asdasd','aasd','1',NULL,NULL,NULL,0),(4,'sdfsdfsdf','asdasd','1',NULL,NULL,NULL,0),(5,'Visita al Jardin Botánico','Visita educativa al Jardín Botánico','2','2015-03-10','10:15:00','14:15:00',1),(6,'Seguridad Vial','Charla en el salón de actos sobre seguridad vial','3',NULL,NULL,NULL,0),(7,'Excursion al campo','Excursión al campo con los alumnos de 1º de ESO','2','2015-02-20','09:15:00','14:15:00',1),(8,'Viaje a Madrid','Visita a Madrid.\r\nMusical del rey León.','2','2015-02-17',NULL,NULL,1),(9,'Luces de Bohemia','Asistencia a la obra de teatro: \"Luces de Bohemia\"','2','2015-02-23',NULL,NULL,1),(10,'Visita al Jardin Botánico','Visita educativa al Jardín Botánico','2','2015-03-10','10:15:00','14:15:00',1),(11,'Seguridad Vial','Charla en el salón de actos sobre seguridad vial','3',NULL,NULL,NULL,0),(12,'Excursion al campo','Excursión al campo con los alumnos de 1º de ESO','2','2015-02-20','09:15:00','14:15:00',1),(13,'Viaje a Madrid','Visita a Madrid.\r\nMusical del rey León.','2','2015-02-17',NULL,NULL,1),(14,'Luces de Bohemia','Asistencia a la obra de teatro: \"Luces de Bohemia\"','2','2015-02-23',NULL,NULL,1);
+LOCK TABLES `actividad` WRITE;
 
-/*Table structure for table `courses` */
+insert  into `actividad`(`id`,`titulo`,`objetivos`,`fecha_ini`,`fecha_fin`,`financiacion`,`esta_evaluada`,`attachment`,`attachment_dir`,`created`,`modified`) values (1,'Actividad de prueba Cáke ñññ','asdasdasd',NULL,NULL,0,0,NULL,NULL,NULL,NULL),(2,'actividad de prueba 2','asdljkasd',NULL,NULL,0,0,NULL,NULL,NULL,NULL);
 
-DROP TABLE IF EXISTS `courses`;
+UNLOCK TABLES;
 
-CREATE TABLE `courses` (
-  `nombre` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `alumnos` int(2) NOT NULL,
-  `id` int(5) NOT NULL AUTO_INCREMENT,
+/*Table structure for table `actividad_profesor` */
+
+DROP TABLE IF EXISTS `actividad_profesor`;
+
+CREATE TABLE `actividad_profesor` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `actividad_id` int(11) unsigned NOT NULL,
+  `profesor_id` int(11) unsigned NOT NULL,
+  `rol` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+/*Data for the table `actividad_profesor` */
+
+LOCK TABLES `actividad_profesor` WRITE;
+
+insert  into `actividad_profesor`(`id`,`actividad_id`,`profesor_id`,`rol`,`created`,`modified`) values (1,1,12345678,1,NULL,NULL),(2,2,23456789,1,NULL,NULL),(3,2,56789123,2,NULL,NULL),(4,3,34567891,1,NULL,NULL),(5,4,56789123,1,NULL,NULL),(6,5,12345678,2,NULL,NULL),(7,5,45678912,1,NULL,NULL);
+
+UNLOCK TABLES;
+
+/*Table structure for table `activities_funders` */
+
+DROP TABLE IF EXISTS `activities_funders`;
+
+CREATE TABLE `activities_funders` (
+  `idact` int(11) NOT NULL,
+  `idfinan` int(11) NOT NULL,
+  `cantidad` decimal(10,2) NOT NULL,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+/*Data for the table `activities_funders` */
+
+LOCK TABLES `activities_funders` WRITE;
+
+insert  into `activities_funders`(`idact`,`idfinan`,`cantidad`,`id`) values (1,1,100.00,1),(3,2,5.00,2),(4,1,50.00,3),(5,2,3.00,4);
+
+UNLOCK TABLES;
+
+/*Table structure for table `curso` */
+
+DROP TABLE IF EXISTS `curso`;
+
+CREATE TABLE `curso` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `tutor_id` int(11) unsigned NOT NULL,
+  `nombre` varchar(255) CHARACTER SET utf8 NOT NULL,
   `letra` varchar(1) CHARACTER SET utf8 NOT NULL,
-  `enseñanza` varchar(100) CHARACTER SET utf8 NOT NULL,
-  PRIMARY KEY (`id`)
+  `alumnos` int(2) NOT NULL,
+  PRIMARY KEY (`id`,`tutor_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-/*Data for the table `courses` */
+/*Data for the table `curso` */
 
-insert  into `courses`(`nombre`,`alumnos`,`id`,`letra`,`enseñanza`) values ('1º BACH',20,1,'',''),('1º ESO',20,2,'',''),('2º ESO',20,3,'',''),('3º ESO',20,4,'',''),('4º ESO',20,5,'','');
+LOCK TABLES `curso` WRITE;
 
-/*Table structure for table `departments` */
+insert  into `curso`(`id`,`tutor_id`,`nombre`,`letra`,`alumnos`) values (1,0,'1º BACH','',20),(2,0,'1º ESO','',20),(3,0,'2º ESO','',20),(4,0,'3º ESO','',20),(5,0,'4º ESO','',20);
 
-DROP TABLE IF EXISTS `departments`;
+UNLOCK TABLES;
 
-CREATE TABLE `departments` (
-  `id` tinyint(2) NOT NULL,
-  `nombre` varchar(25) CHARACTER SET utf8 NOT NULL,
+/*Table structure for table `departmento` */
+
+DROP TABLE IF EXISTS `departmento`;
+
+CREATE TABLE `departmento` (
+  `id` tinyint(11) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-/*Data for the table `departments` */
+/*Data for the table `departmento` */
 
-insert  into `departments`(`id`,`nombre`) values (1,'Informática'),(2,'Matemáticas'),(3,'Lengua'),(4,'Geografía');
+LOCK TABLES `departmento` WRITE;
 
-/*Table structure for table `evaluations` */
+insert  into `departmento`(`id`,`nombre`,`created`,`modified`) values (1,'Informática',NULL,NULL),(2,'Matemáticas',NULL,NULL),(3,'Lengua',NULL,NULL),(4,'Geografía',NULL,NULL);
 
-DROP TABLE IF EXISTS `evaluations`;
+UNLOCK TABLES;
 
-CREATE TABLE `evaluations` (
+/*Table structure for table `evaluations (borrar)` */
+
+DROP TABLE IF EXISTS `evaluations (borrar)`;
+
+CREATE TABLE `evaluations (borrar)` (
   `id_actividad` int(11) NOT NULL,
   `participacion` int(11) NOT NULL,
   `objetivos` varchar(250) CHARACTER SET utf8 DEFAULT NULL,
@@ -83,51 +138,31 @@ CREATE TABLE `evaluations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-/*Data for the table `evaluations` */
+/*Data for the table `evaluations (borrar)` */
 
-/*Table structure for table `funders` */
+LOCK TABLES `evaluations (borrar)` WRITE;
 
-DROP TABLE IF EXISTS `funders`;
+UNLOCK TABLES;
 
-CREATE TABLE `funders` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(20) CHARACTER SET utf8 NOT NULL,
+/*Table structure for table `financiador` */
+
+DROP TABLE IF EXISTS `financiador`;
+
+CREATE TABLE `financiador` (
+  `id` int(11) unsigned NOT NULL,
+  `nombre` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-/*Data for the table `funders` */
+/*Data for the table `financiador` */
 
-insert  into `funders`(`id`,`nombre`) values (1,'Centro'),(2,'Alumno'),(3,'Ayuntamiento'),(4,'Banco');
+LOCK TABLES `financiador` WRITE;
 
-/*Table structure for table `funding` */
+insert  into `financiador`(`id`,`nombre`,`created`,`modified`) values (1,'Centro',NULL,NULL),(2,'Alumno',NULL,NULL),(3,'Ayuntamiento',NULL,NULL),(4,'Banco',NULL,NULL);
 
-DROP TABLE IF EXISTS `funding`;
-
-CREATE TABLE `funding` (
-  `idact` int(11) NOT NULL,
-  `idfinan` int(11) NOT NULL,
-  `cantidad` decimal(10,2) NOT NULL,
-  PRIMARY KEY (`idact`,`idfinan`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Data for the table `funding` */
-
-insert  into `funding`(`idact`,`idfinan`,`cantidad`) values (1,1,100.00),(3,2,5.00),(4,1,50.00),(5,2,3.00);
-
-/*Table structure for table `organization` */
-
-DROP TABLE IF EXISTS `organization`;
-
-CREATE TABLE `organization` (
-  `idact` int(11) NOT NULL,
-  `dniprof` varchar(9) NOT NULL,
-  `rol` enum('responsable','participante') NOT NULL,
-  PRIMARY KEY (`idact`,`dniprof`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Data for the table `organization` */
-
-insert  into `organization`(`idact`,`dniprof`,`rol`) values (1,'12345678A','responsable'),(2,'23456789B','responsable'),(2,'56789123F','participante'),(3,'34567891C','responsable'),(4,'56789123F','responsable'),(5,'12345678A','participante'),(5,'45678912D','responsable');
+UNLOCK TABLES;
 
 /*Table structure for table `participation` */
 
@@ -137,32 +172,81 @@ CREATE TABLE `participation` (
   `idact` int(11) NOT NULL,
   `idcurso` varchar(20) CHARACTER SET utf8 NOT NULL,
   `participan` int(2) DEFAULT NULL,
-  PRIMARY KEY (`idact`,`idcurso`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `participation` */
 
-insert  into `participation`(`idact`,`idcurso`,`participan`) values (1,'1º ESO',20),(1,'2º ESO',20),(2,'4º ESO',20),(3,'1º ESO',20),(4,'4º ESO',7),(5,'1º BACH',20);
+LOCK TABLES `participation` WRITE;
 
-/*Table structure for table `teachers` */
+insert  into `participation`(`idact`,`idcurso`,`participan`,`id`) values (1,'1º ESO',20,1),(1,'2º ESO',20,2),(2,'4º ESO',20,3),(3,'1º ESO',20,4),(4,'4º ESO',7,5),(5,'1º BACH',20,6);
 
-DROP TABLE IF EXISTS `teachers`;
+UNLOCK TABLES;
 
-CREATE TABLE `teachers` (
-  `dni` varchar(9) CHARACTER SET utf8 NOT NULL,
-  `nombre` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `apellidos` varchar(50) CHARACTER SET utf8 NOT NULL,
+/*Table structure for table `profesor` */
+
+DROP TABLE IF EXISTS `profesor`;
+
+CREATE TABLE `profesor` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `departamento_id` int(11) unsigned NOT NULL,
+  `nombre` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `apellidos` varchar(255) CHARACTER SET utf8 NOT NULL,
   `telefono` int(9) DEFAULT NULL,
-  `username` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `imagen` varchar(80) CHARACTER SET utf8 DEFAULT NULL,
-  `password` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `dept` tinyint(2) NOT NULL,
-  PRIMARY KEY (`dni`)
+  `imagen_dir` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `imagen` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Data for the table `profesor` */
+
+LOCK TABLES `profesor` WRITE;
+
+insert  into `profesor`(`id`,`departamento_id`,`nombre`,`apellidos`,`telefono`,`imagen_dir`,`imagen`,`created`,`modified`) values (1,2,'Antonio Jesús','Calvo Morales',NULL,'',NULL,NULL,NULL);
+
+UNLOCK TABLES;
+
+/*Table structure for table `users` */
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-/*Data for the table `teachers` */
+/*Data for the table `users` */
 
-insert  into `teachers`(`dni`,`nombre`,`apellidos`,`telefono`,`username`,`imagen`,`password`,`dept`) values ('12345678A','Antonio Jesús','Calvo Morales',NULL,'acalvo@iestrascolar.es','img/f1.jpg','acalvo',1),('23456789B','Mari Luz','Sánchez Rubio',NULL,'msanchez@iestrascolar.es','img/avatar.png','msanchez',3),('34567891C','Pedro','Jiménez Latorre',NULL,'pjimenez@iestrascolar.es','img/f2.jpg','pjimenez',3),('45678912D','Salvador','Pérez Jorge',NULL,'sperez@iestrascolar.es','img/salvatore.jpg','sperez',2),('56789123F','Herminio','Ludeña Serna',NULL,'hludena@iestrascolar.es','img/minion.jpg','hludena',1);
+LOCK TABLES `users` WRITE;
+
+UNLOCK TABLES;
+
+/*Table structure for table `usuario` */
+
+DROP TABLE IF EXISTS `usuario`;
+
+CREATE TABLE `usuario` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+/*Data for the table `usuario` */
+
+LOCK TABLES `usuario` WRITE;
+
+insert  into `usuario`(`id`,`username`,`password`,`role`,`created`,`modified`) values (1,'admin','9882a25c3c400cc8bc57ffad9b91d5590ccb3485','admin','2015-06-02 06:45:24','2015-06-02 06:45:24');
+
+UNLOCK TABLES;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
