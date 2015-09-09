@@ -12,9 +12,12 @@ class SliderController extends AppController
 
     public $components = [
         'Crud.Crud' => [
-            'actions' => ['Crud.Index', 'Crud.Edit','add' => ['className' => 'Crud.Addd', 'view' => 'edit']]
+            'actions' => [
+                'index' => ['className' => 'Crud.Index', 'view' => 'index'],
+                'edit' => ['className' => 'Crud.Edit', 'view' => 'edit'],
+                'add' => ['className' => 'Crud.Addd', 'view' => 'edit']
+            ]
         ]
     ];
-
 
 }

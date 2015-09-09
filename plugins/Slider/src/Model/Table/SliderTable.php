@@ -6,9 +6,8 @@ use Cake\ORM\Table;
 
 class SliderTable extends Table
 {
-    public function initialize($value='')
+    public function initialize(array $config)
     {
         $this->table('slider');
-        # code...
     }
 }
