@@ -15,7 +15,7 @@ class SliderController extends AppController
             'actions' => [
                 'index' => ['className' => 'Crud.Index', 'view' => 'index'],
                 'edit' => ['className' => 'Crud.Edit', 'view' => 'edit'],
-                'add' => ['className' => 'Crud.Addd', 'view' => 'edit']
+                'add' => ['className' => 'Crud.Add', 'view' => 'edit']
             ]
         ]
     ];
