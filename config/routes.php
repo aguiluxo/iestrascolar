@@ -50,9 +50,20 @@ Router::scope('/', function ($routes) {
     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
 
     /**
-     * ...and connect the rest of 'Pages' controller's URLs.
+     * ...and connect the rest of Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
+
+    ////////////////////////////////// Seccion ADMIN ///////////////////////////////////////////////////
+
+    Router::prefix('admin', function ($routes) {
+        $routes->connect('/actividades', ['controller' => 'Actividad', 'action' => 'index']);
+        $routes->connect('/actividades/:action/*', ['controller' => 'Actividad']);
+
+        $routes->connect('/profesor', ['controller' => 'Profesor', 'action' => 'index']);
+        $routes->connect('/profesor/add', ['controller' => 'Profesor', 'action' => 'add']);
+
+    });
 
     /**
      * Connect catchall routes for all controllers.

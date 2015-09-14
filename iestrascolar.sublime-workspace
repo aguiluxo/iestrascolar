@@ -4,321 +4,49 @@
 		"selected_items":
 		[
 			[
-				"contenedorMenu",
-				"contenedorPulsarMenu	(menu.ctp)"
+				"Cake",
+				"CakePlugin"
 			],
 			[
-				"cabecera",
-				"cabecera_desplegada"
+				"header",
+				"header_menu"
 			],
 			[
-				"logo",
-				"logo_aicor	(header.ctp)"
+				"box",
+				"box-shadow"
 			],
 			[
-				"slide",
-				"slideUp	.slideUp()"
+				"slider",
+				"sliderSolucion"
 			],
 			[
-				"img",
-				"imgManoTactil	(header.ctp)"
-			],
-			[
-				"contenedo",
-				"contenedorContectores"
-			],
-			[
-				"vew",
-				"viewportHeight"
-			],
-			[
-				"vie",
-				"viewportWidth"
-			],
-			[
-				"boton",
-				"botonWebNormal"
-			],
-			[
-				"si",
-				"sizeThum"
-			],
-			[
-				"Solic",
-				"Solicitante_presupuesto	(formularioPresupuesto.ctp)"
-			],
-			[
-				"Docum",
-				"DocumentacionCategoria"
-			],
-			[
-				"save",
-				"save"
-			],
-			[
-				"subm",
-				"submitQuotSmall"
-			],
-			[
-				"main",
-				"main	(routes.php)"
-			],
-			[
-				"pass",
-				"password"
-			],
-			[
-				"req",
-				"request"
-			],
-			[
-				"INDEX",
-				"index"
-			],
-			[
-				"formular",
-				"formularioPresupuesto	(view.ctp)"
-			],
-			[
-				"url",
-				"url_externa"
-			],
-			[
-				"mostrar",
-				"mostrar-listado-productos"
-			],
-			[
-				"attac",
-				"attachment_dir"
-			],
-			[
-				"attachmen",
-				"attachment_dir	(Producto.php)"
-			],
-			[
-				"php",
-				"php"
-			],
-			[
-				"pan",
-				"panelNoticiasContacto	(noticias.less)"
-			],
-			[
-				"fa",
+				"fade",
 				"fadeOut	.fadeOut()"
 			],
 			[
-				"Producto",
-				"ProductoCategoria"
+				"child",
+				"child(1"
 			],
 			[
-				"categ",
-				"categoriaProducto"
-			],
-			[
-				"var",
-				"var_dump"
-			],
-			[
-				"font-s",
-				"font-style"
-			],
-			[
-				"text",
-				"text-transform"
-			],
-			[
-				"contenedoR",
-				"contenedorProducto	(producto.ctp)"
-			],
-			[
-				"grupo",
-				"grupomeyras"
-			],
-			[
-				"somr",
-				"sombraBoton	(utils.less)"
-			],
-			[
-				"borde",
-				"bordeLogos	(logos.ctp)"
-			],
-			[
-				"inp",
-				"inputBusqueda"
-			],
-			[
-				"selec",
-				"selectRamas"
-			],
-			[
-				"eventos",
-				"eventosMultimedia"
-			],
-			[
-				"input",
-				"inputbuscardor"
-			],
-			[
-				"campus",
-				"campusresponsive"
-			],
-			[
-				"boton_",
-				"boton_enviar_empresas"
-			],
-			[
-				"check",
-				"checkCondiciones"
-			],
-			[
-				"email",
-				"emailInput"
-			],
-			[
-				"nombre",
-				"nombreInput"
-			],
-			[
-				"teacher",
-				"teacher"
-			],
-			[
-				"Auth",
-				"Auth"
-			],
-			[
-				"inpu",
-				"inputTlf"
-			],
-			[
-				"ver",
-				"vertical-align"
-			],
-			[
-				"seccio",
-				"seccionSoluciones"
-			],
-			[
-				"trasition",
-				"transition:0.3s"
-			],
-			[
-				"z",
-				"z-index"
-			],
-			[
-				"bac",
-				"background"
-			],
-			[
-				"backgr",
-				"background-size"
-			],
-			[
-				"bako",
-				"background-position"
-			],
-			[
-				"M",
-				"MyriadProCondensed"
-			],
-			[
-				"no",
-				"nopaddingright"
-			],
-			[
-				"titulo",
-				"tituloMenuMovil"
-			],
-			[
-				"seccion",
-				"seccionComponentes"
-			],
-			[
-				"toggl",
-				"toggleClass	.toggleClass()"
-			],
-			[
-				"nopa",
-				"nopadding"
-			],
-			[
-				"menu",
-				"menuGestort"
-			],
-			[
-				"nopad",
-				"nopaddingleft"
-			],
-			[
-				"mapa",
-				"mapa_contacto"
-			],
-			[
-				"line",
-				"line-height"
-			],
-			[
-				"contenedor",
-				"contenedorFormulario"
-			],
-			[
-				"max-",
-				"max-width"
-			],
-			[
-				"fonts-",
-				"font-size"
-			],
-			[
-				"list-s",
-				"list-style"
+				"nth",
+				"nth-child"
 			],
 			[
 				"wid",
 				"width"
 			],
 			[
-				"contene",
-				"contenedorSlider"
+				"text",
+				"text-align"
 			],
 			[
-				"style",
-				"stylesheet"
-			],
-			[
-				"conte",
-				"contenedor"
-			],
-			[
-				"CakePl",
-				"CakePlugin::loadAll"
-			],
-			[
-				"Crud",
-				"CrudControllerTrait"
+				"hig",
+				"highlight_line"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "/C/Users/amuñoz/Desktop/help.md",
-			"settings":
-			{
-				"buffer_size": 2451,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/amuñoz/AppData/Local/Temp/Rar$DIa0.906/database.php",
-			"settings":
-			{
-				"buffer_size": 543,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -327,26 +55,10 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 375.0,
-		"last_filter": "set syn ph",
+		"height": 201.0,
+		"last_filter": "install",
 		"selected_items":
 		[
-			[
-				"set syn ph",
-				"Set Syntax: PHP"
-			],
-			[
-				"php getter",
-				"phpfmt: getter and setter (Go)"
-			],
-			[
-				"syntax php",
-				"Set Syntax: PHP"
-			],
-			[
-				"html",
-				"Set Syntax: HTML"
-			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -356,73 +68,46 @@
 				"Package Control: Install Package"
 			],
 			[
-				"insa",
-				"Indentation: Convert to Spaces"
+				"boots",
+				"Snippet: bootstrap"
+			],
+			[
+				"bo",
+				"Snippet: bootstrap"
+			],
+			[
+				"boo",
+				"Snippet: bootstrap"
+			],
+			[
+				"bootst",
+				"Snippet: bootstrap"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
 			],
 			[
 				"instal",
 				"Package Control: Install Package"
 			],
 			[
-				"package control",
-				"Package Control: Install Package"
-			],
-			[
-				"package",
-				"Package Control: Install Package"
-			],
-			[
-				"install ",
-				"Package Control: Install Package"
-			],
-			[
-				"settings user",
-				"Preferences: Settings - User"
-			],
-			[
-				"rename",
-				"File: Rename"
-			],
-			[
 				"inst",
 				"Package Control: Install Package"
 			],
 			[
-				"ins",
-				"Package Control: Install Package"
-			],
-			[
-				"les",
-				"Set Syntax: LESS"
-			],
-			[
-				"remove",
-				"Package Control: Remove Package"
-			],
-			[
-				"remo",
-				"Package Control: Remove Package"
-			],
-			[
-				"keyb",
-				"Preferences: Key Bindings - Default"
-			],
-			[
-				"keybi",
-				"Preferences: Key Bindings - User"
-			],
-			[
-				"remove pac",
-				"Package Control: Remove Package"
+				"pack",
+				"Package Control: Enable Package"
 			]
 		],
-		"width": 692.0
+		"width": 450.0
 	},
 	"console":
 	{
-		"height": 168.0,
+		"height": 126.0,
 		"history":
 		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
 	"distraction_free":
@@ -436,172 +121,133 @@
 	},
 	"expanded_folders":
 	[
-		"/c/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar",
-		"/c/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins",
-		"/c/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Slider"
+		"/C/wamp/www/iestrascolar"
 	],
 	"file_history":
 	[
-		"/c/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/config/bootstrap.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/artencordoba/app/Config/config.ini",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/artencordoba/app/Config/database.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/artencordoba/app/Config/core.php",
-		"/C/Users/amuñoz/Documents/El Puentecillo/EL puentecillo copia/wp-admin/customize.php",
-		"/C/Users/amuñoz/Documents/El Puentecillo/EL puentecillo copia/wp-admin/index.php",
-		"/C/Users/amuñoz/Desktop/help.md",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/core.php",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/wp-config.php",
-		"/C/Users/amuñoz/Downloads/redux_options_nova_theme_options_backup_02-09-2015.json",
-		"/C/Users/amuñoz/AppData/Local/Temp/Rar$DIa0.311/wp-config.php",
-		"/C/Users/amuñoz/.bashrc",
-		"/C/Users/amuñoz/AppData/Local/Temp/Rar$DIa0.178/database.php",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/contacto.css",
-		"/C/Users/amuñoz/gitolite-admin/conf/interno.conf",
-		"/C/Users/amuñoz/gitolite-admin/conf/gitolite.conf",
-		"/C/Users/amuñoz/Documents/cruzdejuarez/backups/backup.sql",
-		"/C/Users/amuñoz/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/Controller/AppController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/View/Elements/Mobile/menu.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/View/Noticias/index_mobile.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/View/Elements/Noticias/noticia_mobile.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/css/noticias.css",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/js/noticias.js",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/css/mobile_noticias.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/js/server.js",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/View/Layouts/default_mobile.ctp",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/database.php",
-		"/C/Users/amuñoz/AppData/Roaming/Sublime Text 3/Packages/User/phpfmt.sublime-settings",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/View/Layouts/default.ctp",
-		"/C/Users/amuñoz/AppData/Roaming/Sublime Text 3/Packages/phpfmt/phpfmt.sublime-settings",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/View/Elements/menu.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/View/Elements/Mobile/servicios.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/css/mobile_index.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/css/mobile_size_320.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/plugins/Tags/Controller/TagsAppController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/View/Main/index_mobile.ctp",
-		"/C/Users/amuñoz/.ssh/config",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/bloque1.ctp",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/contacto_franquicia.ctp",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/contacto_cv.ctp",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/filosofia.ctp",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/index.ctp",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/menteagil.ctp",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/recordar.ctp",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/default.ctp",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/contacto_presupuesto.ctp",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/contacto_grande.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/js/cargaContenidoMovil.js",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/contacto.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/css/mobile_default.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/css/mobile_menu.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/View/Elements/Mobile/header.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/libs/simpler-sidebar/dist/jquery.simpler-sidebar.js",
-		"/C/Users/amuñoz/Documents/El Puentecillo/EL puentecillo copia/wp-config.php",
-		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/edit.ctp",
-		"/C/Users/amuñoz/AppData/Local/Temp/Rar$DIa0.996/unzip.php",
-		"/C/Users/amuñoz/AppData/Local/Temp/Rar$EXa0.723/index.html",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/libs/simpler-sidebar/jquery.simpler-sidebar.js",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/libs/simpler-sidebar/style.css",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/libs/simpler-sidebar/tests/static-left-top.html",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/libs/simpler-sidebar/jquery.simpler-sidebar.min.js",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/libs/simpler-sidebar-master/tests/static-left.html",
-		"/C/Users/amuñoz/AppData/Local/Temp/Rar$EXa0.288/simpler-sidebar-master/tests/dynamic-left.html",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/View/Elements/Mobile/contenido_cabecera_oculto.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/css/mobile_font.less",
-		"/C/Users/amuñoz/AppData/Local/Temp/Rar$DIa0.756/HelveticaNeueLTStdMdCn.css",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/css/mobile_font.css",
-		"/C/Users/amuñoz/AppData/Local/Temp/Rar$DIa0.400/HelveticaNeueLTProMd.css",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/css/mobile_default.css",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/css/estilo.less",
-		"/C/Users/amuñoz/Documents/Recursos/fonts/css fonts/Roboto Condensed/RobotoCondensed.css",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/webroot/css/estilo.css",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/.editorconfig",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/aicor/app/Config/database.php",
-		"/C/Users/amuñoz/Documents/Bazaros/documentation/api/index.html",
-		"/C/Users/amuñoz/AppData/Local/Temp/Rar$DIa0.956/slider-revslider.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/less/index.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Elements/productos/formularioPresupuesto.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/Controller/ProductosController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Catalogo/Controller/CatalogoController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/js/googlemaps_bak.js",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Contacto/index.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Elements/main/contacto.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/js/googlemaps.js",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/js/controlesMapa.js",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/Controller/AppController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Tags/Controller/TagsAppController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/Config/bootstrap.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Elements/noticias/individual.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Noticias/view.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Productos/Model/ProductoCategoria.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Clientes/View/Cliente/index.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Clientes/View/Cliente/edit.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Noticias/View/Noticia/edit.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Productos/Model/Producto.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Clientes/Controller/ClienteController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/Controller/ClientesController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Clientes/Model/Cliente.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Productos/Controller/ProductoController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/less/producto.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Comun/View/LogDeAcceso/index.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/Plugin/Upload/Model/Behavior/UploadBehavior.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Catalogo/View/Catalogo/index.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Clientes/registro.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/Config/database.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/plugins/Comun/Model/LogDeAcceso.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/Config/routes.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/less/tabla.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/less/menu.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/less/registro.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/less/modal.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/less/menuLateral.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Elements/contacto/form_contacto.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Elements/main/producto.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Productos/index.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Servicios/view.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/less/noticias.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/less/clientes.less",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Elements/servicios/individual.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Elements/productos/productosCategoria.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Elements/productos/producto.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Elements/main/formulario-login.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Clientes/login.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/css/menu.css",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/webroot/js/servicios.js",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Elements/productos/fichaProducto.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/grupomeyras/app/View/Productos/view.ctp"
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/View/Layouts/default.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Usuarios/View/Usuario/edit.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/View/Elements/navbar.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/Config/bootstrap.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/Controller/AdminAppController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Usuarios/Config/routes.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Usuarios/View/Elements/menu_usuario.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Usuarios/View/Elements/menu.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Usuarios/Config/bootstrap.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/Config/VerticalMenu/View/Elements/navbar.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/View/LogDeAcceso/index.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/View/Helper/GridViewHelper.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/Model/Behavior/LogDeAccesoBehavior.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/Lib/ConfigPanelManager.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/Config/VerticalMenu/View/Layouts/default.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/Config/VerticalMenu/readme.md",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/Config/Adjuntos/Pagina.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/plugins/Admin/Config/Adjuntos/PaginaController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Config/routes.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Usuarios/Model/UsuariosAppModel.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Usuarios/Controller/UsuariosAppController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Admin/Model/AdminAppModel.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Usuarios/Config/routes.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Usuarios/Controller/LoginController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Usuarios/Controller/UsuarioController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Admin/Config/routes.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Model/Teacher.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Model/Activity.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Controller/AppController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/View/Layouts/default.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Controller/ActivitiesController_back.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/View/Activities/index.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Controller/ActivitiesController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Config/database.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Config/bootstrap.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Admin/Controller/AdminAppController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Admin/Controller/MainController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Admin/Controller/LogDeAccesoController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Model/Organization.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Model/AppModel.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Controller/TeachersController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/View/Activities/view.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/composer.json",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Config/core.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/View/Admin/admin_index.ctp",
+		"/G/Trabajo/trefiladosurbano/app/Controller/AppController.php",
+		"/G/Trabajo/trefiladosurbano/app/Controller/NoticiasController.php",
+		"/G/Trabajo/trefiladosurbano/app/Controller/CatalogoController.php",
+		"/G/Trabajo/trefiladosurbano/app/Controller/BuscadorController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Controller/AdminController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/View/Emails/admin_index.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/lib/Cake/Utility/Debugger.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/.gitignore",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/webroot/less/header.less",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/config/bootstrap.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Template/Element/header.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/webroot/less/default.less",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Template/Layout/default.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/webroot/css/default.css",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/webroot/css/less/header.less",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/webroot/css/less/default.less",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Model/Table/ActivitiesTable.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Template/Activities/edit.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Model/Table/TeachersTable.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Console/Installer.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/config/routes.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Template/Activities/index.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Template/Activities/view.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Controller/TeachersController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Controller/ActivitiesController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Template/Actividad/edit.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/config/schema/informacionBaseDatos.txt",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Model/Table/ProfesorTable",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Controller/ActividadesController.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Model/Table/ActividadTable.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Template/Actividad/view.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/config/app.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Model/Table/Actividad.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/app/webroot/css/slider.css",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/app/webroot/css/general.css",
+		"/C/Users/Álvaro/Desktop/slider.html",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/app/webroot/css/gestort.css",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/app/View/Elements/gestort/slider.ctp",
+		"/C/Users/Álvaro/AppData/Local/Temp/fz3temp-1/responsive.css",
+		"/C/Users/Álvaro/AppData/Local/Temp/fz3temp-2/responsive.css",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/app/View/Main/gestort.ctp",
+		"/C/Users/Álvaro/AppData/Roaming/Sublime Text 3/Packages/User/bootstrap.sublime-snippet",
+		"/C/Users/Álvaro/AppData/Roaming/Sublime Text 3/Packages/User/viewport.sublime-snippet",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/composer.json",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/lib/Cake/Console/ConsoleOutput.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/CONTRIBUTING.md",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/app/View/Elements/gestort/contenido.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/lib/Cake/Log/Engine/SyslogLog.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/app/Config/Schema/sessions.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/app/webroot/css/header.css",
+		"/C/Users/Álvaro/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Álvaro/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/app/View/Elements/footer.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/app/View/Main/index.ctp",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/Estratos/index.php",
+		"/C/Users/Álvaro/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings"
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
-		"height": 103.0,
+		"height": 100.0,
 		"where_history":
 		[
-			"*",
-			"webroot/less/*",
-			"webroot/less",
-			"/less",
-			"/les",
-			"*",
-			"plugins/Servicios",
-			"*",
+			"plugins/usuarios/*",
+			"usuarios/*.ctp",
+			"plugins/usuarios/*.ctp",
 			"*.ctp",
-			"*.js",
-			"*",
-			"<project>,*.php",
+			"/.ctp",
+			".ctp",
+			"plugins/",
 			"",
-			"*.ctp",
-			"*",
-			"src/",
-			"*",
-			"*.php",
-			"*",
-			"*.css",
-			"",
-			"*.js"
+			"plugins/Usuarios",
+			"/plugins/Usuarios",
+			"plugins/Usuarios",
+			"*"
 		]
 	},
 	"find_state":
@@ -609,134 +255,38 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"plugin",
-			"AppConfig",
-			"demos3",
-			"demos3.aicor.",
-			"demos3.",
-			"demos.aicor.com",
-			"mente",
-			"position:",
-			"jcrop(<?=$config?",
-			"jcrop",
-			"animateClose",
-			"closeSidebar",
-			"close",
-			"		            	 ",
 			"menu",
-			"opacity",
-			"style",
-			"display",
-			"\">\n",
-			"contenedorContectores",
-			"\"titulo\"",
-			"titulo",
-			"\"imagen\"",
-			"imagen",
-			"data-contenido-progresivo",
-			"oculto",
-			"servicio",
-			"info",
-			"\n		",
-			"cabecera",
-			"',\n",
-			"right",
-			"contenedor",
-			"container-fluid",
-			"container",
-			"franja",
-			"container-",
-			"xs",
-			"bookmark.user",
-			"php",
-			"imagen",
-			"search",
-			"busca",
-			"checkboxSolicitudPresupuesto",
-			"solicitantepresu",
-			"\n          ",
-			"asunto",
-			"botoneraRegistro",
-			".botoneraRegistro",
-			"nombreInput",
-			"emailInput",
-			"tlfInput",
-			"nombreInput",
-			"read",
-			"\n		",
-			"background",
-			"EnlaceAppController",
-			"botoneraS",
-			"configure::write(",
-			"configure::write('rol",
-			"configure::write",
-			"borde",
-			"border",
-			"enlaces",
+			"Usuarios",
+			"'Usuarios'",
+			"Inicio",
+			"inicio",
+			"menu",
+			"menu_usuario",
+			"registro de acc",
+			"control",
+			"fecha_vacia",
+			"comun",
+			"Comun",
+			"comun",
+			"Comun",
+			"comun",
+			"Comun",
+			"comun",
+			"Comun",
+			"comun",
+			"Comun",
+			"registroL",
+			"auth",
+			"cakeP",
 			"plugin",
-			"enlace",
-			"'plugin' => 'enlace'",
-			"enlace",
-			"CakePl",
-			";\n",
-			"179px",
-			"height:179px",
-			"fecha",
-			"text",
-			"formulario-registro",
-			"Cat",
-			"cat",
-			"Cat",
-			"cat",
-			"categoria",
-			"email",
-			"();\n",
-			"add",
-			"0",
 			"debug",
-			"cliente->save",
-			"add",
-			"activado",
-			"redirect",
-			"nombreQuotBigInput",
-			"submitRegistrar",
-			"passInput",
-			"emailInput",
-			"asuntoInput",
-			"tlfInput",
-			"tlf",
-			"tlfRegClienteInput",
-			"tlfInput",
-			"apellido_2Input",
-			"apellido_1Input",
-			"apellido_1RegClienteInput",
-			"apellido_2Input",
-			"apellido_1Input",
-			"nombreInput",
-			"mensajeInput",
-			"asuntoBigQuotInput",
-			"emailInput",
-			"asuntoInput",
-			"tlfInput",
-			"nombreInput",
-			"asuntoInput",
-			"emailInput",
-			"nombreInput",
+			"tm",
+			"\",\n",
+			"x;\n			display: inline;",
 			";\n",
-			"nombreIn",
-			"border-bottom",
-			"h1",
-			"font-size",
-			"h1 {",
-			"h1{",
-			"input-error",
-			"slider",
-			"tag",
-			"redirect(array",
-			"add",
-			"redirect ",
-			"redirect",
-			"catalogo"
+			"85",
+			"formBusqueda",
+			"redesSmal"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -744,208 +294,28 @@
 		"regex": false,
 		"replace_history":
 		[
-			"mortadela",
-			"alvaromr",
-			"hola"
 		],
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
-		"wrap": true
+		"wrap": false
 	},
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/C/Users/amuñoz/Desktop/help.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2451,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1024,
-								1024
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/amuñoz/AppData/Local/Temp/Rar$DIa0.906/database.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 543,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								543,
-								543
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 28.0
 	},
 	"input":
 	{
-		"height": 36.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -970,10 +340,6 @@
 		]
 	},
 	"menu_visible": true,
-	"output.exec":
-	{
-		"height": 116.0
-	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -982,7 +348,7 @@
 	"project": "iestrascolar.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -992,516 +358,212 @@
 		"selected_items":
 		[
 			[
-				"bootstp",
-				"config\\bootstrap.php"
+				"admin/default",
+				"plugins\\Admin\\View\\Layouts\\default.ctp"
 			],
 			[
-				"data",
-				"app\\Config\\database.php"
+				"usuarios/menu",
+				"plugins\\Usuarios\\View\\Elements\\menu_usuario.ctp"
 			],
 			[
-				"config",
-				"app\\Config\\config.ini"
+				"usuario/men",
+				"plugins\\Usuarios\\View\\Elements\\menu.ctp"
 			],
 			[
-				"default_",
-				"app\\View\\Layouts\\default_mobile.ctp"
+				"menu.c",
+				"plugins\\Admin\\Config\\VerticalMenu\\View\\Elements\\navbar.ctp"
 			],
 			[
-				"default.ctp",
-				"app\\View\\Layouts\\default.ctp"
+				"edit.ct",
+				"plugins\\Usuarios\\View\\Usuario\\edit.ctp"
 			],
 			[
-				"noticias.css",
-				"app\\webroot\\css\\noticias.css"
+				"admin/defaul",
+				"plugins\\Admin\\View\\Layouts\\default.ctp"
 			],
 			[
-				"noticiasindex",
-				"app\\View\\Noticias\\index_mobile.ctp"
+				"usuarios/route",
+				"plugins\\Usuarios\\Config\\routes.php"
 			],
 			[
-				"noticias.js",
-				"app\\webroot\\js\\noticias.js"
+				"adminappcon",
+				"plugins\\Admin\\Controller\\AdminAppController.php"
 			],
 			[
-				"appcontroll",
-				"app\\Controller\\AppController.php"
+				"admin/boot",
+				"plugins\\Admin\\Config\\bootstrap.php"
 			],
 			[
-				"menu",
-				"app\\View\\Elements\\menu.ctp"
+				"routes",
+				"app\\Config\\routes.php"
 			],
 			[
-				"menu.ctp",
-				"app\\View\\Elements\\menu.ctp"
-			],
-			[
-				"appcon",
-				"plugins\\Tags\\Controller\\TagsAppController.php"
-			],
-			[
-				"servicios",
-				"app\\View\\Elements\\Mobile\\servicios.ctp"
-			],
-			[
-				"index_",
-				"app\\View\\Main\\index_mobile.ctp"
-			],
-			[
-				"mobile_index",
-				"app\\webroot\\css\\mobile_index.less"
-			],
-			[
-				"servicios.",
-				"app\\View\\Elements\\Mobile\\servicios.ctp"
-			],
-			[
-				"index_mobil",
-				"app\\View\\Main\\index_mobile.ctp"
-			],
-			[
-				"320",
-				"app\\webroot\\css\\mobile_size_320.less"
-			],
-			[
-				"",
-				"app\\webroot\\css\\mobile_size_320.less"
-			],
-			[
-				"header.ct",
-				"app\\View\\Elements\\Mobile\\header.ctp"
-			],
-			[
-				"header.ctp",
-				"app\\View\\Elements\\Mobile\\header.ctp"
-			],
-			[
-				"size",
-				"app\\webroot\\css\\mobile_size_320.less"
-			],
-			[
-				"jquery.sim",
-				"app\\webroot\\libs\\simpler-sidebar\\jquery.simpler-sidebar.js"
-			],
-			[
-				"jquery.",
-				"app\\webroot\\libs\\simpler-sidebar\\dist\\jquery.simpler-sidebar.js"
-			],
-			[
-				"mobile_defa",
-				"app\\webroot\\css\\mobile_default.less"
-			],
-			[
-				"jquery.si",
-				"app\\webroot\\libs\\simpler-sidebar\\jquery.simpler-sidebar.min.js"
-			],
-			[
-				"jquery.simple",
-				"app\\webroot\\libs\\simpler-sidebar\\dist\\jquery.simpler-sidebar.js"
-			],
-			[
-				"mobilemenu",
-				"app\\View\\Elements\\Mobile\\menu.ctp"
-			],
-			[
-				"oculto",
-				"app\\View\\Elements\\Mobile\\contenido_cabecera_oculto.ctp"
-			],
-			[
-				"mobiledefault",
-				"app\\webroot\\css\\mobile_default.less"
-			],
-			[
-				"servicios.ct",
-				"app\\View\\Elements\\Mobile\\servicios.ctp"
-			],
-			[
-				"moviljs",
-				"app\\webroot\\js\\cargaContenidoMovil.js"
-			],
-			[
-				"defaulless",
-				"app\\webroot\\css\\mobile_default.less"
-			],
-			[
-				"defaultmo",
-				"app\\View\\Layouts\\default_mobile.ctp"
-			],
-			[
-				"mobile_inde",
-				"app\\webroot\\css\\mobile_index.less"
-			],
-			[
-				"mobile_font",
-				"app\\webroot\\css\\mobile_font.less"
-			],
-			[
-				"header",
-				"app\\View\\Elements\\Mobile\\header.ctp"
-			],
-			[
-				"default",
-				"app\\View\\Layouts\\default.ctp"
-			],
-			[
-				"index",
-				"app\\View\\Main\\index_mobile.ctp"
-			],
-			[
-				"default.les",
-				"app\\webroot\\css\\mobile_default.less"
-			],
-			[
-				"indexmo",
-				"app\\View\\Main\\index_mobile.ctp"
-			],
-			[
-				"appcontroller",
-				"app\\Controller\\AppController.php"
-			],
-			[
-				"estilo.les",
-				"app\\webroot\\css\\estilo.less"
-			],
-			[
-				"estilo",
-				"app\\webroot\\css\\estilo.less"
-			],
-			[
-				"mobileheader",
-				"app\\View\\Elements\\Mobile\\header.ctp"
-			],
-			[
-				"appcontrol",
-				"app\\Controller\\AppController.php"
-			],
-			[
-				"appcnt",
-				"app\\Controller\\AppController.php"
+				"boostrap",
+				"app\\Config\\bootstrap.php"
 			],
 			[
 				"database",
 				"app\\Config\\database.php"
 			],
 			[
-				"bookmarkstable",
-				"src\\Model\\Table\\BookmarksTable.php"
+				"teac",
+				"app\\Model\\Teacher.php"
+			],
+			[
+				"organiza",
+				"app\\Model\\Organization.php"
 			],
 			[
 				"index.ctp",
-				"src\\Template\\Bookmarks\\index.ctp"
+				"app\\View\\Activities\\index.ctp"
 			],
 			[
-				"edit.ct",
-				"src\\Template\\Bookmarks\\edit.ctp"
+				"defaul",
+				"app\\View\\Layouts\\default.ctp"
 			],
 			[
-				"add.ct",
-				"src\\Template\\Bookmarks\\add.ctp"
+				"appcon",
+				"app\\Controller\\AppController.php"
 			],
 			[
-				"entityboo",
-				"src\\Model\\Entity\\Bookmark.php"
+				"boot",
+				"app\\Config\\bootstrap.php"
 			],
 			[
-				"bookmark.",
-				"src\\Model\\Entity\\Bookmark.php"
+				"activit",
+				"app\\Model\\Activity.php"
 			],
 			[
-				"book",
-				"src\\Controller\\BookmarksController.php"
+				"appcont",
+				"app\\Controller\\AppController.php"
 			],
 			[
-				"slideredit",
-				"plugins\\Slider\\View\\Slider\\edit.ctp"
+				"appmode",
+				"app\\Model\\AppModel.php"
 			],
 			[
-				"slider",
-				"plugins\\Slider\\Model\\Slider.php"
+				"teacher.php",
+				"app\\Model\\Teacher.php"
 			],
 			[
-				"email.",
-				"app\\Config\\email.php"
+				"index.ct",
+				"app\\View\\Activities\\index.ctp"
 			],
 			[
-				"index.less",
-				"app\\webroot\\less\\index.less"
+				"a",
+				"app\\Model\\AppModel.php"
 			],
 			[
-				"contacto.less",
-				"app\\webroot\\less\\contacto.less"
+				"acti",
+				"app\\Controller\\ActivitiesController.php"
 			],
 			[
-				"viewcontindex",
-				"app\\View\\Contacto\\index.ctp"
+				"activ",
+				"app\\Model\\Activity.php"
 			],
 			[
-				"googl",
-				"app\\webroot\\js\\googlemaps.js"
+				"defa",
+				"app\\View\\Layouts\\default.ctp"
 			],
 			[
-				"plunotiedit",
-				"plugins\\Noticias\\View\\Noticia\\edit.ctp"
+				"boo",
+				"app\\Config\\bootstrap.php"
 			],
 			[
-				"plucliedit",
-				"plugins\\Clientes\\View\\Cliente\\edit.ctp"
+				"compose",
+				"composer.json"
 			],
 			[
-				"plucliindex",
-				"plugins\\Clientes\\View\\Cliente\\index.ctp"
+				"default",
+				"app\\View\\Layouts\\default.ctp"
 			],
 			[
-				"pluclientec",
-				"plugins\\Clientes\\Controller\\ClienteController.php"
+				"core",
+				"app\\Config\\core.php"
 			],
 			[
-				"clientescontr",
-				"app\\Controller\\ClientesController.php"
-			],
-			[
-				"plucliinde",
-				"plugins\\Clientes\\View\\Cliente\\index.ctp"
-			],
-			[
-				"cliente",
-				"plugins\\Clientes\\Model\\Cliente.php"
-			],
-			[
-				"viecontactoinde",
-				"app\\View\\Contacto\\index.ctp"
-			],
-			[
-				"contacto.ctp",
-				"app\\View\\Elements\\main\\contacto.ctp"
-			],
-			[
-				"google",
-				"app\\webroot\\js\\googlemaps.js"
-			],
-			[
-				"mapa",
-				"app\\webroot\\js\\controlesMapa.js"
+				"compo",
+				"composer.json"
 			],
 			[
 				"bootstrap",
 				"app\\Config\\bootstrap.php"
 			],
 			[
-				"notiindivi",
-				"app\\View\\Elements\\noticias\\individual.ctp"
+				"app",
+				"app\\Controller\\AppController.php"
 			],
 			[
-				"notiview",
-				"app\\View\\Noticias\\view.ctp"
-			],
-			[
-				"upload",
-				"app\\Plugin\\Upload\\Model\\Behavior\\UploadBehavior.php"
-			],
-			[
-				"clientecontroll",
-				"plugins\\Clientes\\Controller\\ClienteController.php"
-			],
-			[
-				"productosco",
-				"app\\Controller\\ProductosController.php"
-			],
-			[
-				"catalogoco",
-				"plugins\\Catalogo\\Controller\\CatalogoController.php"
-			],
-			[
-				"producto.php",
-				"plugins\\Productos\\Model\\Producto.php"
-			],
-			[
-				"productocate",
-				"plugins\\Productos\\Model\\ProductoCategoria.php"
-			],
-			[
-				"cliente.php",
-				"plugins\\Clientes\\Model\\Cliente.php"
-			],
-			[
-				"productoco",
-				"plugins\\Productos\\Controller\\ProductoController.php"
-			],
-			[
-				"plucatecataind",
-				"plugins\\Catalogo\\View\\Catalogo\\index.ctp"
-			],
-			[
-				"plucatacatindex",
-				"plugins\\Catalogo\\View\\Catalogo\\index.ctp"
-			],
-			[
-				"cataindex",
-				"plugins\\Catalogo\\View\\Catalogo\\index.ctp"
-			],
-			[
-				"plucatalogindex",
-				"plugins\\Catalogo\\View\\Catalogo\\index.ctp"
-			],
-			[
-				"plucliindex.",
-				"plugins\\Clientes\\View\\Cliente\\index.ctp"
-			],
-			[
-				"presupuesto",
-				"app\\View\\Elements\\productos\\formularioPresupuesto.ctp"
-			],
-			[
-				"producto.less",
-				"app\\webroot\\less\\producto.less"
-			],
-			[
-				"contacto.",
-				"app\\View\\Elements\\main\\contacto.ctp"
-			],
-			[
-				"bootst",
+				"boots",
 				"app\\Config\\bootstrap.php"
 			],
 			[
-				"menulaterl",
-				"app\\webroot\\less\\menuLateral.less"
+				"composer.",
+				"composer.json"
 			],
 			[
-				"datab",
-				"app\\Config\\database.php"
+				"bootst",
+				"config\\bootstrap.php"
 			],
 			[
-				"logdeacceso",
-				"plugins\\Comun\\Model\\LogDeAcceso.php"
+				"header.less",
+				"webroot\\less\\header.less"
 			],
 			[
-				"ro",
-				"app\\Config\\routes.php"
+				"default.css",
+				"webroot\\css\\default.css"
 			],
 			[
-				"notiindi",
-				"app\\View\\Elements\\noticias\\individual.ctp"
+				"",
+				"src\\Controller\\ActivitiesController.php"
 			],
 			[
-				"tabla.les",
-				"app\\webroot\\less\\tabla.less"
+				"edit",
+				"src\\Template\\Activities\\edit.ctp"
 			],
 			[
-				"menu.less",
-				"app\\webroot\\less\\menu.less"
+				"activi",
+				"src\\Controller\\ActivitiesController.php"
 			],
 			[
-				"menulateral.less",
-				"app\\webroot\\less\\menuLateral.less"
+				"defau",
+				"src\\Template\\Layout\\default.ctp"
 			],
 			[
-				"modal.less",
-				"app\\webroot\\less\\modal.less"
+				"gitig",
+				".gitignore"
 			],
 			[
-				"contacto.ct",
-				"app\\View\\Elements\\main\\contacto.ctp"
+				"actividades",
+				"src\\Controller\\ActividadesController.php"
 			],
 			[
-				"registro.ctp",
-				"app\\View\\Clientes\\registro.ctp"
+				"slider.css",
+				"app\\webroot\\css\\slider.css"
 			],
 			[
-				"registro.le",
-				"app\\webroot\\less\\registro.less"
+				"gestort.css",
+				"app\\webroot\\css\\gestort.css"
 			],
 			[
-				"noticia.less",
-				"app\\webroot\\less\\noticias.less"
+				"general.css",
+				"app\\webroot\\css\\general.css"
 			],
 			[
-				"noticias.less",
-				"app\\webroot\\less\\noticias.less"
+				"slider.ctp",
+				"app\\View\\Elements\\gestort\\slider.ctp"
 			],
 			[
-				"clientes.less",
-				"app\\webroot\\less\\clientes.less"
+				"index.cs",
+				"app\\webroot\\css\\index.css"
 			],
 			[
-				"noticivie",
-				"app\\View\\Noticias\\view.ctp"
+				"footer",
+				"app\\View\\Elements\\footer.ctp"
 			],
 			[
-				"serviindiv",
-				"app\\View\\Elements\\servicios\\individual.ctp"
-			],
-			[
-				"serviciosvie",
-				"app\\View\\Servicios\\view.ctp"
-			],
-			[
-				"producto.ct",
-				"app\\View\\Elements\\productos\\producto.ctp"
-			],
-			[
-				"productoscate",
-				"app\\View\\Elements\\productos\\productosCategoria.ctp"
-			],
-			[
-				"proindex.ct",
-				"app\\View\\Productos\\index.ctp"
-			],
-			[
-				"contacto",
-				"app\\View\\Elements\\contacto\\form_contacto.ctp"
-			],
-			[
-				"form",
-				"app\\View\\Elements\\main\\formulario-login.ctp"
-			],
-			[
-				"logi",
-				"app\\View\\Clientes\\login.ctp"
-			],
-			[
-				"presupues",
-				"app\\View\\Elements\\productos\\formularioPresupuesto.ctp"
-			],
-			[
-				"clientesco",
-				"app\\Controller\\ClientesController.php"
-			],
-			[
-				"clientecontr",
-				"plugins\\Clientes\\Controller\\ClienteController.php"
-			],
-			[
-				"slugview",
-				"plugins\\Comun\\Controller\\Crud\\Action\\SlugViewCrudAction.php"
-			],
-			[
-				"noticiascontr",
-				"app\\Controller\\NoticiasController.php"
-			],
-			[
-				"productoscontroller",
-				"app\\Controller\\ProductosController.php"
-			],
-			[
-				"defult.ctp",
-				"app\\View\\Layouts\\default.ctp"
-			],
-			[
-				"social.less",
-				"app\\webroot\\less\\social.less"
-			],
-			[
-				"proview",
-				"app\\View\\Productos\\view.ctp"
-			],
-			[
-				"fichaprod",
-				"app\\View\\Elements\\productos\\fichaProducto.ctp"
-			],
-			[
-				"lasocial.c",
-				"app\\View\\Elements\\layout\\social.ctp"
+				"genera",
+				"app\\webroot\\css\\general.css"
 			]
 		],
 		"width": 0.0
@@ -1509,56 +571,16 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "iest",
 		"selected_items":
 		[
 			[
-				"arte",
-				"C:\\Bitnami\\wampstack-5.4.38-0\\apache2\\htdocs\\arteencordoba\\ARTENCORDOBA.sublime-workspace"
-			],
-			[
-				"lumier",
-				"C:\\Bitnami\\wampstack-5.4.38-0\\apache2\\htdocs\\lumierezengarden\\Lumierezengarden.sublime-project"
-			],
-			[
-				"lumiere",
-				"C:\\Bitnami\\wampstack-5.4.38-0\\apache2\\htdocs\\lumierezengarden\\Lumierezengarden.sublime-project"
+				"iest",
+				"C:\\Users\\Álvaro\\Documents\\Iestrascolar\\iestrascolar.sublime-project"
 			],
 			[
 				"",
-				"C:\\Users\\amuñoz\\AppData\\Roaming\\Sublime Text 3\\Packages\\User\\Estratos.sublime-project"
-			],
-			[
-				"piedr",
-				"C:\\Users\\amuñoz\\Documents\\piedra.sublime-project"
-			],
-			[
-				"estra",
-				"C:\\Users\\amuñoz\\Documents\\EstratosDefinitivo.sublime-project"
-			],
-			[
-				"piedra",
-				"C:\\Users\\amuñoz\\Documents\\piedra.sublime-project"
-			],
-			[
-				"pie",
-				"C:\\Users\\amuñoz\\Documents\\piedra.sublime-project"
-			],
-			[
-				"aicor",
-				"C:\\Bitnami\\wampstack-5.4.38-0\\apache2\\htdocs\\aicor\\aicor.sublime-project"
-			],
-			[
-				"estratos",
-				"C:\\Users\\amuñoz\\Documents\\EstratosDefinitivo.sublime-project"
-			],
-			[
-				"estrato",
-				"C:\\Users\\amuñoz\\AppData\\Roaming\\Sublime Text 3\\Packages\\User\\Estratos.sublime-project"
-			],
-			[
-				"estrat",
-				"C:\\Users\\amuñoz\\Documents\\EstratosDefinitivo.sublime-project"
+				"C:\\Users\\Álvaro\\Desktop\\Estratos.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -1580,7 +602,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 387.0,
+	"side_bar_width": 341.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

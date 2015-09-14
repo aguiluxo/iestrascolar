@@ -18,38 +18,41 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <!DOCTYPE html>
 <html>
 <head>
-    <?= $this->Html->charset() ?>
+    <?=$this->Html->charset()?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
+        <?=$cakeDescription?>:
+        <?=$this->fetch('title')?>
     </title>
-    <?= $this->Html->meta('icon') ?>
+    <?=$this->Html->meta('icon')?>
+    <?=$this->Html->css('/libs/bootstrap/css/bootstrap.min.css')?>
+    <?=$this->Html->script('/libs/jquery-2.1.4.min.js')?>
+    <?=$this->Html->script('/libs/bootstrap/js/bootstrap.min.js')?>
+    <?=$this->Html->css('/libs/font-awesome/css/font-awesome.min.css')?>
+    <?=$this->Html->css('/libs/summernote/summernote.css')?>
+    <?=$this->Html->script('/libs/summernote/summernote.js')?>
+    <?=$this->Html->css('base.css')?>
+    <?=$this->Html->css('cake.css')?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
-
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+    <!-- Script que carga diversas funcionalidades -->
+    <?=$this->Html->script('cargaFunciones.js')?>
+    <?=$this->fetch('meta')?>
+    <?=$this->fetch('css')?>
+    <?=$this->fetch('script')?>
 </head>
 <body>
     <header>
         <div class="header-title">
-            <span><?= $this->fetch('title') ?></span>
-        </div>
-        <div class="header-help">
-            <span><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></span>
-            <span><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></span>
+            <span><?=$this->fetch('title')?></span>
         </div>
     </header>
     <div id="container">
 
         <div id="content">
-            <?= $this->Flash->render() ?>
+            <?=$this->Flash->render()?>
 
             <div class="row">
-                <?= $this->fetch('content') ?>
+                <?=$this->fetch('content')?>
             </div>
         </div>
         <footer>
