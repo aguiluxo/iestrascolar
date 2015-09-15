@@ -47,7 +47,11 @@ class ActividadTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create');
-
+        $validator->add('titulo', 'unique', [
+            'rule' => 'validateUnique',
+            'provider' => 'table',
+            'message' => 'Ya existe una actividad con el mismo nombre ne nuestra base de datos',
+        ]);
         $validator
             ->requirePresence('titulo', 'create')
             ->notEmpty('titulo');

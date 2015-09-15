@@ -11,6 +11,7 @@ use Cake\Event\Event;
  */
 class ActividadController extends AppController
 {
+    public $uses = "Actividad";
 
     public function beforeFilter(Event $event)
     {
@@ -24,12 +25,9 @@ class ActividadController extends AppController
                 'index' => ['className' => 'Crud.Index', 'view' => 'index'],
                 'edit' => ['className' => 'Crud.Edit', 'view' => 'edit'],
                 'add' => ['className' => 'Crud.Add', 'view' => 'edit'],
+                'Crud.Delete',
             ],
         ],
     ];
 
-    // public function add()
-    // {
-    //     debug($this->request->data);die();
-    // }
 }

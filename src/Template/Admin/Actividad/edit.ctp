@@ -16,12 +16,12 @@ __('Borrar'),
         <legend><?=__('Editar Actividad')?></legend>
         <?php
         echo $this->Form->input('titulo');
-        echo $this->Form->input('descripcion', ['type' => 'hidden', 'data-descripcion']);
+        echo $this->Form->input('descripcion', ['type' => 'textarea', 'data-descripcion']);
         echo $this->Form->input('fecha_ini');
         echo $this->Form->input('fecha_fin');
         echo $this->Form->input('financiacion');
         ?>
-        <div id="editorSummerNote" class="editorSummerNote" oninput="alerta();">
+        <div id="editorSummerNote" class="editorSummerNote">
 
         </div>
     </fieldset>
@@ -29,8 +29,6 @@ __('Borrar'),
     <?=$this->Form->end()?>
 </div>
 <script>
-$('[data-submit]').click(function(){
-$('[data-descripcion]').val($('#editorSummerNote').code());
-});
+
 </script>
 
