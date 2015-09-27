@@ -6,6 +6,7 @@
     </ul>
 </div>
 <div class="actividad index large-10 medium-9 columns">
+    <?php echo $this->element('menu_busqueda') ?>
     <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>
@@ -13,8 +14,6 @@
             <th><?= $this->Paginator->sort('titulo') ?></th>
             <th><?= $this->Paginator->sort('fecha_ini') ?></th>
             <th><?= $this->Paginator->sort('fecha_fin') ?></th>
-            <th><?= $this->Paginator->sort('financiacion') ?></th>
-            <th><?= $this->Paginator->sort('esta_evaluada') ?></th>
             <th class="actions"><?= __('Acciones') ?></th>
         </tr>
     </thead>
@@ -25,8 +24,6 @@
             <td><?= h($actividad->titulo) ?></td>
             <td><?= h($actividad->fecha_ini) ?></td>
             <td><?= h($actividad->fecha_fin) ?></td>
-            <td><?= h($actividad->financiacion) ?></td>
-            <td><?= h($actividad->esta_evaluada) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('Ver'), ['action' => 'view', $actividad->id]) ?>
                 <?= $this->Html->link(__('Editar'), ['action' => 'edit', $actividad->id]) ?>

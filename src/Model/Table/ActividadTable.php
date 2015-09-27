@@ -4,6 +4,7 @@ namespace App\Model\Table;
 use App\Model\Entity\Actividad;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Search\Manager;
 
 /**
  * Actividad Model
@@ -27,6 +28,7 @@ class ActividadTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
 
+        $this->addBehavior('Search.Search');
         $this->addBehavior('Timestamp');
 
         $this->belongsToMany('Profesor', [
@@ -78,5 +80,19 @@ class ActividadTable extends Table
             ->allowEmpty('attachment_dir');
 
         return $validator;
+    }
+    public function searchConfiguration()
+    {
+        $search = new Manager($this);
+        $search
+            ->value('id', [
+                'id' => $this->aliasField('id'),
+            ])
+            ->like('q', [
+                'before' => true,
+                'after' => true,
+                'field' => [$this->aliasField('titulo'), $this->aliasField('descripcion')],
+            ]);
+        return $search;
     }
 }
