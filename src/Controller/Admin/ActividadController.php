@@ -44,4 +44,12 @@ class ActividadController extends AppController
         }
 
     }
+
+    // public function add()
+    // {
+    //     if ($this->request->is('post')) {
+    //        debug($this->request->data);die();
+    //     }
+    //     return $this->Crud->execute();
+    // }
 }

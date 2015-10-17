@@ -27,22 +27,19 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?=$this->Html->meta('icon')?>
     <?=$this->Html->css('/libs/bootstrap/css/bootstrap.min.css')?>
 
-    <!-- JQUERY + JQUERY UI -->
+<!--      JQUERY + BOOTSTRAP + FONTS AWESOME + SUMMERNOTE + DATEPICKER + CAKE ESTILOS -->
+    <?=$this->Html->script('/libs/jquery-2.1.4.min.js')?>
+    <?=$this->Html->script('/libs/bootstrap/js/bootstrap.min.js')?>
+    <?=$this->Html->css('/libs/font-awesome/css/font-awesome.min.css')?>
+    <?=$this->Html->script('/libs/summernote/summernote.min.js')?>
     <?=$this->Html->css('/libs/jquery-ui/jquery-ui.min.css')?>
     <?=$this->Html->css('/libs/jquery-ui/jquery-ui.structure.min.css')?>
     <?=$this->Html->css('/libs/jquery-ui/jquery-ui.theme.min.css')?>
-    <?=$this->Html->script('/libs/jquery-2.1.4.min.js')?>
     <?=$this->Html->script('/libs/jquery-ui/jquery-ui.min.js')?>
-
-    <?=$this->Html->script('/libs/bootstrap/js/bootstrap.min.js')?>
-    <?=$this->Html->css('/libs/font-awesome/css/font-awesome.min.css')?>
-    <?=$this->Html->css('/libs/summernote/summernote.css')?>
-    <?=$this->Html->script('/libs/summernote/summernote.js')?>
     <?=$this->Html->css('base.css')?>
     <?=$this->Html->css('cake.css')?>
 
-    <!-- Script que carga diversas funcionalidades -->
-    <?=$this->Html->script('cargaFunciones.js')?>
+
     <?=$this->fetch('meta')?>
     <?=$this->fetch('css')?>
     <?=$this->fetch('script')?>

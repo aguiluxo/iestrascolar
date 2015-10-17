@@ -959,7 +959,6 @@
      * @param {Node} preceding - predicate function
      */
     var insertAfter = function (node, preceding) {
-      alert("hasdlasd")
       var next = preceding.nextSibling, parent = preceding.parentNode;
       if (next) {
         parent.insertBefore(node, next);

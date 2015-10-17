@@ -61,9 +61,9 @@ class ActividadTable extends Table
         $validator
             ->allowEmpty('descripcion');
 
-        $validator
-            ->add('fecha_ini', 'valid', ['rule' => 'datetime'])
-            ->allowEmpty('fecha_ini');
+        // $validator
+        //     ->add('fecha_ini', 'valid', ['rule' => 'datetime'])
+        //     ->allowEmpty('fecha_ini');
 
         $validator
             ->add('fecha_fin', 'valid', ['rule' => 'datetime'])

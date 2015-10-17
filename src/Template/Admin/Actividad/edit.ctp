@@ -16,26 +16,16 @@ __('Borrar'),
         <legend><?=__('Editar Actividad')?></legend>
         <?php
         echo $this->Form->input('titulo');
-        echo $this->Form->input('descripcion', ['type' => 'textarea', 'data-descripcion']);
-        echo $this->Form->input('fecha_ini');
-        echo $this->Form->input('fecha_fin');
+        // echo $this->Form->input('descripcion', ['type' => 'textarea', 'data-descripcion']);
+        echo $this->Munruiz->fecha('fecha_ini');
+        echo $this->Munruiz->editor('descripcion');
         echo $this->Form->input('financiacion');
         ?>
-        <?php echo $this->Munruiz->datePicker(); ?>
 <!--         <div id="editorSummerNote" class="editorSummerNote">
 
         </div> -->
     </fieldset>
     <?=$this->Form->button(__('Enviar'), ['data-submit'])?>
-    <?=$this->Form->end()?>
 </div>
-<script>
-$descripcion = $('[data-descripcion]').val();
-if ($descripcion != null || $descripcion !="") {
-    $('#editorSummerNote').code($descripcion);
-};
-$('[data-submit]').click(function(){
-$descripcion = ($('#editorSummerNote').code());
-});
-</script>
+
 
