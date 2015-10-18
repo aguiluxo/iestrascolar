@@ -1,0 +1,41 @@
+nav.navbar-default {
+  font-family: OswaldLight;
+  font-size: 14px;
+  color: #717171;
+  font-weight: bold;
+  border-bottom: 1px solid #c9c9c9;
+}
+nav.navbar-default .nav li {
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-right: 28px;
+}
+nav.navbar-default .nav li a {
+  text-transform: uppercase;
+  border-top: 3px solid transparent;
+  padding-top: 14px;
+  padding-left: 0;
+  padding-right: 0;
+}
+nav.navbar-default .nav .active a {
+  border-top: 3px solid #f1c832;
+}
+nav.navbar-default .navbar-right form {
+  padding-top: 11px;
+  padding-right: 15px;
+}
+nav.navbar-default .navbar-right form button {
+  border: 0;
+  padding-bottom: 3px;
+}
+nav.navbar-default .navbar-right .search {
+  height: 26px;
+  width: 202px;
+  border-radius: 0;
+  border: 0;
+  background-color: white;
+  display: inline-block;
+}
+#bs-example-navbar-collapse-1 {
+  padding: 0;
+}

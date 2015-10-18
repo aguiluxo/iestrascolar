@@ -1,0 +1,11 @@
+.btn-social {
+  width: 26px;
+  height: 26px;
+  background-color: #5a5a5a;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+.btn-social:hover {
+  background-color: #f1c832;
+}

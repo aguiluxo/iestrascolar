@@ -1,0 +1,93 @@
+#carousel-example-generic {
+  margin-bottom: 64px;
+}
+.item {
+  height: 390px;
+}
+#item1 {
+  background: url("../img/slider/litu.jpg") 100% 100% no-repeat;
+  background-position-x: 59%;
+  background-position-y: -693px;
+}
+#item2 {
+  background: url("../img/slider/imgslider2.jpg") 82% 36% no-repeat;
+  background-size: cover;
+}
+#item3 {
+  background: url("../img/slider/asturias.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+.carousel {
+  height: 390px;
+  margin-top: 15px;
+}
+.carousel-caption {
+  width: 96%;
+  border-bottom: 2px solid #f1c832;
+  bottom: 35px;
+  height: 128px;
+  left: 0;
+  right: 0;
+  font-family: OswaldRegular;
+  text-transform: uppercase;
+}
+.carousel-caption .contenedor-etiqueta {
+  padding-left: 28px;
+  padding-top: 17px;
+  width: 279px;
+  heigh: 128px;
+  background-color: #444444;
+  text-align: left;
+  position: absolute;
+  left: 70%;
+  bottom: 0px;
+}
+.carousel-caption .fecha {
+  font-size: 14px;
+  display: block;
+}
+.carousel-caption .tipo {
+  font-size: 28px;
+  display: block;
+}
+.carousel-caption .info {
+  font-size: 14px;
+  display: inline-block;
+}
+.carousel-caption .clave {
+  font-size: 41px;
+  color: #f1c832;
+  display: inline-block;
+}
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}
+.carousel-control:focus,
+.carousel-control:hover {
+  background-image: none;
+  color: inherit;
+  opacity: 0.5;
+}
+.botonera-slider {
+  width: 59px;
+  height: 40px;
+  position: absolute;
+  top: 218px;
+  right: -23px;
+  background-color: #f1c832;
+  text-align: center;
+}
+.botonera-slider a.left i {
+  font-size: 33px;
+  padding-top: 3px;
+  padding-left: 12px;
+}
+.botonera-slider a.right i {
+  font-size: 33px;
+  padding-top: 3px;
+  margin-left: -26px;
+}
+.carousel-control {
+  position: inherit;
+}

@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+}
+.row {
+  max-width: 960px;
+  margin: 0 auto;
+}
+h2 {
+  font-family: "MyriadProRegular";
+  font-size: 21px;
+  color: #f7f7f7;
+}
+h3 {
+  font-family: OswaldLight;
+  font-size: 20px;
+  color: #5a5a5a;
+}
+@font-face {
+  font-family: 'MyriadProRegular';
+  src: url('fonts/MyriadProRegular.eot');
+  src: url('fonts/MyriadProRegular.eot') format('embedded-opentype'), url('fonts/MyriadProRegular.woff2') format('woff2'), url('fonts/MyriadProRegular.woff') format('woff'), url('fonts/MyriadProRegular.ttf') format('truetype'), url('fonts/MyriadProRegular.svg#MyriadProRegular') format('svg');
+}
+@font-face {
+  font-family: 'OswaldRegular';
+  src: url('fonts/OswaldRegular.eot');
+  src: url('fonts/OswaldRegular.eot') format('embedded-opentype'), url('fonts/OswaldRegular.woff2') format('woff2'), url('fonts/OswaldRegular.woff') format('woff'), url('fonts/OswaldRegular.ttf') format('truetype'), url('fonts/OswaldRegular.svg#OswaldRegular') format('svg');
+}
+@font-face {
+  font-family: 'OswaldLight';
+  src: url('fonts/OswaldLight.eot');
+  src: url('fonts/OswaldLight.eot') format('embedded-opentype'), url('fonts/OswaldLight.woff2') format('woff2'), url('fonts/OswaldLight.woff') format('woff'), url('fonts/OswaldLight.ttf') format('truetype'), url('fonts/OswaldLight.svg#OswaldLight') format('svg');
+}
+.cabecera {
+  height: 80px;
+  background-color: #4a4a4a;
+  border-top: 5px solid #5a5a5a;
+}
+.cabecera .cabecera-inner {
+  margin-top: 25px;
+}
+.cabecera .cabecera-inner .titulo {
+  display: inline-block;
+}
+.cabecera .cabecera-inner .titulo h2 {
+  margin-top: 0;
+}
+.cabecera .cabecera-inner .botonera {
+  float: right;
+}
+.btn-social {
+  width: 26px;
+  height: 26px;
+  background-color: #5a5a5a;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+.btn-social:hover {
+  background-color: #f1c832;
+}
+nav.navbar-default {
+  font-family: OswaldLight;
+  font-size: 14px;
+  color: #717171;
+  font-weight: bold;
+  border-bottom: 1px solid #c9c9c9;
+}
+nav.navbar-default .nav li {
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-right: 28px;
+}
+nav.navbar-default .nav li a {
+  text-transform: uppercase;
+  border-top: 3px solid transparent;
+  padding-top: 14px;
+  padding-left: 0;
+  padding-right: 0;
+}
+nav.navbar-default .nav .active a {
+  border-top: 3px solid #f1c832;
+}
+nav.navbar-default .navbar-right form {
+  padding-top: 11px;
+  padding-right: 15px;
+}
+nav.navbar-default .navbar-right form button {
+  border: 0;
+  padding-bottom: 3px;
+}
+nav.navbar-default .navbar-right .search {
+  height: 26px;
+  width: 202px;
+  border-radius: 0;
+  border: 0;
+  background-color: white;
+  display: inline-block;
+}
+#bs-example-navbar-collapse-1 {
+  padding: 0;
+}
+#carousel-example-generic {
+  margin-bottom: 64px;
+}
+.item {
+  height: 390px;
+}
+#item1 {
+  background: url("../img/slider/litu.jpg") 100% 100% no-repeat;
+  background-position-x: 59%;
+  background-position-y: -693px;
+}
+#item2 {
+  background: url("../img/slider/imgslider2.jpg") 82% 36% no-repeat;
+  background-size: cover;
+}
+#item3 {
+  background: url("../img/slider/asturias.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+.carousel {
+  height: 390px;
+  margin-top: 15px;
+}
+.carousel-caption {
+  width: 96%;
+  border-bottom: 2px solid #f1c832;
+  bottom: 35px;
+  height: 128px;
+  left: 0;
+  right: 0;
+  font-family: OswaldRegular;
+  text-transform: uppercase;
+}
+.carousel-caption .contenedor-etiqueta {
+  padding-left: 28px;
+  padding-top: 17px;
+  width: 279px;
+  heigh: 128px;
+  background-color: #444444;
+  text-align: left;
+  position: absolute;
+  left: 70%;
+  bottom: 0px;
+}
+.carousel-caption .fecha {
+  font-size: 14px;
+  display: block;
+}
+.carousel-caption .tipo {
+  font-size: 28px;
+  display: block;
+}
+.carousel-caption .info {
+  font-size: 14px;
+  display: inline-block;
+}
+.carousel-caption .clave {
+  font-size: 41px;
+  color: #f1c832;
+  display: inline-block;
+}
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}
+.carousel-control:focus,
+.carousel-control:hover {
+  background-image: none;
+  color: inherit;
+  opacity: 0.5;
+}
+.botonera-slider {
+  width: 59px;
+  height: 40px;
+  position: absolute;
+  top: 218px;
+  right: -23px;
+  background-color: #f1c832;
+  text-align: center;
+}
+.botonera-slider a.left i {
+  font-size: 33px;
+  padding-top: 3px;
+  padding-left: 12px;
+}
+.botonera-slider a.right i {
+  font-size: 33px;
+  padding-top: 3px;
+  margin-left: -26px;
+}
+.carousel-control {
+  position: inherit;
+}
+.col-md-4:last-child {
+  padding-right: 0;
+}
+.col-md-4.actividadDestacada {
+  margin-bottom: 65px;
+}
+.col-md-4.actividadDestacada .titulo {
+  color: #727272;
+  text-align: center;
+}
+.col-md-4.actividadDestacada .titulo h3 {
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 5px;
+}
+.col-md-4.actividadDestacada .titulo i {
+  font-size: 94px;
+  display: block;
+}
+.col-md-4.actividadDestacada .actividadDestacada-inner {
+  background-color: #d6d6d6;
+  border: 1px solid #c4c4c4;
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.21);
+  -moz-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.21);
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.21);
+  padding-top: 16px;
+  height: 154px;
+}
+.col-md-4.actividadDestacada .actividadDestacada-inner .numero {
+  position: absolute;
+  display: inline-block;
+  background-color: #f1c832;
+  font-family: OswaldLight;
+  color: white;
+  font-size: 36px;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  width: 62px;
+  height: 62px;
+  text-align: center;
+  margin-left: -13px;
+  -webkit-box-shadow: 2px 2px 0px #a7a7a7;
+  -moz-box-shadow: 2px 2px 0px #a7a7a7;
+  box-shadow: 2px 2px 0px #a7a7a7;
+}
+.col-md-4.actividadDestacada .informacion {
+  margin-top: 16px;
+  font-family: MyriadProRegular;
+  font-size: 12px;
+  color: #808080;
+  border: 1px solid #c4c4c4;
+  height: 77px;
+  padding: 10px;
+}
+.col-md-4.actividadDestacada .leer-mas {
+  position: absolute;
+  right: 28px;
+  bottom: -10px;
+  width: 21px;
+  height: 21px;
+  font-family: OswaldLight;
+  font-size: 11px;
+  color: #eae0e0;
+  background-color: #5a5a5a;
+  cursor: pointer;
+  text-align: center;
+}
+.col-md-4.actividadDestacada .leer-mas i {
+  padding-top: 6px;
+  padding-right: 2px;
+}
+.col-md-4.actividadDestacada .leer-mas:hover {
+  background-color: #f1c832;
+}
+.circular {
+  width: 619px;
+  height: 599px;
+  border: 2px solid #f1c832;
+  margin: 0 auto;
+  border-radius: 452px;
+  background-color: #d6d6d6;
+}
+.circular .titulo {
+  font-family: OswaldRegular;
+  font-size: 41px;
+  color: #f1c832;
+  width: 55%;
+  text-align: center;
+  padding-top: 51px;
+  margin: 0 auto;
+}
+.circular .cuerpo {
+  color: #808080;
+  font-family: MyriadProRegular;
+  text-align: center;
+}
+.circular .cuerpo .objetivos {
+  padding: 14px;
+}

@@ -1,0 +1,28 @@
+.cabecera {
+  height: 80px;
+  background-color: #4a4a4a;
+  border-top: 5px solid #5a5a5a;
+}
+.cabecera .cabecera-inner {
+  margin-top: 25px;
+}
+.cabecera .cabecera-inner .titulo {
+  display: inline-block;
+}
+.cabecera .cabecera-inner .titulo h2 {
+  margin-top: 0;
+}
+.cabecera .cabecera-inner .botonera {
+  float: right;
+}
+.btn-social {
+  width: 26px;
+  height: 26px;
+  background-color: #5a5a5a;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+.btn-social:hover {
+  background-color: #f1c832;
+}
