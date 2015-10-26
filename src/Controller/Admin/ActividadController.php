@@ -1,7 +1,6 @@
 <?php
 namespace App\Controller\Admin;
 
-use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
 
@@ -10,7 +9,7 @@ use Cake\ORM\TableRegistry;
  *
  * @property \App\Model\Table\ActividadTable $Actividad
  */
-class ActividadController extends AppController
+class ActividadController extends AdminController
 {
     public $uses = ["Actividad", 'Destacado'];
     public $helpers = ['Munruiz'];
@@ -29,7 +28,6 @@ class ActividadController extends AppController
 
     public function beforeFilter(Event $event)
     {
-        $this->layout = "default_admin";
         parent::beforeFilter($event);
     }
 

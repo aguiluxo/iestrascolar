@@ -8,8 +8,7 @@ class FrontController extends AppController{
 
 	public function beforeFilter(Event $event){
 		parent::beforeFilter($event);
-		$this->layout = "default";
-
+		$this->viewBuilder()->layout("default");
 	}
 	public function index(){
         $this->loadModel('Actividad');
