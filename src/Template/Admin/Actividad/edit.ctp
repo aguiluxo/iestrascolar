@@ -16,16 +16,26 @@ __('Borrar'),
         <legend><?=__('Editar Actividad')?></legend>
         <?php
         echo $this->Form->input('titulo');
-        // echo $this->Form->input('descripcion', ['type' => 'textarea', 'data-descripcion']);
-        echo $this->Munruiz->fecha('fecha_ini');
-        echo $this->Munruiz->editor('descripcion');
+        echo $this->Munruiz->fecha('fecha_ini', ['label' => 'Fecha de inicio']);
+        echo $this->Munruiz->fecha('fecha_fin', ['label' => 'Fecha finalización']);
+        echo $this->Form->textarea('descripcion');
+        // echo $this->Munruiz->editor('descripcion', ['label' => 'Descripcion', 'id' => 'summernoteCake']);
         echo $this->Form->input('financiacion');
-        ?>
+        echo $this->Form->checkbox('destacada', ['id' => 'destacada','data-despliega-contenido-oculto' ]);
+        echo "Destacada";?>
+
+
+        <div class="oculto selectorIconos">
+            <?php echo $this->Munruiz->selectorIconos('Destacado.icono',
+                ['empty' => 'Selecciona icono para actividad destacada',
+            ]); ?>
+        </div>
 <!--         <div id="editorSummerNote" class="editorSummerNote">
 
         </div> -->
+
     </fieldset>
-    <?=$this->Form->button(__('Enviar'), ['data-submit'])?>
+    <?=$this->Form->button(__('Enviar'))?>
 </div>
 
 

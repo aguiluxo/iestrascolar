@@ -39,6 +39,13 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?=$this->Html->css('base.css')?>
     <?=$this->Html->css('cake.css')?>
 
+    <!-- Mis estilos -->
+    <?=$this->Html->css('default_backend.css')?>
+
+    <!-- Funciones varias -->
+    <?=$this->Html->script('cargaFunciones.js')?>
+
+
 
     <?=$this->fetch('meta')?>
     <?=$this->fetch('css')?>

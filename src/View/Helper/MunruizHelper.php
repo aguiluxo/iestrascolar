@@ -7,59 +7,107 @@ class MunruizHelper extends Helper
 {
 	public $helpers = ['Html', 'Form'];
 
+function editor($name, $options = array()){
 
-	/**
-	 * Imprime un control de edición de contenido rico
-	 * @param  string el nombre del campo (Como en FormHelper)
-	 * @param  array $options
-	 * @return string
-	 */
-	function editor($name, $options = array()){
+        $default = array(
+            // el label
+            'label' => null,
+            // Atributos para el div que engloba el control
+            'div' => array('class' => 'form-group'),
+        );
 
-		$default = array(
-			// el label
-			'label' => null,
-			// Atributos para el div que engloba el control
-			'div' => array('class' => 'form-group'),
-			'id' => 'summernote'
-		);
+        $options += $default;
 
-		$options += $default;
+        if(empty($options['id'])){
+            $this->Form->setEntity($name);
+            $options['id'] = "summernoteCake";
+        }
+
+        $atts = array_diff_key($options, $default);
+
+        $uid = uniqid("div");
+
+        ob_start();
+
+        if($options['div'] !== false){
+            echo $this->Html->tag('div', null, $options['div']);
+        }
+
+        if($options['label']){
+            echo $this->Html->tag('label', (string) $options['label']);
+        }
+
+        // echo $this->Html->tag('div', (string) $this->Form->value($name), array('id' => $uid));
+        echo "<div id='$uid'>";
+        echo $this->Form->hidden($name, $atts);
+
+        if(!empty($options['allowCodeEditing'])){
+            echo h($this->Html->scriptBlock(sprintf('
+                $("#%s").summernote({
+                    lang: "es-ES",
+                    onblur: function(){
+                        $("#%s").val($(this).code());
+                    },
+                    oninit: function(){
+                        $(".note-link-btn").removeClass("disabled");
+                        $(".note-link-btn").removeAttr("disabled");
+                    },
+                    toolbar: [
+                        //[groupname, [button list]]
+
+                        ["style", ["style", "fontsize", "bold", "italic", "underline", "clear"]],
+                        ["color", ["color"]],
+                        ["para", ["ul", "ol", "paragraph"]],
+                        ["insert", ["picture", "link", "video", "table", "hr"]],
+                        ["code", ["codeview"]],
+                      ]
+                });
+            ', $uid, $options['id'])));
+        }else{
+            echo $this->Html->scriptBlock(sprintf('
+                $("#%s").summernote({
+                    lang: "es-ES",
+                    onblur: function(){
+                        $("#%s").val($(this).code());
+                    },
+                    oninit: function(){
+                        $(".note-link-btn").removeClass("disabled");
+                        $(".note-link-btn").removeAttr("disabled");
+                    },
+                    toolbar: [
+                        //[groupname, [button list]]
+
+                        ["style", ["style", "fontsize", "bold", "italic", "underline", "clear"]],
+                        ["color", ["color"]],
+                        ["para", ["ul", "ol", "paragraph"]],
+                        ["insert", ["picture", "link", "video", "table", "hr"]],
+                      ]
+                });
+            ', $uid, $options['id']));
+        }
+
+        if($options['div'] !== false){
+            echo "</div>";
+        }
+
+        return ob_get_clean();
+    }
+
+function selectorIconos($name, $options = array()) {
+$iconos = [
+    'fa fa-bus' => 'Autobus',
+    'fa fa-plane' => 'Avión',
+    'fa fa-line-chart' => 'Gráfica',
+    'fa fa-superscript' => 'Matemáticas',
+    'fa fa-book' => 'Lengua',
+    'fa fa-language' => 'Inglés',
+    'fa fa-laptop' => 'Informática'
+];
+
+echo $this->Form->select($name, $iconos,$options);
+}
 
 
-		$atts = array_diff_key($options, $default);
-
-		$uid = uniqid("div");
-
-		ob_start();
-
-		if($options['div'] !== false){
-			echo $this->Html->tag('div', null, $options['div']);
-		}
-
-		if($options['label']){
-			echo $this->Html->tag('label', (string) $options['label']);
-		}
-
-		echo $this->Html->tag('div', (string) $this->Form->value($name), array('id' => $uid));
-		echo $this->Form->hidden($name, $atts);
-
-		echo $this->Html->scriptBlock(sprintf('
-			$("#%s").summernote({
-				height : 300,
-				lang: "es-ES",
-				onblur: function(){
-					$("#%s").val($(this).code());
-				}
-			});
-		', $uid, $options['id']));
-
-		if($options['div'] !== false){
-			echo "</div>";
-		}
-
-		return ob_get_clean();
-	}
 
 
 	/**

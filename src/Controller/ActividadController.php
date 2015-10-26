@@ -34,14 +34,14 @@ class ActividadController extends AppController
         $options = array(
             'conditions' => array(
                 'OR' => array(
-                    'Actividad.nombre LIKE' => '%'. $search . '%'
+                    'Actividad.titulo LIKE' => '%'. $search . '%'
                     )
                 )
             );
         $resultados = $this->Actividad->find('all', $options);
         if ($resultados->count()>0) {
             $this->set('actividad',$this->paginate($resultados));
-        }    
+        }
     }else{
         $this->set('actividad', $this->paginate($this->Actividad));
         $this->set('_serialize', ['actividad']);

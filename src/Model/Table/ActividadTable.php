@@ -66,7 +66,7 @@ class ActividadTable extends Table
         //     ->allowEmpty('fecha_ini');
 
         $validator
-            ->add('fecha_fin', 'valid', ['rule' => 'datetime'])
+            // ->add('fecha_fin', 'valid', ['rule' => 'datetime'])
             ->allowEmpty('fecha_fin');
 
         $validator
@@ -85,14 +85,21 @@ class ActividadTable extends Table
     {
         $search = new Manager($this);
         $search
-            ->value('id', [
-                'id' => $this->aliasField('id'),
-            ])
             ->like('q', [
                 'before' => true,
                 'after' => true,
                 'field' => [$this->aliasField('titulo'), $this->aliasField('descripcion')],
+            ])
+            ->compare('fecha_de',[
+                '<' => true,
+                'field' => $this->aliasField('fecha_ini')
+            ])
+            ->compare('fecha_a',[
+                'operator' => '<=',
+                'field' => $this->aliasField('fecha_ini')
             ]);
+
         return $search;
     }
+
 }

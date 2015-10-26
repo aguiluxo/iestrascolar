@@ -3,6 +3,7 @@ namespace App\Controller\Admin;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 /**
  * Actividad Controller
@@ -11,7 +12,7 @@ use Cake\Event\Event;
  */
 class ActividadController extends AppController
 {
-    public $uses = "Actividad";
+    public $uses = ["Actividad", 'Destacado'];
     public $helpers = ['Munruiz'];
 
     public $components = [
@@ -45,11 +46,50 @@ class ActividadController extends AppController
 
     }
 
-    // public function add()
-    // {
-    //     if ($this->request->is('post')) {
-    //        debug($this->request->data);die();
-    //     }
-    //     return $this->Crud->execute();
-    // }
+
+
+    public function edit($id) {
+       $this->Crud->on('afterSave', function(\Cake\Event\Event $event) {
+            if ($event->subject->created) {
+            }
+            else{
+                  if ($this->request->data['destacada'] == '1') {
+
+                    $idActividad = $event->subject->entity->id;
+
+                    $icono = $this->request->data['Destacado']['icono'];
+
+                    $destacados = TableRegistry::get('Destacado');
+                    $destacado = $destacados->find('all')->where(['actividad_id' => $idActividad])->first();
+                    $destacado->icono = $icono;
+                    $destacados->save($destacado);
+                }
+            }
+        });
+        return $this->Crud->execute();
+    }
+
+    public function add()
+    {
+
+        $this->Crud->on('afterSave', function(\Cake\Event\Event $event) {
+            if ($event->subject->created) {
+                if ($this->request->data['destacada'] == '1') {
+                    $idActividad = $event->subject->entity->id;
+                    $icono = $this->request->data['Destacado']['icono'];
+                    $this->_guardaDestacado($idActividad, $icono);
+                }
+            }
+        });
+        return $this->Crud->execute();
+    }
+
+    private function _guardaDestacado($idActividad, $icono) {
+
+        $destacadoTable = TableRegistry::get('Destacado');
+        $destacado = $destacadoTable->newEntity();
+        $destacado->actividad_id = $idActividad;
+        $destacado->icono = $icono;
+        $destacadoTable->save($destacado);
+    }
 }

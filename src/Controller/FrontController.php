@@ -13,15 +13,17 @@ class FrontController extends AppController{
 	}
 	public function index(){
         $this->loadModel('Actividad');
+        $this->loadModel('Destacado');
 
-		$destacadas=$this->Actividad->find('all',[
-			'conditions' => ['Actividad.destacado' => 1],
-			'limit' => '3'
+		$destacadas=$this->Destacado->find('all',[
+			'limit' => '3',
+			'order' => ['Destacado.modified' => 'desc'],
+			'contain' => 'Actividad'
 		]);
 
 
 		$proximas=$this->Actividad->find('all',[
-			'order' => ['Actividad.fecha_inicio' => 'asc'],
+			'order' => ['Actividad.fecha_ini' => 'asc'],
 			'limit' => '4'
 		]);
 		$this->set('actividades_destacadas',$destacadas);

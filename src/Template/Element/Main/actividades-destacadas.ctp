@@ -5,23 +5,13 @@
 				<?php echo $key+1 ?>
 			</div>
 			<div class="titulo">
-				
+
 				<?php
-				if ($key==1){
-					echo "<i class='fa fa-cog'></i>";
-				}
-				else {
-					if ($key==2) {
-						echo "<i class='fa fa-laptop'></i>";
-					}
-					else{
-						echo "<i class='fa fa-superscript'></i>";
-					}
-				}
+					echo "<i class='$actividad->icono'></i>";
 
 				?>
 				<h3>
-					<?php echo $this->Text->truncate(strip_tags($actividad->nombre),25,array(
+					<?php echo $this->Text->truncate(strip_tags($actividad->actividad->titulo),25,array(
 						'ending' => '',
 						'exact' => 'false'
 						)) ?>
@@ -29,7 +19,7 @@
 				</div>
 			</div>
 			<div class="informacion">
-				<?php echo $this->Text->truncate(strip_tags($actividad->objetivos),151, array(
+				<?php echo $this->Text->truncate(strip_tags($actividad->actividad->descripcion),151, array(
 					'ending' => '',
 					'exact' => false,
 					)); ?>

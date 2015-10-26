@@ -1,10 +1,6 @@
 * {
   box-sizing: border-box;
 }
-.row {
-  max-width: 960px;
-  margin: 0 auto;
-}
 h2 {
   font-family: "MyriadProRegular";
   font-size: 21px;
@@ -14,6 +10,13 @@ h3 {
   font-family: OswaldLight;
   font-size: 20px;
   color: #5a5a5a;
+}
+.oculto {
+  display: none;
+}
+.row {
+  max-width: 960px;
+  margin: 0 auto;
 }
 @font-face {
   font-family: 'MyriadProRegular';
