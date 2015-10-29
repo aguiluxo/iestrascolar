@@ -2,78 +2,68 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Cake\Event\Event;
 
+/**
+ * Actividad Controller
+ *
+ * @property \App\Model\Table\ActividadTable $Actividad
+ */
 class ActividadController extends AppController
 {
-    public $components = [
-    // Enable CRUD actions
-    'Crud.Crud' => [
-       // All actions but delete() will be implemented
-    'actions' => [
-        // The controller action 'index' will map to the IndexCrudAction
-        // 'index' => 'Crud.Index',
-        // The controller action 'add' will map to the AddCrudAction
-        // 'add'   => 'Crud.Add',
-        // The controller action 'edit' will map to the EditCrudAction
-        // 'edit'  => 'Crud.Edit',
-        // The controller action 'view' will map to the ViewCrudAction
-    // 'view'  => 'Crud.View'
-    ]
-    ]
-    ];
-    public function beforeFilter(Event $event){
-       parent::beforeFilter($event);
-       $this->set('pagina','actividades');
-   }
 
-   public function index()
-   {
-    if (isset($this->request->query['search'])) {
-        $search = $this->request->query['search'];
-        $options = array(
-            'conditions' => array(
-                'OR' => array(
-                    'Actividad.titulo LIKE' => '%'. $search . '%'
-                    )
-                )
-            );
-        $resultados = $this->Actividad->find('all', $options);
-        if ($resultados->count()>0) {
-            $this->set('actividad',$this->paginate($resultados));
-        }
-    }else{
+    /**
+     * Index method
+     *
+     * @return void
+     */
+    public function index()
+    {
+        $this->paginate = [
+            'contain' => ['Users']
+        ];
         $this->set('actividad', $this->paginate($this->Actividad));
         $this->set('_serialize', ['actividad']);
     }
-}
 
-public function view($id = null){
-    $actividad = $this->Actividad->get($id, [
-        'contain' => ['Curso', 'Financiador', 'Profesor', 'Evaluacion']
+    /**
+     * View method
+     *
+     * @param string|null $id Actividad id.
+     * @return void
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     */
+    public function view($id = null)
+    {
+        $actividad = $this->Actividad->get($id, [
+            'contain' => ['Users', 'Curso', 'Profesor', 'Destacado']
         ]);
-    $this->set('actividad', $actividad);
-    $this->set('_serialize', ['actividad']);
-}
-
-public function add()
-{
-    $actividad = $this->Actividad->newEntity();
-    if ($this->request->is('post')) {
-        $actividad = $this->Actividad->patchEntity($actividad, $this->request->data);
-        if ($this->Actividad->save($actividad)) {
-            $this->Flash->success(__('La actividad ha sido guardada correctamente.'));
-            return $this->redirect(['action' => 'index']);
-        } else {
-            $this->Flash->error(__('La actividad no ha podido ser guardada. Por favor, inténtalo de nuevos'));
-        }
+        $this->set('actividad', $actividad);
+        $this->set('_serialize', ['actividad']);
     }
-    $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
-    $financiador = $this->Actividad->Financiador->find('list', ['limit' => 200]);
-    $profesor = $this->Actividad->Profesor->find('list', ['limit' => 200]);
-    $this->set(compact('actividad', 'curso', 'financiador', 'profesor'));
-    $this->set('_serialize', ['actividad']);
-}
+
+    /**
+     * Add method
+     *
+     * @return void Redirects on successful add, renders view otherwise.
+     */
+    public function add()
+    {
+        $actividad = $this->Actividad->newEntity();
+        if ($this->request->is('post')) {
+            $actividad = $this->Actividad->patchEntity($actividad, $this->request->data);
+            if ($this->Actividad->save($actividad)) {
+                $this->Flash->success(__('The actividad has been saved.'));
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error(__('The actividad could not be saved. Please, try again.'));
+            }
+        }
+        $users = $this->Actividad->Users->find('list', ['limit' => 200]);
+        $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
+        $profesor = $this->Actividad->Profesor->find('list', ['limit' => 200]);
+        $this->set(compact('actividad', 'users', 'curso', 'profesor'));
+        $this->set('_serialize', ['actividad']);
+    }
 
     /**
      * Edit method
@@ -85,21 +75,21 @@ public function add()
     public function edit($id = null)
     {
         $actividad = $this->Actividad->get($id, [
-            'contain' => ['Curso', 'Financiador', 'Profesor']
-            ]);
+            'contain' => ['Curso', 'Profesor']
+        ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $actividad = $this->Actividad->patchEntity($actividad, $this->request->data);
             if ($this->Actividad->save($actividad)) {
-                $this->Flash->success(__('La actividad ha sido editada correctamente.'));
+                $this->Flash->success(__('The actividad has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('La actividad no ha podido ser guardada. Por favor, inténtalo de nuevos'));
+                $this->Flash->error(__('The actividad could not be saved. Please, try again.'));
             }
         }
+        $users = $this->Actividad->Users->find('list', ['limit' => 200]);
         $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
-        $financiador = $this->Actividad->Financiador->find('list', ['limit' => 200]);
         $profesor = $this->Actividad->Profesor->find('list', ['limit' => 200]);
-        $this->set(compact('actividad', 'curso', 'financiador', 'profesor'));
+        $this->set(compact('actividad', 'users', 'curso', 'profesor'));
         $this->set('_serialize', ['actividad']);
     }
 

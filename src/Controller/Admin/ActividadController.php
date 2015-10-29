@@ -3,7 +3,7 @@ namespace App\Controller\Admin;
 
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
-
+use Cake\I18n\Time;
 /**
  * Actividad Controller
  *
@@ -50,6 +50,13 @@ class ActividadController extends AdminController
     public function index()
     {
         if ($this->request->data){
+            // if ($this->request->data['fecha_de'] == "") {
+            //     $this->request->data['fecha_de'] = "1900-01-01";
+            // }
+            // if ($this->request->data['fecha_a'] == "") {
+            //     $this->request->data['fecha_a'] = "2024-12-12";
+            // }
+
         $query = $this->Actividad
                       ->find('search', $this->Actividad->filterParams($this->request->data));
         $this->set('actividad', $this->paginate($query));
@@ -80,6 +87,8 @@ class ActividadController extends AdminController
                 }
             }
         });
+        $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
+        $this->set(compact('curso'));
         return $this->Crud->execute();
     }
 
@@ -89,9 +98,8 @@ class ActividadController extends AdminController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $this->request->data['user_id'] = $this->Auth->user('id');
 
-
              $trimestres = $this->_getFechasTrimestres();
-             $trimestre = $this->_getTrimestre($trimestres, $this->request->data);
+             $trimestre = $this->_getTrimestre($trimestres, $this->request->data['fecha_ini']);
             $this->request->data['trimestre'] = $trimestre;
         }
 
@@ -104,6 +112,8 @@ class ActividadController extends AdminController
                 }
             }
         });
+        $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
+        $this->set(compact('curso'));
         return $this->Crud->execute();
     }
 
@@ -129,18 +139,28 @@ class ActividadController extends AdminController
 
     private function _getTrimestre($fechasTrimestres,$fecha)
     {
-        $primerTrimestre = $fechasTrimestres->first()->fecha_inicio;
-        $segundoTrimestre = $fechasTrimestres->next()->fecha_inicio;
-        $tercerTrimestre = $fechasTrimestres->last()->fecha_inicio;
-        debug($segundoTrimestre);die();
-            debug($fechasTrimestres->first());die();
-           if ($fecha >= $fechasTrimestres->first()->fecha_inicio && $fecha < $fechasTrimestres[1]->fecha_inicio) {
+
+        foreach ($fechasTrimestres as $key => $fechaTrimestre) {
+            if ($key==0) {
+                $primerTrimestre = $fechaTrimestre->fecha_inicio;
+                $primerTrimestre = date('Y-m-d',strtotime($primerTrimestre));
+            }
+            else if($key == 1){
+                $segundoTrimestre = date('Y-m-d',strtotime($fechaTrimestre->fecha_inicio));
+            }
+            else{
+                $tercerTrimestre = date('Y-m-d',strtotime($fechaTrimestre->fecha_inicio));
+            }
+        }
+
+
+           if ($fecha >= $primerTrimestre && $fecha < $segundoTrimestre) {
                return 1;
            }
-           if ($fecha >= $fechasTrimestres[1]->fecha_inicio && $fecha < $fechasTrimestres[2]->fecha_inicio){
+           if ($fecha >= $segundoTrimestre && $fecha < $tercerTrimestre){
             return 2;
            }
-           if ($fecha >= $fechasTrimestres[2]->fecha_inicio){
+           if ($fecha >= $tercerTrimestre){
             return 3;
         }
         return null;

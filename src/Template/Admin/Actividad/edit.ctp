@@ -19,6 +19,7 @@ __('Borrar'),
         echo $this->Munruiz->fecha('fecha_ini', ['label' => 'Fecha de inicio']);
         echo $this->Munruiz->fecha('fecha_fin', ['label' => 'Fecha finalización']);
         echo $this->Form->textarea('descripcion');
+        echo $this->Form->input('curso._ids', ['options' => $curso]);
         // echo $this->Munruiz->editor('descripcion', ['label' => 'Descripcion', 'id' => 'summernoteCake']);
         echo $this->Form->input('financiacion');
         echo $this->Form->checkbox('destacada', ['id' => 'destacada','data-despliega-contenido-oculto' ]);

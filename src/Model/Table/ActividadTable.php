@@ -35,6 +35,14 @@ class ActividadTable extends Table
             'dependent' => true,
             'foreignKey' => 'actividad_id'
         ]);
+        $this->belongsTo('Users', [
+            'foreignKey' => 'user_id'
+        ]);
+         $this->belongsToMany('Curso', [
+            'foreignKey' => 'actividad_id',
+            'targetForeignKey' => 'curso_id',
+            'joinTable' => 'actividad_curso'
+        ]);
         $this->belongsToMany('Profesor', [
             'foreignKey' => 'actividad_id',
             'targetForeignKey' => 'profesor_id',
@@ -96,12 +104,17 @@ class ActividadTable extends Table
                 'field' => [$this->aliasField('titulo'), $this->aliasField('descripcion')],
             ])
             ->compare('fecha_de',[
-                '<' => true,
-                'field' => $this->aliasField('fecha_ini')
+                'field' => $this->aliasField('fecha_ini'),
+                'filterEmpty' => true
             ])
             ->compare('fecha_a',[
                 'operator' => '<=',
-                'field' => $this->aliasField('fecha_ini')
+                'field' => $this->aliasField('fecha_ini'),
+                'filterEmpty' => true
+            ])
+            ->value('trimestre', [
+                'field' => $this->aliasField('trimestre'),
+                'filterEmpty' => true
             ]);
 
         return $search;
