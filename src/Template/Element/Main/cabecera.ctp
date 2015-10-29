@@ -5,7 +5,7 @@
 		</div>
 		<div class="botonera">
 			<div class="btn-social">
-				<?= $this->Html->image('iconos/twitter-icon.png'); ?>
+				<?= $this->Html->image('iconos/moodle-icon.png'); ?>
 			</div>
 			<div class="btn-social">
 				<?= $this->Html->image('iconos/facebook-icon.png'); ?>

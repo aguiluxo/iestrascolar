@@ -22,6 +22,7 @@ class ActividadTable extends Table
      */
     public function initialize(array $config)
     {
+
         parent::initialize($config);
 
         $this->table('actividad');
@@ -30,7 +31,10 @@ class ActividadTable extends Table
 
         $this->addBehavior('Search.Search');
         $this->addBehavior('Timestamp');
-
+        $this->hasOne('Destacado',[
+            'dependent' => true,
+            'foreignKey' => 'actividad_id'
+        ]);
         $this->belongsToMany('Profesor', [
             'foreignKey' => 'actividad_id',
             'targetForeignKey' => 'profesor_id',
@@ -81,6 +85,7 @@ class ActividadTable extends Table
 
         return $validator;
     }
+
     public function searchConfiguration()
     {
         $search = new Manager($this);
@@ -102,4 +107,8 @@ class ActividadTable extends Table
         return $search;
     }
 
+    public function esPropietario($actividadId, $userId)
+    {
+        return $this->exists(['id' => $actividadId, 'user_id' => $userId]);
+    }
 }

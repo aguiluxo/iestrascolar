@@ -9,9 +9,8 @@
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('username') ?></th>
-            <th><?= $this->Paginator->sort('password') ?></th>
-            <th class="actions"><?= __('Actions') ?></th>
+            <th><?= $this->Paginator->sort('username', ['label' => __('Usuario')]) ?></th>
+            <th class="actions"><?= __('Acciones') ?></th>
         </tr>
     </thead>
     <tbody>
@@ -19,11 +18,9 @@
         <tr>
             <td><?= $this->Number->format($user->id) ?></td>
             <td><?= h($user->username) ?></td>
-            <td><?= h($user->password) ?></td>
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
+                <?= $this->Html->link(__('Ver'), ['action' => 'view', $user->id]) ?>
+                <?= $this->Html->link(__('Editar'), ['action' => 'edit', $user->id]) ?>
             </td>
         </tr>
 

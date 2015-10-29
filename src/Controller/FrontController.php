@@ -28,6 +28,5 @@ class FrontController extends AppController{
 		$this->set('actividades_destacadas',$destacadas);
 		$this->set('actividades_proximas',$proximas);
 		$this->set('pagina', 'index');
-
 	}
 }

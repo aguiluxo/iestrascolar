@@ -14,7 +14,7 @@ class AdminController extends AppController
 	}
 	 public function initialize()
     {
-        $this->loadComponent('Flash');
+    	parent::initialize();
         $this->loadComponent('Auth', [
             'loginRedirect' => [
                 'controller' => 'Actividad',

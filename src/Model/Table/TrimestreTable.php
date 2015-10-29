@@ -1,18 +1,17 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\Destacado;
+use App\Model\Entity\Trimestre;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Destacado Model
+ * Trimestre Model
  *
- * @property \Cake\ORM\Association\BelongsTo $Actividad
  */
-class DestacadoTable extends Table
+class TrimestreTable extends Table
 {
 
     /**
@@ -25,10 +24,10 @@ class DestacadoTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('destacado');
-         $this->belongsTo('Actividad');
+        $this->table('trimestre');
         $this->displayField('id');
         $this->primaryKey('id');
+
     }
 
     /**
@@ -44,21 +43,17 @@ class DestacadoTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->allowEmpty('icono');
+            ->add('trimestre', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('trimestre');
+
+        $validator
+            ->add('fecha_inicio', 'valid', ['rule' => 'date'])
+            ->allowEmpty('fecha_inicio');
+
+        $validator
+            ->add('fecha_fin', 'valid', ['rule' => 'date'])
+            ->allowEmpty('fecha_fin');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['actividad_id'], 'Actividad'));
-        return $rules;
     }
 }

@@ -62,10 +62,10 @@ public function add()
     if ($this->request->is('post')) {
         $actividad = $this->Actividad->patchEntity($actividad, $this->request->data);
         if ($this->Actividad->save($actividad)) {
-            $this->Flash->success(__('The actividad has been saved.'));
+            $this->Flash->success(__('La actividad ha sido guardada correctamente.'));
             return $this->redirect(['action' => 'index']);
         } else {
-            $this->Flash->error(__('The actividad could not be saved. Please, try again.'));
+            $this->Flash->error(__('La actividad no ha podido ser guardada. Por favor, inténtalo de nuevos'));
         }
     }
     $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
@@ -90,10 +90,10 @@ public function add()
         if ($this->request->is(['patch', 'post', 'put'])) {
             $actividad = $this->Actividad->patchEntity($actividad, $this->request->data);
             if ($this->Actividad->save($actividad)) {
-                $this->Flash->success(__('The actividad has been saved.'));
+                $this->Flash->success(__('La actividad ha sido editada correctamente.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The actividad could not be saved. Please, try again.'));
+                $this->Flash->error(__('La actividad no ha podido ser guardada. Por favor, inténtalo de nuevos'));
             }
         }
         $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);

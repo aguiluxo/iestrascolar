@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\I18n\Time;
 
 /**
  * Application Controller
@@ -37,10 +38,14 @@ class AppController extends Controller
      * @return void
      */
 
+
     public function initialize()
     {
         parent::initialize();
         $this->loadComponent('Flash');
+        $this->loadComponent('Paginator');
+        Time::$defaultLocale = 'es-ES';
+        Time::setToStringFormat('dd-MM-YYYY');
     }
 
     public function beforeFilter(Event $event)

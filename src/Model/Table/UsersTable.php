@@ -13,6 +13,11 @@ class UsersTable extends Table
     {
         return $validator
             ->notEmpty('username', __('Nombre de usuario requerido'))
+            ->add('username', 'unique', [
+                    'rule' => 'validateUnique',
+                    'provider' => 'table',
+                    'message' => __('Ya existe un usuario registrado con ese nombre')
+            ])
             ->notEmpty('password', __('Contraseña requerida'))
             ->notEmpty('role', __('Rol requerido'))
             ->add('role', 'inList', [

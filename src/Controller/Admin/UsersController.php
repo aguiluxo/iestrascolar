@@ -2,11 +2,15 @@
 
 namespace App\Controller\Admin;
 
-use App\Controller\AppController;
 use Cake\Event\Event;
 
-class UsersController extends AppController
+class UsersController extends AdminController
 {
+
+ public function initialize()
+    {
+        parent::initialize();
+    }
 
     public function beforeFilter(Event $event)
     {
@@ -33,7 +37,9 @@ class UsersController extends AppController
 
      public function index()
      {
-        $this->set('users', $this->Users->find('all'));
+        $usuarios = $this->Users->find('all');
+
+        $this->set('users',$this->paginate($usuarios));
     }
 
     public function view($id)

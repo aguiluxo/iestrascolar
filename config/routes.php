@@ -62,11 +62,17 @@ Router::scope('/', function ($routes) {
     Router::prefix('admin', function ($routes) {
         $routes->connect('/actividades', ['controller' => 'Actividad', 'action' => 'index']);
         $routes->connect('/actividades/:action/*', ['controller' => 'Actividad']);
+
         $routes->connect('/usuarios', ['controller' => 'Users', 'action' => 'index']);
         $routes->connect('/usuarios/:action/*', ['controller' => 'Users']);
 
         $routes->connect('/profesor', ['controller' => 'Profesor', 'action' => 'index']);
         $routes->connect('/profesor/add', ['controller' => 'Profesor', 'action' => 'add']);
+
+        $routes->connect('/trimestre', ['controller' => 'Trimestre', 'action' => 'index']);
+        $routes->connect('/trimestre/:action/*', ['controller' => 'Trimestre',]);
+
+
 
     });
 
