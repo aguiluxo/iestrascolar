@@ -1,3 +1,3 @@
 <div class="row">
-	<?= $this->element('main/actividades-destacadas', compact($actividades_destacadas)); ?>
+<?= $this->element('Main/actividades-destacadas'); ?>	
 </div>
