@@ -2,27 +2,17 @@
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
-use Cake\Auth\DefaultPasswordHasher;
-
 
 /**
- * Profesor Entity.
+ * Departamento Entity.
  *
  * @property int $id
- * @property int $departamento_id
- * @property \App\Model\Entity\Departamento $departamento
- * @property int $user_id
- * @property \App\Model\Entity\User $user
  * @property string $nombre
- * @property string $email
- * @property int $telefono
- * @property string $imagen_dir
- * @property string $imagen
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
- * @property \App\Model\Entity\Actividad[] $actividad
+ * @property \App\Model\Entity\Profesor[] $profesor
  */
-class Profesor extends Entity
+class Departamento extends Entity
 {
 
     /**
@@ -34,10 +24,6 @@ class Profesor extends Entity
      *
      * @var array
      */
-        protected function _setPassword($password)
-    {
-        return (new DefaultPasswordHasher)->hash($password);
-    }
     protected $_accessible = [
         '*' => true,
         'id' => false,

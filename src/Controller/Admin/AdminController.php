@@ -16,15 +16,23 @@ class AdminController extends AppController
     {
     	parent::initialize();
         $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'userModel' => 'Profesor',
+                    'fields' => ['username' => 'email']
+                ]
+            ],
             'loginRedirect' => [
-                'controller' => 'Actividad',
+                'controller' => 'Admin',
                 'action' => 'index'
             ],
             'logoutRedirect' => [
-                'controller' => 'Pages',
-                'action' => 'display',
-                'home'
+                'controller' => 'Users',
+                'action' => 'login',
             ]
         ]);
+    }
+    public function index(){
+        $this->set('menuActivo', 'index');
     }
 }

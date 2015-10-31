@@ -60,17 +60,27 @@ Router::scope('/', function ($routes) {
     ////////////////////////////////// Seccion ADMIN ///////////////////////////////////////////////////
 
     Router::prefix('admin', function ($routes) {
+        $routes->connect('/', ['controller' => 'Admin', 'action' => 'index']);
         $routes->connect('/actividades', ['controller' => 'Actividad', 'action' => 'index']);
         $routes->connect('/actividades/:action/*', ['controller' => 'Actividad']);
 
         $routes->connect('/usuarios', ['controller' => 'Users', 'action' => 'index']);
         $routes->connect('/usuarios/:action/*', ['controller' => 'Users']);
 
-        $routes->connect('/profesor', ['controller' => 'Profesor', 'action' => 'index']);
-        $routes->connect('/profesor/add', ['controller' => 'Profesor', 'action' => 'add']);
+        $routes->connect('/cursos', ['controller' => 'Curso', 'action' => 'index']);
+        $routes->connect('/cursos/:action/*', ['controller' => 'Curso']);
+
+        $routes->connect('/profesores', ['controller' => 'Profesor', 'action' => 'index']);
+        $routes->connect('/profesor/:action/*', ['controller' => 'Profesor']);
+
+        $routes->connect('/departamentos', ['controller' => 'Departamento', 'action' => 'index']);
+        $routes->connect('/departamento/:action/*', ['controller' => 'Departamento']);
 
         $routes->connect('/trimestre', ['controller' => 'Trimestre', 'action' => 'index']);
         $routes->connect('/trimestre/:action/*', ['controller' => 'Trimestre',]);
+
+        $routes->connect('/destacados', ['controller' => 'Destacado', 'action' => 'index']);
+        $routes->connect('/destacados/:action/*', ['controller' => 'Destacado',]);
 
 
 

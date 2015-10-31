@@ -3,6 +3,8 @@ namespace App\Model\Table;
 
 use App\Model\Entity\Actividad;
 use Cake\ORM\Table;
+use Cake\ORM\Query;
+use Cake\ORM\RulesChecker;
 use Cake\Validation\Validator;
 use Search\Manager;
 
@@ -26,11 +28,12 @@ class ActividadTable extends Table
         parent::initialize($config);
 
         $this->table('actividad');
-        $this->displayField('id');
+        $this->displayField('titulo');
         $this->primaryKey('id');
 
         $this->addBehavior('Search.Search');
         $this->addBehavior('Timestamp');
+
         $this->hasOne('Destacado',[
             'dependent' => true,
             'foreignKey' => 'actividad_id'

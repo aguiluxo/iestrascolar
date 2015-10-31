@@ -11,7 +11,7 @@ use Cake\I18n\Time;
  */
 class ActividadController extends AdminController
 {
-    public $uses = ["Actividad", 'Destacado',];
+    public $uses = ["Actividad", 'Destacado','Curso'];
     public $helpers = ['Munruiz'];
 
     public $components = [
@@ -20,6 +20,7 @@ class ActividadController extends AdminController
                 'index' => ['className' => 'Crud.Index', 'view' => 'index'],
                 'edit' => ['className' => 'Crud.Edit', 'view' => 'edit'],
                 'add' => ['className' => 'Crud.Add', 'view' => 'edit'],
+                'view' =>['className' => 'Crud.View', 'view' => 'view'],
                 'Crud.Delete',
                 'Search.Prg',
             ],
@@ -29,8 +30,41 @@ class ActividadController extends AdminController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
+        $this->set('menuActivo', 'actividad');
+
+
+         $this->Crud->on('afterSave', function(\Cake\Event\Event $event) {
+            if ($event->subject->created) {
+             if ($this->request->data['destacada'] == '1') {
+                    $idActividad = $event->subject->entity->id;
+                    $this->_guardaDestacado($idActividad);
+                }
+            }
+        //     else{
+        //           if ($this->request->data['destacada'] == '1') {
+
+        //             $idActividad = $event->subject->entity->id;
+
+        //             $icono = $this->request->data['Destacado']['icono'];
+
+        //             $destacados = TableRegistry::get('Destacado');
+        //             $destacado = $destacados->find('all')->where(['actividad_id' => $idActividad])->first();
+        //             $destacado->icono = $icono;
+        //             $destacados->save($destacado);
+        //         }
+        //     }
+        });
+
     }
 
+    public function beforeSave(Event $event, Entity $entity){
+        if ($entity->isNew()) {
+           die("birrado");
+        }
+        else{
+die("editado");
+        }
+    }
     public function isAuthorized($user = null)
     {
         // Todos los usuarios registrados pueden añadir actividades
@@ -67,32 +101,7 @@ class ActividadController extends AdminController
 
     }
 
-
-
-    public function edit($id) {
-       $this->Crud->on('afterSave', function(\Cake\Event\Event $event) {
-            if ($event->subject->created) {
-            }
-            else{
-                  if ($this->request->data['destacada'] == '1') {
-
-                    $idActividad = $event->subject->entity->id;
-
-                    $icono = $this->request->data['Destacado']['icono'];
-
-                    $destacados = TableRegistry::get('Destacado');
-                    $destacado = $destacados->find('all')->where(['actividad_id' => $idActividad])->first();
-                    $destacado->icono = $icono;
-                    $destacados->save($destacado);
-                }
-            }
-        });
-        $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
-        $this->set(compact('curso'));
-        return $this->Crud->execute();
-    }
-
-    public function add()
+   public function add()
     {
 
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -103,27 +112,67 @@ class ActividadController extends AdminController
             $this->request->data['trimestre'] = $trimestre;
         }
 
-        $this->Crud->on('afterSave', function(\Cake\Event\Event $event) {
-            if ($event->subject->created) {
-                if ($this->request->data['destacada'] == '1') {
-                    $idActividad = $event->subject->entity->id;
-                    $icono = $this->request->data['Destacado']['icono'];
-                    $this->_guardaDestacado($idActividad, $icono);
-                }
-            }
-        });
         $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
         $this->set(compact('curso'));
+        $profesores = $this->Actividad->Profesor->find('list', ['limit' => 200]);
+        $this->set(compact('profesores'));
         return $this->Crud->execute();
     }
 
-    private function _guardaDestacado($idActividad, $icono)
+    public function edit($id = null)
+    {
+        $actividad = $this->Actividad->get($id, [
+            'contain' => ['Curso', 'Profesor']
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $actividad = $this->Actividad->patchEntity($actividad, $this->request->data);
+
+            if ($this->request->data['destacada'] == '0') {
+                    $idActividad = $id;
+                    $destacados = TableRegistry::get('Destacado');
+                    $destacado = $destacados->find('all')->where(['actividad_id' => $id])->first();
+                    $destacados->delete($destacado);
+                }
+            if ($this->Actividad->save($actividad)) {
+                $this->Flash->success(__('The actividad has been saved.'));
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error(__('The actividad could not be saved. Please, try again.'));
+            }
+        }
+        $users = $this->Actividad->Users->find('list', ['limit' => 200]);
+        $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
+        $profesores = $this->Actividad->Profesor->find('list', ['limit' => 200]);
+        $this->set(compact('actividad', 'users', 'curso', 'profesores'));
+        $this->set('_serialize', ['actividad']);
+    }
+
+    public function view($id = null)
+    {
+        $actividad = $this->Actividad->get($id, [
+            'contain' => ['Users', 'Curso', 'Profesor', 'Destacado']
+        ]);
+        $this->set('actividad', $actividad);
+        $this->set('_serialize', ['actividad']);
+    }
+
+    // public function edit($id) {
+    //     $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
+    //     $profesores = $this->Actividad->Profesor->find('list', ['limit' => 200]);
+    //     $this->set(compact('curso'));
+    //     $this->set(compact('profesores'));
+    //     return $this->Crud->execute();
+    // }
+
+
+
+    private function _guardaDestacado($idActividad)
      {
 
         $destacadoTable = TableRegistry::get('Destacado');
         $destacado = $destacadoTable->newEntity();
         $destacado->actividad_id = $idActividad;
-        $destacado->icono = $icono;
+        $destacado->icono = "fa fa-laptop";
         $destacadoTable->save($destacado);
     }
 

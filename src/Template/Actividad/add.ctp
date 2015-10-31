@@ -1,12 +1,6 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $actividad->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $actividad->id)]
-            )
-        ?></li>
         <li><?= $this->Html->link(__('List Actividad'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
@@ -21,7 +15,7 @@
 <div class="actividad form large-9 medium-8 columns content">
     <?= $this->Form->create($actividad) ?>
     <fieldset>
-        <legend><?= __('Edit Actividad') ?></legend>
+        <legend><?= __('Add Actividad') ?></legend>
         <?php
             echo $this->Form->input('user_id', ['options' => $users, 'empty' => true]);
             echo $this->Form->input('titulo');
@@ -34,7 +28,7 @@
             echo $this->Form->input('attachment');
             echo $this->Form->input('attachment_dir');
             echo $this->Form->input('curso._ids', ['options' => $curso]);
-            echo $this->Form->input('profesor._ids', ['options' => $profesores]);
+            echo $this->Form->input('profesor._ids', ['options' => $profesor]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

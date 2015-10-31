@@ -5,8 +5,8 @@
         <li><?= $this->Form->postLink(__('Delete Profesor'), ['action' => 'delete', $profesor->id], ['confirm' => __('Are you sure you want to delete # {0}?', $profesor->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Profesor'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Profesor'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Departmento'), ['controller' => 'Departmento', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Departmento'), ['controller' => 'Departmento', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Departamento'), ['controller' => 'Departamento', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Departamento'), ['controller' => 'Departamento', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Actividad'), ['controller' => 'Actividad', 'action' => 'index']) ?> </li>
@@ -17,8 +17,8 @@
     <h3><?= h($profesor->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th><?= __('Departmento') ?></th>
-            <td><?= $profesor->has('departmento') ? $this->Html->link($profesor->departmento->id, ['controller' => 'Departmento', 'action' => 'view', $profesor->departmento->id]) : '' ?></td>
+            <th><?= __('Departamento') ?></th>
+            <td><?= $profesor->has('departamento') ? $this->Html->link($profesor->departamento->id, ['controller' => 'Departamento', 'action' => 'view', $profesor->departamento->id]) : '' ?></td>
         </tr>
         <tr>
             <th><?= __('User') ?></th>
@@ -29,8 +29,8 @@
             <td><?= h($profesor->nombre) ?></td>
         </tr>
         <tr>
-            <th><?= __('Apellidos') ?></th>
-            <td><?= h($profesor->apellidos) ?></td>
+            <th><?= __('Email') ?></th>
+            <td><?= h($profesor->email) ?></td>
         </tr>
         <tr>
             <th><?= __('Imagen Dir') ?></th>
@@ -73,6 +73,7 @@
                 <th><?= __('Esta Evaluada') ?></th>
                 <th><?= __('Attachment') ?></th>
                 <th><?= __('Attachment Dir') ?></th>
+                <th><?= __('Destacada') ?></th>
                 <th><?= __('Created') ?></th>
                 <th><?= __('Modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
@@ -90,6 +91,7 @@
                 <td><?= h($actividad->esta_evaluada) ?></td>
                 <td><?= h($actividad->attachment) ?></td>
                 <td><?= h($actividad->attachment_dir) ?></td>
+                <td><?= h($actividad->destacada) ?></td>
                 <td><?= h($actividad->created) ?></td>
                 <td><?= h($actividad->modified) ?></td>
                 <td class="actions">

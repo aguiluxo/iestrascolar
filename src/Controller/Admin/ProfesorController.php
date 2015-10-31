@@ -1,16 +1,20 @@
 <?php
-namespace App\Controller;
-
-use App\Controller\AppController;
+namespace App\Controller\Admin;
+use Cake\Event\Event;
 
 /**
  * Profesor Controller
  *
  * @property \App\Model\Table\ProfesorTable $Profesor
  */
-class ProfesorController extends AppController
+class ProfesorController extends AdminController
 {
 
+public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->set('menuActivo', 'profesores');
+    }
     /**
      * Index method
      *
@@ -19,7 +23,7 @@ class ProfesorController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Departmento', 'Users']
+            'contain' => ['Departamento']
         ];
         $this->set('profesor', $this->paginate($this->Profesor));
         $this->set('_serialize', ['profesor']);
@@ -35,7 +39,7 @@ class ProfesorController extends AppController
     public function view($id = null)
     {
         $profesor = $this->Profesor->get($id, [
-            'contain' => ['Departmento', 'Users', 'Actividad']
+            'contain' => ['Departamento', 'Users', 'Actividad']
         ]);
         $this->set('profesor', $profesor);
         $this->set('_serialize', ['profesor']);
@@ -58,10 +62,8 @@ class ProfesorController extends AppController
                 $this->Flash->error(__('The profesor could not be saved. Please, try again.'));
             }
         }
-        $departmento = $this->Profesor->Departmento->find('list', ['limit' => 200]);
-        $users = $this->Profesor->Users->find('list', ['limit' => 200]);
-        $actividad = $this->Profesor->Actividad->find('list', ['limit' => 200]);
-        $this->set(compact('profesor', 'departmento', 'users', 'actividad'));
+        $departamento = $this->Profesor->Departamento->find('list', ['limit' => 200]);
+        $this->set(compact('profesor', 'departamento'));
         $this->set('_serialize', ['profesor']);
     }
 
@@ -86,10 +88,10 @@ class ProfesorController extends AppController
                 $this->Flash->error(__('The profesor could not be saved. Please, try again.'));
             }
         }
-        $departmento = $this->Profesor->Departmento->find('list', ['limit' => 200]);
+        $departamento = $this->Profesor->Departamento->find('list', ['limit' => 200]);
         $users = $this->Profesor->Users->find('list', ['limit' => 200]);
         $actividad = $this->Profesor->Actividad->find('list', ['limit' => 200]);
-        $this->set(compact('profesor', 'departmento', 'users', 'actividad'));
+        $this->set(compact('profesor', 'departamento', 'users', 'actividad'));
         $this->set('_serialize', ['profesor']);
     }
 

@@ -4,7 +4,7 @@
 <?= $this->Form->create() ?>
     <fieldset>
         <legend><?= __('Introduce tu nombre de usuario y contraseña') ?></legend>
-        <?= $this->Form->input('username',['label' => __('Nombre de usuario')]) ?>
+        <?= $this->Form->input('email',['label' => __('Nombre de usuario')]) ?>
         <?= $this->Form->input('password',['label' => __('Contraseña')]) ?>
 
     </fieldset>

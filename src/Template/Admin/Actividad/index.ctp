@@ -14,6 +14,9 @@
             <th><?= $this->Paginator->sort('titulo') ?></th>
             <th><?= $this->Paginator->sort('fecha_ini') ?></th>
             <th><?= $this->Paginator->sort('fecha_fin') ?></th>
+            <th><?= $this->Paginator->sort('destacada') ?></th>
+            <th><?= $this->Paginator->sort('created', ['label' => 'Creada']) ?></th>
+            <th><?= $this->Paginator->sort('modified', ['label' => 'Modificada']) ?></th>
             <th class="actions"><?= __('Acciones') ?></th>
         </tr>
     </thead>
@@ -24,6 +27,9 @@
             <td><?= h($actividad->titulo) ?></td>
             <td><?= h($actividad->fecha_ini) ?></td>
             <td><?= h($actividad->fecha_fin) ?></td>
+            <td><?= h($actividad->destacada) ?></td>
+            <td><?= h($actividad->created) ?></td>
+            <td><?= h($actividad->modified) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('Ver'), ['action' => 'view', $actividad->id]) ?>
                 <?= $this->Html->link(__('Editar'), ['action' => 'edit', $actividad->id]) ?>

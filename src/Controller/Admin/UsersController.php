@@ -16,6 +16,7 @@ class UsersController extends AdminController
     {
         parent::beforeFilter($event);
         $this->Auth->allow('add');
+        $this->set('menuActivo', 'usuario');
     }
 
     public function login()

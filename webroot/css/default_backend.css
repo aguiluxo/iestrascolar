@@ -4,3 +4,31 @@
 .note-codable {
   height: 300px;
 }
+.navbar-default {
+  background-color: inherit;
+  border: none;
+}
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #8d6e65;
+}
+.navbar-default .navbar-brand {
+  color: white;
+}
+.cajaBusqueda form {
+  margin: 0;
+}
+.contenedorBusquedaTrimestre label {
+  display: inline-block;
+  margin-right: 20px;
+}
+.botonRestablecer {
+  border-radius: 0;
+  height: 51px;
+  margin-left: 20px;
+}
+.botonRestablecer:hover {
+  background-color: #8D6E65;
+}

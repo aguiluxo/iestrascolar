@@ -28,7 +28,7 @@ class ProfesorFixture extends TestFixture
         'departamento_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => true, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'user_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => true, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'nombre' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
-        'apellidos' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'email' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'telefono' => ['type' => 'integer', 'length' => 9, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'imagen_dir' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'imagen' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
@@ -40,7 +40,8 @@ class ProfesorFixture extends TestFixture
         ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'profesor_ibfk_1' => ['type' => 'foreign', 'columns' => ['departamento_id'], 'references' => ['departmento', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
+            'email' => ['type' => 'unique', 'columns' => ['email'], 'length' => []],
+            'profesor_ibfk_1' => ['type' => 'foreign', 'columns' => ['departamento_id'], 'references' => ['departamento', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
             'profesor_ibfk_2' => ['type' => 'foreign', 'columns' => ['user_id'], 'references' => ['users', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],
         '_options' => [
@@ -61,12 +62,12 @@ class ProfesorFixture extends TestFixture
             'departamento_id' => 1,
             'user_id' => 1,
             'nombre' => 'Lorem ipsum dolor sit amet',
-            'apellidos' => 'Lorem ipsum dolor sit amet',
+            'email' => 'Lorem ipsum dolor sit amet',
             'telefono' => 1,
             'imagen_dir' => 'Lorem ipsum dolor sit amet',
             'imagen' => 'Lorem ipsum dolor sit amet',
-            'created' => '2015-10-29 18:57:38',
-            'modified' => '2015-10-29 18:57:38'
+            'created' => '2015-10-30 19:40:42',
+            'modified' => '2015-10-30 19:40:42'
         ],
     ];
 }

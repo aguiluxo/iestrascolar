@@ -17,6 +17,7 @@ use Cake\Validation\Validator;
 class ProfesorTable extends Table
 {
 
+
     /**
      * Initialize method
      *
@@ -28,7 +29,7 @@ class ProfesorTable extends Table
         parent::initialize($config);
 
         $this->table('profesor');
-        $this->displayField('id');
+        $this->displayField('nombre');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
@@ -90,22 +91,6 @@ class ProfesorTable extends Table
             ->notEmpty('nombre');
 
         $validator
-            ->add('email', 'valid', ['rule' => 'email'])
-            ->requirePresence('email', 'create')
-            ->notEmpty('email', __('Email requerido'))
-            ->add('email', 'unique', [
-                'rule' => 'validateUnique',
-                'provider' => 'table',
-                'message' => __('Este email ya está registrado')
-            ]);
-        $validator->notEmpty('password', __('Contraseña requerida'));
-
-        $validator->add('role', 'inList', [
-                'rule' => ['inList', ['superadmin','admin', 'profesor']],
-                'message' =>  __('Por favor, introduce un rol válido')
-            ]);
-
-        $validator
             ->add('telefono', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('telefono');
 
@@ -113,6 +98,7 @@ class ProfesorTable extends Table
             ->allowEmpty('imagen_dir');
 
         $validator
+            ->requirePresence('imagen', 'create')
             ->allowEmpty('imagen');
 
         return $validator;
@@ -127,7 +113,6 @@ class ProfesorTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->isUnique(['email']));
         $rules->add($rules->existsIn(['departamento_id'], 'Departamento'));
         $rules->add($rules->existsIn(['user_id'], 'Users'));
         return $rules;

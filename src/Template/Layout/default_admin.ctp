@@ -53,8 +53,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
     <header>
+
         <div class="header-title">
-            <span><?=$this->fetch('title')?></span>
+        <?php
+            if($this->view =='login'){
+                echo $this->fetch('title');
+            }
+            else{
+                echo $this->element('admin/navbar');
+            }
+         ?>
+
         </div>
     </header>
     <div id="container">
