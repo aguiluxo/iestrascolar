@@ -39,7 +39,7 @@ public function beforeFilter(Event $event)
     public function view($id = null)
     {
         $profesor = $this->Profesor->get($id, [
-            'contain' => ['Departamento', 'Users', 'Actividad']
+            'contain' => ['Departamento']
         ]);
         $this->set('profesor', $profesor);
         $this->set('_serialize', ['profesor']);
@@ -56,10 +56,10 @@ public function beforeFilter(Event $event)
         if ($this->request->is('post')) {
             $profesor = $this->Profesor->patchEntity($profesor, $this->request->data);
             if ($this->Profesor->save($profesor)) {
-                $this->Flash->success(__('The profesor has been saved.'));
+                $this->Flash->success(__('El profesor ha sido añadido.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The profesor could not be saved. Please, try again.'));
+                $this->Flash->error(__('El profesor no ha podido ser añadido. Por favor, prueba de nuevo.'));
             }
         }
         $departamento = $this->Profesor->Departamento->find('list', ['limit' => 200]);
@@ -82,16 +82,14 @@ public function beforeFilter(Event $event)
         if ($this->request->is(['patch', 'post', 'put'])) {
             $profesor = $this->Profesor->patchEntity($profesor, $this->request->data);
             if ($this->Profesor->save($profesor)) {
-                $this->Flash->success(__('The profesor has been saved.'));
+                $this->Flash->success(__('El profesor ha sido modificado.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The profesor could not be saved. Please, try again.'));
+                $this->Flash->error(__('El profesor no ha podido ser modificado. Por favor, prueba de nuevo.'));
             }
         }
         $departamento = $this->Profesor->Departamento->find('list', ['limit' => 200]);
-        $users = $this->Profesor->Users->find('list', ['limit' => 200]);
-        $actividad = $this->Profesor->Actividad->find('list', ['limit' => 200]);
-        $this->set(compact('profesor', 'departamento', 'users', 'actividad'));
+        $this->set(compact('profesor', 'departamento'));
         $this->set('_serialize', ['profesor']);
     }
 

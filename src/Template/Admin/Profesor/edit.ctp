@@ -22,12 +22,10 @@
         <legend><?= __('Edit Profesor') ?></legend>
         <?php
             echo $this->Form->input('departamento_id', ['options' => $departamento, 'empty' => true]);
-            echo $this->Form->input('user_id', ['options' => $users, 'empty' => true]);
             echo $this->Form->input('nombre');
             echo $this->Form->input('email');
             echo $this->Form->input('telefono');
             echo $this->Form->input('imagen', ['type' => 'file']);
-            echo $this->Form->input('actividad._ids', ['options' => $actividad]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
