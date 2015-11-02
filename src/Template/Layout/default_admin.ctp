@@ -60,7 +60,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 echo $this->fetch('title');
             }
             else{
-                echo $this->element('admin/navbar');
+                echo $this->element('Admin/navbar');
             }
          ?>
 
