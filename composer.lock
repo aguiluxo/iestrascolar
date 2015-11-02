@@ -5,7 +5,6 @@
         "This file is @generated automatically"
     ],
     "hash": "98e7e02dd6fdcf6ed3e9b359b67bcbf3",
-    "content-hash": "c33bb6e36b938e11f9e25e1e7a82191e",
     "packages": [
         {
             "name": "aura/installer-default",
@@ -417,12 +416,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfCake/search.git",
-                "reference": "4f7e1b0a07604eff4d4630075f5dc5479d9f7d8a"
+                "reference": "a74975c053496f979245995107923fa0a71252d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfCake/search/zipball/4f7e1b0a07604eff4d4630075f5dc5479d9f7d8a",
-                "reference": "4f7e1b0a07604eff4d4630075f5dc5479d9f7d8a",
+                "url": "https://api.github.com/repos/FriendsOfCake/search/zipball/a74975c053496f979245995107923fa0a71252d1",
+                "reference": "a74975c053496f979245995107923fa0a71252d1",
                 "shasum": ""
             },
             "require-dev": {
@@ -454,7 +453,7 @@
                 "cakephp3",
                 "search"
             ],
-            "time": "2015-10-21 19:26:32"
+            "time": "2015-11-01 11:52:24"
         },
         {
             "name": "imagine/imagine",
@@ -954,16 +953,16 @@
     "packages-dev": [
         {
             "name": "cakephp/bake",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/bake.git",
-                "reference": "749c0081ca27027b93723d4305bcb4ad18012057"
+                "reference": "a7d5ed3ef3022264db6d059784b1ad438c8744c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/bake/zipball/749c0081ca27027b93723d4305bcb4ad18012057",
-                "reference": "749c0081ca27027b93723d4305bcb4ad18012057",
+                "url": "https://api.github.com/repos/cakephp/bake/zipball/a7d5ed3ef3022264db6d059784b1ad438c8744c3",
+                "reference": "a7d5ed3ef3022264db6d059784b1ad438c8744c3",
                 "shasum": ""
             },
             "require": {
@@ -996,7 +995,7 @@
                 "bake",
                 "cakephp"
             ],
-            "time": "2015-09-20 01:53:23"
+            "time": "2015-10-31 17:24:20"
         },
         {
             "name": "cakephp/debug_kit",

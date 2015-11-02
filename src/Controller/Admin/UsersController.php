@@ -36,31 +36,12 @@ class UsersController extends AdminController
         return $this->redirect($this->Auth->logout());
     }
 
-     public function index()
-     {
-        $usuarios = $this->Users->find('all');
 
-        $this->set('users',$this->paginate($usuarios));
-    }
-
-    public function view($id)
+    public function profile()
     {
-        $user = $this->Users->get($id);
-        $this->set(compact('user'));
+        $session = $this->request->session();
     }
 
-    public function add()
-    {
-        $user = $this->Users->newEntity();
-        if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->data);
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('El usuario ha sido guardado.'));
-                return $this->redirect(['action' => 'add']);
-            }
-            $this->Flash->error(__('No se ha podido crear el usuario.'));
-        }
-        $this->set('user', $user);
-    }
+
 
 }

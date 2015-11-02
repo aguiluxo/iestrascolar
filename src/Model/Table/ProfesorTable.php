@@ -28,7 +28,7 @@ class ProfesorTable extends Table
         parent::initialize($config);
 
         $this->table('profesor');
-        $this->displayField('id');
+        $this->displayField('nombre');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
@@ -46,9 +46,9 @@ class ProfesorTable extends Table
                         'png_compression_level' => 9
                     ],
                     'estirada' => [     // Define a second thumbnail
-                        'w' => 800,
-                        'h' => 300,
-                        'crop' => false,  // Crop will crop the image as well as resize it
+                        'w' => '1400',
+                        'h' => '370',
+                        'crop' => true,
                     ],
                     'normal' => [
                         'w' => '600',

@@ -11,17 +11,11 @@
 <div class="profesor form large-9 medium-8 columns content">
     <?= $this->Form->create($profesor, ['type' => 'file']) ?>
     <fieldset>
-        <legend><?= __('Add Profesor') ?></legend>
+        <legend><?= __('Añadir Profesor') ?></legend>
         <?php
             echo $this->Form->input('departamento_id', ['options' => $departamento, 'empty' => true]);
             echo $this->Form->input('nombre');
             echo $this->Form->input('email');
-            echo $this->Form->input('password', ['label' => __('Contraseña')]);
-            echo $this->Form->input('role', [
-            'label' => __('Rol'),
-            'empty' => 'Seleccione el tipo de usuario',
-            'options' => ['superadmin' => 'Super Administrador', 'admin' => 'Administrador', 'profesor' => 'Profesor']
-            ]);
             echo $this->Form->input('telefono');
             echo $this->Form->input('imagen', ['type' => 'file']);
         ?>

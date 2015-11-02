@@ -27,7 +27,7 @@
             <td><?= h($actividad->titulo) ?></td>
             <td><?= h($actividad->fecha_ini) ?></td>
             <td><?= h($actividad->fecha_fin) ?></td>
-            <td><?= h($actividad->destacada) ?></td>
+            <td><?= $actividad->destacada == 1? __("Sí"):__('No') ?></td>
             <td><?= h($actividad->created) ?></td>
             <td><?= h($actividad->modified) ?></td>
             <td class="actions">

@@ -19,7 +19,7 @@
 <div class="profesor form large-9 medium-8 columns content">
     <?= $this->Form->create($profesor, ['type' => 'file']) ?>
     <fieldset>
-        <legend><?= __('Edit Profesor') ?></legend>
+        <legend><?= __('Editar Profesor') ?></legend>
         <?php
             echo $this->Form->input('departamento_id', ['options' => $departamento, 'empty' => true]);
             echo $this->Form->input('nombre');
@@ -28,6 +28,6 @@
             echo $this->Form->input('imagen', ['type' => 'file']);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Enviar')) ?>
     <?= $this->Form->end() ?>
 </div>

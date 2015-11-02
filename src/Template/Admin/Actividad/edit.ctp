@@ -33,17 +33,33 @@ __('Borrar'),
             </div>
             <div class="row">
                 <div class="col-md-12">
-                     <?=$this->Form->textarea('descripcion');?>
+                     <?=$this->Form->input('descripcion', ['type' => 'textarea', 'label' => 'Descripción']);?>
                     <?php //echo $this->Munruiz->editor('descripcion', ['label' => 'Descripcion', 'id' => 'summernoteCake']); ?>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <fieldset>
+                        <legend>Cursos que asistirán</legend>
+                        <?= $this->Form->input('curso._ids', [
+                        'options' => $curso,
+                        'multiple' => 'checkbox',
+                        'label' => false]); ?>
+                    </fieldset>
+                </div>
+                <div class="col-md-6">
+                    <fieldset><legend>Profesores que asistirán</legend>
+                        <?= $this->Form->input('profesor._ids', [
+                        'options' => $profesores,
+                        'multiple' => 'checkbox',
+                        'label' => false]); ?>
+                    </fieldset>
+                </div>
             </div>
         </div>
         <?php
-        echo $this->Form->input('curso._ids', ['options' => $curso, 'multiple' => 'checkbox', 'label' => 'Cursos']);
         echo $this->Form->input('financiacion');
 
-        echo $this->Form->input('profesor._ids', ['options' => $profesores, 'multiple' => 'checkbox', 'label' => 'Profesores']);
         echo $this->Form->checkbox('destacada', ['id' => 'destacada']);
         echo "Destacada";?>
 

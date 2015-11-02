@@ -72,7 +72,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <?=$this->Flash->render()?>
             <?=$this->Flash->render('auth')?>
 
-            <div class="row">
+            <div class="row contenido">
                 <?=$this->fetch('content')?>
             </div>
         </div>

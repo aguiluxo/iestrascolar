@@ -36,11 +36,10 @@ class ActividadTable extends Table
 
         $this->hasOne('Destacado',[
             'dependent' => true,
-            'foreignKey' => 'actividad_id'
+            'foreignKey' => 'actividad_id',
+            'dependent' => true
         ]);
-        $this->belongsTo('Users', [
-            'foreignKey' => 'user_id'
-        ]);
+
          $this->belongsToMany('Curso', [
             'foreignKey' => 'actividad_id',
             'targetForeignKey' => 'curso_id',

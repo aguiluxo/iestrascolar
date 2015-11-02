@@ -72,4 +72,13 @@ class ActividadCursoTable extends Table
         $rules->add($rules->existsIn(['curso_id'], 'Curso'));
         return $rules;
     }
+
+    public function getActividadesPorCurso($idCurso)
+    {
+        return $this->find()
+        ->where([
+            'curso_id' => $idCurso
+        ])
+        ->count();
+    }
 }

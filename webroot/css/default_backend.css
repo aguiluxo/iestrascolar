@@ -17,6 +17,15 @@
 .navbar-default .navbar-brand {
   color: white;
 }
+.enlaceHome:before {
+  content: "\f015";
+  font-family: FontAwesome;
+  left: -5px;
+  position: absolute;
+}
+.panelUsuario {
+  top: -15px;
+}
 .cajaBusqueda form {
   margin: 0;
 }

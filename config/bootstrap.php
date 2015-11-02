@@ -181,7 +181,8 @@ Request::addDetector('tablet', function ($request) {
  */
 
 Plugin::loadAll([
-    'Slider' => ['routes' => true]
+    'Slider' => ['routes' => true],
+    'CakePdf' => ['bootstrap' => true, 'routes' => true]
 ]);
 // Only try to load DebugKit in development mode
 // Debug Kit should not be installed on a production system

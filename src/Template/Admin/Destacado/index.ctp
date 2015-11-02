@@ -24,7 +24,7 @@
             <tr>
                 <td><?= $this->Number->format($destacado->id) ?></td>
                 <td><?= $destacado->has('actividad') ? $this->Html->link($destacado->actividad->id, ['controller' => 'Actividad', 'action' => 'view', $destacado->actividad->id]) : '' ?></td>
-                <td><?= h($destacado->icono) ?></td>
+                <td><i class="<?= h($destacado->icono) ?>"></i></td>
                 <td><?= h($destacado->created) ?></td>
                 <td><?= h($destacado->modified) ?></td>
                 <td class="actions">

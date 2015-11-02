@@ -60,4 +60,5 @@ class CursoTable extends Table
 
         return $validator;
     }
+
 }

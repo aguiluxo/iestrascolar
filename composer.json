@@ -12,6 +12,7 @@
         "cakephp/plugin-installer": "*",
         "friendsofcake/crud": "~4.1",
         "davidyell/proffer": "~0.4",
+        "friendsofcake/cakepdf": "3.0.x-dev",
         "friendsofcake/search": "dev-master"
     },
     "require-dev": {

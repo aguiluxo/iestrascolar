@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
 use Cake\I18n\Time;
+use Cake\Mailer\Email;
 /**
  * Actividad Controller
  *
@@ -35,36 +36,18 @@ class ActividadController extends AdminController
 
          $this->Crud->on('afterSave', function(\Cake\Event\Event $event) {
             if ($event->subject->created) {
+                $this->_compruebaMaximoActividadesPorCurso($this->request->data['curso']['_ids']);
              if ($this->request->data['destacada'] == '1') {
                     $idActividad = $event->subject->entity->id;
                     $this->_guardaDestacado($idActividad);
                 }
             }
-        //     else{
-        //           if ($this->request->data['destacada'] == '1') {
 
-        //             $idActividad = $event->subject->entity->id;
-
-        //             $icono = $this->request->data['Destacado']['icono'];
-
-        //             $destacados = TableRegistry::get('Destacado');
-        //             $destacado = $destacados->find('all')->where(['actividad_id' => $idActividad])->first();
-        //             $destacado->icono = $icono;
-        //             $destacados->save($destacado);
-        //         }
-        //     }
         });
 
     }
 
-    public function beforeSave(Event $event, Entity $entity){
-        if ($entity->isNew()) {
-           die("birrado");
-        }
-        else{
-die("editado");
-        }
-    }
+
     public function isAuthorized($user = null)
     {
         // Todos los usuarios registrados pueden añadir actividades
@@ -213,5 +196,23 @@ die("editado");
             return 3;
         }
         return null;
+    }
+    private function _compruebaMaximoActividadesPorCurso($cursos)
+    {
+        $listaCursos = "";
+        $this->loadModel('ActividadCurso');
+        $this->loadModel('Curso');
+
+        foreach ($cursos as $key => $curso) {
+            $numeroActividades = $this->ActividadCurso->getActividadesPorCurso($curso);
+            if ($numeroActividades > 5) {
+                $listaCursos = $this->Curso->find()->where(['id' => $curso])->first();
+                // $email = new Email('default');
+                // $email->to('alvaro89mr@gmail.com', 'Toexample')
+                // ->subject('Prueba')
+                // ->send('My mesanej');
+                $this->Flash->error(__('El siguiente curso ha superado las cinco actividades anuales:' . $listaCursos->nombre ));
+            }
+        }
     }
 }

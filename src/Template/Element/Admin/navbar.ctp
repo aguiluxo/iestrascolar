@@ -1,3 +1,4 @@
+<?php $session = $this->request->session(); ?>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,20 +20,18 @@
         <li class="<?=$menuActivo=='destacados'?'active':''?>"><?= $this->Html->link(__('Destacados'), ['controller' => 'Destacado', 'action' => 'index']) ?></li>
         <li class="<?=$menuActivo=='profesores'?'active':''?>"><?= $this->Html->link(__('Profesores'), ['controller' => 'Profesor', 'action' => 'index']) ?></li>
         <li class="<?=$menuActivo=='cursos'?'active':''?>"><?= $this->Html->link(__('Cursos'), ['controller' => 'Curso', 'action' => 'index']) ?></li>
-
-<li class="<?=$menuActivo=='usuario'?'active':''?>"><?= $this->Html->link(__('Usuarios'), ['controller' => 'Users', 'action' => 'index']) ?></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
+        <li><?=$this->Html->link('Ir a Web', $this->Url->build('/', true), ['target' => '_blank', 'class' => 'enlaceHome']);?></li>
+        <li class="dropdown panelUsuario">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <?=$this->Html->image('files/profesor/' . $this->request->session()->read('Auth.User.imagen_dir') . '/miniatura_' .
-          $this->request->session()->read('Auth.User.imagen'))?>Dropdown
+          <?=$this->Html->image('/files/profesor/imagen/' . $session->read('Auth.User.imagen_dir') . '/miniatura_' .
+          $session->read('Auth.User.imagen'))?>
+          <?=$session->read('Auth.User.nombre')?>
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><?=$this->Html->link('Mi perfil', ['controller' => 'Users', 'action' => 'profile']);?></li>
+            <li><a href="#">Mis actividades</a></li>
             <li role="separator" class="divider"></li>
             <li><?= $this->Html->link(__('Cerrar sesión'), ['controller' => 'Users', 'action' => 'logout']) ?></li>
           </ul>
