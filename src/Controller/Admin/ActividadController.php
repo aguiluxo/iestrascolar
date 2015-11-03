@@ -123,10 +123,9 @@ class ActividadController extends AdminController
                 $this->Flash->error(__('The actividad could not be saved. Please, try again.'));
             }
         }
-        $users = $this->Actividad->Users->find('list', ['limit' => 200]);
         $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
         $profesores = $this->Actividad->Profesor->find('list', ['limit' => 200]);
-        $this->set(compact('actividad', 'users', 'curso', 'profesores'));
+        $this->set(compact('actividad', 'curso', 'profesores'));
         $this->set('_serialize', ['actividad']);
     }
 
