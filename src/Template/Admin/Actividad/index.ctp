@@ -1,4 +1,4 @@
-<?php $this->assign('title', __('Listado de actividades')); ?>
+<?php $this->assign('title', __('Iestrascolar | Listado de actividades')); ?>
 <div class="actions columns large-2 medium-3">
     <h3><?= __('Acciones') ?></h3>
     <ul class="side-nav">
