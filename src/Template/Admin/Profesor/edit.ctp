@@ -7,12 +7,10 @@
                 ['confirm' => __('Are you sure you want to delete # {0}?', $profesor->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Profesor'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Departamento'), ['controller' => 'Departamento', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Departamento'), ['controller' => 'Departamento', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Actividad'), ['controller' => 'Actividad', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Lista Profesores'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Lista Departamentos'), ['controller' => 'Departamento', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nuevo Departamento'), ['controller' => 'Departamento', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Lista Actividades'), ['controller' => 'Actividad', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Actividad'), ['controller' => 'Actividad', 'action' => 'add']) ?></li>
     </ul>
 </nav>

@@ -14,9 +14,9 @@
                 <th><?= $this->Paginator->sort('id') ?></th>
                 <th><?= $this->Paginator->sort('actividad_id') ?></th>
                 <th><?= $this->Paginator->sort('icono') ?></th>
-                <th><?= $this->Paginator->sort('created') ?></th>
-                <th><?= $this->Paginator->sort('modified') ?></th>
-                <th class="actions"><?= __('Actions') ?></th>
+                <th><?= $this->Paginator->sort('created', ['label' => 'Creado'] ) ?></th>
+                <th><?= $this->Paginator->sort('modified', ['label' => 'Modificado']) ?></th>
+                <th class="actions"><?= __('Acciones') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -28,9 +28,9 @@
                 <td><?= h($destacado->created) ?></td>
                 <td><?= h($destacado->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $destacado->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $destacado->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $destacado->id], ['confirm' => __('Are you sure you want to delete # {0}?', $destacado->id)]) ?>
+                    <?= $this->Html->link(__('Ver'), ['action' => 'view', $destacado->id]) ?>
+                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $destacado->id]) ?>
+                    <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $destacado->id], ['confirm' => __('Are you sure you want to delete # {0}?', $destacado->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
