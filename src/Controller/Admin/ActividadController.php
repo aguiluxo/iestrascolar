@@ -132,7 +132,7 @@ class ActividadController extends AdminController
     public function view($id = null)
     {
         $actividad = $this->Actividad->get($id, [
-            'contain' => ['Users', 'Curso', 'Profesor', 'Destacado']
+            'contain' => ['Curso', 'Profesor', 'Destacado']
         ]);
         $this->set('actividad', $actividad);
         $this->set('_serialize', ['actividad']);

@@ -5,8 +5,6 @@
         <li><?= $this->Form->postLink(__('Delete Actividad'), ['action' => 'delete', $actividad->id], ['confirm' => __('Are you sure you want to delete # {0}?', $actividad->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Actividad'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Actividad'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Destacado'), ['controller' => 'Destacado', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Destacado'), ['controller' => 'Destacado', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Curso'), ['controller' => 'Curso', 'action' => 'index']) ?> </li>
@@ -19,10 +17,6 @@
     <h3><?= h($actividad->titulo) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th><?= __('User') ?></th>
-            <td><?= $actividad->has('user') ? $this->Html->link($actividad->user->id, ['controller' => 'Users', 'action' => 'view', $actividad->user->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th><?= __('Titulo') ?></th>
             <td><?= h($actividad->titulo) ?></td>
         </tr>
@@ -30,14 +24,7 @@
             <th><?= __('Descripcion') ?></th>
             <td><?= h($actividad->descripcion) ?></td>
         </tr>
-        <tr>
-            <th><?= __('Attachment') ?></th>
-            <td><?= h($actividad->attachment) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Attachment Dir') ?></th>
-            <td><?= h($actividad->attachment_dir) ?></td>
-        </tr>
+
         <tr>
             <th><?= __('Id') ?></th>
             <td><?= $this->Number->format($actividad->id) ?></td>
@@ -55,11 +42,11 @@
             <td><?= h($actividad->fecha_fin) ?></tr>
         </tr>
         <tr>
-            <th><?= __('Created') ?></th>
+            <th><?= __('Creada') ?></th>
             <td><?= h($actividad->created) ?></tr>
         </tr>
         <tr>
-            <th><?= __('Modified') ?></th>
+            <th><?= __('Modificada') ?></th>
             <td><?= h($actividad->modified) ?></tr>
         </tr>
         <tr>
@@ -110,7 +97,6 @@
             <tr>
                 <th><?= __('Id') ?></th>
                 <th><?= __('Departamento Id') ?></th>
-                <th><?= __('User Id') ?></th>
                 <th><?= __('Nombre') ?></th>
                 <th><?= __('Telefono') ?></th>
                 <th><?= __('Imagen Dir') ?></th>
@@ -123,7 +109,6 @@
             <tr>
                 <td><?= h($profesor->id) ?></td>
                 <td><?= h($profesor->departamento_id) ?></td>
-                <td><?= h($profesor->user_id) ?></td>
                 <td><?= h($profesor->nombre) ?></td>
                 <td><?= h($profesor->telefono) ?></td>
                 <td><?= h($profesor->imagen_dir) ?></td>
