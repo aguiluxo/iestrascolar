@@ -7,21 +7,19 @@
                 ['confirm' => __('Are you sure you want to delete # {0}?', $curso->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Curso'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Actividad'), ['controller' => 'Actividad', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Actividad'), ['controller' => 'Actividad', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Lista Cursos'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Lista Actividades'), ['controller' => 'Actividad', 'action' => 'index']) ?></li>
     </ul>
 </nav>
 <div class="curso form large-9 medium-8 columns content">
     <?= $this->Form->create($curso) ?>
     <fieldset>
-        <legend><?= __('Edit Curso') ?></legend>
+        <legend><?= __('Editar Curso') ?></legend>
         <?php
             echo $this->Form->input('nombre');
             echo $this->Form->input('alumnos');
-            echo $this->Form->input('actividad._ids', ['options' => $actividad]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Enviar')) ?>
     <?= $this->Form->end() ?>
 </div>
