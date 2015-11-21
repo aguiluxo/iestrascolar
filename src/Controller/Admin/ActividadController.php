@@ -36,6 +36,11 @@ class ActividadController extends AdminController
 
          $this->Crud->on('afterSave', function(\Cake\Event\Event $event) {
             if ($event->subject->created) {
+                $email = new Email();
+                $email->template('default', 'creada')
+                ->to('alvaro89mr@gmail.com')
+                ->from('alvaro89mr@gmail.com')
+                ->send();
                 $this->_compruebaMaximoActividadesPorCurso($this->request->data['curso']['_ids']);
              if ($this->request->data['destacada'] == '1') {
                     $idActividad = $event->subject->entity->id;
