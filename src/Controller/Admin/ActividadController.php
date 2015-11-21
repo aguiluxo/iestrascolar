@@ -37,7 +37,7 @@ class ActividadController extends AdminController
          $this->Crud->on('afterSave', function(\Cake\Event\Event $event) {
             if ($event->subject->created) {
                 $email = new Email();
-                $email->template('default', 'creada')
+                $email->template('default')
                 ->emailFormat('html')
                 ->to('alvaro89mr@gmail.com')
                 ->from('alvaro89mr@gmail.com')
