@@ -38,6 +38,7 @@ class ActividadController extends AdminController
             if ($event->subject->created) {
                 $email = new Email();
                 $email->template('default', 'creada')
+                ->emailFormat('html')
                 ->to('alvaro89mr@gmail.com')
                 ->from('alvaro89mr@gmail.com')
                 ->send();
