@@ -49,6 +49,7 @@ Router::scope('/', function ($routes) {
      */
     $routes->connect('/', ['controller' => 'Front', 'action' => 'index']);
     $routes->connect('/actividades', ['controller' => 'Actividad', 'action' => 'index']);
+    $routes->connect('/calendario', ['controller' => 'Actividad', 'action' => 'calendario']);
 
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
