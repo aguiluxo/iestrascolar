@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
+
 
 /**
  * Actividad Controller
@@ -16,6 +18,10 @@ class ActividadController extends AppController
      *
      * @return void
      */
+    public function beforeFilter(Event $event){
+        parent::beforeFilter($event);
+        $this->set('pagina', 'actividades');
+    }
     public function index()
     {
         $this->paginate = [
