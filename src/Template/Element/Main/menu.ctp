@@ -21,7 +21,7 @@
           <?= $this->Html->link(__("actividades"), ['controller' => 'Actividad', 'view' => 'index']); ?>
         </li>
         <li class="<?= ($pagina=='calendario')?'active':''?>">
-          <?= $this->Html->link(__("calendario"), ['controller' => 'Actividad', 'view' => 'index']); ?>
+          <?= $this->Html->link(__("calendario"), ['controller' => 'Actividad', 'action' => 'calendario']); ?>
         </li>
         <li class="<?= ($pagina=='contacto')?'active':''?>">
           <?= $this->Html->link(__("contacto"), ['controller' => 'Actividad', 'view' => 'index']); ?>

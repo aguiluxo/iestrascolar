@@ -9,10 +9,12 @@
 
 
 <script type="text/javascript">
+$(function(){
     var calendar = $("#calendar").calendar(
         {
             language: 'es-ES',
-            tmpl_path: "/libs/bootstrap-calendar/tmpls/",
-            events_source: function () { return []; }
+            tmpl_path: "libs/bootstrap-calendar/tmpls/",
+            events_source: 'getProgramacion'
         });
+})
 </script>

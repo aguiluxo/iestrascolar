@@ -17,12 +17,11 @@
     <?=$this->Html->css('/libs/font-awesome/css/font-awesome.min.css')?>
 
     <!-- Bootstrap Calendar -->
-    <?=$this->Html->css('/libs/bootstrap-calendar/css/bootstrap.min.css')?>
+    <?=$this->Html->css('/libs/bootstrap-calendar/css/calendar.css')?>
 
 
     <?= $this->Html->css('general.css') ?>
 
-    <?= $this->Html->css('/lib/sb-admin2/bower_components/font-awesome/css/font-awesome.min.css'); ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>

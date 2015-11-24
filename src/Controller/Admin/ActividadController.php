@@ -41,6 +41,7 @@ class ActividadController extends AdminController
                 ->emailFormat('html')
                 ->to('alvaro89mr@gmail.com')
                 ->from('alvaro89mr@gmail.com')
+                ->viewVars(['actividad' => $this->request->data])
                 ->send();
                 $this->_compruebaMaximoActividadesPorCurso($this->request->data['curso']['_ids']);
              if ($this->request->data['destacada'] == '1') {
