@@ -4,7 +4,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Network\Response;
-use Cake\Network\Http;
+use Http\Client;
 
 /**
  * Actividad Controller
