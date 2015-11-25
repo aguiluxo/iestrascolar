@@ -75,13 +75,20 @@ class ActividadController extends AppController
 
         $calendario = $this->_getCalendario($eventos);
 
-        return new CakeResponse(array(
+        // return new CakeResponse(array(
+        //     'type' => 'json',
+        //     'body' => json_encode(array(
+        //         'success' => 1,
+        //         'result' => $calendario
+        //     )),
+        // ));
+
+        return array(
             'type' => 'json',
             'body' => json_encode(array(
                 'success' => 1,
                 'result' => $calendario
-            )),
-        ));
+            )));
 
     }
 
