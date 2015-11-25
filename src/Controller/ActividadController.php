@@ -82,13 +82,13 @@ class ActividadController extends AppController
         //         'result' => $calendario
         //     )),
         // ));
-
-        return array(
+        $http = new Client();
+        return $http->post(array(
             'type' => 'json',
             'body' => json_encode(array(
                 'success' => 1,
                 'result' => $calendario
-            )));
+            ))));
 
     }
 
