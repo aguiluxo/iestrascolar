@@ -84,7 +84,7 @@ class ActividadController extends AppController
         //     )),
         // ));
         $http = new Client();
-        return $http->post(array(
+        return $http->get(array(
             'type' => 'json',
             'body' => json_encode(array(
                 'success' => 1,
