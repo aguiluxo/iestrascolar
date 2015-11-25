@@ -55,7 +55,7 @@ class ActividadController extends AppController
 
     /* Función AJAX que envía la programación comprendida entre dos fechas */
     public function getProgramacion(){
-        $this->request->onlyAllow('ajax');
+        Cake\Network\Request::allowMethod('ajax');
 
         $conditions = array();
 
