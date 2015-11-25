@@ -4,7 +4,6 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Network\Response;
-use Cake\Network\Http\Client;
 
 /**
  * Actividad Controller
@@ -70,11 +69,18 @@ class ActividadController extends AppController
             'fecha_fin <=' => date('Y-m-d', substr($to, 0, -3)) . ' 23:59:59',
         );
 
-        $eventos = $this->Actividad->find('all', array(
-            'conditions' => $conditions
-        ));
+        $eventos = $this->Actividad->find()->where($conditions);
 
         $calendario = $this->_getCalendario($eventos);
+        $this->autoRender = false;
+        $this->response->type('json');
+        $data = array('status' => 'o', 'status_message' => 'ok');
+        $this->response->body(json_encode(array(
+            'success' => 1,
+            'result' => $calendario
+        )));
+        $this->response->send();
+        exit();
 
         // return new CakeResponse(array(
         //     'type' => 'json',
@@ -83,13 +89,6 @@ class ActividadController extends AppController
         //         'result' => $calendario
         //     )),
         // ));
-        $http = new Client();
-        return $http->get(array(
-            'type' => 'json',
-            'body' => json_encode(array(
-                'success' => 1,
-                'result' => $calendario
-            ))));
 
     }
 
@@ -99,20 +98,19 @@ class ActividadController extends AppController
 
         foreach($eventos as $k => $evento){
 
-
-            $fecha_comienzo = date('H:i', strtotime($evento['Actividad']['fecha_ini']));
-            $fecha_fin = date('H:i', strtotime($evento['Actividad']['fecha_fin']));
-            $url = "javascript:modalEditEvento({$evento['Actividad']['id']})";
+            $fecha_ini = date('H:i', strtotime($evento->fecha_ini));
+            $fecha_fin = date('H:i', strtotime($evento->fecha_fin));
+            $url = "javascript:modalEditEvento({$evento->id})";
             $calendario[] = array(
-                'id' => $evento['Actividad']['id'],
-                'title' => $evento['Actividad']['nombre'] . " ({$fecha_ini} - {$fecha_fin})",
-                'start' => strtotime($evento['Actividad']['fecha_ini']) . '000',
-                'end' => strtotime($evento['Actividad']['fecha_fin']) . '000',
+                'id' => $evento->id,
+                'title' => $evento->titulo . " ({$fecha_ini} - {$fecha_fin})",
+                'start' => strtotime($evento->fecha_ini) . '000',
+                'end' => strtotime($evento->fecha_fin) . '000',
                 'class' => "event-important",
                 'url' => $url
             );
         }
-
         return $calendario;
+
     }
 }
