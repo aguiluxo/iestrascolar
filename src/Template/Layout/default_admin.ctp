@@ -35,8 +35,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?=$this->Html->css('/libs/jquery-ui/jquery-ui.structure.min.css')?>
     <?=$this->Html->css('/libs/jquery-ui/jquery-ui.theme.min.css')?>
     <?=$this->Html->script('/libs/jquery-ui/jquery-ui.min.js')?>
+    <?=$this->Html->css('sb-admin-2.css')?>
+    <?=$this->Html->css('metisMenu.min.css')?>
+
+
     <?=$this->Html->css('base.css')?>
-    <?=$this->Html->css('cake.css')?>
 
     <!-- Mis estilos -->
     <?=$this->Html->css('default_backend.css')?>
@@ -51,28 +54,27 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?=$this->fetch('script')?>
 </head>
 <body>
-    <header>
 
-        <div class="header-title">
-        <?php
-            if($this->view =='login'){
-                echo $this->fetch('title');
-            }
-            else{
-                echo $this->element('Admin/navbar');
-            }
-         ?>
 
-        </div>
-    </header>
-    <div id="container">
 
-        <div id="content">
+    <div id="container" class="container-fluid">
+
+        <div id="content" class="row">
             <?=$this->Flash->render()?>
             <?=$this->Flash->render('auth')?>
-
-            <div class="row contenido">
-                <?=$this->fetch('content')?>
+                         <?php
+                    if($this->view =='login'){
+                        echo $this->fetch('title');
+                    }
+                    else{
+                        echo "<div class='col-md-4'>";
+                            echo $this->element('Admin/menu');
+                        echo "</div>";
+                    }
+                 ?>
+                 <div class="col-md-8">
+                    <?=$this->fetch('content')?>
+                 </div>
             </div>
         </div>
         <footer>

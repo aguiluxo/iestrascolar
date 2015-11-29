@@ -1,11 +1,23 @@
 $(function(){
+
 	var calendar = $("#calendar").calendar(
 	    {
 	        language: 'es-ES',
 	        tmpl_path: "libs/bootstrap-calendar/tmpls/",
-	        events_source: 'getProgramacion',
-	        modal: "#modalViewActividad"
+	        tmp_cache: true,
+	        events_source: 	"getProgramacion",
+	        time_start: '00:00',
+	        time_end: '24:00',
+	        time_split: '60',
+	        onAfterViewLoad: function(view) {
+	        	$('h3.tituloModal').text(this.getTitle());
+				var fecha_actual = this.getStartDate();
+
+				$('.btn-group button').removeClass('active');
+				$('button[data-calendar-view="' + view + '"]').addClass('active');
+	        }
     	});
+
 
 	$('.btn-group button[data-calendar-nav]').each(function() {
 	var $this = $(this);
@@ -30,10 +42,11 @@ $(function(){
 	});
 	calendar.view();
 	});
+})
 
-	function modalEditEvento(id) {
+function modalLaunchActividad(id) {
 	var url_base = $('.programaciones-index #calendar').data('url');
-
+	alert(url_base);
 	// $('#modalViewActividad').load(url_base + '/formEditEvento/' + id, '', function() {
 	// $('#modalViewActividad').modal({
 	// 'width': '70%',
@@ -41,4 +54,3 @@ $(function(){
 	// });
 	// });
 	}
-})

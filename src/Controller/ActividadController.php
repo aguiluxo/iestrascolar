@@ -18,7 +18,8 @@ class ActividadController extends AppController
      *
      * @return void
      */
-    public function beforeFilter(Event $event){
+    public function beforeFilter(Event $event)
+    {
         parent::beforeFilter($event);
         $this->set('pagina', 'actividades');
     }
@@ -41,12 +42,11 @@ class ActividadController extends AppController
     public function view($id = null)
     {
         $actividad = $this->Actividad->get($id, [
-            'contain' => ['Curso', 'Profesor', 'Destacado']
+            'contain' => ['Curso', 'Profesor', 'Destacado'],
         ]);
         $this->set('actividad', $actividad);
         $this->set('_serialize', ['actividad']);
     }
-
 
     public function calendario()
     {
@@ -54,11 +54,11 @@ class ActividadController extends AppController
     }
 
     /* Función AJAX que envía la programación comprendida entre dos fechas */
-    public function getProgramacion(){
+    public function getProgramacion()
+    {
         // $this->request->onlyAllow('ajax');
 
         $conditions = array();
-
 
         $from = $this->request->query['from'];
         $to = $this->request->query['to'];
@@ -77,37 +77,30 @@ class ActividadController extends AppController
         $data = array('status' => 'o', 'status_message' => 'ok');
         $this->response->body(json_encode(array(
             'success' => 1,
-            'result' => $calendario
+            'result' => $calendario,
         )));
         $this->response->send();
         exit();
 
-        // return new CakeResponse(array(
-        //     'type' => 'json',
-        //     'body' => json_encode(array(
-        //         'success' => 1,
-        //         'result' => $calendario
-        //     )),
-        // ));
-
     }
 
     /* Formatea los eventos al formato de Bootstrap calendar */
-    private function _getCalendario($eventos){
+    private function _getCalendario($eventos)
+    {
         $calendario = array();
 
-        foreach($eventos as $k => $evento){
+        foreach ($eventos as $k => $evento) {
 
             $fecha_ini = date('H:i', strtotime($evento->fecha_ini));
             $fecha_fin = date('H:i', strtotime($evento->fecha_fin));
-            $url = "javascript:modalViewActividad({$evento->id})";
+            $url = "javascript:modalLaunchActividad({$evento->id})";
             $calendario[] = array(
                 'id' => $evento->id,
                 'title' => $evento->titulo . " ({$fecha_ini} - {$fecha_fin})",
                 'start' => strtotime($evento->fecha_ini) . '000',
                 'end' => strtotime($evento->fecha_fin) . '000',
-                'class' => "event-important",
-                'url' => $url
+                'class' => "event-success",
+                'url' => $url,
             );
         }
         return $calendario;

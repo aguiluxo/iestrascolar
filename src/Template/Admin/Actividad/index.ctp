@@ -1,10 +1,5 @@
-<?php $this->assign('title', __('Iestrascolar | Listado de actividades')); ?>
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Acciones') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('Nueva actividad'), ['action' => 'add']) ?></li>
-    </ul>
-</div>
+<?php $this->assign('title', __('Iestrascolar    | Listado de actividades')); ?>
+
 <div class="actividad index large-10 medium-9 columns">
     <?php echo $this->element('menu_busqueda') ?>
     <table cellpadding="0" cellspacing="0">
@@ -12,11 +7,8 @@
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
             <th><?= $this->Paginator->sort('titulo') ?></th>
-            <th><?= $this->Paginator->sort('fecha_ini') ?></th>
-            <th><?= $this->Paginator->sort('fecha_fin') ?></th>
-            <th><?= $this->Paginator->sort('destacada') ?></th>
-            <th><?= $this->Paginator->sort('created', ['label' => 'Creada']) ?></th>
-            <th><?= $this->Paginator->sort('modified', ['label' => 'Modificada']) ?></th>
+            <th><?= $this->Paginator->sort('fecha_ini', ['label' => 'Fecha de inicio']) ?></th>
+            <th><?= $this->Paginator->sort('fecha_fin', ['label' => 'Fecha fin']) ?></th>
             <th class="actions"><?= __('Acciones') ?></th>
         </tr>
     </thead>
@@ -27,9 +19,6 @@
             <td><?= h($actividad->titulo) ?></td>
             <td><?= h($actividad->fecha_ini) ?></td>
             <td><?= h($actividad->fecha_fin) ?></td>
-            <td><?= $actividad->destacada == 1? __("Sí"):__('No') ?></td>
-            <td><?= h($actividad->created) ?></td>
-            <td><?= h($actividad->modified) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('Ver'), ['action' => 'view', $actividad->id]) ?>
                 <?= $this->Html->link(__('Editar'), ['action' => 'edit', $actividad->id]) ?>
