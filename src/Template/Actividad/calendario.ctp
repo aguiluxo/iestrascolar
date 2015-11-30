@@ -38,6 +38,9 @@
                 <h3 class = "tituloModal" id="tituloModal"></h3>
             </div>
             <div class="modal-body" style="height: 400px">
+            <p class="contenidoActividad">
+
+            </p>
             </div>
             <div class="modal-footer">
                 <a href="#" data-dismiss="modal" class="btn">Cerrar</a>

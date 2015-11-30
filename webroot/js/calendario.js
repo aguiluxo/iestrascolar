@@ -44,9 +44,11 @@ $(function(){
 	});
 })
 
-function modalLaunchActividad(id) {
+function modalLaunchActividad(id, nombre, fecha_ini,fecha_fin,descripcion) {
 	var url_base = $('.programaciones-index #calendar').data('url');
 	$('#modalViewActividad').modal('show');
+	$('h3.tituloModal').text(titulo);
+	$('.modal-body .contenidoActividad').text(descripcion)
 	// $('#modalViewActividad').load(url_base + '/formEditEvento/' + id, '', function() {
 	// $('#modalViewActividad').modal({
 	// 'width': '70%',
