@@ -40,6 +40,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 
     <?=$this->Html->css('base.css')?>
+    <?=$this->Html->css('cake.css')?>
 
     <!-- Mis estilos -->
     <?=$this->Html->css('default_backend.css')?>
@@ -67,6 +68,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         echo $this->fetch('title');
                     }
                     else{
+                        echo $this->element('Admin/navbar');
                         // echo "<div class='col-md-4'>";
                         //     echo $this->element('Admin/menu');
                         // echo "</div>";
