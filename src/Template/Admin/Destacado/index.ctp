@@ -1,12 +1,4 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Destacado'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Actividad'), ['controller' => 'Actividad', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Actividad'), ['controller' => 'Actividad', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="destacado index large-9 medium-8 columns content">
+<div class="destacado index large-12 medium-12 columns content">
     <h3><?= __('Destacado') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
@@ -30,7 +22,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('Ver'), ['action' => 'view', $destacado->id]) ?>
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $destacado->id]) ?>
-                    <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $destacado->id], ['confirm' => __('Are you sure you want to delete # {0}?', $destacado->id)]) ?>
+                    <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $destacado->id], ['confirm' => __('Estás seguro de que deseas borrar # {0}?', $destacado->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -38,9 +30,9 @@
     </table>
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->next(__('siguiente') . ' >') ?>
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>

@@ -1,14 +1,8 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Profesor'), ['action' => 'edit', $profesor->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Profesor'), ['action' => 'delete', $profesor->id], ['confirm' => __('Are you sure you want to delete # {0}?', $profesor->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Profesor'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Profesor'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Departamento'), ['controller' => 'Departamento', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Departamento'), ['controller' => 'Departamento', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Actividad'), ['controller' => 'Actividad', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Actividad'), ['controller' => 'Actividad', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Nuevo Profesor'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Lista Profesores'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
 <div class="profesor view large-9 medium-8 columns content">

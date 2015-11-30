@@ -1,11 +1,8 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Profesor'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Departamento'), ['controller' => 'Departamento', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Departamento'), ['controller' => 'Departamento', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Actividad'), ['controller' => 'Actividad', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Actividad'), ['controller' => 'Actividad', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nuevo Profesor'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Lista Profesores'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
 <div class="profesor form large-9 medium-8 columns content">
