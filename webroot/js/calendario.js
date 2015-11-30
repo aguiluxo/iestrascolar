@@ -10,7 +10,7 @@ $(function(){
 	        time_end: '24:00',
 	        time_split: '60',
 	        onAfterViewLoad: function(view) {
-	        	$('h3.tituloModal').text(this.getTitle());
+	        	$('h3.mesCalendarioVista').text(this.getTitle());
 				var fecha_actual = this.getStartDate();
 
 				$('.btn-group button').removeClass('active');
