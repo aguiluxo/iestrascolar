@@ -6,7 +6,10 @@
 <?=$this->Html->script('calendario.js')?>
 
 <div class="row">
-	<div class="pull-right form-inline col-md-12" style="text-align: center;">
+	<div class="col-md-6">
+     <h3 id="mesCalendarioVista"></h3>
+    </div>
+    <div class="pull-right form-inline col-md-6" style="text-align: center;">
 	<div class="btn-group align-center">
 	<button class="btn btn-sm btn-primary" data-calendar-nav="prev"><< <?php echo __('Ant.'); ?></button>
 	<button class="btn btn-sm btn-default" data-calendar-nav="today"><?php echo __('Hoy'); ?></button>
