@@ -46,7 +46,7 @@ $(function(){
 
 function modalLaunchActividad(id) {
 	var url_base = $('.programaciones-index #calendar').data('url');
-	alert(url_base);
+	$('#modalViewActividad').modal('show');
 	// $('#modalViewActividad').load(url_base + '/formEditEvento/' + id, '', function() {
 	// $('#modalViewActividad').modal({
 	// 'width': '70%',
