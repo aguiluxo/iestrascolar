@@ -59,7 +59,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <div id="container" class="container-fluid">
 
-        <div id="content" class="row">
+        <!-- <div id="content" class="row"> -->
             <?=$this->Flash->render()?>
             <?=$this->Flash->render('auth')?>
                          <?php
@@ -67,15 +67,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         echo $this->fetch('title');
                     }
                     else{
-                        echo "<div class='col-md-4'>";
-                            echo $this->element('Admin/menu');
-                        echo "</div>";
+                        // echo "<div class='col-md-4'>";
+                        //     echo $this->element('Admin/menu');
+                        // echo "</div>";
                     }
                  ?>
-                 <div class="col-md-8">
+                 <!-- <div class="col-md-8"> -->
                     <?=$this->fetch('content')?>
-                 </div>
-            </div>
+                 <!-- </div> -->
+            <!-- </div> -->
         </div>
         <footer>
         </footer>
