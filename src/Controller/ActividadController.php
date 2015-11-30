@@ -93,7 +93,7 @@ class ActividadController extends AppController
 
             $fecha_ini = date('H:i', strtotime($evento->fecha_ini));
             $fecha_fin = date('H:i', strtotime($evento->fecha_fin));
-            $url = "javascript:modalLaunchActividad({$evento->id}, {$evento->titulo}, {$evento->fecha_ini},{$evento->fecha_fin}, {$evento->descripcion})";
+            $url = "javascript:modalLaunchActividad({$evento->id}, {$evento->titulo},{$evento->descripcion})";
             $calendario[] = array(
                 'id' => $evento->id,
                 'title' => $evento->titulo . " ({$fecha_ini} - {$fecha_fin})",
