@@ -61,7 +61,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <div id="container" class="container-fluid">
 
         <!-- <div id="content" class="row"> -->
-            <?=$this->Flash->render()?>
+            <div class="row"><?=$this->Flash->render()?></div>
             <?=$this->Flash->render('auth')?>
                          <?php
                     if($this->view =='login'){
