@@ -1,5 +1,7 @@
 // General
-
+body{
+	margin-top: 100px;
+}
 .oculto{
 	display:none;
 }
@@ -12,22 +14,6 @@
 
 // Menú
 
-.navbar-default{
-	background-color:inherit;
-	border:none;
-
-	.navbar-nav>li>a{
-		color:white;
-		&:hover{
-			color:#8D6E65
-		}
-	}
-	.navbar-brand{
-		color:white;
-	}
-
-}
-
 .enlaceHome:before{
 	content: "\f015";
     font-family: FontAwesome;
@@ -35,9 +21,16 @@
     position:absolute;
 }
 
+.zonaUsuarioContainer{
+	height:50px;
+}
 .panelUsuario{
 	top:-15px;
+	&>a{
+		padding-bottom: 0!important;
+	}
 }
+
 
 // Búsqueda
 .cajaBusqueda{
@@ -57,5 +50,19 @@
 	margin-left: 20px;
 	&:hover{
 		background-color:#8D6E65;
+	}
+}
+
+/*Vista edit de actividad */
+
+.contenedorTrimestre{
+	span{
+		display:block;
+	}
+	label {
+		display:inline-block;
+	}
+	input[type=radio]{
+		margin-left: 0.5em;
 	}
 }

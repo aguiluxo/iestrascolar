@@ -96,10 +96,6 @@ class ActividadController extends AdminController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $this->request->data['user_id'] = $this->Auth->user('id');
-
-             $trimestres = $this->_getFechasTrimestres();
-             $trimestre = $this->_getTrimestre($trimestres, $this->request->data['fecha_ini']);
-            $this->request->data['trimestre'] = $trimestre;
         }
 
         $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
@@ -121,13 +117,18 @@ class ActividadController extends AdminController
                     $idActividad = $id;
                     $destacados = TableRegistry::get('Destacado');
                     $destacado = $destacados->find('all')->where(['actividad_id' => $id])->first();
-                    $destacados->delete($destacado);
+                    if ($destacado) {
+                        $destacados->delete($destacado);
+                    }
                 }
+            else if ($this->request->data['destacada'] == '1'){
+                $this->_guardaDestacado($id);
+            }
             if ($this->Actividad->save($actividad)) {
-                $this->Flash->success(__('The actividad has been saved.'));
+                $this->Flash->success(__('La actividad ha sido modificada.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The actividad could not be saved. Please, try again.'));
+                $this->Flash->error(__('La actividad no ha podido ser editada. Por favor, prueba de nuevo'));
             }
         }
         $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
@@ -165,44 +166,6 @@ class ActividadController extends AdminController
         $destacadoTable->save($destacado);
     }
 
-    private function _getFechasTrimestres($fecha = null)
-    {
-        $this->loadModel('Trimestre');
-        $trimestres = $this->Trimestre->find('all', [
-            'field' => ['fecha_inicio']
-        ]);
-        return $trimestres;
-
-    }
-
-    private function _getTrimestre($fechasTrimestres,$fecha)
-    {
-
-        foreach ($fechasTrimestres as $key => $fechaTrimestre) {
-            if ($key==0) {
-                $primerTrimestre = $fechaTrimestre->fecha_inicio;
-                $primerTrimestre = date('Y-m-d',strtotime($primerTrimestre));
-            }
-            else if($key == 1){
-                $segundoTrimestre = date('Y-m-d',strtotime($fechaTrimestre->fecha_inicio));
-            }
-            else{
-                $tercerTrimestre = date('Y-m-d',strtotime($fechaTrimestre->fecha_inicio));
-            }
-        }
-
-
-           if ($fecha >= $primerTrimestre && $fecha < $segundoTrimestre) {
-               return 1;
-           }
-           if ($fecha >= $segundoTrimestre && $fecha < $tercerTrimestre){
-            return 2;
-           }
-           if ($fecha >= $tercerTrimestre){
-            return 3;
-        }
-        return null;
-    }
     private function _compruebaMaximoActividadesPorCurso($cursos)
     {
         $listaCursos = "";

@@ -24,7 +24,7 @@
   box-sizing: border-box;
   float: left;
   margin-left: 0%;
-  *margin-left: -0.05213764337851929%;
+  *margin-left: -0.05213764%;
 }
 .cal-row-fluid [class*="cal-cell"]:first-child {
   margin-left: 0;

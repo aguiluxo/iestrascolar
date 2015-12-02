@@ -1,31 +1,25 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?=__('Acciones')?></h3>
-    <ul class="side-nav">
-        <li><?=$this->Form->postLink(
-__('Borrar'),
-['action' => 'delete', $actividad->id],
-['confirm' => __('Estás seguro de que deseas borrar la actividad # {0}?', $actividad->id)]
-)
-?></li>
-        <li><?=$this->Html->link(__('Listado de Actividades'), ['action' => 'index'])?></li>
-    </ul>
-</div>
-<div class="actividad form large-10 medium-9 columns">
+
+<div class="actividad form">
     <?=$this->Form->create($actividad)?>
     <fieldset>
-        <legend><?=__('Editar Actividad')?></legend>
+        <legend><?= $this->view =='add' ?__('Añadir Actividad'):__('Editar Actividad')?></legend>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
                     <?=$this->Form->input('titulo');?>
                 </div>
-                <div class="col-md-6">
-                    <?=$this->Form->input('financiacion');?>
+                <div class="col-md-6 contenedorTrimestre">
+                    <span class="spanTrimestre">Trimestre:</span>
+                    <?=$this->Form->radio('trimestre',[
+                            ['value' => 1, 'text' => '1', 'style' => 'color:red;'],
+                            ['value' => 2, 'text' => '2', 'style' => 'color:blue;'],
+                            ['value' => 3, 'text' => '3', 'style' => 'color:green;']
+                        ], ['class' => 'botonesTrimestre'])?>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <?=$this->Munruiz->fecha('fecha_ini', ['label' => 'Fecha de inicio']);?>
+                    <?=$this->Munruiz->fecha('fecha_ini', ['label' => 'Fecha de inicio', 'data-fecha' =>'copiar']);?>
                 </div>
                 <div class="col-md-6">
                     <?=$this->Munruiz->fecha('fecha_fin', ['label' => 'Fecha finalización']);?>
@@ -71,4 +65,15 @@ __('Borrar'),
     <?=$this->Form->button(__('Enviar'))?>
 </div>
 
-
+<script>
+    $('#fecha_inidatepicker').change(function(){
+        if($('#fecha_findatepicker').val() ==""){
+            var fecha = $('#fecha_inidatepicker').val();
+            $('#fecha_findatepicker').val(fecha);
+            console.log(fecha);
+            fecha = fecha.split('-');
+            var fechaFormateada = fecha[2] + "-" + fecha[1] + "-" + fecha[0];
+            $('#fecha_fincake').val(fechaFormateada);
+        }
+    })
+</script>

@@ -24,7 +24,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?=$this->fetch('title')?>
     </title>
     <?=$this->Html->meta('icon')?>
-    <?=$this->Html->css('/libs/bootstrap/css/bootstrap.min.css')?>
+    <?=$this->Html->css('/libs/bootstrap/css/bootstrap.ceruleantheme.min.css')?>
 
 <!--      JQUERY + BOOTSTRAP + FONTS AWESOME + SUMMERNOTE + DATEPICKER + CAKE ESTILOS -->
     <?=$this->Html->script('/libs/jquery-2.1.4.min.js')?>
@@ -35,8 +35,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?=$this->Html->css('/libs/jquery-ui/jquery-ui.structure.min.css')?>
     <?=$this->Html->css('/libs/jquery-ui/jquery-ui.theme.min.css')?>
     <?=$this->Html->script('/libs/jquery-ui/jquery-ui.min.js')?>
-    <?=$this->Html->css('sb-admin-2.css')?>
-    <?=$this->Html->css('metisMenu.min.css')?>
 
 
     <?=$this->Html->css('base.css')?>
