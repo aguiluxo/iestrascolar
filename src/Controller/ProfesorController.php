@@ -1,20 +1,16 @@
 <?php
-namespace App\Controller\Admin;
-use Cake\Event\Event;
+namespace App\Controller;
+
+use App\Controller\AppController;
 
 /**
  * Profesor Controller
  *
  * @property \App\Model\Table\ProfesorTable $Profesor
  */
-class ProfesorController extends AdminController
+class ProfesorController extends AppController
 {
 
-public function beforeFilter(Event $event)
-    {
-        parent::beforeFilter($event);
-        $this->set('menuActivo', 'profesores');
-    }
     /**
      * Index method
      *
@@ -23,7 +19,7 @@ public function beforeFilter(Event $event)
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Departamento']
+            'contain' => ['Departamento', 'Users']
         ];
         $this->set('profesor', $this->paginate($this->Profesor));
         $this->set('_serialize', ['profesor']);
@@ -39,7 +35,7 @@ public function beforeFilter(Event $event)
     public function view($id = null)
     {
         $profesor = $this->Profesor->get($id, [
-            'contain' => ['Departamento','Actividad', 'Curso']
+            'contain' => ['Departamento', 'Users', 'Actividad', 'Curso']
         ]);
         $this->set('profesor', $profesor);
         $this->set('_serialize', ['profesor']);
@@ -56,15 +52,17 @@ public function beforeFilter(Event $event)
         if ($this->request->is('post')) {
             $profesor = $this->Profesor->patchEntity($profesor, $this->request->data);
             if ($this->Profesor->save($profesor)) {
-                $this->Flash->success(__('El profesor ha sido añadido.'));
+                $this->Flash->success(__('The profesor has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('El profesor no ha podido ser añadido. Por favor, prueba de nuevo.'));
+                $this->Flash->error(__('The profesor could not be saved. Please, try again.'));
             }
         }
         $departamento = $this->Profesor->Departamento->find('list', ['limit' => 200]);
+        $users = $this->Profesor->Users->find('list', ['limit' => 200]);
+        $actividad = $this->Profesor->Actividad->find('list', ['limit' => 200]);
         $curso = $this->Profesor->Curso->find('list', ['limit' => 200]);
-        $this->set(compact('profesor', 'departamento', 'curso'));
+        $this->set(compact('profesor', 'departamento', 'users', 'actividad', 'curso'));
         $this->set('_serialize', ['profesor']);
     }
 
@@ -78,20 +76,22 @@ public function beforeFilter(Event $event)
     public function edit($id = null)
     {
         $profesor = $this->Profesor->get($id, [
-            'contain' => ['Curso']
+            'contain' => ['Actividad', 'Curso']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $profesor = $this->Profesor->patchEntity($profesor, $this->request->data);
             if ($this->Profesor->save($profesor)) {
-                $this->Flash->success(__('El profesor ha sido modificado.'));
+                $this->Flash->success(__('The profesor has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('El profesor no ha podido ser modificado. Por favor, prueba de nuevo.'));
+                $this->Flash->error(__('The profesor could not be saved. Please, try again.'));
             }
         }
         $departamento = $this->Profesor->Departamento->find('list', ['limit' => 200]);
+        $users = $this->Profesor->Users->find('list', ['limit' => 200]);
+        $actividad = $this->Profesor->Actividad->find('list', ['limit' => 200]);
         $curso = $this->Profesor->Curso->find('list', ['limit' => 200]);
-        $this->set(compact('profesor', 'departamento', 'curso'));
+        $this->set(compact('profesor', 'departamento', 'users', 'actividad', 'curso'));
         $this->set('_serialize', ['profesor']);
     }
 
@@ -99,7 +99,7 @@ public function beforeFilter(Event $event)
      * Delete method
      *
      * @param string|null $id Profesor id.
-     * @return void Redirects to index.
+     * @return \Cake\Network\Response|null Redirects to index.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function delete($id = null)

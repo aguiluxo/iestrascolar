@@ -34,6 +34,11 @@ class CursoTable extends Table
             'targetForeignKey' => 'actividad_id',
             'joinTable' => 'actividad_curso'
         ]);
+       $this->belongsToMany('Profesor', [
+            'foreignKey' => 'curso_id',
+            'targetForeignKey' => 'profesor_id',
+            'joinTable' => 'curso_profesor'
+        ]);
     }
 
     /**

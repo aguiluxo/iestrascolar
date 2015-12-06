@@ -35,5 +35,5 @@
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('siguiente') . ' >') ?>
         </ul>
-        <p><?= $this->Paginator->counter() ?></p>
+        <p><?= $this->Paginator->counter(__('{{page}} de {{pages}}')) ?></p>
     </div>

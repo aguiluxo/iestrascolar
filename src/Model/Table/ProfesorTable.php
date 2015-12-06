@@ -71,6 +71,13 @@ class ProfesorTable extends Table
             'targetForeignKey' => 'actividad_id',
             'joinTable' => 'actividad_profesor'
         ]);
+        $this->belongsToMany('Curso', [
+            'foreignKey' => 'profesor_id',
+            'targetForeignKey' => 'curso_id',
+            'joinTable' => 'curso_profesor'
+        ]);
+
+
     }
 
     /**
@@ -129,7 +136,7 @@ class ProfesorTable extends Table
     {
         $rules->add($rules->isUnique(['email']));
         $rules->add($rules->existsIn(['departamento_id'], 'Departamento'));
-        $rules->add($rules->existsIn(['user_id'], 'Users'));
+        // $rules->add($rules->existsIn(['user_id'], 'Users'));
         return $rules;
     }
 }

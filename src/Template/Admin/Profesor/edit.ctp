@@ -15,6 +15,8 @@
             echo $this->Form->input('email');
             echo $this->Form->input('telefono');
             echo $this->Form->input('imagen', ['type' => 'file']);
+            echo $this->Form->input('curso._ids', ['options' => $curso, 'multiple' => 'checkbox']);
+
         ?>
     </fieldset>
     <?= $this->Form->button(__('Enviar')) ?>

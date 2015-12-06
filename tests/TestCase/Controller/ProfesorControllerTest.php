@@ -17,12 +17,13 @@ class ProfesorControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'app.profesor',
-        'app.departmento',
+        'app.departamento',
         'app.users',
         'app.actividad',
         'app.destacado',
         'app.curso',
         'app.actividad_curso',
+        'app.curso_profesor',
         'app.actividad_profesor'
     ];
 

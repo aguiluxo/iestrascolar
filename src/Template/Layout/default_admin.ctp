@@ -13,7 +13,6 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,7 +25,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?=$this->Html->meta('icon')?>
     <?=$this->Html->css('/libs/bootstrap/css/bootstrap.ceruleantheme.min.css')?>
 
-<!--      JQUERY + BOOTSTRAP + FONTS AWESOME + SUMMERNOTE + DATEPICKER + CAKE ESTILOS -->
+<!--      JQUERY + BOOTSTRAP + FONTS AWESOME + SUMMERNOTE + DATEPICKER + CAKE ESTILOS + DATETIMEPICKER -->
     <?=$this->Html->script('/libs/jquery-2.1.4.min.js')?>
     <?=$this->Html->script('/libs/bootstrap/js/bootstrap.min.js')?>
     <?=$this->Html->css('/libs/font-awesome/css/font-awesome.min.css')?>
@@ -35,7 +34,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?=$this->Html->css('/libs/jquery-ui/jquery-ui.structure.min.css')?>
     <?=$this->Html->css('/libs/jquery-ui/jquery-ui.theme.min.css')?>
     <?=$this->Html->script('/libs/jquery-ui/jquery-ui.min.js')?>
-
+    <?=$this->Html->css('/libs/datetimepicker/jquery-ui-timepicker-addon.css')?>
+    <?=$this->Html->script('/libs/datetimepicker/jquery-ui-timepicker-addon.js')?>
 
     <?=$this->Html->css('base.css')?>
     <?=$this->Html->css('cake.css')?>
@@ -62,10 +62,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <div class="row"><?=$this->Flash->render()?></div>
             <?=$this->Flash->render('auth')?>
                          <?php
-                    if($this->view =='login'){
-                        echo $this->fetch('title');
-                    }
-                    else{
+                    if($this->view !='login'){
                         echo $this->element('Admin/navbar');
                         // echo "<div class='col-md-4'>";
                         //     echo $this->element('Admin/menu');

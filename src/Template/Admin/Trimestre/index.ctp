@@ -1,7 +1,6 @@
     <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th><?= $this->Paginator->sort('id') ?></th>
                 <th><?= $this->Paginator->sort('trimestre') ?></th>
                 <th><?= $this->Paginator->sort('fecha_inicio') ?></th>
                 <th><?= $this->Paginator->sort('fecha_fin') ?></th>
@@ -11,7 +10,6 @@
         <tbody>
             <?php foreach ($trimestre as $trimestre): ?>
             <tr>
-                <td><?= $this->Number->format($trimestre->id) ?></td>
                 <td><?= $this->Number->format($trimestre->trimestre) ?></td>
                 <td><?= h($trimestre->fecha_inicio) ?></td>
                 <td><?= h($trimestre->fecha_fin) ?></td>

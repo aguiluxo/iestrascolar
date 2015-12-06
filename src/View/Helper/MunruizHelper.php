@@ -117,6 +117,78 @@ echo $this->Form->select($name, $iconos,$options);
 	 * @return string
 	 */
 
+function datetimepicker($name, $options = array(), $options_input = array()){
+
+        $default = array(
+            // El label por defecto
+            'label' => __('Fecha'),
+            'placeholder' => false,
+            'style' => null,
+            'required' => false,
+            'class' => 'form-control timepicker',
+        );
+
+
+        $options += $default;
+
+        $datetimepicker_fecha = $name . "datetimepicker";
+
+        $default_input = array(
+            'type' => 'text',
+            'label' => $options['label'],
+            'class' => $options['class'],
+            'placeholder' => $options['placeholder'],
+            'style' => $options['style'],
+            'required' => $options['required'],
+            'data-field' => $name,
+            'id' => $datetimepicker_fecha
+        );
+
+
+        $options_input += $default_input;
+
+
+        ob_start();
+
+
+        echo $this->Form->input($datetimepicker_fecha, $options_input);
+        $idInputOculto = $name . "cake";
+
+
+
+        echo $this->Form->hidden($name, array('id' => $idInputOculto));
+
+
+        echo $this->Html->scriptBlock(
+            "$('#{$datetimepicker_fecha}').datetimepicker({
+                'altField': '#{$idInputOculto}',
+                'altFieldTimeOnly': false,
+                'altFormat': 'yy-mm-dd',
+                'dateFormat': 'dd-mm-yy',
+                'timeFormat': 'HH:mm',
+            });
+
+            //Si hay una hora en el campo hidden se la paso al timepicker
+            var fecha = $('#$idInputOculto}').val();
+            if(fecha && fecha != '0000-00-00 00:00:00'){
+
+                var date = new Date(fecha);
+                var yr = date.getFullYear();
+                var month = ('0' + (date.getMonth() + 1)).slice(-2)
+                var day = ('0' + date.getDate()).slice(-2)
+                var h = ('0' + date.getHours()).slice(-2)
+                var m = ('0' + date.getMinutes()).slice(-2)
+                var newTime = h + ':' + m;
+                var newDate = day + '-' + month + '-' + yr + ' ' + newTime;
+                $('#{$datetimepicker_fecha}').datetimepicker('setTime', newDate);
+                $('#{$datetimepicker_fecha}').datetimepicker('setDate', newDate);
+            }"
+        );
+
+        return ob_get_clean();
+
+    }
+
 	function fecha($name, $options = array(), $options_input = array(), $value = ''){
 		$default = array(
             // El label por defecto

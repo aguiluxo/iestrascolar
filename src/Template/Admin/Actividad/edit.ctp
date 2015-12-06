@@ -19,7 +19,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <?=$this->Munruiz->fecha('fecha_ini', ['label' => 'Fecha de inicio', 'data-fecha' =>'copiar']);?>
+                    <?=$this->Munruiz->datetimepicker('fecha_ini', ['label' => 'Fecha de inicio', 'data-fecha' =>'copiar']);?>
                 </div>
                 <div class="col-md-6">
                     <?=$this->Munruiz->fecha('fecha_fin', ['label' => 'Fecha finalización']);?>
@@ -66,14 +66,14 @@
 </div>
 
 <script>
-    $('#fecha_inidatepicker').change(function(){
-        if($('#fecha_findatepicker').val() ==""){
-            var fecha = $('#fecha_inidatepicker').val();
-            $('#fecha_findatepicker').val(fecha);
-            console.log(fecha);
-            fecha = fecha.split('-');
-            var fechaFormateada = fecha[2] + "-" + fecha[1] + "-" + fecha[0];
-            $('#fecha_fincake').val(fechaFormateada);
-        }
-    })
+    // $('#fecha_inidatepicker').change(function(){
+    //     if($('#fecha_findatepicker').val() ==""){
+    //         var fecha = $('#fecha_inidatepicker').val();
+    //         $('#fecha_findatepicker').val(fecha);
+    //         console.log(fecha);
+    //         fecha = fecha.split('-');
+    //         var fechaFormateada = fecha[2] + "-" + fecha[1] + "-" + fecha[0];
+    //         $('#fecha_fincake').val(fechaFormateada);
+    //     }
+    // })
 </script>
