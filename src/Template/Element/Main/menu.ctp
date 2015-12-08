@@ -26,6 +26,9 @@
         <li class="<?= ($pagina=='contacto')?'active':''?>">
           <?= $this->Html->link(__("contacto"), ['controller' => 'Actividad', 'view' => 'index']); ?>
         </li>
+        <li>
+          <?= $this->Html->link(__("Área privada"), ['controller' => 'Admin', 'view' => 'index']); ?>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <div class="form-group">

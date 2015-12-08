@@ -10,6 +10,12 @@ html {
 body {
   margin: 0;
 }
+.container-fluid, #signin_main{
+  height:100%!important;
+}
+.container-fluid{
+  padding: 0!important;
+}
 
 /* line 45, ../sass/bootstrap/_normalize.scss */
 article,

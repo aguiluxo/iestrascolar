@@ -59,8 +59,7 @@
     <div id="container" class="container-fluid">
 
         <!-- <div id="content" class="row"> -->
-            <div class="row"><?=$this->Flash->render()?></div>
-            <?=$this->Flash->render('auth')?>
+            <?=$this->Flash->render('mensajes')?>
                          <?php
                     if($this->view !='login'){
                         echo $this->element('Admin/navbar');

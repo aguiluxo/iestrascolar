@@ -27,7 +27,10 @@ class UsersController extends AdminController
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl());
             }
-            $this->Flash->error(__('Usuario o contraseña erroneos'));
+            $this->Flash->error(__('Usuario o contraseña erroneos'), [
+                'key' => 'auth'
+            ]);
+            $this->set('efecto', 'error');
         }
     }
 

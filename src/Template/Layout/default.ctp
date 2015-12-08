@@ -33,7 +33,6 @@
         <div id="content" class="row">
             <div class="clearfix"></div>
             <?php echo $this->element('Main/slider'); ?>
-            <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
         </div>
         <footer>

@@ -70,7 +70,6 @@ class ActividadController extends AppController
         );
 
         $eventos = $this->Actividad->find()->where($conditions);
-
         $calendario = $this->_getCalendario($eventos);
         $this->autoRender = false;
         $this->response->type('json');
@@ -90,9 +89,16 @@ class ActividadController extends AppController
         $calendario = array();
 
         foreach ($eventos as $k => $evento) {
-
             $fecha_ini = date('H:i', strtotime($evento->fecha_ini));
             $fecha_fin = date('H:i', strtotime($evento->fecha_fin));
+
+              $actividad = $this->Actividad->get($evento->id, [
+            'contain' => ['Curso', 'Profesor']
+        ]);
+              $cursos ="";
+              foreach ($actividad->curso as $curso) {
+                  $cursos .= " ".$curso->nombre;
+              }
             $url = "javascript:modalLaunchActividad({$evento->id}, '{$evento->titulo}','{$evento->descripcion}')";
             $calendario[] = array(
                 'id' => $evento->id,
@@ -101,9 +107,18 @@ class ActividadController extends AppController
                 'end' => strtotime($evento->fecha_fin) . '000',
                 'class' => "event-success",
                 'url' => $url,
+                'cursos' => $cursos
             );
         }
         return $calendario;
 
+    }
+    public function quees()
+    {
+
+        $eventos = $this->curso->find()->where($conditions)->contain('Curso');
+        foreach ($eventos as $evento) {
+            debug($evento);
+        }
     }
 }
