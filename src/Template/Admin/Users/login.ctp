@@ -14,7 +14,7 @@
 						  <h5>Panel de acceso</h5>
 					  </div>
 						<div id="form_1" data-animation="bounceIn" class="<?php echo isset($efecto)? 'animated bounceIn fail':'animated bounceIn'?>">
-					  		<?=$this->form->create();?>
+					  		<?=$this->Form->create();?>
 							<div class="form-header">
 							  <i class="fa fa-user <?php echo isset($efecto)? 'fail':'' ?>"></i>
 
