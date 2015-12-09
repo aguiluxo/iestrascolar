@@ -1,79 +1,130 @@
+<?php $this->start('script');?>
+	<script>
+		function actualizaFechaFin() {
+			if($('#fecha_findatetimepicker').val() ==""){
+				var fecha = $('#fecha_inidatetimepicker').val();
+				console.log(fecha);
+				fecha = fecha.split(' ');
+				var time = fecha[1];
+				time = time.split(':')
+				fecha = fecha[0].split('-');
+				time = Number(time[0])+1 + ":" + time[1];
+				var fechaFormateada = fecha[2] + "-" + fecha[1] + "-" + fecha[0] + " " + time;
+				$('#fecha_fincake').val(fechaFormateada);
+				$('#fecha_findatetimepicker').val(fecha[0] + "-" + fecha[1] + "-" + fecha[2] + " " + time);
+			}
+		}
+	</script>
+<?php $this->end();?>
+<div class="row">
+	<?=$this->Form->create($actividad, ['class' => 'form-horizontal'])?>
+   <div class="col-lg-6">
+		<div class="well bs-component">
+			<fieldset>
+			  <legend><?= $this->view =='add' ?__('Añadir Actividad'):__('Editar Actividad')?></legend>
+			  <div class="form-group">
+				<label for="tituloInput" class="col-lg-2 control-label"><?= __('Título') ?></label>
+				<div class="col-lg-10">
+					<?=$this->Form->input('titulo', ['label' => false, 'id' => 'tituloInput']);?>
+				</div>
+			  </div>
+			  <div class="form-group">
+				<label for="fecha_inidatetimepicker" class="col-lg-2 control-label">
+					<?= __('Inicio') ?> <i class="fa fa-calendar"></i>
+				</label>
+				<div class="col-lg-10">
+					<?=$this->Munruiz->datetimepicker('fecha_ini', ['label' => false], ['label' => false], "actualizaFechaFin()");?>
+			<!--       <div class="checkbox">
+					<label>
+					  <input type="checkbox"> Checkbox
+					</label>
+				  </div> -->
+				</div>
+			  </div>
+			  <div class="form-group">
+				<label for="fecha_findatetimepicker" class="col-lg-2 control-label">
+					<?= __('Fin') ?> <i class="fa fa-calendar-o"></i>
+				</label>
+				<div class="col-lg-10">
+					<?=$this->Munruiz->datetimepicker('fecha_fin', ['label' => false]);?>
+				</div>
+			  </div>
+			  <div class="form-group">
+				<label for="descripcionInput" class="col-lg-2 control-label"><?=__('Descripción')?></label>
+				<div class="col-lg-10">
+				  <?=$this->Form->input('descripcion', [
+					  'type' => 'textarea',
+					  'label' => false,
+					  'id' => 'descripcionInput'
+				   ]);?>
+				  <span class="help-block">
+					<?= __('Introduce el contenido que quieres que se refleje en el resumen de la actividad')?>
+				  </span>
+				</div>
+			  </div>
+			  <div class="form-group">
+				<label class="col-lg-2 control-label">Trimestre</label>
+				<div class="col-lg-10">
+				  <div class="radio contenedorTrimestre">
+					<?=$this->Form->radio('trimestre',[
+							['value' => 1, 'text' => '1'],
+							['value' => 2, 'text' => '2'],
+							['value' => 3, 'text' => '3']
+					], ['class' => 'botonesTrimestre'])?>
+				  </div>
+				</div>
+			  </div>
+			  <div class="checkbox">
+					<label>
+					  <?= $this->Form->checkbox('financiacion'); ?> Financiación
+					</label>
+			  </div>
+			  <div class="checkbox">
+			  		<label>
+	  					<?= $this->Form->checkbox('destacada'); ?> Destacada
+			  		</label>
+			  </div>
+			</fieldset>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="well bs-component">
+			<fieldset>
+				<legend>Cursos que asistirán</legend>
+				<div class="form-group">
+					<div class="col-xs-12">
+						<?= $this->Form->input('curso._ids', [
+							'options' => $curso,
+							'multiple' => 'checkbox',
+							'label' => false]); ?>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</div>
 
-<div class="actividad form">
-    <?=$this->Form->create($actividad)?>
-    <fieldset>
-        <legend><?= $this->view =='add' ?__('Añadir Actividad'):__('Editar Actividad')?></legend>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    <?=$this->Form->input('titulo');?>
-                </div>
-                <div class="col-md-6 contenedorTrimestre">
-                    <span class="spanTrimestre">Trimestre:</span>
-                    <?=$this->Form->radio('trimestre',[
-                            ['value' => 1, 'text' => '1', 'style' => 'color:red;'],
-                            ['value' => 2, 'text' => '2', 'style' => 'color:blue;'],
-                            ['value' => 3, 'text' => '3', 'style' => 'color:green;']
-                        ], ['class' => 'botonesTrimestre'])?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <?=$this->Munruiz->datetimepicker('fecha_ini', ['label' => 'Fecha de inicio', 'data-fecha' =>'copiar']);?>
-                </div>
-                <div class="col-md-6">
-                    <?=$this->Munruiz->fecha('fecha_fin', ['label' => 'Fecha finalización']);?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                     <?=$this->Form->input('descripcion', ['type' => 'textarea', 'label' => 'Descripción']);?>
-                    <?php //echo $this->Munruiz->editor('descripcion', ['label' => 'Descripcion', 'id' => 'summernoteCake']); ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <fieldset>
-                        <legend>Cursos que asistirán</legend>
-                        <?= $this->Form->input('curso._ids', [
-                        'options' => $curso,
-                        'multiple' => 'checkbox',
-                        'label' => false]); ?>
-                    </fieldset>
-                </div>
-                <div class="col-md-6">
-                    <fieldset><legend>Profesores que asistirán</legend>
-                        <?= $this->Form->input('profesor._ids', [
-                        'options' => $profesores,
-                        'multiple' => 'checkbox',
-                        'label' => false]); ?>
-                    </fieldset>
-                </div>
-            </div>
-        </div>
-        <?php
-        echo $this->Form->input('financiacion');
+	<div class="col-lg-6">
+		<div class="well bs-component">
+			<fieldset>
+				<legend>Profesores que asistirán</legend>
+				<div class="form-group">
+					<div class="col-xs-12">
+						<?= $this->Form->input('profesor._ids', [
+							'options' => $profesores,
+							'multiple' => 'checkbox',
+							'label' => false]); ?>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</div>
 
-        echo $this->Form->checkbox('destacada', ['id' => 'destacada']);
-        echo "Destacada";?>
 
-<!--         <div id="editorSummerNote" class="editorSummerNote">
-
-        </div> -->
-
-    </fieldset>
-    <?=$this->Form->button(__('Enviar'))?>
 </div>
-
-<script>
-    // $('#fecha_inidatepicker').change(function(){
-    //     if($('#fecha_findatepicker').val() ==""){
-    //         var fecha = $('#fecha_inidatepicker').val();
-    //         $('#fecha_findatepicker').val(fecha);
-    //         console.log(fecha);
-    //         fecha = fecha.split('-');
-    //         var fechaFormateada = fecha[2] + "-" + fecha[1] + "-" + fecha[0];
-    //         $('#fecha_fincake').val(fechaFormateada);
-    //     }
-    // })
-</script>
+<div class="row">
+	<div class="col-xs-12">
+		<button>Cancelar</button>
+		<?=$this->Form->button(__('Enviar'))?>
+	</div>
+</div>
+<?= $this->Form->end(); ?>

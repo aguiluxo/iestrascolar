@@ -17,64 +17,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <?=$this->Html->charset()?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?=$this->fetch('title')?>
-    </title>
-    <?=$this->Html->meta('icon')?>
-    <?=$this->Html->css('/libs/bootstrap/css/bootstrap.ceruleantheme.min.css')?>
+	<?=$this->Html->charset()?>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		<?=$this->fetch('title')?>
+	</title>
+	<?=$this->Html->meta('icon')?>
+	<?=$this->Html->css('/libs/bootstrap/css/bootstrap.ceruleantheme.min.css')?>
 
 <!--      JQUERY + BOOTSTRAP + FONTS AWESOME + SUMMERNOTE + DATEPICKER + CAKE ESTILOS + DATETIMEPICKER -->
-    <?=$this->Html->script('/libs/jquery-2.1.4.min.js')?>
-    <?=$this->Html->script('/libs/bootstrap/js/bootstrap.min.js')?>
-    <?=$this->Html->css('/libs/font-awesome/css/font-awesome.min.css')?>
-    <?=$this->Html->script('/libs/summernote/summernote.min.js')?>
-    <?=$this->Html->css('/libs/jquery-ui/jquery-ui.min.css')?>
-    <?=$this->Html->css('/libs/jquery-ui/jquery-ui.structure.min.css')?>
-    <?=$this->Html->css('/libs/jquery-ui/jquery-ui.theme.min.css')?>
-    <?=$this->Html->script('/libs/jquery-ui/jquery-ui.min.js')?>
-    <?=$this->Html->css('/libs/datetimepicker/jquery-ui-timepicker-addon.css')?>
-    <?=$this->Html->script('/libs/datetimepicker/jquery-ui-timepicker-addon.js')?>
+	<?=$this->Html->script('/libs/jquery-2.1.4.min.js')?>
+	<?=$this->Html->script('/libs/bootstrap/js/bootstrap.min.js')?>
+	<?=$this->Html->css('/libs/font-awesome/css/font-awesome.min.css')?>
+	<?=$this->Html->script('/libs/summernote/summernote.min.js')?>
+	<?=$this->Html->css('/libs/jquery-ui/jquery-ui.min.css')?>
+	<?=$this->Html->css('/libs/jquery-ui/jquery-ui.structure.min.css')?>
+	<?=$this->Html->css('/libs/jquery-ui/jquery-ui.theme.min.css')?>
+	<?=$this->Html->script('/libs/jquery-ui/jquery-ui.min.js')?>
+	<?=$this->Html->css('/libs/datetimepicker/jquery-ui-timepicker-addon.css')?>
+	<?=$this->Html->script('/libs/datetimepicker/jquery-ui-timepicker-addon.js')?>
 
-    <?=$this->Html->css('base.css')?>
-    <?=$this->Html->css('cake.css')?>
+	<?=$this->Html->css('base.css')?>
+	<?=$this->Html->css('cake.css')?>
 
-    <!-- Mis estilos -->
-    <?=$this->Html->css('default_backend.css')?>
+	<!-- Mis estilos -->
+	<?=$this->Html->css('default_backend.css')?>
 
-    <!-- Funciones varias -->
-    <?=$this->Html->script('cargaFunciones.js')?>
+	<!-- Funciones varias -->
+	<?=$this->Html->script('cargaFunciones.js')?>
 
 
 
-    <?=$this->fetch('meta')?>
-    <?=$this->fetch('css')?>
-    <?=$this->fetch('script')?>
+	<?=$this->fetch('meta')?>
+	<?=$this->fetch('css')?>
+	<?=$this->fetch('script')?>
 </head>
 <body>
 
+	<div id="container" class="container-fluid">
 
-
-    <div id="container" class="container-fluid">
-
-        <!-- <div id="content" class="row"> -->
-            <?=$this->Flash->render('mensajes')?>
-                         <?php
-                    if($this->view !='login'){
-                        echo $this->element('Admin/navbar');
-                        // echo "<div class='col-md-4'>";
-                        //     echo $this->element('Admin/menu');
-                        // echo "</div>";
-                    }
-                 ?>
-                 <!-- <div class="col-md-8"> -->
-                    <?=$this->fetch('content')?>
-                 <!-- </div> -->
-            <!-- </div> -->
-        </div>
-        <footer>
-        </footer>
-    </div>
+	 <?php
+		if($this->view !='login'){
+			echo $this->element('Admin/navbar');
+		}
+	 ?>
+	<?=$this->Flash->render('mensajes')?>
+		<?=$this->fetch('content')?>
+	</div>
+	<footer>
+	</footer>
 </body>
 </html>

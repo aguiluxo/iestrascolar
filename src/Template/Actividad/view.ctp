@@ -1,8 +1,16 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Nueva Actividad'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('Lista Actividades'), ['controller' => 'Actividad', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Edit Actividad'), ['action' => 'edit', $actividad->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Delete Actividad'), ['action' => 'delete', $actividad->id], ['confirm' => __('Are you sure you want to delete # {0}?', $actividad->id)]) ?> </li>
+        <li><?= $this->Html->link(__('List Actividad'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Actividad'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Destacado'), ['controller' => 'Destacado', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Destacado'), ['controller' => 'Destacado', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Curso'), ['controller' => 'Curso', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Curso'), ['controller' => 'Curso', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Profesor'), ['controller' => 'Profesor', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Profesor'), ['controller' => 'Profesor', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="actividad view large-9 medium-8 columns content">
@@ -16,10 +24,25 @@
             <th><?= __('Descripcion') ?></th>
             <td><?= h($actividad->descripcion) ?></td>
         </tr>
-
+        <tr>
+            <th><?= __('Attachment') ?></th>
+            <td><?= h($actividad->attachment) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Attachment Dir') ?></th>
+            <td><?= h($actividad->attachment_dir) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Direccion') ?></th>
+            <td><?= h($actividad->direccion) ?></td>
+        </tr>
         <tr>
             <th><?= __('Id') ?></th>
             <td><?= $this->Number->format($actividad->id) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('User Id') ?></th>
+            <td><?= $this->Number->format($actividad->user_id) ?></td>
         </tr>
         <tr>
             <th><?= __('Trimestre') ?></th>
@@ -27,19 +50,19 @@
         </tr>
         <tr>
             <th><?= __('Fecha Ini') ?></th>
-            <td><?= h($actividad->fecha_ini) . " "?></tr>
+            <td><?= h($actividad->fecha_ini) ?></td>
         </tr>
         <tr>
             <th><?= __('Fecha Fin') ?></th>
-            <td><?= h($actividad->fecha_fin) ?></tr>
+            <td><?= h($actividad->fecha_fin) ?></td>
         </tr>
         <tr>
-            <th><?= __('Creada') ?></th>
-            <td><?= h($actividad->created) ?></tr>
+            <th><?= __('Created') ?></th>
+            <td><?= h($actividad->created) ?></td>
         </tr>
         <tr>
-            <th><?= __('Modificada') ?></th>
-            <td><?= h($actividad->modified) ?></tr>
+            <th><?= __('Modified') ?></th>
+            <td><?= h($actividad->modified) ?></td>
         </tr>
         <tr>
             <th><?= __('Financiacion') ?></th>
@@ -55,7 +78,7 @@
          </tr>
     </table>
     <div class="related">
-        <h4><?= __('Cursos que asistirán') ?></h4>
+        <h4><?= __('Related Curso') ?></h4>
         <?php if (!empty($actividad->curso)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
@@ -83,13 +106,16 @@
     <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Profesores que asistirán') ?></h4>
+        <h4><?= __('Related Profesor') ?></h4>
         <?php if (!empty($actividad->profesor)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th><?= __('Id') ?></th>
                 <th><?= __('Departamento Id') ?></th>
                 <th><?= __('Nombre') ?></th>
+                <th><?= __('Email') ?></th>
+                <th><?= __('Password') ?></th>
+                <th><?= __('Role') ?></th>
                 <th><?= __('Telefono') ?></th>
                 <th><?= __('Imagen Dir') ?></th>
                 <th><?= __('Imagen') ?></th>
@@ -102,6 +128,9 @@
                 <td><?= h($profesor->id) ?></td>
                 <td><?= h($profesor->departamento_id) ?></td>
                 <td><?= h($profesor->nombre) ?></td>
+                <td><?= h($profesor->email) ?></td>
+                <td><?= h($profesor->password) ?></td>
+                <td><?= h($profesor->role) ?></td>
                 <td><?= h($profesor->telefono) ?></td>
                 <td><?= h($profesor->imagen_dir) ?></td>
                 <td><?= h($profesor->imagen) ?></td>
@@ -121,11 +150,3 @@
     <?php endif; ?>
     </div>
 </div>
-<!-- <iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY
-    &q=Space+Needle,Seattle+WA" allowfullscreen>
-</iframe> -->
-

@@ -117,8 +117,8 @@ echo $this->Form->select($name, $iconos,$options);
 	 * @return string
 	 */
 
-function datetimepicker($name, $options = array(), $options_input = array()){
-
+function datetimepicker($name, $options = array(), $options_input = array(), $onClose = false){
+//Añadido argumento $onClose, con la función para ejecutarse en el evento onCLose
         $default = array(
             // El label por defecto
             'label' => __('Fecha'),
@@ -157,33 +157,46 @@ function datetimepicker($name, $options = array(), $options_input = array()){
 
 
         echo $this->Form->hidden($name, array('id' => $idInputOculto));
+        if ($onClose == false) {
+            echo $this->Html->scriptBlock(
+                "$('#{$datetimepicker_fecha}').datetimepicker({
+                    'altField': '#{$idInputOculto}',
+                    'altFieldTimeOnly': false,
+                    'altFormat': 'yy-mm-dd',
+                    'dateFormat': 'dd-mm-yy',
+                    'timeFormat': 'HH:mm',
+                });"
+            );
+        }
+        else{
+            echo $this->Html->scriptBlock(
+                "$('#{$datetimepicker_fecha}').datetimepicker({
+                    'altField': '#{$idInputOculto}',
+                    'altFieldTimeOnly': false,
+                    'altFormat': 'yy-mm-dd',
+                    'dateFormat': 'dd-mm-yy',
+                    'timeFormat': 'HH:mm',
+                    'onClose' : function(){{$onClose}}
+                });"
+            );
+        }
 
-
-        echo $this->Html->scriptBlock(
-            "$('#{$datetimepicker_fecha}').datetimepicker({
-                'altField': '#{$idInputOculto}',
-                'altFieldTimeOnly': false,
-                'altFormat': 'yy-mm-dd',
-                'dateFormat': 'dd-mm-yy',
-                'timeFormat': 'HH:mm',
-            });
-
-            //Si hay una hora en el campo hidden se la paso al timepicker
-            var fecha = $('#$idInputOculto}').val();
-            if(fecha && fecha != '0000-00-00 00:00:00'){
-
-                var date = new Date(fecha);
-                var yr = date.getFullYear();
-                var month = ('0' + (date.getMonth() + 1)).slice(-2)
-                var day = ('0' + date.getDate()).slice(-2)
-                var h = ('0' + date.getHours()).slice(-2)
-                var m = ('0' + date.getMinutes()).slice(-2)
-                var newTime = h + ':' + m;
-                var newDate = day + '-' + month + '-' + yr + ' ' + newTime;
-                $('#{$datetimepicker_fecha}').datetimepicker('setTime', newDate);
-                $('#{$datetimepicker_fecha}').datetimepicker('setDate', newDate);
-            }"
-        );
+         echo $this->Html->scriptBlock("
+                    //Si hay una hora en el campo hidden se la paso al timepicker
+                    var fecha = $('#{$idInputOculto}').val();
+                    if(fecha && fecha != '0000-00-00 00:00:00'){
+                        var date = new Date(fecha);
+                        var yr = date.getFullYear();
+                        var month = ('0' + (date.getMonth() + 1)).slice(-2)
+                        var day = ('0' + date.getDate()).slice(-2)
+                        var h = ('0' + date.getHours()).slice(-2)
+                        var m = ('0' + date.getMinutes()).slice(-2)
+                        var newTime = h + ':' + m;
+                        var newDate = day + '-' + month + '-' + yr + ' ' + newTime;
+                        $('#{$datetimepicker_fecha}').datetimepicker('setTime', newDate);
+                        $('#{$datetimepicker_fecha}').datetimepicker('setDate', newDate);
+                    }"
+                );
 
         return ob_get_clean();
 

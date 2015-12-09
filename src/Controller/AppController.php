@@ -45,7 +45,7 @@ class AppController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('Paginator');
         Time::$defaultLocale = 'es-ES';
-        Time::setToStringFormat('dd-MM-YYYY');
+        Time::setToStringFormat('dd-MM-YYYY HH:mm');
     }
 
     public function beforeFilter(Event $event)

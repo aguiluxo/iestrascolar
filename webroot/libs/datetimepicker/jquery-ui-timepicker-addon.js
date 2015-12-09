@@ -35,18 +35,18 @@
 	var Timepicker = function () {
 		this.regional = []; // Available regional settings, indexed by language code
 		this.regional[''] = { // Default regional settings
-			currentText: 'Now',
-			closeText: 'Done',
+			currentText: 'Ahora',
+			closeText: 'OK',
 			amNames: ['AM', 'A'],
 			pmNames: ['PM', 'P'],
 			timeFormat: 'HH:mm',
 			timeSuffix: '',
-			timeOnlyTitle: 'Choose Time',
-			timeText: 'Time',
-			hourText: 'Hour',
-			minuteText: 'Minute',
-			secondText: 'Second',
-			millisecText: 'Millisecond',
+			timeOnlyTitle: 'Elije hora',
+			timeText: 'Tiempo',
+			hourText: 'Hora',
+			minuteText: 'Minuto',
+			secondText: 'Segundo',
+			millisecText: 'Milisegundo',
 			microsecText: 'Microsecond',
 			timezoneText: 'Time Zone',
 			isRTL: false
@@ -843,7 +843,6 @@
 					);
 
 			if (hasChanged) {
-
 				if (hour !== false) {
 					this.hour = hour;
 				}

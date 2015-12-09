@@ -8,8 +8,6 @@
             )
         ?></li>
         <li><?= $this->Html->link(__('List Actividad'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Destacado'), ['controller' => 'Destacado', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Destacado'), ['controller' => 'Destacado', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Curso'), ['controller' => 'Curso', 'action' => 'index']) ?></li>
@@ -23,7 +21,7 @@
     <fieldset>
         <legend><?= __('Edit Actividad') ?></legend>
         <?php
-            echo $this->Form->input('user_id', ['options' => $users, 'empty' => true]);
+            echo $this->Form->input('user_id');
             echo $this->Form->input('titulo');
             echo $this->Form->input('descripcion');
             echo $this->Form->input('fecha_ini');
@@ -33,8 +31,10 @@
             echo $this->Form->input('esta_evaluada');
             echo $this->Form->input('attachment');
             echo $this->Form->input('attachment_dir');
+            echo $this->Form->input('direccion');
+            echo $this->Form->input('destacada');
             echo $this->Form->input('curso._ids', ['options' => $curso]);
-            echo $this->Form->input('profesor._ids', ['options' => $profesores]);
+            echo $this->Form->input('profesor._ids', ['options' => $profesor]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
