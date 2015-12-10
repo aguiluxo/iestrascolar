@@ -34,11 +34,6 @@
 				</label>
 				<div class="col-lg-10">
 					<?=$this->Munruiz->datetimepicker('fecha_ini', ['label' => false], ['label' => false], "actualizaFechaFin()");?>
-			<!--       <div class="checkbox">
-					<label>
-					  <input type="checkbox"> Checkbox
-					</label>
-				  </div> -->
 				</div>
 			  </div>
 			  <div class="form-group">
@@ -96,6 +91,7 @@
 						<?= $this->Form->input('curso._ids', [
 							'options' => $curso,
 							'multiple' => 'checkbox',
+							'class' => 'dosColumnas',
 							'label' => false]); ?>
 					</div>
 				</div>
@@ -112,6 +108,7 @@
 						<?= $this->Form->input('profesor._ids', [
 							'options' => $profesores,
 							'multiple' => 'checkbox',
+							'class' => 'dosColumnas',
 							'label' => false]); ?>
 					</div>
 				</div>
