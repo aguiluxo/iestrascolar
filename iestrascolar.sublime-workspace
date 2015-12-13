@@ -92,42 +92,82 @@
 	"buffers":
 	[
 		{
-			"file": "src/View/Helper/MunruizHelper.php",
+			"file": "src/Template/Admin/Actividad/edit.ctp",
 			"settings":
 			{
-				"buffer_size": 7348,
+				"buffer_size": 3958,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/Model/Table/ProfesorTable.php",
+			"file": "src/Controller/Admin/ActividadController.php",
 			"settings":
 			{
-				"buffer_size": 4525,
+				"buffer_size": 6550,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "webroot/libs/bootstrap/css/bootstrap.ceruleantheme.min.css",
+			"settings":
+			{
+				"buffer_size": 128244,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "webroot/libs/login/login.css",
+			"file": "src/Template/Admin/Actividad/view.ctp",
 			"settings":
 			{
-				"buffer_size": 242565,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "webroot/libs/login/animacioneslogin.css",
-			"settings":
-			{
-				"buffer_size": 11581,
-				"line_ending": "Windows"
+				"buffer_size": 5199,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "src/Template/Admin/Users/login.ctp",
 			"settings":
 			{
-				"buffer_size": 4129,
+				"buffer_size": 2006,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Controller/Admin/UsersController.php",
+			"settings":
+			{
+				"buffer_size": 1005,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Controller/AppController.php",
+			"settings":
+			{
+				"buffer_size": 1492,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Template/Actividad/edit.ctp",
+			"settings":
+			{
+				"buffer_size": 2218,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "webroot/less/default_backend.less",
+			"settings":
+			{
+				"buffer_size": 822,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "webroot/libs/datetimepicker/jquery-ui-timepicker-addon.js",
+			"settings":
+			{
+				"buffer_size": 77244,
 				"line_ending": "Windows"
 			}
 		},
@@ -135,72 +175,8 @@
 			"file": "src/Template/Layout/default_admin.ctp",
 			"settings":
 			{
-				"buffer_size": 2852,
+				"buffer_size": 2227,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": " ",
-			"settings":
-			{
-				"buffer_size": 1,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/Model/Table/ProfesorTable.php",
-			"settings":
-			{
-				"buffer_size": 4525,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/Model/Table/ProfesorTable.php",
-			"settings":
-			{
-				"buffer_size": 4525,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/Model/Table/CursoTable.php",
-			"settings":
-			{
-				"buffer_size": 1651,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/Controller/ProfesorController.php",
-			"settings":
-			{
-				"buffer_size": 4097,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "config/routes.php",
-			"settings":
-			{
-				"buffer_size": 4562,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Template/Admin/Profesor/edit.ctp",
-			"settings":
-			{
-				"buffer_size": 1059,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Controller/Admin/AdminController.php",
-			"settings":
-			{
-				"buffer_size": 921,
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -299,21 +275,44 @@
 	[
 		"/C/wamp/www/iestrascolar",
 		"/C/wamp/www/iestrascolar/src",
+		"/C/wamp/www/iestrascolar/src/Template",
+		"/C/wamp/www/iestrascolar/src/Template/Actividad",
 		"/C/wamp/www/iestrascolar/webroot",
 		"/C/wamp/www/iestrascolar/webroot/libs",
+		"/C/wamp/www/iestrascolar/webroot/libs/bootstrap-calendar",
+		"/C/wamp/www/iestrascolar/webroot/libs/bootstrap-calendar/tmpls",
 		"/C/wamp/www/iestrascolar/webroot/libs/datetimepicker",
 		"/C/wamp/www/iestrascolar/webroot/libs/login"
 	],
 	"file_history":
 	[
 		"/C/wamp/www/iestrascolar/webroot/css/base.css",
-		"/C/wamp/www/iestrascolar/src/Template/Admin/Profesor/add.ctp",
-		"/C/wamp/www/iestrascolar/src/Template/Admin/Actividad/edit.ctp",
-		"/C/wamp/www/iestrascolar/src/Template/Element/menu_busqueda.ctp",
 		"/C/wamp/www/iestrascolar/src/Template/Layout/default_admin.ctp",
+		"/C/wamp/www/iestrascolar/src/Controller/Admin/UsersController.php",
+		"/C/wamp/www/iestrascolar/src/View/Helper/MunruizHelper.php",
+		"/C/wamp/www/iestrascolar/src/Controller/AppController.php",
+		"/C/wamp/www/iestrascolar/src/Template/Admin/Actividad/view.ctp",
+		"/C/wamp/www/iestrascolar/src/Template/Admin/Users/login.ctp",
+		"/C/wamp/www/iestrascolar/webroot/libs/login/login.css",
+		"/C/wamp/www/iestrascolar/webroot/libs/bootstrap-calendar/tmpls/month.html",
+		"/C/wamp/www/iestrascolar/webroot/libs/bootstrap-calendar/tmpls/month-day.html",
+		"/C/wamp/www/iestrascolar/src/Template/Element/Main/menu.ctp",
+		"/C/wamp/www/iestrascolar/src/Template/Layout/default.ctp",
+		"/C/wamp/www/iestrascolar/src/Template/Admin/Actividad/edit.ctp",
 		"/C/wamp/www/iestrascolar/webroot/libs/datetimepicker/jquery-ui-timepicker-addon.js",
 		"/C/wamp/www/iestrascolar/src/Controller/Admin/ActividadController.php",
+		"/C/wamp/www/iestrascolar/src/Controller/ActividadController.php",
+		"/C/wamp/www/iestrascolar/vendor/cakephp/cakephp/src/Controller/Component/AuthComponent.php",
 		"/C/wamp/www/iestrascolar/src/Template/Admin/Actividad/index.ctp",
+		"/C/wamp/www/iestrascolar/src/Template/Admin/Profesor/edit.ctp",
+		"/C/wamp/www/iestrascolar/src/Controller/Admin/AdminController.php",
+		"/C/wamp/www/iestrascolar/config/routes.php",
+		"/C/wamp/www/iestrascolar/src/Controller/ProfesorController.php",
+		"/C/wamp/www/iestrascolar/src/Model/Table/CursoTable.php",
+		"/C/wamp/www/iestrascolar/src/Model/Table/ProfesorTable.php",
+		"/C/wamp/www/iestrascolar/webroot/libs/login/animacioneslogin.css",
+		"/C/wamp/www/iestrascolar/src/Template/Admin/Profesor/add.ctp",
+		"/C/wamp/www/iestrascolar/src/Template/Element/menu_busqueda.ctp",
 		"/C/wamp/www/iestrascolar/src/Template/Admin/Curso/index.ctp",
 		"/C/wamp/www/iestrascolar/src/Template/Admin/Trimestre/index.ctp",
 		"/C/wamp/www/iestrascolar/src/Controller/Admin/ProfesorController.php",
@@ -324,7 +323,6 @@
 		"/C/wamp/www/iestrascolar/webroot/libs/datetimepicker/jquery-ui-timepicker-addon.min.js",
 		"/C/wamp/www/iestrascolar/src/Template/Admin/Profesor/index.ctp",
 		"/C/wamp/www/iestrascolar/src/Template/Admin/Destacado/index.ctp",
-		"/C/wamp/www/iestrascolar/src/Controller/ActividadController.php",
 		"/C/wamp/www/iestrascolar/webroot/js/calendario.js",
 		"/C/wamp/www/iestrascolar/src/Template/Element/Admin/navbar.ctp",
 		"/C/wamp/www/iestrascolar/src/Model/Table/ActividadTable.php",
@@ -334,32 +332,21 @@
 		"/C/wamp/www/iestrascolar/webroot/css/default_backend.css",
 		"/C/wamp/www/iestrascolar/webroot/libs/bootstrap/css/bootstrap.ceruleantheme.min.css",
 		"/C/Users/Álvaro/SkyDrive/Personal/help.md - Acceso directo.lnk",
-		"/C/wamp/www/iestrascolar/config/routes.php",
-		"/C/wamp/www/iestrascolar/src/Template/Element/Main/menu.ctp",
 		"/C/wamp/www/iestrascolar/src/Template/Email/html/creada.ctp",
-		"/C/wamp/www/iestrascolar/src/Template/Layout/default.ctp",
 		"/C/wamp/www/iestrascolar/config/bootstrap.php",
-		"/C/wamp/www/iestrascolar/src/View/Helper/MunruizHelper.php",
-		"/C/wamp/www/iestrascolar/src/Model/Table/ProfesorTable.php",
 		"/C/wamp/www/iestrascolar/config/app.php",
 		"/C/Users/LVARO~1/AppData/Local/Temp/Rar$DRa0.630/bootstrap-calendar-master/README.md",
 		"/C/wamp/www/iestrascolar/src/Template/Email/html/default.ctp",
-		"/C/wamp/www/iestrascolar/src/Template/Admin/Actividad/view.ctp",
 		"/C/Users/LVARO~1/AppData/Local/Temp/Rar$DRa0.747/CakePdf-master/README.md",
 		"/C/wamp/www/iestrascolar/composer.json",
 		"/C/wamp/www/iestrascolar/composer.",
 		"/C/wamp/www/iestrascolar/src/Model/Table/ActividadCursoTable.php",
-		"/C/wamp/www/iestrascolar/src/Model/Table/CursoTable.php",
 		"/C/Users/Álvaro/AppData/Roaming/Sublime Text 3/Packages/User/debug.sublime-snippet",
-		"/C/wamp/www/iestrascolar/src/Template/Admin/Profesor/edit.ctp",
 		"/C/wamp/www/iestrascolar/webroot/less/profile.less",
-		"/C/wamp/www/iestrascolar/src/Controller/Admin/UsersController.php",
 		"/C/wamp/www/iestrascolar/src/Template/Admin/Users/profile.ctp",
 		"/C/wamp/www/iestrascolar/webroot/less/general.less",
 		"/C/wamp/www/iestrascolar/webroot/js/cargaFunciones.js",
 		"/C/wamp/www/iestrascolar/src/Template/Admin/Profesor/view.ctp",
-		"/C/wamp/www/iestrascolar/src/Controller/AppController.php",
-		"/C/wamp/www/iestrascolar/src/Controller/Admin/AdminController.php",
 		"/C/wamp/www/iestrascolar/src/Template/Front/index.ctp",
 		"/C/wamp/www/iestrascolar/src/Template/Element/Utils/font-awesome-list.ctp",
 		"/C/wamp/www/iestrascolar/src/Model/Table/DestacadoTable.php",
@@ -426,14 +413,7 @@
 		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Model/AppModel.php",
 		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Controller/TeachersController.php",
 		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/View/Activities/view.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/composer.json",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Config/core.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/View/Admin/admin_index.ctp",
-		"/G/Trabajo/trefiladosurbano/app/Controller/AppController.php",
-		"/G/Trabajo/trefiladosurbano/app/Controller/NoticiasController.php",
-		"/G/Trabajo/trefiladosurbano/app/Controller/CatalogoController.php",
-		"/G/Trabajo/trefiladosurbano/app/Controller/BuscadorController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Controller/AdminController.php"
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/composer.json"
 	],
 	"find":
 	{
@@ -464,6 +444,31 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"form",
+			"<iframe\n  width=\"600\"\n  height=\"450\"\n  frameborder=\"0\" style=\"border:0\"\n  src=\"https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY\n    &q=Space+Needle,Seattle+WA\" allowfullscreen>\n</iframe>",
+			"position: absolute;margin-left: -20px;",
+			"actual",
+			"actualiza",
+			"actualizaFechaFin",
+			"close",
+			"OK",
+			"done",
+			"click",
+			"field",
+			"fieldset",
+			"legend",
+			"ontimechange",
+			"_onTimeChange",
+			"done",
+			"datetime",
+			"done",
+			"format(",
+			"contain",
+			"holaaaa",
+			"authError",
+			"No estás autorizado a acceder ",
+			"no estas autorizado a acceder",
+			"');\n",
 			"font-size:0.875rem;",
 			"authenti",
 			"google",
@@ -561,24 +566,24 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/View/Helper/MunruizHelper.php",
+					"file": "src/Template/Admin/Actividad/edit.ctp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7348,
+						"buffer_size": 3958,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5805,
-								5805
+								1629,
+								1629
 							]
 						],
 						"settings":
@@ -586,68 +591,68 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 173.0,
+						"translation.y": 342.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
@@ -655,19 +660,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/Model/Table/ProfesorTable.php",
+					"file": "src/Controller/Admin/ActividadController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4525,
+						"buffer_size": 6550,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4480,
-								4480
+								3717,
+								3719
 							]
 						],
 						"settings":
@@ -675,88 +680,175 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 895.0,
+						"translation.y": 1200.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "webroot/libs/bootstrap/css/bootstrap.ceruleantheme.min.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 128244,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								38970,
+								38970
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3734.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "webroot/libs/login/login.css",
+					"buffer": 3,
+					"file": "src/Template/Admin/Actividad/view.ctp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 242565,
+						"buffer_size": 5199,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								223891,
-								223891
+								5199,
+								5199
 							]
 						],
 						"settings":
@@ -764,161 +856,71 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"open_with_edit": true,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 123476.0,
+						"translation.y": 1345.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "webroot/libs/login/animacioneslogin.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11581,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11581,
-								11581
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"open_with_edit": true,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 10965.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -927,15 +929,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4129,
+						"buffer_size": 2006,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								105,
-								105
+								732,
+								732
 							]
 						],
 						"settings":
@@ -943,63 +945,153 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 42.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/Controller/Admin/UsersController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1005,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								390,
+								390
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
-								"bh_round_content"
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1009,20 +1101,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "src/Template/Layout/default_admin.ctp",
+					"buffer": 6,
+					"file": "src/Controller/AppController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2852,
+						"buffer_size": 1492,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								481,
-								481
+								1358,
+								1362
 							]
 						],
 						"settings":
@@ -1030,63 +1122,63 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -1098,107 +1190,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1,
-								1
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"auto_name": "",
-							"bh_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
 					"buffer": 7,
-					"file": "src/Model/Table/ProfesorTable.php",
-					"semi_transient": false,
+					"file": "src/Template/Actividad/edit.ctp",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 4525,
+						"buffer_size": 2218,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2185,
+								2185
 							]
 						],
 						"settings":
@@ -1206,140 +1211,31 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "src/Model/Table/ProfesorTable.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4525,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
@@ -1349,9 +1245,29 @@
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
-								"bh_default_content"
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -1363,20 +1279,108 @@
 					"type": "text"
 				},
 				{
+					"buffer": 8,
+					"file": "webroot/less/default_backend.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 822,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								65,
+								65
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
 					"buffer": 9,
-					"file": "src/Model/Table/CursoTable.php",
+					"file": "webroot/libs/datetimepicker/jquery-ui-timepicker-addon.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1651,
+						"buffer_size": 77244,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								955,
-								955
+								671,
+								671
 							]
 						],
 						"settings":
@@ -1384,21 +1388,41 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1409,402 +1433,114 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "src/Controller/ProfesorController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4097,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1137,
-								1137
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content"
+								"bh_tag_content"
 							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 408.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "config/routes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4562,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2478,
-								2478
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 334.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "src/Template/Admin/Profesor/edit.ctp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1059,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								960,
-								976
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content"
-							],
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "src/Controller/Admin/AdminController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 921,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								900,
-								900
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/Template/Layout/default_admin.ctp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1978,
+								1978
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
@@ -1859,8 +1595,104 @@
 		"selected_items":
 		[
 			[
+				"appcontr",
+				"src\\Controller\\AppController.php"
+			],
+			[
+				"us",
+				"src\\Controller\\Admin\\UsersController.php"
+			],
+			[
+				"login.ctp",
+				"src\\Template\\Admin\\Users\\login.ctp"
+			],
+			[
+				"adminactivi",
+				"src\\Controller\\Admin\\ActividadController.php"
+			],
+			[
+				"cerulean",
+				"webroot\\libs\\bootstrap\\css\\bootstrap.ceruleantheme.min.css"
+			],
+			[
+				"adminview",
+				"src\\Template\\Admin\\Actividad\\view.ctp"
+			],
+			[
+				"default_b",
+				"webroot\\less\\default_backend.less"
+			],
+			[
 				"base.css",
 				"webroot\\css\\base.css"
+			],
+			[
+				"munrui",
+				"src\\View\\Helper\\MunruizHelper.php"
+			],
+			[
+				"timepicker",
+				"webroot\\libs\\datetimepicker\\jquery-ui-timepicker-addon.js"
+			],
+			[
+				"default_admin",
+				"src\\Template\\Layout\\default_admin.ctp"
+			],
+			[
+				"adminedit",
+				"src\\Template\\Admin\\Actividad\\edit.ctp"
+			],
+			[
+				"adminactivida",
+				"src\\Controller\\Admin\\ActividadController.php"
+			],
+			[
+				"adminactiindex",
+				"src\\Template\\Admin\\Actividad\\index.ctp"
+			],
+			[
+				"munruizhe",
+				"src\\View\\Helper\\MunruizHelper.php"
+			],
+			[
+				"actividadedit",
+				"src\\Template\\Admin\\Actividad\\edit.ctp"
+			],
+			[
+				"default.ctp",
+				"src\\Template\\Layout\\default.ctp"
+			],
+			[
+				"menu.ctp",
+				"src\\Template\\Element\\Main\\menu.ctp"
+			],
+			[
+				"adminactividad",
+				"src\\Controller\\Admin\\ActividadController.php"
+			],
+			[
+				"actividadcontr",
+				"src\\Controller\\ActividadController.php"
+			],
+			[
+				"actividadcontro",
+				"src\\Controller\\Admin\\ActividadController.php"
+			],
+			[
+				"mon",
+				"webroot\\libs\\bootstrap-calendar\\tmpls\\month.html"
+			],
+			[
+				"login.css",
+				"webroot\\libs\\login\\login.css"
+			],
+			[
+				"defautl_admin",
+				"src\\Template\\Layout\\default_admin.ctp"
+			],
+			[
+				"usercontro",
+				"src\\Controller\\Admin\\UsersController.php"
 			],
 			[
 				"dfault_admin",
@@ -1869,10 +1701,6 @@
 			[
 				"adminprofesedit",
 				"src\\Template\\Admin\\Profesor\\edit.ctp"
-			],
-			[
-				"actividadedit",
-				"src\\Template\\Admin\\Actividad\\edit.ctp"
 			],
 			[
 				"adminadd.",
@@ -1889,14 +1717,6 @@
 			[
 				"jquery-ui-timepicker-add",
 				"webroot\\libs\\datetimepicker\\jquery-ui-timepicker-addon.js"
-			],
-			[
-				"default_admin",
-				"src\\Template\\Layout\\default_admin.ctp"
-			],
-			[
-				"munrui",
-				"src\\View\\Helper\\MunruizHelper.php"
 			],
 			[
 				"default_admi",
@@ -1929,10 +1749,6 @@
 			[
 				"back",
 				"webroot\\less\\default_backend.less"
-			],
-			[
-				"actividadcontr",
-				"src\\Controller\\Admin\\ActividadController.php"
 			],
 			[
 				"adminactividadedit",
@@ -1971,16 +1787,8 @@
 				"src\\Template\\Layout\\default.ctp"
 			],
 			[
-				"default.ctp",
-				"src\\Template\\Layout\\default.ctp"
-			],
-			[
 				"calendario.c",
 				"src\\Template\\Actividad\\calendario.ctp"
-			],
-			[
-				"menu.ctp",
-				"src\\Template\\Element\\Main\\menu.ctp"
 			],
 			[
 				"app.",
@@ -2023,16 +1831,8 @@
 				"src\\Model\\Table\\CursoTable.php"
 			],
 			[
-				"adminactividad",
-				"src\\Controller\\Admin\\ActividadController.php"
-			],
-			[
 				"profile",
 				"src\\Template\\Admin\\Users\\profile.ctp"
-			],
-			[
-				"adminactivida",
-				"src\\Controller\\Admin\\ActividadController.php"
 			],
 			[
 				"actividadtba",
@@ -2119,20 +1919,12 @@
 				"src\\Template\\Layout\\default_admin.ctp"
 			],
 			[
-				"munruizhe",
-				"src\\View\\Helper\\MunruizHelper.php"
-			],
-			[
 				"destacadotable",
 				"src\\Model\\Table\\DestacadoTable.php"
 			],
 			[
 				"general.less",
 				"webroot\\less\\general.less"
-			],
-			[
-				"adminedit",
-				"src\\Template\\Admin\\Actividad\\edit.ctp"
 			],
 			[
 				"frontindex",
@@ -2235,10 +2027,6 @@
 				"src\\Template\\Admin\\Actividad\\edit.ctp"
 			],
 			[
-				"defautl_admin",
-				"src\\Template\\Layout\\default_admin.ctp"
-			],
-			[
 				"efault.ctp",
 				"src\\Template\\Element\\Flash\\default.ctp"
 			],
@@ -2317,58 +2105,6 @@
 			[
 				"boot",
 				"app\\Config\\bootstrap.php"
-			],
-			[
-				"activit",
-				"app\\Model\\Activity.php"
-			],
-			[
-				"appcont",
-				"app\\Controller\\AppController.php"
-			],
-			[
-				"appmode",
-				"app\\Model\\AppModel.php"
-			],
-			[
-				"teacher.php",
-				"app\\Model\\Teacher.php"
-			],
-			[
-				"index.ct",
-				"app\\View\\Activities\\index.ctp"
-			],
-			[
-				"a",
-				"app\\Model\\AppModel.php"
-			],
-			[
-				"activ",
-				"app\\Model\\Activity.php"
-			],
-			[
-				"defa",
-				"app\\View\\Layouts\\default.ctp"
-			],
-			[
-				"boo",
-				"app\\Config\\bootstrap.php"
-			],
-			[
-				"compose",
-				"composer.json"
-			],
-			[
-				"core",
-				"app\\Config\\core.php"
-			],
-			[
-				"compo",
-				"composer.json"
-			],
-			[
-				"app",
-				"app\\Controller\\AppController.php"
 			]
 		],
 		"width": 0.0

@@ -10,6 +10,45 @@ body {
 .note-codable {
   height: 300px;
 }
+.dosColumnas,
+.contenedorCursos .checkbox,
+.contenedorProfesores .checkbox {
+  width: 50%;
+  display: inline-block;
+}
+.botones {
+  padding: 10px 17px;
+  border-radius: 3px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.botonEditar:before {
+  content: '\f040';
+  font-family: FontAwesome;
+  color: white;
+}
+.botonEditar {
+  background: #536270;
+}
+.botonVer {
+  background: #0FA8FF;
+}
+.botonVer:before {
+  color: white;
+  content: '\f06e';
+  font-family: FontAwesome;
+}
+.botonBorrar:before {
+  content: "\f1f8";
+  font-family: FontAwesome;
+  color: white;
+}
+.botonBorrar {
+  background: #ED5153;
+}
+td.actions {
+  padding: 13px!important;
+}
 .enlaceHome:before {
   content: "\f015";
   font-family: FontAwesome;

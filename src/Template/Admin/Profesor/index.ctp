@@ -18,9 +18,11 @@
                 <td><?= h($profesor->email) ?></td>
                 <td><?= $this->Number->format($profesor->telefono) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Ver'), ['action' => 'view', $profesor->id]) ?>
-                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $profesor->id]) ?>
-                    <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $profesor->id], ['confirm' => __('Estas seguro de que deseas borrar # {0}?', $profesor->id)]) ?>
+                    <?= $this->Html->link('', ['action' => 'view', $profesor->id],['class' => 'botones botonVer']) ?>
+                    <?= $this->Html->link('', ['action' => 'edit', $profesor->id], ['class' => 'botones botonEditar']) ?>
+                    <?= $this->Form->postLink('', ['action' => 'delete', $profesor->id], [
+                        'class' => 'botones botonBorrar',
+                        'confirm' => __('Estas seguro de que deseas borrar # {0}?', $profesor->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

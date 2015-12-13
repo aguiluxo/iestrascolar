@@ -20,9 +20,12 @@
             <td><?= h($actividad->fecha_ini) ?></td>
             <td><?= h($actividad->fecha_fin) ?></td>
             <td class="actions">
-                <?= $this->Html->link(__('Ver'), ['action' => 'view', $actividad->id]) ?>
-                <?= $this->Html->link(__('Editar'), ['action' => 'edit', $actividad->id]) ?>
-                <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $actividad->id], ['confirm' => __('Seguro que quieres borrar la actividad # {0}?', $actividad->id)]) ?>
+                <?= $this->Html->link('', ['action' => 'view', $actividad->id], ['class' => 'botones botonVer']) ?>
+                <?= $this->Html->link('', ['action' => 'edit', $actividad->id],['class' => 'botones botonEditar']) ?>
+                <?= $this->Form->postLink('', ['action' => 'delete', $actividad->id],[
+                    'class' => 'botones botonBorrar',
+                    'confirm' => __('Seguro que quieres borrar la actividad # {0}?', $actividad->id)
+                ]) ?>
             </td>
         </tr>
 

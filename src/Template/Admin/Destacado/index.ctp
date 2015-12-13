@@ -14,9 +14,11 @@
                 <td><?= $destacado->has('actividad') ? $this->Html->link($destacado->actividad->titulo, ['controller' => 'Actividad', 'action' => 'view', $destacado->actividad->id]) : '' ?></td>
                 <td><i class="<?= h($destacado->icono) ?>"></i></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Ver'), ['action' => 'view', $destacado->id]) ?>
-                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $destacado->id]) ?>
-                    <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $destacado->id], ['confirm' => __('Estás seguro de que deseas borrar # {0}?', $destacado->id)]) ?>
+                    <?= $this->Html->link('', ['action' => 'view', $destacado->id],['class' => 'botones botonVer']) ?>
+                    <?= $this->Html->link('', ['action' => 'edit', $destacado->id],['class' => 'botones botonEditar']) ?>
+                    <?= $this->Form->postLink('', ['action' => 'delete', $destacado->id], [
+                        'class' => 'botones botonBorrar',
+                        'confirm' => __('Estás seguro de que deseas borrar # {0}?', $destacado->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

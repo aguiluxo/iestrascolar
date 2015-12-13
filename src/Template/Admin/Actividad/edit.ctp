@@ -82,7 +82,7 @@
 			</fieldset>
 		</div>
 	</div>
-	<div class="col-lg-6">
+	<div class="col-lg-6 contenedorCursos">
 		<div class="well bs-component">
 			<fieldset>
 				<legend>Cursos que asistirán</legend>
@@ -90,16 +90,14 @@
 					<div class="col-xs-12">
 						<?= $this->Form->input('curso._ids', [
 							'options' => $curso,
-							'multiple' => 'checkbox',
-							'class' => 'dosColumnas',
-							'label' => false]); ?>
+							'multiple' => 'checkbox']); ?>
 					</div>
 				</div>
 			</fieldset>
 		</div>
 	</div>
 
-	<div class="col-lg-6">
+	<div class="col-lg-6 contenedorProfesores">
 		<div class="well bs-component">
 			<fieldset>
 				<legend>Profesores que asistirán</legend>

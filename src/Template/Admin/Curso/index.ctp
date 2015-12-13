@@ -14,9 +14,12 @@
                 <td><?= h($curso->nombre) ?></td>
                 <td><?= $this->Number->format($curso->alumnos) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Ver'), ['action' => 'view', $curso->id]) ?>
-                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $curso->id]) ?>
-                    <?= $this->Form->postLink(__('Borrar'), ['action' => 'delete', $curso->id], ['confirm' => __('Está seguro de que desea borrar # {0}?', $curso->id)]) ?>
+                    <?= $this->Html->link('', ['action' => 'view', $curso->id],['class' => 'botones botonVer']) ?>
+                    <?= $this->Html->link('', ['action' => 'edit', $curso->id],['class' => 'botones botonEditar']) ?>
+                    <?= $this->Form->postLink('', ['action' => 'delete', $curso->id], [
+                        'class' => 'botones botonBorrar',
+                        'confirm' => __('Está seguro de que desea borrar # {0}?', $curso->id)
+                     ]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
