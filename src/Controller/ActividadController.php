@@ -21,10 +21,16 @@ class ActividadController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
+        $this->loadModel('Slider');
+         $slider = $this->Slider->find('all', [
+            'order' => ['Slider.orden' => 'asc']
+        ]);
+        $this->set('slider', $slider);
         $this->set('pagina', 'actividades');
     }
     public function index()
     {
+
         $this->paginate = [
 
         ];

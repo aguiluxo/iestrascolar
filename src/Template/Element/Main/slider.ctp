@@ -11,7 +11,7 @@
 			<?php foreach ($slider as $key => $slide): ?>
 				<div id="item<?php echo ($key+1) ?>" class="<?php echo $key==0? 'item active': 'item' ?>"
 				style="background-image:url(files/slider/imagen/<?php echo $slide->imagen_dir;?>/<?php echo
-				$this->view == 'index'? 'slider_':'normal_';echo $slide->imagen ?>)">
+				$this->view == 'index'? 'slider_':'slider_';echo $slide->imagen ?>)">
 					<div class="carousel-caption">
 						<div class="contenedor-etiqueta">
 							<div class="fecha">
