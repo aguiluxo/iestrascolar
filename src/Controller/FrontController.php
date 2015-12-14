@@ -13,6 +13,11 @@ class FrontController extends AppController{
 	public function index(){
         $this->loadModel('Actividad');
         $this->loadModel('Destacado');
+        $this->loadModel('Slider');
+
+        $slider = $this->Slider->find('all', [
+        	'order' => ['Slider.orden' => 'asc']
+        ]);
 
 		$destacadas=$this->Destacado->find('all',[
 			'limit' => '3',
@@ -27,6 +32,7 @@ class FrontController extends AppController{
 		]);
 		$this->set('actividades_destacadas',$destacadas);
 		$this->set('actividades_proximas',$proximas);
+		$this->set('slider', $slider);
 		$this->set('pagina', 'index');
 	}
 }

@@ -21,7 +21,7 @@
    <div class="col-lg-6">
 		<div class="well bs-component">
 			<fieldset>
-			  <legend><?= $this->view =='add' ?__('Añadir Actividad'):__('Editar Actividad')?></legend>
+			  <legend><?= $this->action =='add' ?__('Añadir Actividad'):__('Editar Actividad')?></legend>
 			  <div class="form-group">
 				<label for="tituloInput" class="col-lg-2 control-label"><?= __('Título') ?></label>
 				<div class="col-lg-10">

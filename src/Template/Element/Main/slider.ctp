@@ -7,62 +7,30 @@
 		</ol>
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
-			<div id="item1" class="item active">
-				<div class="carousel-caption">
-					<div class="contenedor-etiqueta">
-						<div class="fecha">
-							JUEVES 18 22:00
-						</div>
-						<div class="tipo">
-							Charla
-						</div>
-						<div class="info">
-							Supervivientes  
-						</div>
-						<div class="clave">
-							Lituania
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="item2" class="item">
-				<div class="carousel-caption">
-					<div class="contenedor-etiqueta">
-						<div class="fecha">
-							VIERNES 10 10:00
-						</div>
-						<div class="tipo">
-							Actividad
-						</div>
-						<div class="info">
-							Performance con
-						</div>
-						<div class="clave">
-							Toledo
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="item3" class="item">
-				<div class="carousel-caption">
-							<div class="contenedor-etiqueta">
-						<div class="fecha">
-							LUNES 18 9:30
-						</div>
-						<div class="tipo">
-							Actividad
-						</div>
-						<div class="info">
-							Fin de curso
-						</div>
-						<div class="clave">
-							Asturias
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 
+			<?php foreach ($slider as $key => $slide): ?>
+				<div id="item<?php echo ($key+1) ?>" class="<?php echo $key==0? 'item active': 'item' ?>"
+				style="background-image:url(files/slider/imagen/<?php echo $slide->imagen_dir;?>/<?php echo
+				$this->view == 'index'? 'slider_':'normal_';echo $slide->imagen ?>)">
+					<div class="carousel-caption">
+						<div class="contenedor-etiqueta">
+							<div class="fecha">
+								<?=$slide->texto_fecha?>
+							</div>
+							<div class="tipo">
+								<?=$slide->texto_tipo?>
+							</div>
+							<div class="info">
+								<?=$slide->texto_info?>
+							</div>
+							<div class="clave">
+								<?=$slide->texto_clave?>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php endforeach ?>
+		</div>
 		<!-- Controls -->
 		<div class="botonera-slider">
 			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">

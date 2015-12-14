@@ -13,7 +13,7 @@
     </ul>
 </nav>
 <div class="destacado form large-9 medium-8 columns content">
-    <?= $this->Form->create($destacado) ?>
+    <?= $this->Form->create($destacado, ['class' => 'form-horizontal']) ?>
     <fieldset>
         <legend><?= __('Edit Destacado') ?></legend>
         <?php

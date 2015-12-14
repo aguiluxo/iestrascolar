@@ -61,7 +61,7 @@
 			echo $this->element('Admin/navbar');
 		}
 	 ?>
-	<?=$this->Flash->render('mensajes')?>
+	<?=$this->Flash->render()?>
 		<?=$this->fetch('content')?>
 	</div>
 	<footer>

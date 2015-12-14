@@ -15,6 +15,7 @@
     <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
       <ul class="nav navbar-nav">
         <li class="<?=$menuActivo=='index'?'active':''?>"><?= $this->Html->link(__('Inicio'), ['controller' => 'Admin', 'action' => 'index']) ?></li>
+         <li class="<?=$menuActivo=='slider'?'active':''?>"><?= $this->Html->link(__('Slider'), ['controller' => 'Slider', 'action' => 'index']) ?></li>
         <li class="<?=$menuActivo=='actividad'?'active':''?>"><?= $this->Html->link(__('Actividades'), ['controller' => 'Actividad', 'action' => 'index']) ?></li>
         <li class="<?=$menuActivo=='destacados'?'active':''?>"><?= $this->Html->link(__('Destacados'), ['controller' => 'Destacado', 'action' => 'index']) ?></li>
         <li class="<?=$menuActivo=='profesores'?'active':''?>"><?= $this->Html->link(__('Profesores'), ['controller' => 'Profesor', 'action' => 'index']) ?></li>

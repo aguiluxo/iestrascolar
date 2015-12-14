@@ -85,6 +85,7 @@ Router::scope('/', function ($routes) {
         $routes->connect('/destacados', ['controller' => 'Destacado', 'action' => 'index']);
         $routes->connect('/destacados/:action/*', ['controller' => 'Destacado',]);
 
+        $routes->connect('/slider/:action/*', ['controller' => 'Slider',]);
 
 
     });

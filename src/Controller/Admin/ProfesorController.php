@@ -66,6 +66,7 @@ public function beforeFilter(Event $event)
         $curso = $this->Profesor->Curso->find('list', ['limit' => 200]);
         $this->set(compact('profesor', 'departamento', 'curso'));
         $this->set('_serialize', ['profesor']);
+        $this->render('edit');
     }
 
     /**
@@ -107,9 +108,9 @@ public function beforeFilter(Event $event)
         $this->request->allowMethod(['post', 'delete']);
         $profesor = $this->Profesor->get($id);
         if ($this->Profesor->delete($profesor)) {
-            $this->Flash->success(__('The profesor has been deleted.'));
+            $this->Flash->success(__('El profesor ha sido borrado.'));
         } else {
-            $this->Flash->error(__('The profesor could not be deleted. Please, try again.'));
+            $this->Flash->error(__('El profesor no ha podido ser borrado.'));
         }
         return $this->redirect(['action' => 'index']);
     }
