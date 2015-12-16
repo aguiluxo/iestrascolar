@@ -1,3 +1,4 @@
+<div class="table-responsive">
     <table class="table table-striped table-hover">
         <thead>
             <tr>
@@ -24,11 +25,12 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('siguiente') . ' >') ?>
-        </ul>
-        <p><?= $this->Paginator->counter() ?></p>
-    </div>
+</div>
+<div class="paginator">
+    <ul class="pagination">
+        <?= $this->Paginator->prev('< ' . __('anterior')) ?>
+        <?= $this->Paginator->numbers() ?>
+        <?= $this->Paginator->next(__('siguiente') . ' >') ?>
+    </ul>
+    <p><?= $this->Paginator->counter() ?></p>
+</div>

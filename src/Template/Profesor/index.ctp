@@ -12,38 +12,41 @@
 </nav>
 <div class="profesor index large-9 medium-8 columns content">
     <h3><?= __('Profesor') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th><?= $this->Paginator->sort('id') ?></th>
-                <th><?= $this->Paginator->sort('departamento_id') ?></th>
-                <th><?= $this->Paginator->sort('nombre') ?></th>
-                <th><?= $this->Paginator->sort('email') ?></th>
-                <th><?= $this->Paginator->sort('password') ?></th>
-                <th><?= $this->Paginator->sort('role') ?></th>
-                <th><?= $this->Paginator->sort('telefono') ?></th>
-                <th class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($profesor as $profesor): ?>
-            <tr>
-                <td><?= $this->Number->format($profesor->id) ?></td>
-                <td><?= $profesor->has('departamento') ? $this->Html->link($profesor->departamento->nombre, ['controller' => 'Departamento', 'action' => 'view', $profesor->departamento->id]) : '' ?></td>
-                <td><?= h($profesor->nombre) ?></td>
-                <td><?= h($profesor->email) ?></td>
-                <td><?= h($profesor->password) ?></td>
-                <td><?= h($profesor->role) ?></td>
-                <td><?= $this->Number->format($profesor->telefono) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $profesor->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $profesor->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $profesor->id], ['confirm' => __('Are you sure you want to delete # {0}?', $profesor->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('id') ?></th>
+                    <th><?= $this->Paginator->sort('departamento_id') ?></th>
+                    <th><?= $this->Paginator->sort('nombre') ?></th>
+                    <th><?= $this->Paginator->sort('email') ?></th>
+                    <th><?= $this->Paginator->sort('password') ?></th>
+                    <th><?= $this->Paginator->sort('role') ?></th>
+                    <th><?= $this->Paginator->sort('telefono') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($profesor as $profesor): ?>
+                <tr>
+                    <td><?= $this->Number->format($profesor->id) ?></td>
+                    <td><?= $profesor->has('departamento') ? $this->Html->link($profesor->departamento->nombre, ['controller' => 'Departamento', 'action' => 'view', $profesor->departamento->id]) : '' ?></td>
+                    <td><?= h($profesor->nombre) ?></td>
+                    <td><?= h($profesor->email) ?></td>
+                    <td><?= h($profesor->password) ?></td>
+                    <td><?= h($profesor->role) ?></td>
+                    <td><?= $this->Number->format($profesor->telefono) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $profesor->id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $profesor->id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $profesor->id], ['confirm' => __('Are you sure you want to delete # {0}?', $profesor->id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>

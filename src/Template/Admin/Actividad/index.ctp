@@ -2,6 +2,8 @@
 
 
     <?php echo $this->element('menu_busqueda') ?>
+    <div class="table-responsive">
+
     <table class="table table-striped table-hover">
     <thead>
         <tr>
@@ -32,6 +34,7 @@
     <?php endforeach; ?>
     </tbody>
     </table>
+    </div>
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('anterior')) ?>
