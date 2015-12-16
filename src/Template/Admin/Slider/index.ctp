@@ -22,7 +22,10 @@
             <?php foreach ($slider as $slider): ?>
             <tr>
                 <td><?= $this->Number->format($slider->id) ?></td>
-                <td><?= $this->Number->format($slider->orden) ?></td>
+                <td>
+                    <?= $this->Html->link('',['action' => 'subir'],['class' => 'flechaSuperior']);?>
+                    <?= $this->Html->link('',['action' => 'bajar'],['class' => 'flechaInferior']);?>
+                </td>
                 <td><?= $this->Html->image('/files/slider/imagen/' . $slider->imagen_dir . '/miniatura_' . $slider->imagen);?></td>
                 <td><?= h($slider->texto_fecha) ?></td>
                 <td><?= h($slider->texto_tipo) ?></td>

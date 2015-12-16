@@ -49,6 +49,14 @@ body {
 td.actions {
   padding: 13px!important;
 }
+.flechaSuperior:before {
+  content: "\f062";
+  font-family: FontAwesome;
+}
+.flechaInferior:before {
+  content: "\f063";
+  font-family: FontAwesome;
+}
 .enlaceHome:before {
   content: "\f015";
   font-family: FontAwesome;
