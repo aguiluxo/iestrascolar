@@ -23,7 +23,7 @@
             <tr>
                 <td><?= $this->Number->format($slider->id) ?></td>
                 <td><?= $this->Number->format($slider->orden) ?></td>
-                <td><?= $this->Html->image('files/slider/imagen/' . $slider->img_dir . '/miniatura_' . $slider->img);?></td>
+                <td><?= $this->Html->image('/files/slider/imagen/' . $slider->imagen_dir . '/miniatura_' . $slider->imagen);?></td>
                 <td><?= h($slider->texto_fecha) ?></td>
                 <td><?= h($slider->texto_tipo) ?></td>
                 <td><?= h($slider->texto_info) ?></td>
