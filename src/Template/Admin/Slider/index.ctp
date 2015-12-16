@@ -11,6 +11,7 @@
             <tr>
                 <th><?= $this->Paginator->sort('id') ?></th>
                 <th><?= $this->Paginator->sort('orden') ?></th>
+                <th><i class="fa fa-picture-o"></i></th>
                 <th><?= $this->Paginator->sort('texto_fecha') ?></th>
                 <th><?= $this->Paginator->sort('texto_tipo') ?></th>
                 <th><?= $this->Paginator->sort('texto_info') ?></th>
@@ -22,6 +23,7 @@
             <tr>
                 <td><?= $this->Number->format($slider->id) ?></td>
                 <td><?= $this->Number->format($slider->orden) ?></td>
+                <td><?= $this->Html->image('files/slider/imagen/' . $slider->img_dir . '/miniatura_' . $slider->img);?></td>
                 <td><?= h($slider->texto_fecha) ?></td>
                 <td><?= h($slider->texto_tipo) ?></td>
                 <td><?= h($slider->texto_info) ?></td>

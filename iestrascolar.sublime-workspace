@@ -95,8 +95,8 @@
 			"file": "src/Template/Admin/Actividad/edit.ctp",
 			"settings":
 			{
-				"buffer_size": 3958,
-				"line_ending": "Windows"
+				"buffer_size": 3903,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -108,11 +108,11 @@
 			}
 		},
 		{
-			"file": "webroot/libs/bootstrap/css/bootstrap.ceruleantheme.min.css",
+			"file": "vendor/cakephp/cakephp/src/View/HelperRegistry.php",
 			"settings":
 			{
-				"buffer_size": 128244,
-				"line_ending": "Windows"
+				"buffer_size": 4597,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -132,6 +132,25 @@
 			}
 		},
 		{
+			"contents": "<?php\ndefine('PS_ADMIN_DIR', getcwd());  //coger directorio donde se encuentra el .php\n$r=strval(PS_ADMIN_DIR);  //coger la ruta donde se encuentra\n$direcHISTORICO = $r. \"/CSV/HISTORICO/\";\n$hoy = date(\"Y-m-d-His\");\n\n///// Conexión base de datos\n$host = \"localhost\";\n$user = \"oquenlzl_wrdp25\";\n$db= \"oquenlzl_wrdp25\";\n$pass= \"SjI7uh6k85zw\";\n\n\n// // CONEXIÓN LOCAL\n// $host = \"localhost\";\n// $db= \"baybom\";\n// $user = \"root\";\n// $pass= \"\";\n\n//$dir = $r.\"/CSV/\";\n\n\n$prod=0;\n$categ=0;\n$col=0;\n$marc=0;\n$subCat=0;\n$tall=0;\n$varia=0;\n\n$conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\nmysql_select_db($db,$conexion);\n\n$sql = \"DELETE FROM productos\";\nmysql_query($sql,$conexion);\n$sql1 = \"DELETE FROM colores\";\nmysql_query($sql1,$conexion);\n$sql2 = \"DELETE FROM marcas\";\nmysql_query($sql2,$conexion);\n$sql3 = \"DELETE FROM categorias\";\nmysql_query($sql3,$conexion);\n$sql4 = \"DELETE FROM tallas\";\nmysql_query($sql4,$conexion);\n$sql5 = \"DELETE FROM variaciones\";\nmysql_query($sql5,$conexion);\n$sql6 = \"DELETE FROM imagenes\";\nmysql_query($sql6,$conexion);\n$sql7 = \"DELETE FROM subcategorias\";\nmysql_query($sql7,$conexion);\n\n\nmysql_close($conexion);\n\n\n\n$dir = $r.\"/CSV/ALTA/\";\n//$direcHISTORICO = $r. \"/CSV/HISTORICO/\";\nif (is_dir($dir)){\n    $directorio = opendir($dir);\n   //print(\"Procesando subida masiva<br>\");\n   while ($file = readdir($directorio)){\n       if($file !=\".\" && $file !=\"..\"){\n           $aux=explode(\".\",$file);//quitar extensión\n           $nombre_sin_ext=$aux[0];\n\n\n           //print(\"variable file: \".$file.\"<br>\");\n           //print(\"variable nombre sin extension: \".$nombre_sin_ext.\"<br>\");\n           switch ($nombre_sin_ext) { //SEGÚN EL NOMBRE DEL FICHERO SER HAR�? LA IMPORTACIÓN CORRESPONDIENTE\n               case \"categorias\":\n                  // echo \"Entra en case Categorias<br/>\";\n                  $categ++;\n                  importarCategorias($dir, $file);\n\n                  copy($dir.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir.$file);\n                  echo \"Sale de Case Categorias<br/>\";\n                  break;\n\n               case \"colores\":\n                  // echo \"Entra en case colores<br/>\";\n\n                  $col++;\n\n                  importarColores($dir, $file);\n\n                  copy($dir.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir.$file);\n                  echo \"Sale de Case colores<br/>\";\n\n                   break;\n\n               case \"marcas\":\n                  // echo \"Entra en case marcas<br/>\";\n\n                  $marc++;\n                  importarMarcas($dir, $file);\n\n                  copy($dir.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir.$file);\n                  echo \"Sale de Case marcas<br/>\";\n\n                   break;\n\n               case \"productos\":\n                  // echo \"Entra en case productos<br/>\";\n\n                  $prod++;\n                  importarProductos($dir, $file);\n\n                  copy($dir.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir.$file);\n                  echo \"Sale de Case productos<br/>\";\n\n                   break;\n\n               case \"subcategorias\":\n                  // echo \"Entra en case subcategoria<br/>\";\n\n                  $subCat++;\n                  importarSubCategorias($dir, $file);\n\n                  copy($dir.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir.$file);\n                  echo \"Sale de Case subcategoria<br/>\";\n\n                   break;\n\n               case \"tallas\":\n                  // echo \"Entra en case tallas<br/>\";\n\n                  $tall++;\n                  importarTallas($dir, $file);\n\n                  copy($dir.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir.$file);\n                  echo \"Sale de Case tallas<br/>\";\n\n                   break;\n\n               case \"variaciones\":\n                  // echo \"Entra en case variaciones<br/>\";\n\n                  $varia++;\n                  importarVariaciones($dir, $file);\n\n                  copy($dir.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir.$file);\n                  echo \"Sale de Case variaciones<br/>\";\n\n                   break;\n\n               default:\n                   break;\n            }\n       }\n   }\n}\n\n$dir3 = $r.\"/CSV/MODIFICACIONES/\";\n//$direcHISTORICO = $r. \"/CSV/HISTORICO/\";\nif (is_dir($dir3)){\n    $directorio = opendir($dir3);\n   //print(\"Procesando subida masiva<br>\");\n   while ($file = readdir($directorio)){\n       if($file !=\".\" && $file !=\"..\"){\n           $aux=explode(\".\",$file);//quitar extensión\n           $nombre_sin_ext=$aux[0];\n\n\n           //print(\"variable file: \".$file.\"<br>\");\n           //print(\"variable nombre sin extension: \".$nombre_sin_ext.\"<br>\");\n           switch ($nombre_sin_ext) { //SEGÚN EL NOMBRE DEL FICHERO SER HAR�? LA IMPORTACIÓN CORRESPONDIENTE\n               case \"categorias\":\n\n                  $categ++;\n                  importarCategorias($dir3, $file);\n\n                  copy($dir3.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir3.$file);\n\n                  break;\n\n               case \"colores\":\n\n                  $col++;\n\n                  importarColores($dir3, $file);\n\n                  copy($dir3.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir3.$file);\n\n                   break;\n\n               case \"marcas\":\n\n                  $marc++;\n                  importarMarcas($dir3, $file);\n\n                  copy($dir3.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir3.$file);\n\n                   break;\n\n               case \"productos\":\n\n                  $prod++;\n                  importarProductos($dir3, $file);\n\n                  copy($dir3.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir3.$file);\n\n                   break;\n\n               case \"subcategorias\":\n                  $subCat++;\n                  importarSubCategorias($dir3, $file);\n\n                  copy($dir3.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir3.$file);\n\n                   break;\n\n               case \"tallas\":\n\n                  $tall++;\n                  importarTallas($dir3, $file);\n\n                  copy($dir3.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir3.$file);\n\n                   break;\n\n               case \"variaciones\":\n\n                  $varia++;\n                  importarVariaciones($dir3, $file);\n\n                  copy($dir3.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir3.$file);\n\n                   break;\n\n               default:\n                   break;\n            }\n       }\n   }\n}\n\n$dir2 = $r.\"/CSV/BAJA/\";\n//$direcHISTORICO = $r. \"/CSV/HISTORICO/\";\nif (is_dir($dir2)){\n  $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n  mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n  $directorio2 = opendir($dir2);\n\n\n  while ($file = readdir($directorio2)){\n\n    if($file !=\".\" && $file !=\"..\"){\n\n      $fileOpen = fopen($dir2. $file, \"r\");\n      while (($linea=fgetcsv($fileOpen,2048,\";\")) !== FALSE){\n          $query = \"SELECT * FROM wp_posts where post_title like '%\".$linea[1].\"%'\";\n          $resul=mysql_query($query,$conexion);\n\n          while($registro=mysql_fetch_array($resul)){\n            $idBaja[] = $registro['ID'];\n          }\n        }\n\n        copy($dir2.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n        unlink($dir2.$file);\n      }\n\n  }\n\n  if (!empty($idBaja)) {\n\n    for($i = 0 ; $i < sizeof($idBaja) ; $i++){\n\n      if(!empty($idBaja[$i])){\n        $query = \"DELETE FROM wp_posts WHERE ID = $idBaja[$i]\";\n        mysql_query($query,$conexion);\n\n        $query = \"SELECT * FROM wp_posts WHERE post_parent = $idBaja[$i] and post_type = 'attachment'\";\n        $resul=mysql_query($query,$conexion);\n\n        while($registro=mysql_fetch_array($resul)){\n          $query = \"DELETE FROM wp_postmeta WHERE post_id = $registro[post_id]\";\n          mysql_query($query,$conexion);\n        }\n\n        $query = \"DELETE FROM wp_posts WHERE post_parent = $idBaja[$i] and post_type = 'attachment'\";\n        mysql_query($query,$conexion);\n\n        $query = \"DELETE FROM wp_postmeta WHERE post_id = $idBaja[$i]\";\n        mysql_query($query,$conexion);\n\n        $query = \"DELETE FROM wp_term_relationships WHERE object_id = $idBaja[$i]\";\n\n        mysql_query($query,$conexion);\n      }\n    }\n  }\n\n  mysql_close($conexion);\n}\n\n\n\n$dir4 = $r.\"/CSV/MASIVA/\";\n//$direcHISTORICO = $r. \"/CSV/HISTORICO/\";\nif (is_dir($dir4)){\n\n  if(sizeof(scandir($dir4))>2){\n\n    $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n    mysql_select_db($db,$conexion);\n\n    $query = \"ALTER TABLE `wp_postmeta` ADD FOREIGN KEY (`post_id`)\n    REFERENCES `wp_posts`(`ID`) ON UPDATE CASCADE ON DELETE CASCADE;\";\n    $resul=mysql_query($query,$conexion);\n\n      $queryDel = \"DELETE FROM wp_posts WHERE id_producto!=0\";\n      mysql_query($queryDel,$conexion);\n\n    /*$query = \"DELETE FROM wp_terms WHERE term_id > 387\";\n    mysql_query($query,$conexion);\n\n    $query = \"DELETE FROM wp_term_relationships\";\n    mysql_query($query,$conexion);\n\n    $query = \"DELETE FROM wp_term_taxonomy WHERE taxonomy = 'product_tag' OR taxonomy = 'product_cat' OR taxonomy = 'pa_talla' OR taxonomy = 'pa_color'\";\n    mysql_query($query,$conexion);*/\n\n\n    mysql_close($conexion);\n\n  }\necho \"linea\";\n\n  $directorio = opendir($dir4);\n   //print(\"Procesando subida masiva<br>\");\n  while ($file = readdir($directorio)){\n       if($file !=\".\" && $file !=\"..\"){\n           $aux=explode(\".\",$file);//quitar extensión\n           $nombre_sin_ext=$aux[0];\n\n\n           //print(\"variable file: \".$file.\"<br>\");\n           //print(\"variable nombre sin extension: \".$nombre_sin_ext.\"<br>\");\n           switch ($nombre_sin_ext) { //SEGÚN EL NOMBRE DEL FICHERO SER HAR�? LA IMPORTACIÓN CORRESPONDIENTE\n               case \"categorias\":\n                  echo \"Entra en case categ<br/>\";\n\n                  $categ++;\n                  importarCategorias($dir4, $file);\n\n                  copy($dir4.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir4.$file);\n                  echo \"Sale de case categorias\";\n                  break;\n\n               case \"colores\":\n                  // echo \"Entra en case color<br/>\";\n\n                  $col++;\n\n                  importarColores($dir4, $file);\n\n                  copy($dir4.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir4.$file);\n                  echo \"Sale de case colores\";\n\n                   break;\n\n               case \"marcas\":\n                  // echo \"Entra en case marcas<br/>\";\n\n                  $marc++;\n                  importarMarcas($dir4, $file);\n\n                  copy($dir4.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir4.$file);\n                  echo \"Sale de case marcas\";\n\n                   break;\n\n               case \"productos\":\n                  // echo \"Entra en case productos<br/>\";\n\n                  $prod++;\n                  importarProductos($dir4, $file);\n\n                  copy($dir4.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir4.$file);\n                  echo \"Sale de case productos\";\n\n                   break;\n\n               case \"subcategorias\":\n                  // echo \"Entra en case subcategoria<br/>\";\n\n                  $subCat++;\n                  importarSubCategorias($dir4, $file);\n\n                  copy($dir4.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir4.$file);\n                  echo \"Sale de case subcategoria\";\n\n                   break;\n\n               case \"tallas\":\n                  // echo \"Entra en case tallas<br/>\";\n\n                  $tall++;\n                  importarTallas($dir4, $file);\n\n                  copy($dir4.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir4.$file);\n                  echo \"Sale de case tallas\";\n\n                   break;\n\n               case \"variaciones\":\n                  // echo \"Entra en case variaciones<br/>\";\n\n                  $varia++;\n                  importarVariaciones($dir4, $file);\n\n                  copy($dir4.$file, $direcHISTORICO.$nombre_sin_ext.\"-\".$hoy.\".csv\");\n                  unlink($dir4.$file);\n                  echo \"Sale de case variaciones\";\n\n                   break;\n\n               default:\n                   break;\n            }\n       }\n   }\n}\n\n\nfunction importarCategorias($direc,$file){\n\n    global $host,$user,$db,$pass;\n    $fileOpen = fopen($direc. $file, \"r\");\n    while (($linea=fgetcsv($fileOpen,2048,\";\")) !== FALSE){\n        $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n        mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n\n            //echo \"entra cat<br>\";\n            $queryInsert = \"INSERT INTO categorias VALUES (null,'$linea[1]','$linea[2]','$linea[1]')\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n\n            mysql_close($conexion);\n    }\n    //echo \"entra cat<br>\";\n}\n\nfunction importarColores($direc,$file){\n\n\n    global $host,$user,$db,$pass;\n    $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n        mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n    $fileOpen = fopen($direc. $file, \"r\");\n    while (($linea=fgetcsv($fileOpen,2048,\";\")) !== FALSE){\n\n            $queryInsert = \"INSERT INTO colores VALUES (null,'$linea[1]','$linea[2]','$linea[3]','$linea[2]')\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n\n\n        }\n        mysql_close($conexion);\n        //echo \"entra col<br>\";\n}\nfunction importarMarcas($direc,$file){\n\n    global $host,$user,$db,$pass;\n    $fileOpen = fopen($direc. $file, \"r\");\n\n    echo \"entra mar<br>\";\n\n    while (($linea=fgetcsv($fileOpen,2048,\";\")) !== FALSE){\n\n        $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n        mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n\n            $queryInsert = \"INSERT INTO marcas VALUES (null,'$linea[1]','$linea[2]','$linea[1]')\";\n            // echo($queryInsert);\n            $resultInsert = mysql_query($queryInsert,$conexion);\n\n        mysql_close($conexion);\n\n    }\n}\nfunction importarProductos($direc,$file){\n\n    global $host,$user,$db,$pass;\n    $fileOpen = fopen($direc. $file, \"r\");\n    while (($linea=fgetcsv($fileOpen,2048,\";\")) !== FALSE){\n        $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n        mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n        $linea[6] = date('Y-m-d H:i:s', strtotime($linea[6]));\n            $queryInsert = \"INSERT INTO productos VALUES ($linea[0],'$linea[1]','$linea[2]','$linea[3]',$linea[4],'$linea[5]','$linea[6]','$linea[7]','$linea[8]','$linea[9]','$linea[10]',$linea[11],'$linea[12]','$linea[13]','$linea[14]',$linea[15],$linea[16],'$linea[17]','$linea[18]','$linea[19]','$linea[20]','$linea[21]','$linea[22]','$linea[23]','$linea[24]','$linea[25]','$linea[26]','$linea[27]','No')\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n            mysql_close($conexion);\n    }\n\n    //echo \"entra pro<br>\";\n}\n\nfunction importarSubCategorias($direc,$file){\n\n    global $host,$user,$db,$pass;\n    $fileOpen = fopen($direc. $file, \"r\");\n    while (($linea=fgetcsv($fileOpen,2048,\";\")) !== FALSE){\n        $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n        mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n\n            $queryInsert = \"INSERT INTO subcategorias VALUES (null,'$linea[1]','$linea[2]','$linea[3]','$linea[1]')\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n\n            mysql_close($conexion);\n    }\n}\nfunction importarTallas($direc,$file){\n\n    global $host,$user,$db,$pass;\n    $fileOpen = fopen($direc. $file, \"r\");\n    while (($linea=fgetcsv($fileOpen,2048,\";\")) !== FALSE){\n        $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n        mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n\n            $queryInsert = \"INSERT INTO tallas VALUES (null,'$linea[1]','$linea[2]','$linea[3]','$linea[2]')\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n\n            mysql_close($conexion);\n\n    }\n    //echo \"entra tal<br>\";\n}\nfunction importarVariaciones($direc,$file){\n\n    global $host,$user,$db,$pass;\n    $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n    mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n    $fileOpen = fopen($direc. $file, \"r\");\n    while (($linea=fgetcsv($fileOpen,2048,\";\")) !== FALSE){\n\n        $queryInsert = \"INSERT INTO variaciones VALUES (null,'$linea[0]','$linea[1]','$linea[2]','$linea[3]',$linea[4],$linea[5],$linea[6],'$linea[7]','$linea[8]')\";\n\n        // str_replace(\"/\", \"-\", $linea[8]).\"')\n        mysql_query($queryInsert,$conexion);\n    }\n    mysql_close($conexion);\n\n    //echo \"entra var<br>\";\n}\n\n\n////////////////////////\n///////CATEGORIAS//////\n///////////////////////\n  if($categ != 0){\n    // volcado de datos de la tabla categorias a la tabla wp_terms\n    $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n    mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n    // echo \"Comienza volcado de categorias a wp post<br/>\";\n\n    $query = \"SELECT DISTINCT * FROM categorias\";\n    $resul=mysql_query($query,$conexion);\n\n    while($registro=mysql_fetch_array($resul)){\n      //Se busca si existen las categorias que hay en la tabla categorias, si existe no haca nada y si existe la inserta y le hace las relaciones\n\n      $query1 = \"SELECT * FROM wp_terms where name = '$registro[categoria]'\";\n      $resul1=mysql_query($query1,$conexion);\n\n      if (mysql_fetch_row($resul1) == 0){\n\n        $queryInsert = \"INSERT INTO wp_terms(name,slug) VALUES ('$registro[categoria]','$registro[slug]')\";\n        $resultInsert = mysql_query($queryInsert,$conexion);\n\n        // relacionar tabla wp_terms con tabla wp_term_taxonomy de la nueva categoria introducida\n        $query2 = \"SELECT wp_terms.term_id,categorias.description FROM wp_terms,categorias WHERE wp_terms.name = '$registro[categoria]' and categorias.categoria = '$registro[categoria]'\";\n        $resul2=mysql_query($query2,$conexion);\n\n\n        while($registro1=mysql_fetch_array($resul2)){\n\n          $queryInsert1 = \"INSERT INTO wp_term_taxonomy (term_id,taxonomy,description) VALUES ($registro1[term_id],'product_cat','$registro1[description]')\";\n          $resultInsert = mysql_query($queryInsert1,$conexion);\n        }\n      }\n    }\n\necho \"Sale de volcado de categorias<br/>\";\n    mysql_close($conexion);\n  }\n\n\n\n\n///////////////////////\n////////COLORES////////\n///////////////////////\n\nif($col != 0){\n// echo \"Comienza volcado de colores<br/>\";\n\n  // volcado de datos de la tabla colores a la tabla wp_terms\n  $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n  mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n\n  $query = \"SELECT DISTINCT * FROM colores\";\n  $resul=mysql_query($query,$conexion);\n\n        while($registro=mysql_fetch_array($resul)){\n          //Se busca si existen las categorias que hay en la tabla colores, si existe no hace nada y si existe la inserta y le hace las relaciones\n\n          $query1 = \"SELECT * FROM wp_terms where name = '$registro[color]'\";\n          $resul1=mysql_query($query1,$conexion);\n\n          if (mysql_fetch_row($resul1) == 0){\n\n            $queryInsert = \"INSERT INTO wp_terms(name,slug) VALUES ('$registro[color]','$registro[slug]')\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n\n            // relacionar tabla wp_terms con tabla wp_term_taxonomy del nuevo color introducido\n            $query2 = \"SELECT wp_terms.term_id,colores.description FROM wp_terms,colores WHERE wp_terms.name='$registro[color]' and colores.color = '$registro[color]'\";\n            $resul2=mysql_query($query2,$conexion);\n\n\n            while($registro1=mysql_fetch_array($resul2)){\n\n              $queryInsert = \"INSERT INTO wp_term_taxonomy (term_id,taxonomy,description) VALUES ($registro1[term_id],'pa_color','$registro1[description]')\";\n              $resultInsert = mysql_query($queryInsert,$conexion);\n\n            }\n\n          }\n\n        }\n\necho \"Sale de volcado de colores<br/>\";\n  mysql_close($conexion);\n}\n\n////////////////////////\n/////////MARCAS////////\n///////////////////////\n\nif($marc != 0){\n// echo \"Comienza volcado de marcas<br/>\";\n\n  // volcado de datos de la tabla marcas en la tabla wp_terms\n    $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n    mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n  $query = \"SELECT DISTINCT * FROM marcas\";\n  $resul=mysql_query($query,$conexion);\n\n    while($registro=mysql_fetch_array($resul)){\n    //Se busca si existen las categorias que hay en la tabla marcas, si existe no hace nada y si existe la inserta y le hace las relaciones\n          $query1 = \"SELECT * FROM wp_terms where name like '$registro[marca]'\";\n          $resul1=mysql_query($query1,$conexion);\n    if (mysql_fetch_row($resul1) == 0){\n        $queryInsert = \"INSERT INTO wp_terms(name,slug) VALUES ('$registro[marca]','$registro[slug]')\";\n        $resultInsert = mysql_query($queryInsert,$conexion);\n\n        // relacionar tabla wp_terms con tabla wp_term_taxonomy de la nueva marca introducida\n        $query2 = \"SELECT wp_terms.term_id,marcas.description FROM wp_terms,marcas WHERE wp_terms.name = '$registro[marca]' and marcas.marca = '$registro[marca]'\";\n        $resul2=mysql_query($query2,$conexion);\n\n\n          while($registro1=mysql_fetch_array($resul2)){\n\n            $queryInsert = \"INSERT INTO wp_term_taxonomy (term_id,taxonomy,description) VALUES ($registro1[term_id],'product_tag','$registro1[description]')\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n\n          }\n      }\n    }\n\n  // mysql_query($sql,$conexion);\necho \"Sale de volcado de colores<br/>\";\n\n  mysql_close($conexion);\n\n}\n\n\n////////////////////////\n/////////TALLAS/////////\n///////////////////////\n\nif($tall != 0){\n// echo \"Comienza volcado de tallas<br/>\";\n\n  // volcado de datos de la tabla tallas en la tabla wp_terms\n    $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n    mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n\n    $query = \"SELECT DISTINCT talla,slug FROM tallas\";\n    $resul=mysql_query($query,$conexion);\n\n        while($registro=mysql_fetch_array($resul)){\n          $query1 = \"SELECT * FROM wp_terms where name like '$registro[talla]'\";\n          $resul1=mysql_query($query1,$conexion);\n\n          if (mysql_fetch_row($resul1) == 0){\n            $queryInsert = \"INSERT INTO wp_terms(name,slug) VALUES ('$registro[talla]','$registro[slug]')\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n\n            // relacionar tabla wp_terms con tabla wp_term_taxonomy de la nueva talla introducida\n            $query2 = \"SELECT wp_terms.term_id,tallas.description FROM wp_terms, tallas WHERE wp_terms.name = '$registro[talla]' and tallas.talla = '$registro[talla]'\";\n            $resul2=mysql_query($query2,$conexion);\n\n            while($registro1=mysql_fetch_array($resul2)){\n\n              $queryInsert = \"INSERT INTO wp_term_taxonomy (term_id,taxonomy,description) VALUES ($registro1[term_id],'pa_talla','$registro1[description]')\";\n              $resultInsert = mysql_query($queryInsert,$conexion);\n\n            }\n          }\n        }\n\n  // mysql_query($sql,$conexion);\n// echo \"Sale volcado de colores<br/>\";\n\n    mysql_close($conexion);\n}\n\n\n///////////////////////\n/////SUBCATEGORIAS/////\n///////////////////////\n\nif($subCat != 0){\n// echo \"Comienza volcado de subcat<br/>\";\n\n  // volcado de datos de la tabla subcategorias en la tabla wp_terms\n    $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n    mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n  $query = \"SELECT * FROM subcategorias\";\n  $resul=mysql_query($query,$conexion);\n    while($registro=mysql_fetch_array($resul)){\n      $query1 = \"SELECT * FROM wp_terms where name = '$registro[subcategoria]'\";\n      $resul1=mysql_query($query1,$conexion);\n\n      if (mysql_fetch_row($resul1) == 0){\n        $queryInsert = \"INSERT INTO wp_terms(name,slug) VALUES ('$registro[subcategoria]','$registro[slug]')\";\n        $resultInsert = mysql_query($queryInsert,$conexion);\n        $idSubcategoria = \"SELECT term_id FROM wp_terms WHERE name = '$registro[subcategoria]'\";\n        $idSubcategoria = mysql_query($idSubcategoria, $conexion);\n        $idSubcategoria = mysql_fetch_array($idSubcategoria);\n        $idSubcategoria = (int)$idSubcategoria['term_id'];\n        // relacionar tabla wp_terms con tabla wp_term_taxonomy de la nueva subcategoria introducida\n        $query2 = \"SELECT wp_terms.term_id,subcategorias.description FROM wp_terms,subcategorias WHERE wp_terms.name LIKE '$registro[familia]' and subcategorias.subcategoria = '$registro[subcategoria]'\";\n        $resul2=mysql_query($query2,$conexion);\n\n        while($registro1=mysql_fetch_array($resul2)){\n          $queryInsert = \"INSERT INTO wp_term_taxonomy (term_id,taxonomy,description,parent) VALUES ($idSubcategoria,'product_cat','$registro1[description]',$registro1[term_id])\";\n          $resultInsert = mysql_query($queryInsert,$conexion);\n\n        }\n      }\n    }\n\n  // mysql_query($sql,$conexion);\n// echo \"Sale volcado de subcategorias<br/>\";\n\n  mysql_close($conexion);\n}\n\n///////////////////////\n///////PRODUCTOS///////\n///////////////////////\nif($prod != 0){\necho \"Comienza volcado de product<br/>\";\n\n  //volcado de la tabla productos a la tabla wp_posts\n    $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n    mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n\n    $query = \"SELECT * FROM productos\";\n    $resulProd = mysql_query($query,$conexion);\n    while($registro=mysql_fetch_array($resulProd)){\n        $query1 = \"SELECT * FROM wp_posts WHERE wp_posts.id_producto = '$registro[id]'\";\n        $resul1=mysql_query($query1,$conexion);\n        if (mysql_num_rows($resul1) == 0){\n          // Añadir producto\n          $queryInsert = \"INSERT INTO wp_posts (post_author, post_date, post_content, post_title, post_status, comment_status, post_name, post_parent, menu_order, post_type, id_producto) VALUES(0,'$registro[post_date]','$registro[post_content]','$registro[post_title]', 'publish','$registro[comment_status]','$registro[post_name]','$registro[post_parent]','$registro[menu_order]','$registro[post_type]','$registro[id]')\";\n          $resultInsert = mysql_query($queryInsert,$conexion);\n\n          ///Para unir un producto con el tipo que es\n          $query2 = \"SELECT * FROM wp_terms where name = '$registro[product_type]' \";\n          $resul2=mysql_query($query2,$conexion);\n          $registro3 = mysql_fetch_row($resul2);\n          $codigoVariable = $registro3[0];//id del tipo\n\n          /////////////////////////////////// ETIQUETAS //////////////////////////////////////////\n          if($registro['slider']!=\"No\"){\n\n            /// Cojer la id de posts\n            $query60 = \"SELECT * FROM wp_posts where wp_posts.id_producto = '$registro[id]'\";\n\n            $resul60=mysql_query($query60,$conexion);\n            while($reg=mysql_fetch_array($resul60)){\n                $idProc = $reg['ID'];\n\n            }\n\n            /// Cojer la id de taxonomy\n            $query60 = \"SELECT t.* FROM wp_term_taxonomy t, wp_terms e WHERE e.name='\".$registro['slider'].\"' AND t.term_id=e.term_id\";\n\n            $resul60=mysql_query($query60,$conexion);\n            while($reg=mysql_fetch_array($resul60)){\n                $idTaxonomy = $reg['term_taxonomy_id'];\n\n            }\n\n            /// Añadir enlace de etiqueta con producto\n            if(!empty($idProc) && !empty($idTaxonomy)){\n                $queryInsert = \"INSERT INTO `wp_term_relationships`(`object_id`, `term_taxonomy_id`, `term_order`) VALUES (\".$idProc.\", \".$idTaxonomy.\", 0)\";\n                $resultInsert = mysql_query($queryInsert,$conexion);\n            }\n          }\n          /////////////////////////////////// ETIQUETAS //////////////////////////////////////////\n\n\n          ///Para unir un producto con la categoria en la que se encuentra\n          $query3 = \"SELECT * FROM wp_term_taxonomy where description = '$registro[categoria]' and taxonomy = 'product_cat' and parent = 0\";\n          $resul3=mysql_query($query3,$conexion);\n          if(mysql_num_rows($resul3)==0){\n            $queryInsert = \"INSERT INTO wp_terms(name,slug) VALUES ('\".$registro['subcategoria'].\"','\".strtolower($registro['categoria'].\"-\".$registro['subcategoria']).\"')\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n          }\n          $query3 = \"SELECT * FROM wp_term_taxonomy where description = '$registro[subcategoria]' and taxonomy='product_cat'\";\n          $resul3=mysql_query($query3,$conexion);\n          $registro4 = mysql_fetch_row($resul3);\n          $codigoCategoria = $registro4[0];\n\n\n          ///Para unir un producto con la marca en la que se encuentra\n          $query4 = \"SELECT * FROM wp_term_taxonomy where description = '$registro[marca]'\";\n          $resul4=mysql_query($query4,$conexion);\n          if(mysql_num_rows($resul4)==0){\n            $queryInsert = \"INSERT INTO wp_terms(name,slug) VALUES ('\".strtoupper($registro['marca']).\"','\".strtolower($registro['marca']).\"')\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n\n            // relacionar tabla wp_terms con tabla wp_term_taxonomy de la nueva talla introducida\n            $query2 = \"SELECT wp_terms.term_id,marcas.description FROM wp_terms, marcas WHERE wp_terms.name = '$registro[marca]' and marcas.marca = '$registro[marca]'\";\n            $resul2=mysql_query($query2,$conexion);\n\n            while($registro1=mysql_fetch_array($resul2)){\n\n              $queryInsert = \"INSERT INTO wp_term_taxonomy (term_id,taxonomy,description) VALUES ($registro1[term_id],'product_tag','$registro1[description]')\";\n\n              $resultInsert = mysql_query($queryInsert,$conexion);\n\n            }\n          }\n          $query4 = \"SELECT * FROM wp_term_taxonomy where description = '$registro[marca]' and taxonomy='product_tag'\";\n          $resul4=mysql_query($query4,$conexion);\n          $registro5 = mysql_fetch_row($resul4);\n          $codigoMarca = $registro5[0];\n\n\n\n          ///Para unir un producto con la subcategoria en la que se encuentra\n          $query3 = \"SELECT * FROM wp_term_taxonomy where description = '$registro[categoria]' and taxonomy = 'product_cat' and parent != 0\";\n          $resul3=mysql_query($query3,$conexion);\n          if(mysql_num_rows($resul3)==0){\n            $queryInsert = \"INSERT INTO wp_terms(name,slug) VALUES ('\".$registro['categoria'].\"','\".strtolower($registro['categoria']).\"')\";\n\n            $resultInsert = mysql_query($queryInsert,$conexion);\n\n            // recoger id de la categoria padre\n            $query2 = \"SELECT * FROM wp_terms WHERE wp_terms.name = '$registro[categoria]'\";\n            $resul2=mysql_query($query2,$conexion);\n            $idCategoria=0;\n\n            while($registro1=mysql_fetch_array($resul2)){\n\n              $idCategoria=$registro1[\"term_id\"];\n\n            }\n\n            // relacionar tabla wp_terms con tabla wp_term_taxonomy de la subcategoria\n            $query2 = \"SELECT * FROM wp_terms WHERE wp_terms.name = '$registro[subcategoria]'\";\n            $resul2=mysql_query($query2,$conexion);\n\n            while($registro1=mysql_fetch_array($resul2)){\n\n              $queryInsert = \"INSERT INTO wp_term_taxonomy (term_id,taxonomy,description,parent) VALUES ($registro1[term_id],'product_cat','$registro[subcategoria]',$idCategoria)\";\n              $resultInsert = mysql_query($queryInsert,$conexion);\n\n            }\n\n            // agregar entrada de categoria en taxonomy\n            $query2 = \"SELECT * FROM wp_terms WHERE wp_terms.name = '$registro[categoria]'\";\n            $resul2=mysql_query($query2,$conexion);\n\n            while($registro1=mysql_fetch_array($resul2)){\n\n              $queryInsert = \"INSERT INTO wp_term_taxonomy (term_id,taxonomy,description) VALUES ($registro1[term_id],'product_cat','$registro[categoria]')\";\n\n              $resultInsert = mysql_query($queryInsert,$conexion);\n\n            }\n\n            // relacionar tabla wp_terms con tabla wp_term_taxonomy de la nueva talla introducida\n            $query2 = \"SELECT * FROM wp_terms WHERE wp_terms.name = '$registro[subcategoria]'\";\n            $resul2=mysql_query($query2,$conexion);\n\n            while($registro1=mysql_fetch_array($resul2)){\n\n              $query7 = \"SELECT * FROM wp_term_taxonomy WHERE description = '$registro[subcategoria]' and taxonomy = 'product_cat' and parent = 0\";\n              $resul7=mysql_query($query7,$conexion);\n              $registro7 = mysql_fetch_row($resul7);\n\n\n              $queryInsert = \"INSERT INTO wp_term_taxonomy (term_id,taxonomy,description,parent) VALUES ($registro1[term_id],'product_cat','$registro[subcategoria]',$registro7[0])\";\n              $resultInsert = mysql_query($queryInsert,$conexion);\n            }\n          }\n\n          if(strpos($registro['subcategoria'], \",\")){\n            $descripcionDato = substr($registro['subcategoria'], 0,strpos($registro['subcategoria'], \",\"));\n          }else{\n            $descripcionDato = $registro['subcategoria'];\n          }\n          $query5 = \"SELECT * FROM wp_term_taxonomy where description = '\".$descripcionDato.\"' and taxonomy = 'product_cat' and parent != 0\";\n          $resul5=mysql_query($query5,$conexion);\n          $registro6 = mysql_fetch_row($resul5);\n          $codigoSubCategoria = $registro6[0];\n\n          ///Aqui se le asigna cada uno de los valores anteriormente buscados\n          $query2 = \"SELECT * FROM wp_posts WHERE wp_posts.post_title = '$registro[post_title]'\";\n          $resul2=mysql_query($query2,$conexion);\n\n          while($registro2=mysql_fetch_array($resul2)){\n            $queryInsert = \"UPDATE wp_posts SET guid='http://baybom.dissapi.com/?p=\".$registro2['ID']. \"' WHERE ID=$registro2[ID]\";\n            mysql_query($queryInsert,$conexion);\n\n            $idProducto=$registro2['ID'];\n\n            $queryInsert1 = \"INSERT INTO wp_term_relationships(object_id, term_taxonomy_id, term_order) VALUES($registro2[ID], $codigoVariable, 0)\";\n            mysql_query($queryInsert1,$conexion);\n\n            //$queryInsert2 = \"INSERT INTO wp_term_relationships(object_id, term_taxonomy_id, term_order) VALUES($registro2[ID], $codigoCategoria, 0)\";\n            //mysql_query($queryInsert2,$conexion);\n\n            $queryInsert2 = \"INSERT INTO wp_term_relationships(object_id, term_taxonomy_id, term_order) VALUES($registro2[ID], $codigoSubCategoria, 0)\";\n            mysql_query($queryInsert2,$conexion);\n\n            $queryInsert3 = \"INSERT INTO wp_term_relationships(object_id, term_taxonomy_id, term_order) VALUES($registro2[ID], $codigoMarca, 0)\";\n            mysql_query($queryInsert3,$conexion);\n          }\n\n           //INICIO relacionar en wp_relationshits el producto con la subcategoria\n          $busqueda=\"SELECT term_id FROM wp_terms WHERE name='\".$registro['subcategoria'].\"'\";\n          $resulBusqueda = mysql_query($busqueda,$conexion);\n          while($registro2=mysql_fetch_array($resulBusqueda)){\n            $busqueda2=\"SELECT term_taxonomy_id FROM wp_term_taxonomy WHERE term_id=\".$registro2['term_id'];\n            $resulBusqueda2 = mysql_query($busqueda2,$conexion);\n            while($registro2=mysql_fetch_array($resulBusqueda2)){\n              $insertado = \"INSERT INTO wp_term_relationships VALUES ($idProducto,$registro2[term_taxonomy_id],0)\";\n              mysql_query($insertado,$conexion);\n            }\n          }\n\n          // FIN relacionar en wp_relationshits el producto con la subcategoria\n\n        }else{\n          // Modificar producto\n          $registro1 = mysql_fetch_row($resul1);\n\n          $queryInsert = \"UPDATE wp_postmeta SET meta_value = '$registro[precio]' where meta_key = '_price' and post_id = $registro1[ID]\";\n          $resultInsert = mysql_query($queryInsert,$conexion);\n\n          $queryInsert = \"UPDATE wp_postmeta SET meta_value = '$registro[stock]' where meta_key = '_stock' and post_id = $registro1[ID]\";\n          $resultInsert = mysql_query($queryInsert,$conexion);\n\n          $queryInsert = \"UPDATE wp_posts SET post_author=0, post_date='$registro[post_date]', post_content='$registro[post_content]', post_title='$registro[post_title]', post_status='publish', comment_status='$registro[comment_status]', post_name='$registro[post_name]', post_parent='$registro[post_parent]', menu_order='$registro[menu_order]', post_type='$registro[post_type]' WHERE id_producto='$registro[id]'\";\n          $resultInsert = mysql_query($queryInsert,$conexion);\n\n          /////////////////////////////////// ETIQUETAS //////////////////////////////////////////\n\n          /// Cojer la id de posts\n          $query60 = \"SELECT * FROM wp_posts where wp_posts.id_producto = '$registro[id]'\";\n          $resul60=mysql_query($query60,$conexion);\n\n          while($reg=mysql_fetch_array($resul60)){\n              $idProc = $reg['ID'];\n          }\n\n          if($registro['slider']!=\"No\"){\n\n            /// Cojer la id de taxonomy\n            $query60 = \"SELECT t.* FROM wp_term_taxonomy t, wp_terms e WHERE e.name='\".$registro['slider'].\"' AND t.term_id=e.term_id\";\n\n            $resul60=mysql_query($query60,$conexion);\n            while($reg=mysql_fetch_array($resul60)){\n                $idTaxonomy = $reg['term_taxonomy_id'];\n            }\n\n            /// Añadir enlace de etiqueta con producto\n            if(!empty($idProc) && !empty($idTaxonomy)){\n\n              $nuevo=true;\n              $query1 = \"SELECT * FROM wp_term_relationships WHERE object_id=\".$idProc.\" and term_taxonomy_id=24795\";\n              $resul1=mysql_query($query1,$conexion);\n              if (mysql_num_rows($resul1) != 0){\n                $nuevo=false;\n                $queryInsert = \"UPDATE `wp_term_relationships` SET `term_taxonomy_id`=\".$idTaxonomy.\" WHERE object_id=\".$idProc.\" and term_taxonomy_id=24795\";\n                $resultInsert = mysql_query($queryInsert,$conexion);\n              }\n              $query1 = \"SELECT * FROM wp_term_relationships WHERE object_id=\".$idProc.\" and term_taxonomy_id=24796\";\n              $resul1=mysql_query($query1,$conexion);\n              if (mysql_num_rows($resul1) != 0){\n                $nuevo=false;\n                $queryInsert = \"UPDATE `wp_term_relationships` SET `term_taxonomy_id`=\".$idTaxonomy.\" WHERE object_id=\".$idProc.\" and term_taxonomy_id=24796\";\n                $resultInsert = mysql_query($queryInsert,$conexion);\n              }\n              $query1 = \"SELECT * FROM wp_term_relationships WHERE object_id=\".$idProc.\" and term_taxonomy_id=24797\";\n              $resul1=mysql_query($query1,$conexion);\n              if (mysql_num_rows($resul1) != 0){\n                $nuevo=false;\n                $queryInsert = \"UPDATE `wp_term_relationships` SET `term_taxonomy_id`=\".$idTaxonomy.\" WHERE object_id=\".$idProc.\" and term_taxonomy_id=24797\";\n                $resultInsert = mysql_query($queryInsert,$conexion);\n              }\n\n              if($nuevo){\n                $queryInsert = \"INSERT INTO `wp_term_relationships`(`object_id`, `term_taxonomy_id`, `term_order`) VALUES (\".$idProc.\", \".$idTaxonomy.\", 0)\";\n                $resultInsert = mysql_query($queryInsert,$conexion);\n              }\n            }\n          }else{\n            // Quitar enlace de etiqueta con producto\n            $queryInsert = \"DELETE FROM `wp_term_relationships` WHERE object_id=\".$idProc.\" and term_taxonomy_id=24795\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n            $queryInsert = \"DELETE FROM `wp_term_relationships` WHERE object_id=\".$idProc.\" and term_taxonomy_id=24796\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n            $queryInsert = \"DELETE FROM `wp_term_relationships` WHERE object_id=\".$idProc.\" and term_taxonomy_id=24797\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n          }\n          /////////////////////////////////// ETIQUETAS //////////////////////////////////////////\n\n          $query = \"DELETE FROM productos WHERE post_title = '$registro[post_title]'\";\n\n          $resul=mysql_query($query,$conexion);\n\n        }\n    }\n    //VOLCADO DE IMAGENES DE LOS PRODUCTOS\n\n    $dir2 = $r.\"/img/Imagenes/\";\n    $dir3 = $r.\"/wp-content/uploads/\";\n\n    if (is_dir($dir2)){\n        $directorio2 = opendir($dir2);\n        while ($file = readdir($directorio2)){\n          if($file !=\".\" && $file !=\"..\"){\n\n            copy($dir2.$file, $dir3.$file);\n            copy($dir2.$file, $dir3.str_replace(\".\", \"-90x90.\", $file));//90x90\n            copy($dir2.$file, $dir3.str_replace(\".\", \"-90x110.\", $file));//90x110\n            copy($dir2.$file, $dir3.str_replace(\".\", \"-105x135.\", $file));//105x135\n            copy($dir2.$file, $dir3.str_replace(\".\", \"-135x160.\", $file));//135x160\n            copy($dir2.$file, $dir3.str_replace(\".\", \"-150x150.\", $file));//150x150\n            copy($dir2.$file, $dir3.str_replace(\".\", \"-200x100.\", $file));//200x100\n            copy($dir2.$file, $dir3.str_replace(\".\", \"-200x200.\", $file));//200x200\n\n            unlink($dir2.$file);\n          }\n        }\n    }\n\n\n  echo \"Sale de volcado de colores<br/>\";\n\n\n    // $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n  $sql =\"SELECT categoria, count(*) count FROM productos GROUP BY categoria\";\n  $categorias = mysql_query($sql,$conexion);\n      while($actualizacion=mysql_fetch_array($categorias)){\n       $act = \"UPDATE 'wp_term_taxonomy' SET 'count' =\" . $actualizacion['count'] . \" WHERE 'description'= '$actualizacion[categoria]'\";\n        echo \"$act<br>\";\n        // $setregistro = mysql_query($act,$conexion);\n      }\n\n\n    //Mete la imagen de cada producto en la tabla imagenes\n  $query = \"SELECT * FROM productos\";\n  $resul=mysql_query($query,$conexion);\n\n  while($registro=mysql_fetch_array($resul)){\n\n    $var=strrpos($registro['imagenes'],\".\");\n    $ext=substr($registro['imagenes'],$var+1);\n    $ext=strtolower($ext);\n    if ($ext=='jpg')\n      $ext='jpeg';\n\n    $nom=strrpos($registro['imagenes'],\"/\");\n\n\n    $totalcadena=strlen(substr ($registro['imagenes'],$nom+1));\n    $totalcadena2=strlen(substr ($registro['imagenes'],$var));\n\n    $nombre=substr($registro['imagenes'],$nom+1,$totalcadena-$totalcadena2);\n\n    if ($registro['imagenes']!=\"\"){\n\n      $queryInsert14 =\"INSERT INTO imagenes (post_date,nombre,post_status,comment_status,post_name,ruta, menu_order,post_type,post_mime_type) VALUES ('$registro[post_date]','$nombre','inherit','Closed','$nombre','$registro[imagenes]',0,'attachment','image/$ext')\";\n      $resultInsert14 = mysql_query($queryInsert14,$conexion);\n\n\n    }\n  }\n\n  //Vuelca las imagenes a la tabla wp_posts\n  $query = \"SELECT * FROM wp_posts INNER JOIN imagenes ON wp_posts.guid = imagenes.ruta\";\n  $resul=mysql_query($query,$conexion);\n\n        if (mysql_num_rows($resul) == 0){\n    $queryInsert = \"INSERT INTO wp_posts(post_date,post_title,post_status,comment_status,post_name,guid,menu_order,post_type,post_mime_type) SELECT post_date,nombre,post_status,comment_status,post_name,ruta,menu_order,post_type,post_mime_type FROM imagenes\";\n    $resultInsert = mysql_query($queryInsert,$conexion);\n    }\n\n    $query =\"SELECT DISTINCT wp_posts.*,productos.imagenes FROM wp_posts,productos,imagenes WHERE wp_posts.post_title=productos.post_title and productos.imagenes=imagenes.ruta\";\n    $resul = mysql_query($query,$conexion);\n      while($registro=mysql_fetch_array($resul)){\n\n        $queryInsert = \"UPDATE wp_posts SET post_parent=$registro[ID] WHERE guid='$registro[imagenes]'\";\n        $resultInsert = mysql_query($queryInsert,$conexion);\n\n      }\n\n    //volcar imagenes en wp_postmeta\n  $query = \"SELECT * FROM wp_posts INNER JOIN imagenes ON wp_posts.guid = imagenes.ruta\";\n  $resul=mysql_query($query,$conexion);\n\n    while($registro=mysql_fetch_array($resul)){\n          $var=strrpos($registro['guid'],\"/\");\n          $ext=substr($registro['guid'],$var+1);\n\n          $var2=strrpos($registro['guid'],\".\");\n          $ext2=substr($registro['guid'],$var2+1);\n\n\n          $nombre1 = str_replace(\".\", \"-90x90.\", $ext);\n          $nombre2 = str_replace(\".\", \"-90x110.\", $ext);\n          $nombre3 = str_replace(\".\", \"-105x135.\", $ext);\n          $nombre4 = str_replace(\".\", \"-135x160.\", $ext);\n          $nombre5 = str_replace(\".\", \"-150x150.\", $ext);\n          $nombre6 = str_replace(\".\", \"-200x100.\", $ext);\n          $nombre7 = str_replace(\".\", \"-200x200.\", $ext);\n\n          $queryInsert =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_wp_attached_file','$ext')\";\n          $resultInsert = mysql_query($queryInsert,$conexion);\n\n          $valorImagen = \"a:5:{s:5:\\\"width\\\";i:200;s:6:\\\"height\\\";i:200;s:4:\\\"file\\\";s:\".strlen($ext).\":\\\"\".$ext.\"\\\";s:5:\\\"sizes\\\";a:7:{s:9:\\\"thumbnail\\\";a:4:{s:4:\\\"file\\\";s:\".strlen($nombre5).\":\\\"\".$nombre5.\"\\\";s:5:\\\"width\\\";i:150;s:6:\\\"height;i:150;s:9:\\\"mime-type\\\";s:9:\\\"image/\".$ext2.\"\\\";}s:12:\\\"blog-thumb-3\\\";a:4:{s:4:\\\"file\\\";s:\".strlen($nombre7).\":\\\"\".$nombre7.\"\\\";s:5:\\\"width\\\";i:200;s:6:\\\"height\\\";i:200;s:9:\\\"mime-type\\\";s:9:\\\"image/\".$ext2.\"\\\";}s:12:\\\"shop-thumb-2\\\";a:4:{s:4:\\\"file\\\";s:\".strlen($nombre2).\":\\\"\".$nombre2.\"\\\";s:5:\\\"width\\\";i:90;s:6:\\\"height\\\";i:110;s:9:\\\"mime-type\\\";s:9:\\\"image/\".$ext2.\"\\\";}s:12:\\\"shop-thumb-3\\\";a:4:{s:4:\\\"file\\\";s:\".strlen($nombre3).\":\\\"\".$nombre3.\"\\\";s:5:\\\"width\\\";i:105;s:6:\\\"height\\\";i:135;s:9:\\\"mime-type\\\";s:9:\\\"image/\".$ext2.\"\\\";}s:12:\\\"shop-thumb-5\\\";a:4:{s:4:\\\"file\\\";s:\".strlen($nombre4).\":\\\"\".$nombre4.\"\\\";s:5:\\\"width\\\";i:135;s:6:\\\"height\\\";i:160;s:9:\\\"mime-type\\\";s:9:\\\"image/\".$ext2.\"\\\";}s:14:\\\"shop_thumbnail\\\";a:4:{s:4:\\\"file\\\";s:\".strlen($nombre1).\":\\\"\".$nombre1.\"\\\";s:5:\\\"width\\\";i:90;s:6:\\\"height\\\";i:90;s:9:\\\"mime-type\\\";s:9:\\\"image/\".$ext2.\"\\\";}s:12:\\\"shop_catalog\\\";a:4:{s:4:\\\"file\\\";s:\".strlen($nombre5).\":\\\"\".$nombre5.\"\\\";s:5:\\\"width\\\";i:150;s:6:\\\"height\\\";i:150;s:9:\\\"mime-type\\\";s:9:\\\"image/\".$ext2.\"\\\";}}s:10:\\\"image_meta\\\";a:11:{s:8:\\\"aperture\\\";i:0;s:6:\\\"credit\\\";s:0:\\\"\\\";s:6:\\\"camera\\\";s:0:\\\"\\\";s:7:\\\"caption\\\";s:0:\\\"\\\";s:17:\\\"created_timestamp\\\";i:0;s:9:\\\"copyright\\\";s:0:\\\"\\\";s:12:\\\"focal_length\\\";i:0;s:3:\\\"iso\\\";i:0;s:13:\\\"shutter_speed\\\";i:0;s:5:\\\"title\\\";s:0:\\\"\\\";s:11:\\\"orientation\\\";i:0;}}\";\n\n          $queryInsert1 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_wp_attachment_metadata','$valorImagen')\";\n          $resultInsert1 = mysql_query($queryInsert1,$conexion);\n\n        }\n\n  //volcado de datos a la tabla wp_postmeta\n    $query = \"SELECT wp_posts.*,productos.imagenes FROM wp_posts,productos WHERE wp_posts.post_title = productos.post_title\";\n  $resul=mysql_query($query,$conexion);\n\n    while($registro=mysql_fetch_array($resul)){\n\n       $sql = \"SELECT * FROM productos where post_title = '$registro[post_title]'\";\n       $resul2=mysql_query($sql,$conexion);\n       while($registro2=mysql_fetch_array($resul2)){\n\n        $queryInsert =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'laborator_meta_description','')\";\n        $resultInsert = mysql_query($queryInsert,$conexion);\n        $queryInsert2 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'laborator_meta_keywords','')\";\n        $resultInsert = mysql_query($queryInsert2,$conexion);\n        $queryInsert3 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'laborator_meta_robots_index','')\";\n        $resultInsert = mysql_query($queryInsert3,$conexion);\n        $queryInsert4 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'laborator_meta_robots_follow','')\";\n        $resultInsert = mysql_query($queryInsert4,$conexion);\n        $queryInsert5 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_product_attributes','a:2:{s:8:\\\"pa_talla\\\";a:6:{s:4:\\\"name\\\";s:8:\\\"pa_talla\\\";s:5:\\\"value\\\";s:0:\\\"\\\";s:8:\\\"position\\\";s:1:\\\"0\\\";s:10:\\\"is_visible\\\";i:1;s:12:\\\"is_variation\\\";i:1;s:11:\\\"is_taxonomy\\\";i:1;}s:8:\\\"pa_color\\\";a:6:{s:4:\\\"name\\\";s:8:\\\"pa_color\\\";s:5:\\\"value\\\";s:0:\\\"\\\";s:8:\\\"position\\\";s:1:\\\"1\\\";s:10:\\\"is_visible\\\";i:1;s:12:\\\"is_variation\\\";i:1;s:11:\\\"is_taxonomy\\\";i:1;}}')\";\n        $resultInsert = mysql_query($queryInsert5,$conexion);\n        $queryInsert6 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_visibility','$registro2[visibility]')\";\n        $resultInsert = mysql_query($queryInsert6,$conexion);\n        $queryInsert7 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_stock_status','$registro2[stock_status]')\";\n        $resultInsert = mysql_query($queryInsert7,$conexion);\n        $queryInsert8 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_vc_post_settings','a:1:{s:7:\\\"vc_grid\\\";a:0:{}}')\";\n        $resultInsert = mysql_query($queryInsert8,$conexion);\n        $queryInsert9 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_regular_price','')\";\n        $resultInsert = mysql_query($queryInsert9,$conexion);\n        $queryInsert10 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_price','')\";\n        $resultInsert = mysql_query($queryInsert10,$conexion);\n        $queryInsert11 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_sale_price','')\";\n        $resultInsert = mysql_query($queryInsert11,$conexion);\n\n        if($registro2['destacado']==0){\n          $queryInsert12 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_featured','no')\";\n          $resultInsert = mysql_query($queryInsert12,$conexion);\n        }else{\n          $queryInsert12 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_featured','yes')\";\n          $resultInsert = mysql_query($queryInsert12,$conexion);\n        }\n\n\n        $queryInsert13 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_weight','$registro2[wight]')\";\n        $resultInsert = mysql_query($queryInsert13,$conexion);\n        $queryInsert14 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_sku','$registro2[sku]')\";\n        $resultInsert = mysql_query($queryInsert14,$conexion);\n        $queryInsert15 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_manage_stock','$registro2[manage_stock]')\";\n        $resultInsert = mysql_query($queryInsert15,$conexion);\n        $queryInsert16 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_backorders','$registro2[backorders]')\";\n        $resultInsert = mysql_query($queryInsert16,$conexion);\n        $queryInsert17 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_stock','$registro2[stock]')\";\n        $resultInsert = mysql_query($queryInsert17,$conexion);\n\n       $query = \"SELECT wp_posts.* FROM wp_posts,productos WHERE wp_posts.guid = productos.imagenes\";\n      $resul3=mysql_query($query,$conexion);\n\n        while($registro3=mysql_fetch_array($resul3)){\n          if ($registro3['guid']==$registro['imagenes']){\n\n        $queryInsert18 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_product_image_gallery',$registro3[ID])\";\n        $resultInsert = mysql_query($queryInsert18,$conexion);\n        $queryInsert19 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_thumbnail_id',$registro3[ID])\";\n        $resultInsert = mysql_query($queryInsert19,$conexion);\n\n          }\n        }\n\n        $queryInsert20 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_wp_old_slug','producto-variacion')\";\n        $resultInsert = mysql_query($queryInsert20,$conexion);\n        $queryInsert21 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_tax_status','$registro2[estrellitas]')\";\n        $resultInsert = mysql_query($queryInsert21,$conexion);\n        $queryInsert22 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_upsell_ids','a:0:{}')\";\n        $resultInsert = mysql_query($queryInsert22,$conexion);\n        $queryInsert23 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_crosssell_ids','a:0:{}')\";\n        $resultInsert = mysql_query($queryInsert23,$conexion);\n        $queryInsert24 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_default_attributes','a:0:{}')\";\n        $resultInsert = mysql_query($queryInsert24,$conexion);\n        $queryInsert25 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_downloadable','no')\";\n        $resultInsert = mysql_query($queryInsert25,$conexion);\n        $queryInsert26 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_virtual','no')\";\n        $resultInsert = mysql_query($queryInsert26,$conexion);\n\n       }\n    }\n\n\n\n\n      mysql_close($conexion);\n\n}\n\n\n\n///////////////////////\n//////VARIACIONES//////\n///////////////////////\n\nif($varia != 0){\n// echo \"Comienza volcado de variaciones<br/>\";\n\n  //volcado de la tabla variaciones a la tabla wp_posts\n  $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n    mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n\n  $query = \"SELECT * FROM variaciones\";\n$resul=mysql_query($query,$conexion);\n  while($registro=mysql_fetch_array($resul)){\n    $query1 = \"SELECT * FROM wp_postmeta where meta_value = '$registro[codigo]' and meta_key='_sku'\";\n    $resul1=mysql_query($query1,$conexion);\n    while($registro1=mysql_fetch_array($resul1)){\n\n      $query2 = \"SELECT * FROM wp_postmeta where post_id = $registro1[post_id]\";\n      $resul2=mysql_query($query2,$conexion);\n      if(mysql_num_rows($resul2)==20){\n\n        $codVarDel[] = $registro['codigo'];\n\n        $queryInsert = \"UPDATE wp_postmeta SET meta_value = '$registro[precio]' WHERE post_id = $registro1[post_id] and meta_key = '_price'\";\n        mysql_query($queryInsert,$conexion);\n\n        $queryInsert = \"UPDATE wp_postmeta SET meta_value = '$registro[precio]' WHERE post_id = $registro1[post_id] and meta_key = '_regular_price'\";\n        mysql_query($queryInsert,$conexion);\n\n        $queryInsert = \"UPDATE wp_postmeta SET meta_value = '$registro[stock]' WHERE post_id = $registro1[post_id] and meta_key = '_stock'\";\n        mysql_query($queryInsert,$conexion);\n      }\n    }\n  }\n  for($i = 0; $i < sizeof($codVarDel);$i++){\n    $query = \"DELETE FROM variaciones WHERE codigo = '$codVarDel[$i]'\";\n    mysql_query($query,$conexion);\n  }\n\n\n  //Aqui pasaria a introducir la variaciones si no existen\n  $query = \"SELECT * FROM variaciones\";\n  $resul=mysql_query($query,$conexion);\n\n  while($registro=mysql_fetch_array($resul)){\n\n\n    $query2=\"SELECT wp_posts.* FROM wp_posts WHERE wp_posts.post_title='$registro[parent_title]' and wp_posts.post_type='product'\";\n    $resul2=mysql_query($query2,$conexion);\n\n    $registro2=mysql_fetch_array($resul2);\n\n\n    $queryInsert = \"INSERT INTO wp_posts(post_title,post_status,comment_status,post_parent,post_type) VALUES ('$registro[parent_title]','$registro[post_status]','closed',$registro2[ID],'product_variation')\";\n    $resultInsert = mysql_query($queryInsert,$conexion);\n\n  }\n\n\n    $query=\"SELECT distinct wp_posts.* FROM wp_posts,variaciones WHERE wp_posts.post_title=variaciones.parent_title AND wp_posts.post_type='product_variation' order by post_title\";\n    $resul=mysql_query($query,$conexion);\n\n    $cont=1;\n    $aux=\"\";\n\n    while($registro=mysql_fetch_array($resul)){\n\n\n    if ($aux==$registro['post_title']){\n      $cont++;\n    }else{\n      $aux=$registro['post_title']; $cont=1;\n    }\n\n    $query1=\"SELECT variaciones.* FROM variaciones WHERE parent_title='$registro[post_title]'\";\n    $resul1=mysql_query($query1,$conexion);\n\n    $registro3=mysql_fetch_array($resul1);\n\n    $regis=\"\";\n\n    if ($cont>1) $regis=\"-$cont\";\n    else $regis=\"\";\n\n    //actualizacion de la tabla wp_posts\n\n    $queryUpdate = \"UPDATE wp_posts SET post_title='Variacion #\".$registro['ID'].\" de \".$registro['post_title'].\"', post_name='product-\".$registro['post_parent'].\"-variation\".$regis.\"',guid='http://baybom.dissapi.com/?product_variation=product-\".$registro['post_parent'].\"-variation\".$regis.\"' WHERE ID=$registro[ID]\";\n    $resultUpdate = mysql_query($queryUpdate,$conexion);\n\n    //volcado de datos a la tabla wp_postmeta\n\n      $queryInsert1 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'custom_page_title','')\";\n      $resultInsert = mysql_query($queryInsert1,$conexion);\n      $queryInsert2 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'laborator_meta_description','')\";\n      $resultInsert = mysql_query($queryInsert2,$conexion);\n      $queryInsert3 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'laborator_meta_keywords','')\";\n      $resultInsert = mysql_query($queryInsert3,$conexion);\n      $queryInsert4 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'laborator_meta_robots_index','')\";\n      $resultInsert = mysql_query($queryInsert4,$conexion);\n      $queryInsert5 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'laborator_meta_robots_follow','')\";\n      $resultInsert = mysql_query($queryInsert5,$conexion);\n      $queryInsert6 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_stock_status','instock')\";\n      $resultInsert = mysql_query($queryInsert6,$conexion);\n      $queryInsert7 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_sku','$registro3[codigo]')\";\n      $resultInsert = mysql_query($queryInsert7,$conexion);\n      $queryInsert9 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_manage_stock','yes')\";\n      $resultInsert = mysql_query($queryInsert9,$conexion);\n      $queryInsert10 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_backorders','no')\";\n      $resultInsert = mysql_query($queryInsert10,$conexion);\n      $queryInsert11 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_stock','$registro3[stock]')\";\n      $resultInsert = mysql_query($queryInsert11,$conexion);\n      $queryInsert12 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_regular_price','$registro3[precio]')\";\n      $resultInsert = mysql_query($queryInsert12,$conexion);\n      $queryInsert13 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_sale_price','')\";\n      $resultInsert = mysql_query($queryInsert13,$conexion);\n      $queryInsert14 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_sale_price_dates_from','')\";\n      $resultInsert = mysql_query($queryInsert14,$conexion);\n      $queryInsert15 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_sale_price_dates_to','')\";\n      $resultInsert = mysql_query($queryInsert15,$conexion);\n      $queryInsert16 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_price','$registro3[precio_rebajado]')\";\n      $resultInsert = mysql_query($queryInsert16,$conexion);\n      $queryInsert17 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_download_limit','')\";\n      $resultInsert = mysql_query($queryInsert17,$conexion);\n      $queryInsert18 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_download_expiry','')\";\n      $resultInsert = mysql_query($queryInsert18,$conexion);\n      $queryInsert19 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'_downloadable_files','')\";\n      $resultInsert = mysql_query($queryInsert19,$conexion);\n\n      $queryInsert20 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'attribute_pa_color','$registro3[color]')\";\n      $resultInsert = mysql_query($queryInsert20,$conexion);\n      $queryInsert20 =\"INSERT INTO wp_postmeta (post_id,meta_key,meta_value) VALUES ($registro[ID],'attribute_pa_talla','$registro3[talla]')\";\n      $resultInsert = mysql_query($queryInsert20,$conexion);\n\n\n    }\n\n\n  mysql_query($sql,$conexion);\n\n    mysql_close($conexion);\n\n// relación en la tabla wp_term_relationships de las VARIACIONES\n\n  $conexion = mysql_connect($host,$user,$pass) OR DIE (mysql_error());\n    mysql_select_db($db,$conexion);\n  // mysqli_set_charset($conexion,\"utf8\");\n\n\n    //Crear las tallas y colores si no existen...\n    $query = \"SELECT * FROM variaciones\";\n    $resul=mysql_query($query,$conexion);\n\n        while($registro=mysql_fetch_array($resul)){\n          ///////TALLAS\n          $query1 = \"SELECT * FROM wp_terms where name like '$registro[talla]'\";\n          $resul1=mysql_query($query1,$conexion);\n\n          if (mysql_fetch_row($resul1) == 0){\n            $queryInsert = \"INSERT INTO wp_terms(name,slug) VALUES ('\".strtoupper($registro['talla']).\"','\".strtolower($registro['talla']).\"')\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n\n            // relacionar tabla wp_terms con tabla wp_term_taxonomy de la nueva talla introducida\n            $query2 = \"SELECT wp_terms.term_id FROM wp_terms WHERE wp_terms.name = '$registro[talla]'\";\n            $resul2=mysql_query($query2,$conexion);\n\n            while($registro1=mysql_fetch_array($resul2)){\n\n              $queryInsert = \"INSERT INTO wp_term_taxonomy (term_id,taxonomy,description) VALUES ($registro1[term_id],'pa_talla','$registro[talla]')\";\n              $resultInsert = mysql_query($queryInsert,$conexion);\n\n            }\n          }\n\n\n          ////////COLORES\n          $query2 = \"SELECT * FROM wp_terms where name like '$registro[color]'\";\n          $resul2=mysql_query($query2,$conexion);\n\n          if (mysql_fetch_row($resul2) == 0){\n            $queryInsert = \"INSERT INTO wp_terms(name,slug) VALUES ('\".strtoupper($registro['color']).\"','\".strtolower($registro['color']).\"')\";\n            $resultInsert = mysql_query($queryInsert,$conexion);\n\n            // relacionar tabla wp_terms con tabla wp_term_taxonomy de la nueva talla introducida\n            $query3 = \"SELECT wp_terms.term_id FROM wp_terms WHERE wp_terms.name = '$registro[color]'\";\n            $resul3=mysql_query($query3,$conexion);\n\n            while($registro1=mysql_fetch_array($resul3)){\n\n              $queryInsert = \"INSERT INTO wp_term_taxonomy (term_id,taxonomy,description) VALUES ($registro1[term_id],'pa_color','$registro[color]')\";\n              $resultInsert = mysql_query($queryInsert,$conexion);\n\n            }\n          }\n        }\n\n\n\n\n\n\n\n    //colores\n\n    $query=\"SELECT wp_terms.*, wp_posts.* FROM variaciones, wp_terms, wp_posts WHERE variaciones.color = wp_terms.name and variaciones.parent_title = wp_posts.post_title\";\n    $resul=mysql_query($query,$conexion);\n\n      while($registro=mysql_fetch_array($resul)){\n\n        $query2 = \"SELECT term_taxonomy_id FROM wp_term_taxonomy WHERE term_id = $registro[term_id]\";\n        $resul2=mysql_query($query2,$conexion);\n\n        while($registro2=mysql_fetch_array($resul2)){\n\n        $queryInsert =\"INSERT INTO wp_term_relationships (object_id,term_taxonomy_id) VALUES ($registro[ID],$registro2[term_taxonomy_id])\";\n        $resultInsert = mysql_query($queryInsert,$conexion);\n\n          if ($resultInsert==1){\n            $sql=\"UPDATE wp_term_taxonomy SET count=count+1 WHERE term_taxonomy_id=$registro2[term_taxonomy_id]\";\n            $resultUpdate = mysql_query($sql,$conexion);\n          }\n\n        }\n      }\n\n\n    //tallas\n\n    $query=\"SELECT wp_terms.*, wp_posts.* FROM variaciones, wp_terms, wp_posts WHERE variaciones.talla = wp_terms.name and variaciones.parent_title = wp_posts.post_title\";\n    $resul=mysql_query($query,$conexion);\n\n      while($registro=mysql_fetch_array($resul)){\n\n        $query2 = \"SELECT term_taxonomy_id FROM wp_term_taxonomy WHERE term_id = $registro[term_id]\";\n        $resul2=mysql_query($query2,$conexion);\n\n        while($registro2=mysql_fetch_array($resul2)){\n\n        $queryInsert =\"INSERT INTO wp_term_relationships (object_id,term_taxonomy_id) VALUES ($registro[ID],$registro2[term_taxonomy_id])\";\n        $resultInsert = mysql_query($queryInsert,$conexion);\n\n          if ($resultInsert==1){\n            $sql=\"UPDATE wp_term_taxonomy SET count=count+1 WHERE term_taxonomy_id=$registro2[term_taxonomy_id]\";\n            $resultUpdate = mysql_query($sql,$conexion);\n          }\n\n        }\n      }\n\n   /////////////////////////////////////////////\n  ////Cambia los valores del orden del menu////\n ////Cambia los valores de los artributos/////\n/////////////////////////////////////////////\n\n  $query=\"SELECT * FROM wp_posts where post_parent in ( SELECT id FROM wp_posts where post_type LIKE 'product') AND post_type LIKE 'product_variation' order by post_parent\";\n  $resul=mysql_query($query,$conexion);\n\n  $contador;\n  $aux=0;\n  while($registro=mysql_fetch_array($resul)){\n    $id = $registro['ID'];\n    if($aux != $registro['post_parent']){\n        $aux = $registro['post_parent'];\n        $contador=0;\n    }else{\n        $contador++;\n    }\n    $sql=\"UPDATE wp_posts SET menu_order = $contador WHERE ID = $id\";\n    $resultUpdate = mysql_query($sql,$conexion);\n  }\n\n\n\n  //Aqui se le asigna los valores correspondientes a cada variacion\n\n$query1 = \"SELECT * FROM wp_posts where post_type like 'product' order by post_title\";\n$resul1=mysql_query($query1,$conexion);\n\nwhile($registro=mysql_fetch_array($resul1)){\n  $query3 = \"SELECT * FROM variaciones where parent_title like '%\".$registro['post_title'].\"'\";\n  $resul3=mysql_query($query3,$conexion);\n\n  if(mysql_num_rows($resul3)>0){\n\n    $query4 = \"SELECT * FROM wp_posts where post_type like 'product_variation' and post_title like '%\".$registro['post_title'].\"'\";\n    $resul4=mysql_query($query4,$conexion);\n\n    while($registro1=mysql_fetch_array($resul4)){\n      $idVar[] = $registro1['ID'];\n    }\n\n    $query2 = \"SELECT * FROM variaciones where parent_title like '\".$registro['post_title'].\"'\";\n    $resul2=mysql_query($query2,$conexion);\n\n    while($registro2=mysql_fetch_array($resul2)){\n      $talla[] = $registro2['talla'];\n      $color[] = $registro2['color'];\n      $precio[] = $registro2['precio'];\n      $stock[] = $registro2['stock'];\n      $skuVar[] = $registro2['codigo'];\n    }\n  }\n}\n\n\nfor($i = 0 ; $i < sizeof($color) ; $i++){\n    $sql=\"UPDATE wp_postmeta SET meta_value = '\".$color[$i].\"' WHERE post_id = \".$idVar[$i] .\" and meta_key like 'attribute_pa_color'\";\n    $resultUpdate = mysql_query($sql,$conexion);\n\n    $sql=\"UPDATE wp_postmeta SET meta_value = '\".$talla[$i].\"' WHERE post_id = \".$idVar[$i] .\" and meta_key like 'attribute_pa_talla'\";\n    $resultUpdate = mysql_query($sql,$conexion);\n\n    $sql=\"UPDATE wp_postmeta SET meta_value = '\".$precio[$i].\"' WHERE post_id = \".$idVar[$i] .\" and meta_key like '_price'\";\n    $resultUpdate = mysql_query($sql,$conexion);\n\n    $sql=\"UPDATE wp_postmeta SET meta_value = '\".$stock[$i].\"' WHERE post_id = \".$idVar[$i] .\" and meta_key like '_stock'\";\n    $resultUpdate = mysql_query($sql,$conexion);\n\n    $sql=\"UPDATE wp_postmeta SET meta_value = '\".$skuVar[$i].\"' WHERE post_id = \".$idVar[$i] .\" and meta_key like '_sku'\";\n    $resultUpdate = mysql_query($sql,$conexion);\n}\n\n////Para actualizar los valores de la tabla wp_postmeta del producto con los precios de las variaciones\n\n$query1 = \"SELECT * FROM wp_posts where post_type like 'product' order by post_title\";\n$resul1=mysql_query($query1,$conexion);\n\nwhile($registro=mysql_fetch_array($resul1)){\n  $query3 = \"SELECT * FROM variaciones where parent_title like '%\".$registro['post_title'].\"'\";\n  $resul3=mysql_query($query3,$conexion);\n\n  if(mysql_num_rows($resul3)>0){\n    $query4 = \"SELECT * FROM wp_posts where post_type like 'product_variation' and post_title like '%\".$registro['post_title'].\"'\";\n    $resul4=mysql_query($query4,$conexion);\n\n    while($registro1=mysql_fetch_array($resul4)){\n      $idPreVar[] = $registro1['ID'];\n    }\n\n    $query2 = \"SELECT * FROM variaciones where parent_title like '\".$registro['post_title'].\"'\";\n    $resul2=mysql_query($query2,$conexion);\n\n    while($registro2=mysql_fetch_array($resul2)){\n      $precioVar[] = $registro2['precio'];\n    }\n  }\n  for($i = 0 ; $i < sizeof($idMaximo) ; $i++){\n    for($j = 0 ; $j < sizeof($idMaximo) ; $j++){\n      if($precioVar[$i] > $precioVar[$j]){\n        $maximo = $precioVar[$i];\n        $posicionIdMax = $i;\n      }\n      if($precioVar[$i] < $precioVar[$j]){\n        $minimo = $precioVar[$i];\n        $posicionIdMin = $i;\n      }\n    }\n  }\n\n    $sql=\"UPDATE wp_postmeta SET meta_value = '\".$minimo.\"' WHERE post_id = \".$registro['ID'] .\" and meta_key like '_min_variation_price'\";\n    $resultUpdate = mysql_query($sql,$conexion);\n\n    $sql=\"UPDATE wp_postmeta SET meta_value = '\".$maximo.\"' WHERE post_id = \".$registro['ID'] .\" and meta_key like '_max_variation_price'\";\n    $resultUpdate = mysql_query($sql,$conexion);\n\n    $sql=\"UPDATE wp_postmeta SET meta_value = '\".$precioVar[$posicionIdMin].\"' WHERE post_id = \".$registro['ID'] .\" and meta_key like '_min_price_variation_id'\";\n    $resultUpdate = mysql_query($sql,$conexion);\n\n    $sql=\"UPDATE wp_postmeta SET meta_value = '\".$precioVar[$posicionIdMax].\"' WHERE post_id = \".$registro['ID'] .\" and meta_key like '_max_price_variation_id'\";\n    $resultUpdate = mysql_query($sql,$conexion);\n\n}\n\n\n// echo \"Sale volcado de variaciones<br/>\";\n\n    mysql_close($conexion);\n}\n?>",
+			"file": "/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/disstext.php",
+			"file_size": 72014,
+			"file_write_time": 130946761074566499,
+			"settings":
+			{
+				"buffer_size": 70317,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Controller/ActividadController.php",
+			"settings":
+			{
+				"buffer_size": 3818,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "src/Controller/Admin/UsersController.php",
 			"settings":
 			{
@@ -148,19 +167,11 @@
 			}
 		},
 		{
-			"file": "src/Template/Actividad/edit.ctp",
-			"settings":
-			{
-				"buffer_size": 2218,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "webroot/less/default_backend.less",
 			"settings":
 			{
-				"buffer_size": 822,
-				"line_ending": "Windows"
+				"buffer_size": 1434,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -175,7 +186,7 @@
 			"file": "src/Template/Layout/default_admin.ctp",
 			"settings":
 			{
-				"buffer_size": 2227,
+				"buffer_size": 2217,
 				"line_ending": "Unix"
 			}
 		}
@@ -273,19 +284,23 @@
 	},
 	"expanded_folders":
 	[
-		"/C/wamp/www/iestrascolar",
-		"/C/wamp/www/iestrascolar/src",
-		"/C/wamp/www/iestrascolar/src/Template",
-		"/C/wamp/www/iestrascolar/src/Template/Actividad",
-		"/C/wamp/www/iestrascolar/webroot",
-		"/C/wamp/www/iestrascolar/webroot/libs",
-		"/C/wamp/www/iestrascolar/webroot/libs/bootstrap-calendar",
-		"/C/wamp/www/iestrascolar/webroot/libs/bootstrap-calendar/tmpls",
-		"/C/wamp/www/iestrascolar/webroot/libs/datetimepicker",
-		"/C/wamp/www/iestrascolar/webroot/libs/login"
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Controller",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Controller/Admin",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Template",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Template/Actividad"
 	],
 	"file_history":
 	[
+		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/.htaccess",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/webroot/libs/bootstrap/css/bootstrap.ceruleantheme.min.css",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/vendor/friendsofcake/crud/src/Controller/ControllerTrait.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/config/routes.php",
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/src/Controller/ActividadController.php",
+		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/disstext.php",
+		"/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/disstextprueba.php",
+		"/C/Users/amuñoz/Documents/Sousa/backups/sousa/wp-config.php",
 		"/C/wamp/www/iestrascolar/webroot/css/base.css",
 		"/C/wamp/www/iestrascolar/src/Template/Layout/default_admin.ctp",
 		"/C/wamp/www/iestrascolar/src/Controller/Admin/UsersController.php",
@@ -405,15 +420,7 @@
 		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/View/Activities/index.ctp",
 		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Controller/ActivitiesController.php",
 		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Config/database.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Config/bootstrap.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Admin/Controller/AdminAppController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Admin/Controller/MainController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/Plugin/Admin/Controller/LogDeAccesoController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Model/Organization.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Model/AppModel.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Controller/TeachersController.php",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/View/Activities/view.ctp",
-		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/composer.json"
+		"/C/Bitnami/wampstack-5.4.38-0/apache2/htdocs/iestrascolar/app/Config/bootstrap.php"
 	],
 	"find":
 	{
@@ -444,6 +451,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"close",
+			"mysql_connect",
+			"\"select",
+			"select",
+			"productos",
+			"fs",
+			"masiva",
+			"masica",
+			"PRODUCTOS",
+			"categorias",
+			"INSERT INTO wp_terms",
+			"categorias",
+			"cateogirasç",
+			"importarcategorias",
 			"form",
 			"<iframe\n  width=\"600\"\n  height=\"450\"\n  frameborder=\"0\" style=\"border:0\"\n  src=\"https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY\n    &q=Space+Needle,Seattle+WA\" allowfullscreen>\n</iframe>",
 			"position: absolute;margin-left: -20px;",
@@ -566,7 +587,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -575,15 +596,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3958,
+						"buffer_size": 3903,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1629,
-								1629
+								2511,
+								2511
 							]
 						],
 						"settings":
@@ -596,16 +617,21 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -616,46 +642,41 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content"
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
 							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 342.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -671,8 +692,8 @@
 						"selection":
 						[
 							[
-								3717,
-								3719
+								595,
+								595
 							]
 						],
 						"settings":
@@ -685,16 +706,21 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -705,63 +731,58 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content"
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1200.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "webroot/libs/bootstrap/css/bootstrap.ceruleantheme.min.css",
+					"file": "vendor/cakephp/cakephp/src/View/HelperRegistry.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 128244,
+						"buffer_size": 4597,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								38970,
-								38970
+								1003,
+								1003
 							]
 						],
 						"settings":
@@ -774,16 +795,21 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -794,44 +820,41 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content"
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
-							"syntax": "Packages/CSS/CSS.tmLanguage"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3734.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -920,7 +943,7 @@
 						"translation.y": 1345.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -936,8 +959,8 @@
 						"selection":
 						[
 							[
-								732,
-								732
+								781,
+								781
 							]
 						],
 						"settings":
@@ -950,16 +973,21 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -970,36 +998,31 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content"
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
 							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
@@ -1008,11 +1031,189 @@
 						"translation.y": 42.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
+					"file": "/C/Users/amuñoz/AppData/Local/Temp/fz3temp-1/disstext.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 70317,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								42269,
+								42269
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 14773.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/Controller/ActividadController.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3818,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "src/Controller/Admin/UsersController.php",
 					"semi_transient": false,
 					"settings":
@@ -1097,11 +1298,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "src/Controller/AppController.php",
 					"semi_transient": false,
 					"settings":
@@ -1186,113 +1387,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "src/Template/Actividad/edit.ctp",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2218,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2185,
-								2185
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "webroot/less/default_backend.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 822,
+						"buffer_size": 1434,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								65,
-								65
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1363,11 +1475,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "webroot/libs/datetimepicker/jquery-ui-timepicker-addon.js",
 					"semi_transient": false,
 					"settings":
@@ -1451,24 +1563,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "src/Template/Layout/default_admin.ctp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2227,
+						"buffer_size": 2217,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1978,
-								1978
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1540,7 +1652,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -1594,6 +1706,22 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"edit.ctp",
+				"src\\Template\\Admin\\Actividad\\edit.ctp"
+			],
+			[
+				"helperreg",
+				"vendor\\cakephp\\cakephp\\src\\View\\HelperRegistry.php"
+			],
+			[
+				"controllertrai",
+				"vendor\\friendsofcake\\crud\\src\\Controller\\ControllerTrait.php"
+			],
+			[
+				"route",
+				"config\\routes.php"
+			],
 			[
 				"appcontr",
 				"src\\Controller\\AppController.php"
@@ -1987,10 +2115,6 @@
 				"src\\Template\\Layout\\default_admin.ctp"
 			],
 			[
-				"edit.ctp",
-				"src\\Template\\Admin\\Actividad\\edit.ctp"
-			],
-			[
 				"error.log",
 				"logs\\error.log"
 			],
@@ -2093,18 +2217,6 @@
 			[
 				"teac",
 				"app\\Model\\Teacher.php"
-			],
-			[
-				"organiza",
-				"app\\Model\\Organization.php"
-			],
-			[
-				"appcon",
-				"app\\Controller\\AppController.php"
-			],
-			[
-				"boot",
-				"app\\Config\\bootstrap.php"
 			]
 		],
 		"width": 0.0

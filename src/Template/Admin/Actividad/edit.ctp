@@ -45,6 +45,14 @@
 				</div>
 			  </div>
 			  <div class="form-group">
+				<label for="direccionInput" class="col-lg-2 control-label">
+					<?= __('Dirección') ?> <i class="fa fa-map-marker"></i>
+				</label>
+				<div class="col-lg-10">
+					<?=$this->Form->input('direccion',['id' => 'direccionInput','label' => false]);?>
+				</div>
+			  </div>
+			  <div class="form-group">
 				<label for="descripcionInput" class="col-lg-2 control-label"><?=__('Descripción')?></label>
 				<div class="col-lg-10">
 				  <?=$this->Form->input('descripcion', [
