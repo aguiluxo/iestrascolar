@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller\Admin;
-use Cake\Event\Event;
 
+use Cake\Event\Event;
 
 class SliderController extends AdminController
 {
@@ -18,13 +18,14 @@ class SliderController extends AdminController
         $this->set('_serialize', ['slider']);
     }
 
-
-
     public function add()
     {
         $slider = $this->Slider->newEntity();
         if ($this->request->is('post')) {
+            $cantidad = $this->Slider->find()->count();
+            $this->request->data['orden'] = $cantidad + 1;
             $slider = $this->Slider->patchEntity($slider, $this->request->data);
+
             if ($this->Slider->save($slider)) {
                 $this->Flash->success(__('El slider ha sido guardado.'));
                 return $this->redirect(['action' => 'index']);
@@ -40,7 +41,7 @@ class SliderController extends AdminController
     public function edit($id = null)
     {
         $slider = $this->Slider->get($id, [
-            'contain' => []
+            'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $slider = $this->Slider->patchEntity($slider, $this->request->data);
