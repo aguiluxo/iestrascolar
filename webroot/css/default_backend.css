@@ -57,6 +57,12 @@ td.actions {
   content: "\f063";
   font-family: FontAwesome;
 }
+.imagenMiniatura {
+  border: 2px solid #9DC7D4;
+  border-radius: 3px;
+  width: 135px;
+  height: 52px;
+}
 .enlaceHome:before {
   content: "\f015";
   font-family: FontAwesome;

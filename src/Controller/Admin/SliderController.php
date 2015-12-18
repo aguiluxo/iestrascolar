@@ -14,6 +14,11 @@ class SliderController extends AdminController
 
     public function index()
     {
+        $this->paginate = [
+            'order' => [
+                'orden' => 'asc',
+            ],
+        ];
         $this->set('slider', $this->paginate($this->Slider));
         $this->set('_serialize', ['slider']);
     }
@@ -64,6 +69,38 @@ class SliderController extends AdminController
             $this->Flash->success(__('Slider borrado.'));
         } else {
             $this->Flash->error(__('El slider no ha podido ser borrado.'));
+        }
+        return $this->redirect(['action' => 'index']);
+    }
+
+    public function subir($id = null)
+    {
+        if ($id) {
+            $slider = $this->Slider->find()->where(['id' => $id])->first();
+            $orden = $slider->orden;
+            $slider_anterior = $this->Slider->find()->where(['orden' => ($orden - 1)])->first();
+            if ($orden != 1) {
+                $slider->orden = $orden - 1;
+                $slider_anterior->orden = $orden;
+                $this->Slider->save($slider);
+                $this->Slider->save($slider_anterior);
+            }
+        }
+        return $this->redirect(['action' => 'index']);
+    }
+
+    public function bajar($id = null)
+    {
+        if ($id) {
+            $slider = $this->Slider->find()->where(['id' => $id])->first();
+            $orden = $slider->orden;
+            $slider_posterior = $this->Slider->find()->where(['orden' => ($orden + 1)])->first();
+            if ($orden != $this->Slider->find()->count()) {
+                $slider->orden = $orden + 1;
+                $slider_posterior->orden = $orden;
+                $this->Slider->save($slider);
+                $this->Slider->save($slider_posterior);
+            }
         }
         return $this->redirect(['action' => 'index']);
     }

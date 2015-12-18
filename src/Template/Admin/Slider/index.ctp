@@ -12,21 +12,22 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($slider as $slider): ?>
+                <?php foreach ($slider as $slide): ?>
                 <tr>
-                    <td><?= $this->Number->format($slider->id) ?></td>
+                    <td><?= $this->Number->format($slide->id) ?></td>
                     <td>
-                           <?= $this->Html->link('',['action' => 'subir'],['class' => 'flechaSuperior']);?>
-                        <?= $this->Html->link('',['action' => 'bajar'],['class' => 'flechaInferior']);?>
+                           <?= $slide->orden == 1?'':$this->Html->link('',['action' => 'subir', $slide->id],['class' => 'flechaSuperior']);?>
+
+                        <?= $slide->orden == count($slider)?'':$this->Html->link('',['action' => 'bajar', $slide->id],['class' => 'flechaInferior']);?>
                     </td>
-                    <td><?= $this->Html->image('/files/slider/imagen/' . $slider->imagen_dir . '/miniatura_' . $slider->imagen,
-                    ['style' => 'width:50%;border:2px solid #9DC7D4;border-radius:3px;']);?></td>
-                    <td><?= h($slider->texto_fecha) ?></td>
-                    <td><?= h($slider->texto_tipo) ?></td>
-                    <td><?= h($slider->texto_info) ?></td>
+                    <td><?= $this->Html->image('/files/slider/imagen/' . $slide->imagen_dir . '/miniatura_' . $slide->imagen,
+                    ['class' => 'imagenMiniatura']);?></td>
+                    <td><?= h($slide->texto_fecha) ?></td>
+                    <td><?= h($slide->texto_tipo) ?></td>
+                    <td><?= h($slide->texto_info) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link('', ['action' => 'edit', $slider->id],['class' => 'botones botonEditar']) ?>
-                        <?= $this->Form->postLink('', ['action' => 'delete', $slider->id], ['class' => 'botones botonBorrar', 'confirm' => __('Are you sure you want to delete # {0}?', $slider->id)]) ?>
+                        <?= $this->Html->link('', ['action' => 'edit', $slide->id],['class' => 'botones botonEditar']) ?>
+                        <?= $this->Form->postLink('', ['action' => 'delete', $slide->id], ['class' => 'botones botonBorrar', 'confirm' => __('Are you sure you want to delete # {0}?', $slide->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
