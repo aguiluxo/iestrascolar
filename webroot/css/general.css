@@ -102,6 +102,7 @@ nav.navbar-default .navbar-right .search {
 #bs-example-navbar-collapse-1 {
   padding: 0;
 }
+/* Color principal del diseño */
 #carousel-example-generic {
   margin-bottom: 64px;
 }
@@ -150,6 +151,24 @@ nav.navbar-default .navbar-right .search {
   font-size: 41px;
   color: #f1c832;
   display: inline-block;
+}
+.carousel-indicators {
+  bottom: -42px;
+  margin-left: -46%;
+  text-align: initial;
+}
+.carousel-indicators li.miniatura {
+  height: 56px;
+  width: 132px;
+  border-radius: 0;
+  background-size: cover;
+  position: relative;
+  border: 3px solid white;
+  outline: 1px solid #c8c8c8;
+  margin-right: 16px;
+}
+.carousel-indicators li.miniatura.active {
+  border: 3px solid #f1c832;
 }
 .carousel-control.left,
 .carousel-control.right {

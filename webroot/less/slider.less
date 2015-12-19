@@ -1,4 +1,4 @@
-@amarillo:#f1c832;
+@amarillo:#f1c832; /* Color principal del diseño */
 #carousel-example-generic{
   margin-bottom: 64px;
 }
@@ -47,6 +47,25 @@
     font-size: 41px;
     color:@amarillo;
     display:inline-block;
+  }
+}
+
+.carousel-indicators{
+  bottom:-42px;
+  margin-left: -46%;
+  text-align: initial;
+  li.miniatura{
+    height:56px;
+    width:132px;
+    border-radius: 0;
+    background-size: cover;
+    position:relative;
+    border:3px solid white;
+    outline: 1px solid #c8c8c8;
+    margin-right: 16px;
+  }
+  li.miniatura.active{
+    border:3px solid @amarillo;
   }
 }
 .carousel-control.left,.carousel-control.right{

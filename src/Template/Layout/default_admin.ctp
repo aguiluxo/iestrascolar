@@ -23,7 +23,7 @@
 		<?=$this->fetch('title')?>
 	</title>
 	<?=$this->Html->meta('icon')?>
-	<?=$this->Html->css('/libs/bootstrap/css/bootstrap.ceruleantheme.min.css')?>
+	<?=$this->Html->css('/libs/bootstrap/css/bootstrap.flatytheme.css')?>
 
 <!--      JQUERY + BOOTSTRAP + FONTS AWESOME + SUMMERNOTE + DATEPICKER + CAKE ESTILOS + DATETIMEPICKER -->
 	<?=$this->Html->script('/libs/jquery-2.1.4.min.js')?>

@@ -1,10 +1,15 @@
 	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-		</ol>
+		<?php if ($slider->count() > 1): ?>
+			<ol class="carousel-indicators">
+				<?php foreach ($slider as $key => $slide): ?>
+					<li data-target="#carousel-example-generic" data-slide-to="<?=$key?>" class="<?=$key==0?'active':''?> miniatura"
+					style="background-image:url(files/slider/imagen/<?=$slide->imagen_dir;?>/miniatura_<?=$slide->imagen ?>)">
+					</li>
+				<?php endforeach ?>
+			</ol>
+
+		<?php endif ?>
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
 
@@ -12,22 +17,24 @@
 				<div id="item<?php echo ($key+1) ?>" class="<?php echo $key==0? 'item active': 'item' ?>"
 				style="background-image:url(files/slider/imagen/<?php echo $slide->imagen_dir;?>/<?php echo
 				$this->view == 'index'? 'slider_':'slider_';echo $slide->imagen ?>)">
-					<div class="carousel-caption">
-						<div class="contenedor-etiqueta">
-							<div class="fecha">
-								<?=$slide->texto_fecha?>
-							</div>
-							<div class="tipo">
-								<?=$slide->texto_tipo?>
-							</div>
-							<div class="info">
-								<?=$slide->texto_info?>
-							</div>
-							<div class="clave">
-								<?=$slide->texto_clave?>
+					<?php if ($slide->texto_fecha !=null ||$slide->texto_tipo != null || $slide->texto_info != null): ?>
+						<div class="carousel-caption">
+							<div class="contenedor-etiqueta">
+								<div class="fecha">
+									<?=$slide->texto_fecha?>
+								</div>
+								<div class="tipo">
+									<?=$slide->texto_tipo?>
+								</div>
+								<div class="info">
+									<?=$slide->texto_info?>
+								</div>
+								<div class="clave">
+									<?=$slide->texto_clave?>
+								</div>
 							</div>
 						</div>
-					</div>
+					<?php endif ?>
 				</div>
 			<?php endforeach ?>
 		</div>
