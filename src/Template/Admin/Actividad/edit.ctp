@@ -1,24 +1,24 @@
 <?php $this->start('script');?>
-	<script>
-		function actualizaFechaFin() {
-			if($('#fecha_findatetimepicker').val() ==""){
-				var fecha = $('#fecha_inidatetimepicker').val();
-				console.log(fecha);
-				fecha = fecha.split(' ');
-				var time = fecha[1];
-				time = time.split(':')
-				fecha = fecha[0].split('-');
-				time = Number(time[0])+1 + ":" + time[1];
-				var fechaFormateada = fecha[2] + "-" + fecha[1] + "-" + fecha[0] + " " + time;
-				$('#fecha_fincake').val(fechaFormateada);
-				$('#fecha_findatetimepicker').val(fecha[0] + "-" + fecha[1] + "-" + fecha[2] + " " + time);
-			}
-		}
-	</script>
+    <script type="text/javascript">
+        function actualizaFechaFin() {
+            if($('#fecha_findatetimepicker').val() ==""){
+                var fecha = $('#fecha_inidatetimepicker').val();
+                console.log(fecha);
+                fecha = fecha.split(' ');
+                var time = fecha[1];
+                time = time.split(':')
+                fecha = fecha[0].split('-');
+                time = Number(time[0])+1 + ":" + time[1];
+                var fechaFormateada = fecha[2] + "-" + fecha[1] + "-" + fecha[0] + " " + time;
+                $('#fecha_fincake').val(fechaFormateada);
+                $('#fecha_findatetimepicker').val(fecha[0] + "-" + fecha[1] + "-" + fecha[2] + " " + time);
+            }
+        }
+    </script>
 <?php $this->end();?>
 <div class="row">
 	<?=$this->Form->create($actividad, ['class' => 'form-horizontal'])?>
-   <div class="col-lg-6">
+   <div class="col-lg-7">
 		<div class="well bs-component">
 			<fieldset>
 			  <legend><?=$this->request->params['action'] =='add' ?__('Añadir Actividad'):__('Editar Actividad')?></legend>
@@ -49,7 +49,8 @@
 					<?= __('Dirección') ?> <i class="fa fa-map-marker"></i>
 				</label>
 				<div class="col-lg-10">
-					<?=$this->Form->input('direccion',['id' => 'direccionInput','label' => false]);?>
+					<?=$this->Form->input('direccion',['id' => 'direccionInput','label' => false, 'data-autocompleteAdress',
+					'onFocus' => 'geolocate()']);?>
 				</div>
 			  </div>
 			  <div class="form-group">
@@ -90,7 +91,7 @@
 			</fieldset>
 		</div>
 	</div>
-	<div class="col-lg-6 contenedorCursos">
+	<div class="col-lg-5 contenedorCursos">
 		<div class="well bs-component">
 			<fieldset>
 				<legend>Cursos que asistirán</legend>
@@ -105,7 +106,7 @@
 		</div>
 	</div>
 
-	<div class="col-lg-6 contenedorProfesores">
+	<div class="col-lg-5 contenedorProfesores">
 		<div class="well bs-component">
 			<fieldset>
 				<legend>Profesores que asistirán</legend>
@@ -131,3 +132,32 @@
 	</div>
 </div>
 <?= $this->Form->end(); ?>
+<script>
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('direccionInput')),
+      {types: ['geocode']});
+
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+}
+
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
+      autocomplete.setBounds(circle.getBounds());
+    });
+  }
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6vVqUMviw0jKHC4tqWmEd1o4vDlz1WAU&signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>

@@ -27,6 +27,7 @@
 								'class' => 'form-control',
 								'required' => 'required',
 								'label' => false,
+								'autocomplete',
 								'placeHolder' => __('Nombre de usuario')
 								]) ?>
 								<?= $this->Form->input('password',[
