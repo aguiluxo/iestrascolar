@@ -1,3 +1,6 @@
+ <div class="jumbotron panelAcciones">
+        <?=$this->Html->link('Nuevo Profesor',['action' => 'add'],['class' => 'btn btn-success botonAdd']);?>
+    </div>
    <div class="table-responsive">
         <table class="table table-striped table-hover">
             <thead>

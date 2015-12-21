@@ -1,7 +1,11 @@
 <?php $this->assign('title', __('Iestrascolar    | Listado de actividades')); ?>
 
 
-    <?php echo $this->element('menu_busqueda') ?>
+    <?=$this->element('menu_busqueda') ?>
+    <div class="jumbotron panelAcciones">
+    <?=$this->Html->link('Nueva actividad',['action' => 'add'],['class' => 'btn btn-success botonAdd']);?>
+    <?=$this->Html->link('Informe',['action' => 'generaInforme'],['class' => 'btn btn-warning botonInforme','target' => '_blank'])?>
+    </div>
     <div class="table-responsive">
 
     <table class="table table-striped table-hover">
@@ -35,11 +39,12 @@
     </tbody>
     </table>
     </div>
-    <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('anterior')) ?>
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('siguiente') . ' >') ?>
         </ul>
-        <p><?= $this->Paginator->counter(__('{{page}} de {{pages}}')) ?></p>
-    </div>
+        <?=$this->Form->create($actividad,['action' => 'generaInforme']);?>
+        <?=$this->Form->hidden('actividad',['value' => $actividad])?>
+
+        <p class="col-xs-12"><?= $this->Paginator->counter(__('{{page}} de {{pages}}')) ?></p>

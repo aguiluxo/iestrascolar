@@ -1,4 +1,4 @@
-<div class="busqueda">
+<div class="row busqueda">
 	<?php
 	echo $this->Form->create('Activity', array(
 		'type' => 'GET',
@@ -22,4 +22,4 @@
 		<?php echo $this->Form->button('<i class="fa fa-search"></i>', array(
 			'class' => 'botonBusqueda')); ?>
 			<?php echo $this->Form->end(); ?>
-		</div>
+</div>

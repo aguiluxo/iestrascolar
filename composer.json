@@ -12,7 +12,6 @@
         "cakephp/plugin-installer": "*",
         "friendsofcake/crud": "~4.1",
         "davidyell/proffer": "~0.4",
-        "friendsofcake/cakepdf": "3.0.x-dev",
         "friendsofcake/search": "dev-master"
     },
     "require-dev": {
@@ -26,9 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src",
-            "Slider\\": "./plugins/Slider/src"
-        }
+            "App\\": "src"
+        },
+        "classmap": [
+         	"vendor/mpdf/mpdf",
+        	"vendor/html2pdf/html2pdf"
+     	]
     },
     "autoload-dev": {
         "psr-4": {

@@ -1,5 +1,9 @@
+    <div class="jumbotron panelAcciones">
+        <?=$this->Html->link('Nuevo Slide',['action' => 'add'],['class' => 'btn btn-success botonAdd']);?>
+    </div>
+
     <div class="table-responsive">
-        <table class="table" cellpadding="0" cellspacing="0">
+        <table class="table table-striped table-hover" cellpadding="0" cellspacing="0">
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>

@@ -5,6 +5,7 @@ use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
 use Cake\I18n\Time;
 use Cake\Mailer\Email;
+use mpdf;
 /**
  * Actividad Controller
  *
@@ -154,11 +155,25 @@ class ActividadController extends AdminController
     //     return $this->Crud->execute();
     // }
 
+    public function generaInforme(){
+        $this->_buildPdf($this->request->data['actividad']);
+    }
 
-
+    private function _buildPdf($data = null){
+ 	 	$mpdf = new mPDF('utf-8','A4','','',0,0,0,0,0,0);
+		$mpdf->useOnlyCoreFonts = true;    // false is default
+		$mpdf->SetProtection(array('print'));
+		$mpdf->SetTitle("Indorme de	actividades");
+		$mpdf->SetAuthor("IESTRASCOLAR");
+		$mpdf->watermark_font = 'DejaVuSansCondensed';
+		$mpdf->watermarkTextAlpha = 0.1;
+		$mpdf->SetDisplayMode('fullpage');
+		$mpdf->useSubstitutions=false;
+		debug($data);
+		die();
+    }
     private function _guardaDestacado($idActividad)
      {
-
         $destacadoTable = TableRegistry::get('Destacado');
         $destacado = $destacadoTable->newEntity();
         $destacado->actividad_id = $idActividad;

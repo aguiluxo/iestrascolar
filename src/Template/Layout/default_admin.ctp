@@ -37,10 +37,6 @@
 	<?=$this->Html->css('/libs/datetimepicker/jquery-ui-timepicker-addon.css')?>
 	<?=$this->Html->script('/libs/datetimepicker/jquery-ui-timepicker-addon.js')?>
 
-
-	<?=$this->Html->css('base.css')?>
-	<?=$this->Html->css('cake.css')?>
-
 	<!-- Mis estilos -->
 	<?=$this->Html->css('default_backend.css')?>
 
@@ -63,7 +59,7 @@
 		}
 	 ?>
 	<?=$this->Flash->render()?>
-		<?=$this->fetch('content')?>
+	 <?=$this->fetch('content')?>
 	</div>
 	<footer>
 	</footer>

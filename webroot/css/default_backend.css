@@ -16,6 +16,10 @@ body {
   width: 50%;
   display: inline-block;
 }
+.panelAcciones {
+  padding: 5px!important;
+}
+/*Botones*/
 .botones {
   padding: 10px 17px;
   border-radius: 3px;
@@ -46,6 +50,21 @@ body {
 .botonBorrar {
   background: #ED5153;
 }
+.botonAdd:before {
+  margin-right: 5px;
+  content: "\f067";
+  font-family: FontAwesome;
+  color: white;
+}
+.botonInforme:before {
+  content: '\f1c1';
+  font-family: FontAwesome;
+  color: red;
+  background: white;
+  margin-right: 5px;
+  border-radius: 0 7px 0 0;
+}
+/*Fin botones*/
 td.actions {
   padding: 13px!important;
 }

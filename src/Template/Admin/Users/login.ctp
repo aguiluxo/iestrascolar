@@ -19,7 +19,7 @@
 							  <i class="fa fa-user <?php echo isset($efecto)? 'fail':'' ?>"></i>
 
 						  </div>
-						  <?= $this->Flash->render('auth') ?>
+						  <?= $this->Flash->render('auth', 	['class' => "alert alert-dismissible alert-danger"]) ?>
 						  <div class="form-main">
 							  <div class="form-group">
 								<?= $this->Form->input('email',[
