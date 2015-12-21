@@ -111,7 +111,7 @@
                 <div class="form-group">
                     <div class="col-xs-12">
                         <?= $this->Form->input('curso._ids', [
-                        	'label' => 'false',
+                        	'label' => false,
                             'options' => $curso,
                             'multiple' => 'checkbox']); ?>
                     </div>
