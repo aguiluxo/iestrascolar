@@ -6,6 +6,7 @@ use Cake\ORM\TableRegistry;
 use Cake\I18n\Time;
 use Cake\Mailer\Email;
 use mpdf;
+use html2pdf;
 /**
  * Actividad Controller
  *
@@ -156,7 +157,10 @@ class ActividadController extends AdminController
     // }
 
     public function generaInforme(){
-        $this->_buildPdf($this->request->data['actividad']);
+        // if($this->request->is(['patch', 'post', 'put'])){
+            // $this->set('actividades',$this->request->data);
+        // }
+        // $this->_buildPdf($this->request->data['actividad']);
     }
 
     private function _buildPdf($data = null){

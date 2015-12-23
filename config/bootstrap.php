@@ -34,6 +34,8 @@ require ROOT . DS . 'vendor' . DS . 'autoload.php';
 require CORE_PATH . 'config' . DS . 'bootstrap.php';
 
 require ROOT . DS . 'vendor' . DS .  'mpdf' . DS . 'mpdf' . DS . 'mpdf.php';
+require ROOT . DS . 'vendor' . DS .  'html2pdf' . DS . 'html2pdf' . DS . 'html2pdf.class.php';
+
 
 // You can remove this if you are confident you have intl installed.
 if (!extension_loaded('intl')) {

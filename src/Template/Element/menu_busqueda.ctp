@@ -3,7 +3,7 @@
 		<div class="panel-heading" role="tab" id="headingOne">
 		  <legend class="panel-title">
 		    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-				<i class="fa fa-search"></i>Buscador de actividades
+				<i class="fa fa-search"></i> 	Buscador de actividades
 		    	<i class="pull-right fa fa-chevron-down"></i>
 		    </a>
 		  </legend>
@@ -11,14 +11,14 @@
 		<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 		  <div class="panel-body">
 		  	<div class="row">
-		   		<?=$this->Form->create(null, ['class' => 'form-horizontal']);?>
+		   		<?=$this->Form->create(null, ['class' => 'form-inline']);?>
 				<div class="col-md-3">
 					<div class="form-group">
 						<?=$this->Form->input('q',['placeHolder' =>'Buscar por nombre o descripción', 'label' => false,
 						'class' => 'form-control']);?>
 					</div>
 				</div>
-				<div class="col-md-2 contenedorBusquedaTrimestre">
+				<div class="col-md-3 contenedorBusquedaTrimestre">
 					<div class="form-group">
 
 						<span>Trimestre:</span>
@@ -58,4 +58,3 @@
 		</div>
 
 	</div>
-</div>

@@ -67,6 +67,8 @@ Router::scope('/', function ($routes) {
         $routes->connect('/', ['controller' => 'Admin', 'action' => 'index']);
         $routes->connect('/actividades', ['controller' => 'Actividad', 'action' => 'index']);
         $routes->connect('/actividades/:action/*', ['controller' => 'Actividad']);
+        $routes->connect('/actividades/informeActividades/*', ['controller' => 'Actividad', 'action' => 'generaInforme']);
+
 
         $routes->connect('/usuarios/:action/*', ['controller' => 'Users']);
 
