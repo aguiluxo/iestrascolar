@@ -1,4 +1,4 @@
-<table border="1" class="table table-striped table-hover">
+<!-- <table border="1" class="table table-striped table-hover">
 	<thead>
 		<tr>
 			<th>Nombre</th>
@@ -15,4 +15,4 @@
 				</tr>
 			<?php endforeach ?>
 	</tbody>
-</table>
+</table> -->
