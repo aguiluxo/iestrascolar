@@ -6,6 +6,7 @@
 	<?=$this->Form->create(null,['action' 	=> 	'generaInforme','class' =>'form-inline']);?>
 	 	<?=$this->Html->link('Nueva actividad',['action' => 'add'],['class' => 'btn btn-success botonAdd']);?>
 		<button 	class="btn 	btn-warning botonInforme">Infome</button>
+		<?=$this->Form->hidden('actividades', ['value' => json_encode($actividad)]);?>
 		<?=$this->Form->end();?>
 	</div>
 	<div class="table-responsive">

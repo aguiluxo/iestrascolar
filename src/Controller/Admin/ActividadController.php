@@ -2,11 +2,10 @@
 namespace App\Controller\Admin;
 
 use Cake\Event\Event;
-use Cake\ORM\TableRegistry;
-use Cake\I18n\Time;
 use Cake\Mailer\Email;
+use Cake\ORM\TableRegistry;
 use mpdf;
-use html2pdf;
+
 /**
  * Actividad Controller
  *
@@ -14,7 +13,7 @@ use html2pdf;
  */
 class ActividadController extends AdminController
 {
-    public $uses = ["Actividad", 'Destacado','Curso'];
+    public $uses = ["Actividad", 'Destacado', 'Curso'];
     public $helpers = ['Munruiz'];
 
     public $components = [
@@ -23,7 +22,7 @@ class ActividadController extends AdminController
                 'index' => ['className' => 'Crud.Index', 'view' => 'index'],
                 'edit' => ['className' => 'Crud.Edit', 'view' => 'edit'],
                 'add' => ['className' => 'Crud.Add', 'view' => 'edit'],
-                'view' =>['className' => 'Crud.View', 'view' => 'view'],
+                'view' => ['className' => 'Crud.View', 'view' => 'view'],
                 'Crud.Delete',
                 'Search.Prg',
             ],
@@ -35,8 +34,7 @@ class ActividadController extends AdminController
         parent::beforeFilter($event);
         $this->set('menuActivo', 'actividad');
 
-
-         $this->Crud->on('afterSave', function(\Cake\Event\Event $event) {
+        $this->Crud->on('afterSave', function (\Cake\Event\Event $event) {
             if ($event->subject->created) {
                 $email = new Email();
                 $email->template('default')
@@ -46,7 +44,7 @@ class ActividadController extends AdminController
                 ->viewVars(['actividad' => $this->request->data])
                 ->send();
                 $this->_compruebaMaximoActividadesPorCurso($this->request->data['curso']['_ids']);
-             if ($this->request->data['destacada'] == '1') {
+                if ($this->request->data['destacada'] == '1') {
                     $idActividad = $event->subject->entity->id;
                     $this->_guardaDestacado($idActividad);
                 }
@@ -55,7 +53,6 @@ class ActividadController extends AdminController
         });
 
     }
-
 
     public function isAuthorized($user = null)
     {
@@ -66,7 +63,7 @@ class ActividadController extends AdminController
 
         //Propietario de actividad puede editarla y borrarla
         if (in_array($this->request->action, ['edit', 'delete'])) {
-            $actividadId = (int)$this->request->params['pass'][0];
+            $actividadId = (int) $this->request->params['pass'][0];
             if ($this->Actividad->esPropietario($actividadId, $user['id'])) {
                 return true;
             }
@@ -75,25 +72,19 @@ class ActividadController extends AdminController
     }
     public function index()
     {
-        if ($this->request->data){
-            // if ($this->request->data['fecha_de'] == "") {
-            //     $this->request->data['fecha_de'] = "1900-01-01";
-            // }
-            // if ($this->request->data['fecha_a'] == "") {
-            //     $this->request->data['fecha_a'] = "2024-12-12";
-            // }
+        if ($this->request->data) {
 
-        $query = $this->Actividad
-                      ->find('search', $this->Actividad->filterParams($this->request->data));
-        $this->set('actividad', $this->paginate($query));
+            $query = $this->Actividad
+                          ->find('search', $this->Actividad->filterParams($this->request->data));
+            $this->set('actividad', $this->paginate($query));
 
-        }else{
+        } else {
             return $this->Crud->execute();
         }
 
     }
 
-   public function add()
+    public function add()
     {
 
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -110,20 +101,19 @@ class ActividadController extends AdminController
     public function edit($id = null)
     {
         $actividad = $this->Actividad->get($id, [
-            'contain' => ['Curso', 'Profesor']
+            'contain' => ['Curso', 'Profesor'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $actividad = $this->Actividad->patchEntity($actividad, $this->request->data);
 
             if ($this->request->data['destacada'] == '0') {
-                    $idActividad = $id;
-                    $destacados = TableRegistry::get('Destacado');
-                    $destacado = $destacados->find('all')->where(['actividad_id' => $id])->first();
-                    if ($destacado) {
-                        $destacados->delete($destacado);
-                    }
+                $idActividad = $id;
+                $destacados = TableRegistry::get('Destacado');
+                $destacado = $destacados->find('all')->where(['actividad_id' => $id])->first();
+                if ($destacado) {
+                    $destacados->delete($destacado);
                 }
-            else if ($this->request->data['destacada'] == '1'){
+            } else if ($this->request->data['destacada'] == '1') {
                 $this->_guardaDestacado($id);
             }
             if ($this->Actividad->save($actividad)) {
@@ -142,7 +132,7 @@ class ActividadController extends AdminController
     public function view($id = null)
     {
         $actividad = $this->Actividad->get($id, [
-            'contain' => ['Curso', 'Profesor', 'Destacado']
+            'contain' => ['Curso', 'Profesor', 'Destacado'],
         ]);
         $this->set('actividad', $actividad);
         $this->set('_serialize', ['actividad']);
@@ -156,28 +146,38 @@ class ActividadController extends AdminController
     //     return $this->Crud->execute();
     // }
 
-    public function generaInforme(){
+    public function generaInforme()
+    {
+        $actividades = json_decode($this->request->data('actividades'));
+        $this->viewBuilder()->layout("listado_pdf");
+        $this->set('actividades', $actividades);
+        $this->set('_serialize', ['actividad']);
+        // $mpdf = new mPDF();
+        // $mpdf->WriteHTML('<p>Hola!</p>');
+        // $mpdf->Output();
+        // exit;
         // if($this->request->is(['patch', 'post', 'put'])){
-            // $this->set('actividades',$this->request->data);
+        // $this->set('actividades',$this->request->data);
         // }
         // $this->_buildPdf($this->request->data['actividad']);
     }
 
-    private function _buildPdf($data = null){
- 	 	$mpdf = new mPDF('utf-8','A4','','',0,0,0,0,0,0);
-		$mpdf->useOnlyCoreFonts = true;    // false is default
-		$mpdf->SetProtection(array('print'));
-		$mpdf->SetTitle("Indorme de	actividades");
-		$mpdf->SetAuthor("IESTRASCOLAR");
-		$mpdf->watermark_font = 'DejaVuSansCondensed';
-		$mpdf->watermarkTextAlpha = 0.1;
-		$mpdf->SetDisplayMode('fullpage');
-		$mpdf->useSubstitutions=false;
-		debug($data);
-		die();
+    private function _buildPdf($data = null)
+    {
+        $mpdf = new mPDF('utf-8', 'A4', '', '', 0, 0, 0, 0, 0, 0);
+        $mpdf->useOnlyCoreFonts = true; // false is default
+        $mpdf->SetProtection(array('print'));
+        $mpdf->SetTitle("Indorme de	actividades");
+        $mpdf->SetAuthor("IESTRASCOLAR");
+        $mpdf->watermark_font = 'DejaVuSansCondensed';
+        $mpdf->watermarkTextAlpha = 0.1;
+        $mpdf->SetDisplayMode('fullpage');
+        $mpdf->useSubstitutions = false;
+        debug($data);
+        die();
     }
     private function _guardaDestacado($idActividad)
-     {
+    {
         $destacadoTable = TableRegistry::get('Destacado');
         $destacado = $destacadoTable->newEntity();
         $destacado->actividad_id = $idActividad;
@@ -199,7 +199,7 @@ class ActividadController extends AdminController
                 // $email->to('alvaro89mr@gmail.com', 'Toexample')
                 // ->subject('Prueba')
                 // ->send('My mesanej');
-                $this->Flash->error(__('El siguiente curso ha superado las cinco actividades anuales:' . $listaCursos->nombre ));
+                $this->Flash->error(__('El siguiente curso ha superado las cinco actividades anuales:' . $listaCursos->nombre));
             }
         }
     }

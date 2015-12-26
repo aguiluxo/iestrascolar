@@ -29,6 +29,7 @@
 </head>
 <body>
             <?php echo $this->element('Main/cabecera'); ?>
+            <?=$this->element('Main/menu');?>
     <div id="container">
         <div id="content" class="row">
             <div class="clearfix"></div>

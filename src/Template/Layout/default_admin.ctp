@@ -40,11 +40,6 @@
 	<!-- Mis estilos -->
 	<?=$this->Html->css('default_backend.css')?>
 
-	<!-- Funciones varias -->
-	<?=$this->Html->script('cargaFunciones.js')?>
-
-
-
 	<?=$this->fetch('meta')?>
 	<?=$this->fetch('css')?>
 	<?=$this->fetch('script')?>
