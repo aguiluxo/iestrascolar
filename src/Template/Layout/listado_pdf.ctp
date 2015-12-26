@@ -1,13 +1,13 @@
 <?php
 $mpdf = new mPDF();
-$mpdf->useOnlyCoreFonts = true;    // false is default
-$mpdf->SetProtection(array('print'));
-$mpdf->SetTitle("Informe de actividades - IESTRASCOLAR");
-$mpdf->SetAuthor("IESTRASCOLAR");
-$mpdf->watermark_font = 'DejaVuSansCondensed';
-$mpdf->watermarkTextAlpha = 0.1;
-$mpdf->SetDisplayMode('fullpage');
-$mpdf->useSubstitutions=false;
+// $mpdf->useOnlyCoreFonts = true;    // false is default
+// $mpdf->SetProtection(array('print'));
+// $mpdf->SetTitle("Informe de actividades - IESTRASCOLAR");
+// $mpdf->SetAuthor("IESTRASCOLAR");
+// $mpdf->watermark_font = 'DejaVuSansCondensed';
+// $mpdf->watermarkTextAlpha = 0.1;
+// $mpdf->SetDisplayMode('fullpage');
+// $mpdf->useSubstitutions=false;
 
 $html = '
     <!DOCTYPE html>
