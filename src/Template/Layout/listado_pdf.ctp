@@ -1,4 +1,5 @@
 <?php
+include ('../../../vendor/mpdf/mpdf/mpdf.php');
 $mpdf = new mPDF();
 // $mpdf->useOnlyCoreFonts = true;    // false is default
 // $mpdf->SetProtection(array('print'));
