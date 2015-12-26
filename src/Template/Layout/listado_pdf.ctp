@@ -1,5 +1,5 @@
 <?php
-$mpdf = new mPDF('utf-8','A4','','',0,0,0,0,0,0);
+$mpdf = new mPDF();
 $mpdf->useOnlyCoreFonts = true;    // false is default
 $mpdf->SetProtection(array('print'));
 $mpdf->SetTitle("Informe de actividades - IESTRASCOLAR");
