@@ -35,7 +35,7 @@ $html = '
 
 ';
 
-$mpdf->WriteHTML($html);
+$mpdf->WriteHTML("hola");
 
 $mpdf->Output('informe.pdf', 'I'); exit;
 
