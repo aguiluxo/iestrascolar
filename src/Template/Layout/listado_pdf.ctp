@@ -35,9 +35,9 @@ $mpdf = new mPDF();
 
 // ';
 
-$mpdf->WriteHTML("hola");
+$mpdf->WriteHTML("<p>hola</p>");
 
-$mpdf->Output('informe.pdf', 'I');
+$mpdf->Output();
 
 exit;
 
