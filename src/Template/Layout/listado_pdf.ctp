@@ -1,5 +1,5 @@
 <?php
-$mpdf = new mPDF();
+$mpdf = new mPDF('utf-8','A4','','',20,15,48,25,10,10);
 $mpdf->useOnlyCoreFonts = true;    // false is default
 $mpdf->SetProtection(array('print'));
 $mpdf->SetTitle("Informe de actividades - IESTRASCOLAR");
@@ -10,56 +10,78 @@ $mpdf->SetDisplayMode('fullpage');
 $mpdf->useSubstitutions=false;
 
 $html = '
-    <!DOCTYPE html>
     <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <style>
-            body{
-                    font-family: Arial, sans-serif;
-                    margin: 0;
-                    padding: 0;
-                }
-
-            .tablaMadre td{
-                    text-align:center;
-                }
-
-                .tablaMadre{
-                    width:800px;
-
-                }
-
-                .tablaMadre table{
-                    width:100%;
-                    text-align: center;
-                }
-
-                .imagen{
-                    width:100%;
-                }
-                .cuerpo{
-                    background-color: #ffffff;
-                    padding: 50px 30px 50px 30px;
-                    height:810px;
-                }
+         body{
+            font-family: sans-serif;
+            font-size: 10pt;
+        }
+        p{
+            margin: 0pt;
+        }
+        td{
+            vertical-align: top;
+        }
+        .items td {
+            border-left: 0.1mm solid #000000;
+            border-right: 0.1mm solid #000000;
+        }
+        table thead td {
+            background-color: #EEEEEE;
+            text-align: center;
+            border: 0.1mm solid #000000;
+        }
+        .items td.blanktotal {
+            background-color: #FFFFFF;
+            border: 0mm none #000000;
+            border-top: 0.1mm solid #000000;
+            border-right: 0.1mm solid #000000;
+        }
+        .items td.totals {
+            text-align: right;
+            border: 0.1mm solid #000000;
+        }
+        .tabla{
+            border: 1px solid black;
+        }
         </style>
     </head>
     <body>
-        <div class="cabecera">
-            <div class="cabecera-inner">
-                    <div class="titulo">
-                    <h2>IESTRASCOLAR</h2>
-                    </div>
-            </div>
-        </div>'
+            <table width="100%">
+                <tr>
+                    <td width="50%" style="color:#0000BB;">
+                        ' . $this->Html->image('logo_tic.jpg') . '
+                    </td>
+                    <td width="50%" style="text-align: right;">
+                        IESTRASSIERRA - <span style="font-weight: bold; font-size: 12pt;"> Actividades de '  . '</span>
+                        <br/>
+                        Página {PAGENO} de {nb}
+                    </td>
+                </tr>
+            </table>
+
+    <table width="100%" style="font-family: serif;" cellpadding="10">
+        <tr>
+            <td width="45%">
+                <strong>IES IESTRASSIERRA</strong><br/>
+                <br />Avenida Arroyo del Moro, s/n,
+                <br />14011 Córdoba
+                <br />Tel.: 957 73 49 00
+            </td>
+            <td width="10%">&nbsp;</td>
+            <td width="45%">
+                <strong>'. 'datos de búsqueda</strong>
+            </td>
+        </tr>
+    </table>
+
+    <br/><br/>'
+
         . $this->fetch('content') .
 
     '</body>
     </html>
-
-
 ';
 
 $mpdf->WriteHTML($html);

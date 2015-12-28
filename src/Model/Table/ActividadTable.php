@@ -123,11 +123,19 @@ class ActividadTable extends Table
             ->value('departamentos', [
                 'field' => $this->aliasField('departamento_id'),
                 'filterEmpty' => true
+            ])
+            ->callback('cursos', [
+                'callback' => function (Query $query, array $args) {
+                    return $query
+                        ->distinct($this->aliasField('id'))
+                        ->matching('Curso', function (Query $query) use ($args) {
+                            return $query
+                                ->where([
+                                    $this->Curso->target()->aliasField('id') => $args['cursos'][0]
+                                ]);
+                        });
+                }
             ]);
-            // ->value('cursos', [
-            //     'field' => $this->aliasField('curso.id'),
-            //     'filterEmpty' => true
-            // ]);
 
         return $search;
     }
