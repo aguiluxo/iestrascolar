@@ -34,6 +34,12 @@ class DepartamentoTable extends Table
         $this->hasMany('Profesor', [
             'foreignKey' => 'departamento_id'
         ]);
+
+        $this->hasMany('Actividad', [
+            'foreignKey' => 'departamento_id'
+        ]);
+
+
     }
 
     /**

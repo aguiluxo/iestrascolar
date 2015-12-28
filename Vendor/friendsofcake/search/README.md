@@ -1,6 +1,5 @@
 # CakePHP Search
 
-
 [![Build Status](https://img.shields.io/travis/FriendsOfCake/search/master.svg?style=flat-square)](https://travis-ci.org/FriendsOfCake/search)
 [![Coverage Status](https://img.shields.io/coveralls/FriendsOfCake/search/master.svg?style=flat-square)](https://coveralls.io/r/FriendsOfCake/search?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/friendsofcake/search.svg?style=flat-square)](https://packagist.org/packages/friendsofcake/search)
@@ -19,7 +18,7 @@ The master branch has the following requirements:
 * Install the plugin with composer from your CakePHP Project's ROOT directory
 (where composer.json file is located)
 ```sh
-php composer.phar require friendsofcake/search "dev-master"
+php composer.phar require friendsofcake/search
 ```
 
 * Load the plugin by adding following to your `config/bootstrap.php`
@@ -33,80 +32,139 @@ or running command
 ```
 
 ## Usage
-The plugin has three main parts which you will need to configure and include in your application.
+
+The plugin has three main parts which you will need to configure and include in
+your application.
 
 ### Table class
-There are three tasks during setup in your table class. Firstly you must add a `use` statement for the `Search\Manager`. Next you need to attach the Search behaviour to your table class. Lastly you must add a `searchConfiguration` method to your table class so that you can configure how the search will work.
+
+There are three tasks during setup in your table class. Firstly you must add a
+`use` statement for the `Search\Manager`. Next you need to attach the `Search`
+behaviour to your table class. Then you have two options to work with the search
+filters:
+
+The first way is the prefered way as it works the same as many core classes as
+well. In your table classes `initialize()` method call the `searchManager()`
+method, it will return a search manager instance. You can now add filters to the
+manager by chaining them. The first arg of the `add()` method is the field, the
+second the filter using the dot notation of cake to load filters from plugins.
+The third one is an array o filter specific options.
 
 ```php
 use Search\Manager;
 
 class ExampleTable extends Table {
 
-	public function initialize(array $config)
-	{
-		// Add the behaviour to your table
-		$this->addBehavior('Search.Search');
-	}
+    public function initialize(array $config)
+    {
+        parent::initialize();
+        // Add the behaviour to your table
+        $this->addBehavior('Search.Search');
 
-	// Configure how you want the search plugin to work with this table class
+        $this->searchManager()
+            ->add('author_id', 'Search.Value')
+            // Here we will alias the 'q' query param to search the `Articles.title`
+            // field and the `Articles.content` field, using a LIKE match, with `%`
+            // both before and after.
+            ->add('q', 'Search.Like', [
+                'before' => true,
+                'after' => true,
+                'field' => [$this->aliasField('title'), $this->aliasField('content')]
+            ])
+            ->add('foo', 'Search.Callback', [
+                'callback' => function ($query, $args, $manager) {
+                    // Modify $query as required
+                }
+            ]);
+    }
+```
+
+The old way is to add a `searchConfiguration()` method to the class. The
+behavior will look if such a method exists and if yes use it to get the search
+manager instance from it. This method **must** return a search manager instance.
+
+If you want to change the name of the method, or have multiple methods and
+switch between them, you can configure the name of the method by setting the
+behaviors option `searchConfigMethod` to the name of the method you want.
+
+```php
+use Search\Manager;
+
+class ExampleTable extends Table {
+
+    public function initialize(array $config)
+    {
+        // Add the behaviour to your table
+        $this->addBehavior('Search.Search');
+    }
+
+    // Configure how you want the search plugin to work with this table class
     public function searchConfiguration()
     {
-        $search = new Manager($this);
-        $search
-        ->value('author_id', [
-            'field' => $this->aliasField('author_id')
-        ])
-        // Here we will alias the 'q' query param to search the `Articles.title` 
-        // field and the `Articles.content` field, using a LIKE match, with `%` 
-        // both before and after.
-        ->like('q', [
-            'before' => true,
-            'after' => true,
-            'field' => [$this->aliasField('title'), $this->aliasField('content')]
-        ]);
+        $search = new Manager($this)
+            ->value('author_id', [
+                'field' => $this->aliasField('author_id')
+            ])
+            // Here we will alias the 'q' query param to search the `Articles.title`
+            // field and the `Articles.content` field, using a LIKE match, with `%`
+            // both before and after.
+            ->like('q', [
+                'before' => true,
+                'after' => true,
+                'field' => [$this->aliasField('title'), $this->aliasField('content')]
+            ])
+            ->callback('foo', [
+                'callback' => function ($query, $args, $manager) {
+                    // Modify $query as required
+                }
+            ]);
+
         return $search;
     }
 ```
 
 ### Controller class
-In order for the Search plugin to work it will need to process the query params which are passed in your url. So you will need to edit your `index` method to accomodate this.
+In order for the Search plugin to work it will need to process the query params
+which are passed in your url. So you will need to edit your `index` method to
+accomodate this.
 
 ```php
 public function index()
 {
     $query = $this->Articles
-    	// Use the plugins 'search' custom finder and pass in the 
-    	// processed query params
+        // Use the plugins 'search' custom finder and pass in the
+        // processed query params
         ->find('search', $this->Articles->filterParams($this->request->query))
         // You can add extra things to the query if you need to
         ->contain(['Comments'])
-        ->where(['title !=' => null]);
+        ->where(['title IS NOT' => null]);
+
     $this->set('articles', $this->paginate($query));
 }
 ```
 
-The `search` finder and the `filterParams()` method are dynamically provided by the
-`Search` behavior.
+The `search` finder and the `filterParams()` method are dynamically provided by
+the `Search` behavior.
 
 ### Component
-Then add the Search Prg component to the necessary methods in your controller. 
+Then add the Search Prg component to the necessary methods in your controller.
 
-:warning: Make sure, 
-* That you add this in the controller's `initialize` method. 
-* That you only add this to methods which are using search, such as your `index` method.
+:warning: Make sure,
+* That you add this in the controller's `initialize()` method.
+* That you only add the methods which are using search, such as your `index()` method.
 
 ```php
 public function initialize()
 {
     parent::initialize();
-    if ($this->request->action === 'index') {
-        $this->loadComponent('Search.Prg');
-    }
+    $this->loadComponent('Search.Prg', [
+        'actions' => ['index']
+    ]);
 }
 ```
 
-The `Search.Prg` component will allow your filtering forms to be populated using the data in the query params. It uses the [Post, redirect, get pattern](https://en.wikipedia.org/wiki/Post/Redirect/Get).
+The `Search.Prg` component will allow your filtering forms to be populated using
+the data in the query params. It uses the [Post, redirect, get pattern](https://en.wikipedia.org/wiki/Post/Redirect/Get).
 
 ## Filtering your data
 Once you have completed all the setup you can now filter your data by passing
@@ -117,15 +175,17 @@ could filter your articles using the following.
 
 Would filter your list of articles to any article with "cakephp" in the `title`
 or `content` field. You might choose to make a `get` form which posts the filter
-directly to the url, but if you're using the `Search.Prg` component, you'll want to use `POST`.
+directly to the url, but if you're using the `Search.Prg` component, you'll want
+to use `POST`.
 
 ### Creating your form
-In most cases you'll want to add a form to your index view which will search your data.
+In most cases you'll want to add a form to your index view which will search
+your data.
 
 ```php
-    echo $this->Form->create(null);
+    echo $this->Form->create();
     // You'll need to populate $authors in the template from your controller
-    echo $this->Form->input('author_id'); 
+    echo $this->Form->input('author_id');
     // Match the search param in your table configuration
     echo $this->Form->input('q');
     echo $this->Form->button('Filter', ['type' => 'submit']);
@@ -133,9 +193,10 @@ In most cases you'll want to add a form to your index view which will search you
     echo $this->Form->end();
 ```
 
-If you are using the `Search.Prg` component the forms current values will be populated from the query params.
+If you are using the `Search.Prg` component the forms current values will be
+populated from the query params.
 
-## Types
+## Filters
 
 The Search plugin comes with a set of predefined search filters that allow you to
 easily create the search results you need. Use:
@@ -148,7 +209,9 @@ easily create the search results you need. Use:
 - ``callback`` to produce results using your own custom callable function
 
 ## Optional fields
-Sometimes you might want to search your data based on two of three inputs in your form. You can use the `filterEmpty` search option to ignore any empty fields.
+
+Sometimes you might want to search your data based on two of three inputs in
+your form. You can use the `filterEmpty` search option to ignore any empty fields.
 
 ```php
 // ExampleTable.php

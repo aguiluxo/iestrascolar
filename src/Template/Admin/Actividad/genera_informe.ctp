@@ -1,4 +1,9 @@
-<table border="1" class="table table-striped table-hover">
+<style>table{
+	background:color:blue;
+	width:100%;
+}
+</style>
+<table border="1" class="tablaMadre">
 	<thead>
 		<tr>
 			<th>Nombre</th>

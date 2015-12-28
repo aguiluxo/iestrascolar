@@ -443,6 +443,7 @@ class Shell
         }
 
         if ($this->hasMethod('main')) {
+            $this->command = 'main';
             $this->startup();
             return call_user_func_array([$this, 'main'], $this->args);
         }
@@ -735,8 +736,7 @@ class Shell
 
         $File = new File($path, true);
         if ($File->exists() && $File->writable()) {
-            $data = $File->prepare($contents);
-            $File->write($data);
+            $File->write($contents);
             $this->_io->out(sprintf('<success>Wrote</success> `%s`', $path));
             return true;
         }

@@ -48,8 +48,12 @@ class ApiQueryLogListener extends BaseListener
     public function setupLogging(Event $event)
     {
         foreach ($this->_getSources() as $connectionName) {
-            $this->_getSource($connectionName)->logQueries(true);
-            $this->_getSource($connectionName)->logger(new \Crud\Log\QueryLogger());
+            try {
+                $this->_getSource($connectionName)->logQueries(true);
+                $this->_getSource($connectionName)->logger(new \Crud\Log\QueryLogger());
+            } catch (\Cake\Datasource\Exception\MissingDatasourceConfigException $e) {
+                //Safe to ignore this :-)
+            }
         }
     }
 
@@ -80,7 +84,10 @@ class ApiQueryLogListener extends BaseListener
 
         $queryLog = [];
         foreach ($sources as $source) {
-            $queryLog[$source] = $this->_getSource($source)->logger()->getLogs();
+            $logger = $this->_getSource($source)->logger();
+            if (method_exists($logger, 'getLogs')) {
+                $queryLog[$source] = $logger->getLogs();
+            }
         }
 
         return $queryLog;

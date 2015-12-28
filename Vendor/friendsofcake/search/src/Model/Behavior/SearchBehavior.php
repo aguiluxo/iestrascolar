@@ -5,21 +5,34 @@ use Cake\Event\Event;
 use Cake\ORM\Behavior;
 use Cake\ORM\Query;
 use Cake\ORM\Table;
+use Search\Manager;
 
 class SearchBehavior extends Behavior
 {
 
     /**
+     * Search Manager instance.
+     *
+     * @var \Search\Manager
+     */
+    public $_manager = null;
+
+    /**
      * $_defaultConfig For the Behavior.
+     *
+     * ### Options
+     * - `searchConfigMethod` Method name of the method that returns the filters.
      *
      * @var array
      */
     protected $_defaultConfig = [
+        'searchConfigMethod' => 'searchConfiguration',
         'implementedFinders' => [
             'search' => 'findSearch'
         ],
         'implementendMethods' => [
-            'filterParams' => 'filterParams'
+            'filterParams' => 'filterParams',
+            'searchManager' => 'searchManager'
         ]
     ];
 
@@ -36,7 +49,8 @@ class SearchBehavior extends Behavior
             $options = $options['search'];
         }
 
-        foreach ($this->_table->searchConfiguration()->all() as $config) {
+        $filters = $this->_getAllFilters();
+        foreach ($filters as $config) {
             $config->args($options);
             $config->query($query);
             $config->process();
@@ -54,7 +68,33 @@ class SearchBehavior extends Behavior
      */
     public function filterParams($params)
     {
-        $valid = $this->_table->searchConfiguration()->all();
-        return ['search' => array_intersect_key($params, $valid)];
+        return ['search' => array_intersect_key($params, $this->_getAllFilters())];
+    }
+
+    /**
+     * Returns the search filter manager.
+     *
+     * @return \Search\Manager
+     */
+    public function searchManager()
+    {
+        if (empty($this->_manager)) {
+            $this->_manager = new Manager($this->_table);
+        }
+        return $this->_manager;
+    }
+
+    /**
+     * Gets all filters from the search manager.
+     *
+     * @return array An array of filters for the defined fields.
+     */
+    protected function _getAllFilters()
+    {
+        $method = $this->config('searchConfigMethod');
+        if (method_exists($this->_table, $method)) {
+            return $this->_table->{$method}()->all();
+        }
+        return $this->searchManager()->all();
     }
 }

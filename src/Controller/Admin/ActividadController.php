@@ -19,7 +19,7 @@ class ActividadController extends AdminController
     public $components = [
         'Crud.Crud' => [
             'actions' => [
-                'index' => ['className' => 'Crud.Index', 'view' => 'index'],
+                // 'index' => ['className' => 'Crud.Index', 'view' => 'index', 'contain' => 'Curso'],
                 'edit' => ['className' => 'Crud.Edit', 'view' => 'edit'],
                 'add' => ['className' => 'Crud.Add', 'view' => 'edit'],
                 'view' => ['className' => 'Crud.View', 'view' => 'view'],
@@ -72,15 +72,21 @@ class ActividadController extends AdminController
     }
     public function index()
     {
+        $cursos = $this->Actividad->Curso->find('list', ['limit' => 200]);
+        $departamentos = $this->Actividad->Departamento->find('list', ['limit' => 20]);
         if ($this->request->data) {
 
             $query = $this->Actividad
-                          ->find('search', $this->Actividad->filterParams($this->request->data));
+                          ->find('search', $this->Actividad->filterParams($this->request->data))
+                          ->contain('Curso');
             $this->set('actividad', $this->paginate($query));
 
         } else {
-            return $this->Crud->execute();
+          $actividad = $this->Actividad->find()->contain('Curso');
+           $this->set('actividad', $this->paginate($actividad));
         }
+        $this->set('cursos', $cursos);
+        $this->set('departamentos', $departamentos);
 
     }
 

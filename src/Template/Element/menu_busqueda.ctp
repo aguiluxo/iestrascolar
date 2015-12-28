@@ -43,6 +43,14 @@
 				</div>
 			</div>
 			<div class="row">
+				<div class="col-md-6">
+					<?=$this->element('Utils/submenu_cursos');?>
+				</div>
+				<div class="col-md-6">
+					<?=$this->element('Utils/submenu_departamentos');?>
+				</div>
+			</div>
+			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
 						<?php

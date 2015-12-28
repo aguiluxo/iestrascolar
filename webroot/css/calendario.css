@@ -1,0 +1,10 @@
+.carousel,
+.item {
+  height: 200px;
+}
+.botonera-slider {
+  display: none;
+}
+.events-list {
+  font-size: 10px;
+}

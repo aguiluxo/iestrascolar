@@ -40,6 +40,8 @@ class ActividadTable extends Table
             'dependent' => true
         ]);
 
+         $this->belongsTo('Departamento');
+
          $this->belongsToMany('Curso', [
             'foreignKey' => 'actividad_id',
             'targetForeignKey' => 'curso_id',
@@ -117,7 +119,15 @@ class ActividadTable extends Table
             ->value('trimestre', [
                 'field' => $this->aliasField('trimestre'),
                 'filterEmpty' => true
+            ])
+            ->value('departamentos', [
+                'field' => $this->aliasField('departamento_id'),
+                'filterEmpty' => true
             ]);
+            // ->value('cursos', [
+            //     'field' => $this->aliasField('curso.id'),
+            //     'filterEmpty' => true
+            // ]);
 
         return $search;
     }

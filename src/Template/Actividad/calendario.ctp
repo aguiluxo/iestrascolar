@@ -1,10 +1,12 @@
-
-
-<?=$this->Html->script('/libs/bootstrap-calendar/js/vendor/underscore-min.js')?>
-<?=$this->Html->script('/libs/bootstrap-calendar/js/calendar.js')?>
-<?=$this->Html->script('/libs/bootstrap-calendar/js/language/es-ES.js')?>
-<?=$this->Html->script('calendario.js')?>
-
+<?=$this->start('script');?>
+    <?=$this->Html->script('/libs/bootstrap-calendar/js/vendor/underscore-min.js')?>
+    <?=$this->Html->script('/libs/bootstrap-calendar/js/calendar.js')?>
+    <?=$this->Html->script('/libs/bootstrap-calendar/js/language/es-ES.js')?>
+    <?=$this->Html->script('calendario.js')?>
+<?=$this->end();?>
+<?=$this->start('css');?>
+    <?=$this->Html->css('calendario.css')?>
+<?=$this->end();?>
 <div class="row">
 	<div class="col-md-6">
      <h3 class="mesCalendarioVista"></h3>
@@ -39,7 +41,7 @@
             </div>
             <div class="modal-body" style="height: 400px">
             <p class="contenidoActividad">
-
+                <?=$this->element('Utils/mapa');?>
             </p>
             </div>
             <div class="modal-footer">
