@@ -20,7 +20,7 @@
 				</div>
 				<div class="col-md-3 contenedorBusquedaTrimestre">
 					<div class="form-group">
-
+						<span>Tiene Financiación</span>
 						<span>Trimestre:</span>
 						<?php
 							echo $this->Form->radio('trimestre',[
