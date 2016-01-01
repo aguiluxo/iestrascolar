@@ -43,9 +43,10 @@ h3 {
 }
 .cabecera .cabecera-inner .titulo {
   display: inline-block;
+  margin-top: -5px;
 }
-.cabecera .cabecera-inner .titulo h2 {
-  margin-top: 0;
+.cabecera .cabecera-inner .titulo img {
+  width: 200px;
 }
 .cabecera .cabecera-inner .botonera {
   float: right;

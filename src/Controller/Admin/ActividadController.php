@@ -158,30 +158,8 @@ class ActividadController extends AdminController
         $this->viewBuilder()->layout("listado_pdf");
         $this->set('actividades', $actividades);
         $this->set('_serialize', ['actividad']);
-        // $mpdf = new mPDF();
-        // $mpdf->WriteHTML('<p>Hola!</p>');
-        // $mpdf->Output();
-        // exit;
-        // if($this->request->is(['patch', 'post', 'put'])){
-        // $this->set('actividades',$this->request->data);
-        // }
-        // $this->_buildPdf($this->request->data['actividad']);
     }
 
-    private function _buildPdf($data = null)
-    {
-        $mpdf = new mPDF('utf-8', 'A4', '', '', 0, 0, 0, 0, 0, 0);
-        $mpdf->useOnlyCoreFonts = true; // false is default
-        $mpdf->SetProtection(array('print'));
-        $mpdf->SetTitle("Indorme de	actividades");
-        $mpdf->SetAuthor("IESTRASCOLAR");
-        $mpdf->watermark_font = 'DejaVuSansCondensed';
-        $mpdf->watermarkTextAlpha = 0.1;
-        $mpdf->SetDisplayMode('fullpage');
-        $mpdf->useSubstitutions = false;
-        debug($data);
-        die();
-    }
     private function _guardaDestacado($idActividad)
     {
         $destacadoTable = TableRegistry::get('Destacado');

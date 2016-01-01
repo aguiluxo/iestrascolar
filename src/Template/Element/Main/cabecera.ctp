@@ -1,7 +1,7 @@
 <div class="container-fluid cabecera">
 	<div class="row cabecera-inner">
 		<div class="titulo">
-			<h2>IESTRASCOLAR</h2>
+		<?=$this->Html->image('logoiestrascolar.png')?>
 		</div>
 		<div class="botonera">
 			<div class="btn-social">

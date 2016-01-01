@@ -10,8 +10,8 @@
     <?php foreach ($actividades as $key => $actividad): ?>
 		<tr>
 			<td align="center"><?=$actividad->titulo?></td>
-			<td align="center"><?=$actividad->fecha_ini?></td>
-			<td align="center"><?=$actividad->fecha_fin?></td>
+			<td align="center"><?=date('d-m-y,H:i',strtotime($actividad->fecha_ini))?></td>
+			<td align="center"><?=date('d-m-y,H:i',strtotime($actividad->fecha_fin))?></td>
 		</tr>
 	<?php endforeach ?>
 

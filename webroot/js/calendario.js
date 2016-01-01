@@ -44,10 +44,11 @@ $(function(){
 	});
 })
 
-function modalLaunchActividad(id, nombre, descripcion) {
-	$('#modalViewActividad').modal('show');
-	$('h3.tituloModal').text(nombre);
-	$('.modal-body .contenidoActividad').text(descripcion);
+function modalLaunchActividad(id) {
+	$('#modalViewActividad .contenidoActividad').load('actividades/vistaActividades/' + id, function() {$('#modalViewActividad').modal('show');});
+
+	// $('h3.tituloModal').text(nombre);
+	// $('.modal-body .contenidoActividad').text(descripcion);
 	// $('#modalViewActividad').load(url_base + '/formEditEvento/' + id, '', function() {
 	// $('#modalViewActividad').modal({
 	// 'width': '70%',

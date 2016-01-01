@@ -53,6 +53,9 @@ class ActividadController extends AppController
         $this->set('actividad', $actividad);
         $this->set('_serialize', ['actividad']);
     }
+     public function vistaActividades($id = null) {
+        $this->layout(false);
+    }
 
     public function calendario()
     {
@@ -117,6 +120,15 @@ class ActividadController extends AppController
             );
         }
         return $calendario;
+            $calendario[] = array(
+                'id' => $evento['Programacion']['id'],
+                'title' => $piloto['Piloto']['nombrecompleto'] . ' - ' . $evento['Programacion']['titulo'] . " ({$fecha_comienzo} - {$fecha_fin})",
+                'start' => strtotime($evento['Programacion']['fecha_comienzo']) . '000',
+                'end' => strtotime($evento['Programacion']['fecha_fin']) . '000',
+                'class' => $this->Programacion->getClaseEventoCalendario($evento['Programacion']['tipo']),
+                'url' => $url
+            );
+
 
     }
     public function quees()

@@ -131,7 +131,7 @@ class ActividadTable extends Table
                         ->matching('Curso', function (Query $query) use ($args) {
                             return $query
                                 ->where([
-                                    $this->Curso->target()->aliasField('id') => $args['cursos'][0]
+                                    $this->Curso->target()->aliasField('id') .  ' IN'=> $args['cursos']
                                 ]);
                         });
                 }
