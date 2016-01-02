@@ -17,6 +17,18 @@
                 <div class="titulo">
                 INFO DE <b>CONTACTO</b>
                 </div>
+                <p class="descripcion">
+                    Nos encontramos en la siguiente dirección:
+                </p>
+                <p class="descripcion">
+ 	 	 	 	 	<i class="fa fa-map-marker"></i><span> IES Trassierra</span><br>
+ 	 	 	 	 	<span>Avenida Arrollo del Moro,	s/n</span><br>
+ 	 	 	 	 	<span>14011 Córdoba</span><br>
+ 	 	 	 	 	<i class="fa fa-globe"></i>
+ 	 	 	 	 	<a href="http://iestrassierra.com" target="_blank"> iestrassierra.com</a><br>
+ 	 	 	 	 	<i class="fa fa-phone"></i><span> 957 73 49 00</span><br>
+ 	 	 	 	 	<i class="fa fa-envelope-o"></i> <a href="mailto:alvaro89mr@gmail.com?subject=Iestrascolar"> alvaro89mr@gmail.com</a>
+                </p>
              </div>
             </div>
     </div>

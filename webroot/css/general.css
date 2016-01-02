@@ -299,10 +299,6 @@ nav.navbar-default .navbar-right .search {
 .col-md-4.actividadDestacada .leer-mas:hover {
   background-color: #f1c832;
 }
-.filaSliderProximas > .outside .titulo {
-  display: inline-block;
-  width: 897px;
-}
 .filaSliderProximas .bx-viewport {
   height: auto!important;
   box-shadow: none!important;
@@ -342,10 +338,11 @@ nav.navbar-default .navbar-right .search {
   display: none;
 }
 .filaSliderProximas .selectorBx {
-  width: 27px;
-  height: 26px;
-  padding: 5px 9.5px;
   background: #5a5a5a;
+}
+.filaSliderProximas .selectorBx #anterior,
+.filaSliderProximas .selectorBx #siguiente {
+  display: inline-block;
 }
 .filaSliderProximas .selectorBx:hover {
   background: #f1c832;
@@ -354,6 +351,7 @@ nav.navbar-default .navbar-right .search {
   color: white;
   font-family: MyriadProRegular;
   background: none;
+  padding: 8px;
 }
 .circular {
   width: 619px;
@@ -387,6 +385,9 @@ footer.footer {
   background: #5a5a5a;
   position: relative;
 }
+footer.footer a {
+  color: #f1c832;
+}
 footer.footer .picoFooter {
   position: absolute;
   left: 50%;
@@ -414,7 +415,7 @@ footer.footer .descripcion {
   height: 50px;
   background: #464646;
   color: #a1a1a1;
-  font-size: 12px;
+  font-size: 13px;
 }
 .subfooter .row {
   margin-top: 20px;

@@ -13,9 +13,12 @@ $(function(){
 })
 </script>
 <div class="outside">
-<h3 class="titulo"> <?= __('<b class="cabeceraTitulo">PRÓXIMOS</b> EVENTOS');?></h3>
+<h3 class="titulo"> <?= __('<b class="cabeceraTitulo">PRÓXIMOS</b> EVENTOS');?>
+ 	 <div class="pull-right flechasContainer">
  	 	<span id="anterior" class="selectorBx"></span>
  	 	<span id="siguiente" class="selectorBx"></span>
+ 	 </div>
+</h3>
 </div>
 <div class="sliderProximas">
  	<?php foreach ($actividades_proximas as $actividad): ?>
