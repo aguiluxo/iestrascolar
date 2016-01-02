@@ -33,6 +33,28 @@ class ActividadTable extends Table
 
         $this->addBehavior('Search.Search');
         $this->addBehavior('Timestamp');
+         $this->addBehavior('Proffer.Proffer', [
+            'imagen' => [    // The name of your upload field
+                'root' => WWW_ROOT . 'files', // Customise the root upload folder here, or omit to use the default
+                'dir' => 'imagen_dir',   // The name of the field to store the folder
+                'thumbnailSizes' => [ // Declare your thumbnails
+                    'carousel' => [   // Define the prefix of your thumbnail
+                        'w' => 219, // Width
+                        'h' => 134, // Height
+                        'crop' => false,  // Crop will crop the image as well as resize it
+                        'jpeg_quality'  => 100,
+                        'png_compression_level' => 9
+                    ],
+
+                    'galeria' => [
+                        'w' => '180',
+                        'h' => '90',
+                        'crop' => false,
+                    ]
+                ],
+                'thumbnailMethod' => 'Gmagick'  // Options are Imagick, Gd or Gmagick
+            ]
+        ]);
 
         $this->hasOne('Destacado',[
             'dependent' => true,
@@ -94,6 +116,12 @@ class ActividadTable extends Table
 
         $validator
             ->allowEmpty('attachment_dir');
+
+        $validator
+            ->allowEmpty('imagen_dir');
+
+        $validator
+            ->allowEmpty('imagen');
 
         return $validator;
     }

@@ -2,10 +2,11 @@ nav.navbar-default{
 	font-family: OswaldLight;
 	font-size: 14px;
 	color:#717171;
+	background:#d6d6d6;
 	font-weight: bold;
 	border-bottom: 1px solid #c9c9c9;
 	.nav{
-		
+
 		li{
 			padding-left: 2px;
 			padding-right: 2px;
@@ -16,10 +17,15 @@ nav.navbar-default{
 				padding-top: 14px;
 				padding-left: 0;
 				padding-right: 0;
+
 			}
 		}
 		.active a{
 			border-top:3px solid #f1c832;
+			background:inherit;
+			&:hover{
+				background:inherit;
+			}
 		}
 	}
 	.navbar-right{

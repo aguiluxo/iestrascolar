@@ -28,7 +28,7 @@ class FrontController extends AppController{
 
 		$proximas=$this->Actividad->find('all',[
 			'order' => ['Actividad.fecha_ini' => 'asc'],
-			'limit' => '4'
+			'limit' => '10'
 		]);
 		$this->set('actividades_destacadas',$destacadas);
 		$this->set('actividades_proximas',$proximas);

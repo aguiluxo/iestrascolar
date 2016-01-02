@@ -17,7 +17,7 @@
     </script>
 <?php $this->end();?>
 <div class="row">
-    <?=$this->Form->create($actividad, ['class' => 'form-horizontal'])?>
+    <?=$this->Form->create($actividad, ['type' =>  'file','class' => 'form-horizontal'])?>
    <div class="col-lg-7">
         <div class="well bs-component">
             <fieldset>
@@ -103,6 +103,20 @@
               </div>
             </fieldset>
         </div>
+    </div>
+    <div class="col-lg-5 contenedorImagen">
+        <div class="well bs-component">
+
+         	<fieldset>
+         	 	<legend>Imagen</legend>
+            	 <?=$this->Form->input('imagen', [
+              		'type' => 'file',
+              		'id' => 'imgInput',
+              		'label'	=> false,
+             	]);?>
+             </fieldset>
+
+     	</div>
     </div>
     <div class="col-lg-5 contenedorCursos">
         <div class="well bs-component">

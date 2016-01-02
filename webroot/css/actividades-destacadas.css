@@ -1,9 +1,6 @@
 .col-md-4:last-child {
   padding-right: 0;
 }
-.col-md-4.actividadDestacada {
-  margin-bottom: 65px;
-}
 .col-md-4.actividadDestacada .titulo {
   color: #727272;
   text-align: center;
@@ -51,6 +48,7 @@
   border: 1px solid #c4c4c4;
   height: 77px;
   padding: 10px;
+  text-align: center;
 }
 .col-md-4.actividadDestacada .leer-mas {
   position: absolute;

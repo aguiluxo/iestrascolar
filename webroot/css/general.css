@@ -11,6 +11,18 @@ h3 {
   font-size: 20px;
   color: #5a5a5a;
 }
+h3.titulo {
+  border-bottom: 1px solid #c4c4c4;
+}
+h3.titulo > b {
+  font-family: OswaldDemiBold;
+  line-height: 33px;
+}
+.cabeceraTitulo {
+  padding-right: 14px;
+  margin-right: -15px;
+  border-bottom: 3px solid #f1c832;
+}
 .oculto {
   display: none;
 }
@@ -32,6 +44,11 @@ h3 {
   font-family: 'OswaldLight';
   src: url('fonts/OswaldLight.eot');
   src: url('fonts/OswaldLight.eot') format('embedded-opentype'), url('fonts/OswaldLight.woff2') format('woff2'), url('fonts/OswaldLight.woff') format('woff'), url('fonts/OswaldLight.ttf') format('truetype'), url('fonts/OswaldLight.svg#OswaldLight') format('svg');
+}
+@font-face {
+  font-family: 'OswaldDemiBold';
+  src: url('fonts/OswaldDemiBold.eot');
+  src: url('fonts/OswaldDemiBold.eot') format('embedded-opentype'), url('fonts/OswaldDemiBold.woff2') format('woff2'), url('fonts/OswaldDemiBold.woff') format('woff'), url('fonts/OswaldDemiBold.ttf') format('truetype'), url('fonts/OswaldDemiBold.svg#OswaldDemiBold') format('svg');
 }
 .cabecera {
   height: 80px;
@@ -66,6 +83,7 @@ nav.navbar-default {
   font-family: OswaldLight;
   font-size: 14px;
   color: #717171;
+  background: #d6d6d6;
   font-weight: bold;
   border-bottom: 1px solid #c9c9c9;
 }
@@ -83,6 +101,10 @@ nav.navbar-default .nav li a {
 }
 nav.navbar-default .nav .active a {
   border-top: 3px solid #f1c832;
+  background: inherit;
+}
+nav.navbar-default .nav .active a:hover {
+  background: inherit;
 }
 nav.navbar-default .navbar-right form {
   padding-top: 11px;
@@ -206,9 +228,6 @@ nav.navbar-default .navbar-right .search {
 .col-md-4:last-child {
   padding-right: 0;
 }
-.col-md-4.actividadDestacada {
-  margin-bottom: 65px;
-}
 .col-md-4.actividadDestacada .titulo {
   color: #727272;
   text-align: center;
@@ -256,6 +275,7 @@ nav.navbar-default .navbar-right .search {
   border: 1px solid #c4c4c4;
   height: 77px;
   padding: 10px;
+  text-align: center;
 }
 .col-md-4.actividadDestacada .leer-mas {
   position: absolute;
@@ -276,6 +296,62 @@ nav.navbar-default .navbar-right .search {
 }
 .col-md-4.actividadDestacada .leer-mas:hover {
   background-color: #f1c832;
+}
+.filaSliderProximas > .outside .titulo {
+  display: inline-block;
+  width: 897px;
+}
+.filaSliderProximas .bx-viewport {
+  height: auto!important;
+  box-shadow: none!important;
+  width: 100%;
+}
+.filaSliderProximas .sliderProximas img {
+  width: 219px;
+  height: 134px;
+}
+.filaSliderProximas .sliderProximas .titulo {
+  text-align: center;
+  font-family: OswaldLight;
+  font-size: 16px;
+  line-height: 40px;
+  color: #5a5a5a;
+}
+.filaSliderProximas .sliderProximas .marco {
+  border: 1px solid #c4c4c4;
+}
+.filaSliderProximas .sliderProximas .separador {
+  text-align: center;
+  font-family: OswaldLight;
+  color: #c4c4c4;
+  font-size: 10px;
+  margin-bottom: 0;
+}
+.filaSliderProximas .sliderProximas .descripcion {
+  border: 1px solid #c4c4c4;
+  font-family: MyriadProRegular;
+  font-size: 12px;
+  color: #808080;
+  height: 55px;
+  padding: 10px 20px;
+  text-align: center;
+}
+.filaSliderProximas .bx-pager {
+  display: none;
+}
+.filaSliderProximas .selectorBx {
+  width: 27px;
+  height: 26px;
+  padding: 5px 9.5px;
+  background: #5a5a5a;
+}
+.filaSliderProximas .selectorBx:hover {
+  background: #f1c832;
+}
+.filaSliderProximas .selectorBx a {
+  color: white;
+  font-family: MyriadProRegular;
+  background: none;
 }
 .circular {
   width: 619px;
@@ -301,4 +377,9 @@ nav.navbar-default .navbar-right .search {
 }
 .circular .cuerpo .objetivos {
   padding: 14px;
+}
+/*Subfooter 	*/
+.subfooter {
+  height: 50px;
+  background: #464646;
 }
