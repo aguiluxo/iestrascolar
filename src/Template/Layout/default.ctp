@@ -30,24 +30,13 @@
 <body>
    <?php echo $this->element('Main/cabecera'); ?>
    <?=$this->element('Main/menu');?>
-    <div id="container">
+    <div class="container" id="container">
         <div id="content" class="row">
             <div class="clearfix"></div>
             <?php echo $this->element('Main/slider'); ?>
             <?= $this->fetch('content') ?>
         </div>
     </div>
-    <div class="container">
-        <footer>
-        </footer>
-        <footer class="subfooter">
-            <div class="col-sm-6">
- 	 	 	<span>Copyright &copy2015</span>
-            </div>
-            <div class="col-sm-6 pull-right">
-            </div>
-        </footer>
-
-    </div>
+   <?=$this->element('Main/footer');?>
 </body>
 </html>

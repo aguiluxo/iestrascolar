@@ -1,4 +1,5 @@
 <nav class="navbar navbar-default menuContainer">
+<div class="container">
   <div class="row">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -43,4 +44,5 @@
     </ul>
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
+</div>
 </nav>
