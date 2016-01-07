@@ -5,9 +5,10 @@ use Cake\View\Helper;
 
 class MunruizHelper extends Helper
 {
-	public $helpers = ['Html', 'Form'];
+    public $helpers = ['Html', 'Form'];
 
-function editor($name, $options = array()){
+    public function editor($name, $options = array())
+    {
 
         $default = array(
             // el label
@@ -18,7 +19,7 @@ function editor($name, $options = array()){
 
         $options += $default;
 
-        if(empty($options['id'])){
+        if (empty($options['id'])) {
             $this->Form->setEntity($name);
             $options['id'] = "summernoteCake";
         }
@@ -29,11 +30,11 @@ function editor($name, $options = array()){
 
         ob_start();
 
-        if($options['div'] !== false){
+        if ($options['div'] !== false) {
             echo $this->Html->tag('div', null, $options['div']);
         }
 
-        if($options['label']){
+        if ($options['label']) {
             echo $this->Html->tag('label', (string) $options['label']);
         }
 
@@ -41,7 +42,7 @@ function editor($name, $options = array()){
         echo "<div id='$uid'>";
         echo $this->Form->hidden($name, $atts);
 
-        if(!empty($options['allowCodeEditing'])){
+        if (!empty($options['allowCodeEditing'])) {
             echo h($this->Html->scriptBlock(sprintf('
                 $("#%s").summernote({
                     lang: "es-ES",
@@ -63,7 +64,7 @@ function editor($name, $options = array()){
                       ]
                 });
             ', $uid, $options['id'])));
-        }else{
+        } else {
             echo $this->Html->scriptBlock(sprintf('
                 $("#%s").summernote({
                     lang: "es-ES",
@@ -86,38 +87,52 @@ function editor($name, $options = array()){
             ', $uid, $options['id']));
         }
 
-        if($options['div'] !== false){
+        if ($options['div'] !== false) {
             echo "</div>";
         }
 
         return ob_get_clean();
     }
 
-function selectorIconos($name, $options = array()) {
-$iconos = [
-    'fa fa-bus' => 'Autobus',
-    'fa fa-plane' => 'Avión',
-    'fa fa-line-chart' => 'Gráfica',
-    'fa fa-superscript' => 'Matemáticas',
-    'fa fa-book' => 'Lengua',
-    'fa fa-language' => 'Inglés',
-    'fa fa-laptop' => 'Informática'
-];
+    public function selectorIconos($name, $options = array())
+    {
+        $iconos = [
+            'fa fa-bus',
+            'fa fa-plane',
+            'fa fa-line-chart',
+            'fa fa-superscript',
+            'fa fa-book',
+            'fa fa-language',
+            'fa fa-laptop',
+            'fa fa-headphones',
+            'fa fa-futbol-o',
+            'fa fa-heartbeat',
+            'fa fa-paint-brush',
+            'fa fa-wheelchair',
+            'fa fa-venus-mars',
+        ];
+        foreach ($iconos as $key => $icono) {
+            echo "<div class='col-sm-1 contenedorIcono'>
+                <label class='' for='icono" . $key . "'>
+                    <i class='" . $icono . "'></i>
+                </label>";
+            echo $this->Form->radio($name, [
+                ['value' => $icono, 'text' => '', 'id' => 'icono' . $key, 'label' => false],
+            ]);
+            echo "</div>";
 
-echo $this->Form->select($name, $iconos,$options);
-}
+        }
+    }
 
+    /**
+     * Imprime un input para fechas con el datepicker de jQueryUI incluido
+     * @param  string el nombre del campo (Como en FormHelper)
+     * @param  array $options
+     * @return string
+     */
 
-
-
-	/**
-	 * Imprime un input para fechas con el datepicker de jQueryUI incluido
-	 * @param  string el nombre del campo (Como en FormHelper)
-	 * @param  array $options
-	 * @return string
-	 */
-
-function datetimepicker($name, $options = array(), $options_input = array(), $onClose = false){
+    public function datetimepicker($name, $options = array(), $options_input = array(), $onClose = false)
+    {
 //Añadido argumento $onClose, con la función para ejecutarse en el evento onCLose
         $default = array(
             // El label por defecto
@@ -127,7 +142,6 @@ function datetimepicker($name, $options = array(), $options_input = array(), $on
             'required' => false,
             'class' => 'form-control timepicker',
         );
-
 
         $options += $default;
 
@@ -141,20 +155,15 @@ function datetimepicker($name, $options = array(), $options_input = array(), $on
             'style' => $options['style'],
             'required' => $options['required'],
             'data-field' => $name,
-            'id' => $datetimepicker_fecha
+            'id' => $datetimepicker_fecha,
         );
-
 
         $options_input += $default_input;
 
-
         ob_start();
-
 
         echo $this->Form->input($datetimepicker_fecha, $options_input);
         $idInputOculto = $name . "cake";
-
-
 
         echo $this->Form->hidden($name, array('id' => $idInputOculto));
         if ($onClose == false) {
@@ -167,8 +176,7 @@ function datetimepicker($name, $options = array(), $options_input = array(), $on
                     'timeFormat': 'HH:mm',
                 });"
             );
-        }
-        else{
+        } else {
             echo $this->Html->scriptBlock(
                 "$('#{$datetimepicker_fecha}').datetimepicker({
                     'altField': '#{$idInputOculto}',
@@ -181,7 +189,7 @@ function datetimepicker($name, $options = array(), $options_input = array(), $on
             );
         }
 
-         echo $this->Html->scriptBlock("
+        echo $this->Html->scriptBlock("
                     //Si hay una hora en el campo hidden se la paso al timepicker
                     var fecha = $('#{$idInputOculto}').val();
                     if(fecha && fecha != '0000-00-00 00:00:00'){
@@ -196,49 +204,50 @@ function datetimepicker($name, $options = array(), $options_input = array(), $on
                         $('#{$datetimepicker_fecha}').datetimepicker('setTime', newDate);
                         $('#{$datetimepicker_fecha}').datetimepicker('setDate', newDate);
                     }"
-                );
+        );
 
         return ob_get_clean();
 
     }
 
-	function fecha($name, $options = array(), $options_input = array(), $value = ''){
-		$default = array(
+    public function fecha($name, $options = array(), $options_input = array(), $value = '')
+    {
+        $default = array(
             // El label por defecto
-			'label' => __('Fecha'),
-			'placeholder' => false,
-			'style' => null,
-			'required' => false,
-			'class' => 'form-control datepicker',
-			);
+            'label' => __('Fecha'),
+            'placeholder' => false,
+            'style' => null,
+            'required' => false,
+            'class' => 'form-control datepicker',
+        );
 
-		$options += $default;
-		$datepicker_fecha = $name . 'datepicker';
-		$default_input = array(
-			'type' => 'text',
-			'label' => $options['label'],
-			'id' => $datepicker_fecha,
-			'class' => $options['class'],
-			'placeholder' => $options['placeholder'],
-			'style' => $options['style'],
-			'required' => $options['required'],
-			);
+        $options += $default;
+        $datepicker_fecha = $name . 'datepicker';
+        $default_input = array(
+            'type' => 'text',
+            'label' => $options['label'],
+            'id' => $datepicker_fecha,
+            'class' => $options['class'],
+            'placeholder' => $options['placeholder'],
+            'style' => $options['style'],
+            'required' => $options['required'],
+        );
 
-		$options_input += $default_input;
+        $options_input += $default_input;
 
-		ob_start();
+        ob_start();
 
-		echo $this->Form->input($datepicker_fecha, $options_input);
+        echo $this->Form->input($datepicker_fecha, $options_input);
 
-		$idInputOculto = $name . "cake";
-		if($value){
-			echo $this->Form->hidden($name, array('value' => $value,'id' => $idInputOculto));
-		} else {
-			echo $this->Form->hidden($name, array('id' => $idInputOculto));
-		}
+        $idInputOculto = $name . "cake";
+        if ($value) {
+            echo $this->Form->hidden($name, array('value' => $value, 'id' => $idInputOculto));
+        } else {
+            echo $this->Form->hidden($name, array('id' => $idInputOculto));
+        }
 
-		echo $this->Html->scriptBlock(
-			"$('#{$datepicker_fecha}').datepicker({
+        echo $this->Html->scriptBlock(
+            "$('#{$datepicker_fecha}').datepicker({
 				dateFormat: 'dd-mm-yy',
 				altField: '#{$idInputOculto}',
 				altFormat: 'yy-mm-dd',
@@ -251,9 +260,9 @@ function datetimepicker($name, $options = array(), $options_input = array(), $on
 			var date = new Date(fecha);
 			$('#{$datepicker_fecha}').datepicker('setDate', date);
 		}"
-		);
+        );
 
-		return ob_get_clean();
+        return ob_get_clean();
 
-	}
+    }
 }

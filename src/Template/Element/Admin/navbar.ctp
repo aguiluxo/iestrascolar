@@ -19,6 +19,7 @@
         <li class="<?=$menuActivo=='actividad'?'active':''?>"><?= $this->Html->link(__('Actividades'), ['controller' => 'Actividad', 'action' => 'index']) ?></li>
         <li class="<?=$menuActivo=='destacados'?'active':''?>"><?= $this->Html->link(__('Destacados'), ['controller' => 'Destacado', 'action' => 'index']) ?></li>
         <li class="<?=$menuActivo=='profesores'?'active':''?>"><?= $this->Html->link(__('Profesores'), ['controller' => 'Profesor', 'action' => 'index']) ?></li>
+         <li class="<?=$menuActivo=='departamentos'?'active':''?>"><?= $this->Html->link(__('Departamentos'), ['controller' => 'Departamento', 'action' => 'index']) ?></li>
         <li class="<?=$menuActivo=='cursos'?'active':''?>"><?= $this->Html->link(__('Cursos'), ['controller' => 'Curso', 'action' => 'index']) ?></li>
       </ul>
 

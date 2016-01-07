@@ -1,4 +1,4 @@
-<?php $this->assign('title', __('Iestrascolar    | Listado de actividades')); ?>
+<?php $this->assign('title', __('Iestrascolar | Listado de actividades')); ?>
 
 
 	<?=$this->element('menu_busqueda') ?>
@@ -48,8 +48,6 @@
 			<?= $this->Paginator->numbers() ?>
 			<?= $this->Paginator->next(__('siguiente') . ' >') ?>
 		</ul>
-		<?=$this->Form->create($actividad,['action' => 'generaInforme']);?>
-		<?=$this->Form->hidden('actividad',['value' => $actividad])?>
 
 		<p class="col-xs-12"><?= $this->Paginator->counter(__('{{page}} de {{pages}}')) ?></p>
  	</div>

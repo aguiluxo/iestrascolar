@@ -47,43 +47,30 @@ $html = '
         }
         </style>
     </head>
-    <body>
-            <table width="100%">
-                <tr>
-                    <td width="50%" style="color:#0000BB;">
-                        ' . $this->Html->image('logo_tic.jpg') . '
-                    </td>
-                    <td width="50%" style="text-align: right;">
-                        IESTRASSIERRA - <span style="font-weight: bold; font-size: 12pt;"> Actividades de '  . '</span>
-                        <br/>
-                        Página {PAGENO} de {nb}
-                    </td>
-                </tr>
-            </table>
-
-    <table width="100%" style="font-family: serif;" cellpadding="10">
-        <tr>
-            <td width="45%">
-                <strong>IES IESTRASSIERRA</strong><br/>
-                <br />Avenida Arroyo del Moro, s/n,
-                <br />14011 Córdoba
-                <br />Tel.: 957 73 49 00
-            </td>
-            <td width="10%">&nbsp;</td>
-            <td width="45%">
-                <strong>'. 'datos de búsqueda</strong>
-            </td>
-        </tr>
-    </table>
-
-    <br/><br/>'
+    <body>'
 
         . $this->fetch('content') .
 
     '</body>
     </html>
 ';
-
+$cabecera = '
+                <table width="100%">
+                <tr>
+                    <td width="50%" style="color:#0000BB;">
+                        ' . $this->Html->image('logo_tic.jpg') . '<br />
+                        <br /><span style="color:black">Avenida Arroyo del Moro, s/n,
+                        <br />14011 Córdoba
+                        <br />Tel.: 957 73 49 00</span>
+                    </td>
+                    <td width="50%" style="text-align: right;">
+                        IESTRASSIERRA - <span style="font-weight: bold; font-size: 12pt;"> Listado de actividades '  . '</span>
+                        <br/>
+                        Página {PAGENO} de {nb}
+                    </td>
+                </tr>
+            </table>';
+$mpdf->SetHTMLHeader($cabecera);
 $mpdf->WriteHTML($html);
 
 $mpdf->Output('informe.pdf', 'I'); exit;

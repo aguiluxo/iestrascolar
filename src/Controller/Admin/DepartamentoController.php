@@ -1,16 +1,21 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\Admin;
 
-use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Departamento Controller
  *
  * @property \App\Model\Table\DepartamentoTable $Departamento
  */
-class DepartamentoController extends AppController
+class DepartamentoController extends AdminController
 {
 
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->set("menuActivo", 'departamentos');
+    }
     /**
      * Index method
      *
@@ -32,7 +37,7 @@ class DepartamentoController extends AppController
     public function view($id = null)
     {
         $departamento = $this->Departamento->get($id, [
-            'contain' => []
+            'contain' => [],
         ]);
         $this->set('departamento', $departamento);
         $this->set('_serialize', ['departamento']);
@@ -69,7 +74,7 @@ class DepartamentoController extends AppController
     public function edit($id = null)
     {
         $departamento = $this->Departamento->get($id, [
-            'contain' => []
+            'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $departamento = $this->Departamento->patchEntity($departamento, $this->request->data);

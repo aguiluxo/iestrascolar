@@ -11,7 +11,7 @@ use Cake\Event\Event;
 class DestacadoController extends AdminController
 {
 
-public function beforeFilter(Event $event)
+    public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
         $this->set('menuActivo', 'destacados');
@@ -24,7 +24,7 @@ public function beforeFilter(Event $event)
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Actividad']
+            'contain' => ['Actividad'],
         ];
         $this->set('destacado', $this->paginate($this->Destacado));
         $this->set('_serialize', ['destacado']);
@@ -40,7 +40,7 @@ public function beforeFilter(Event $event)
     public function view($id = null)
     {
         $destacado = $this->Destacado->get($id, [
-            'contain' => ['Actividad']
+            'contain' => ['Actividad'],
         ]);
         $this->set('destacado', $destacado);
         $this->set('_serialize', ['destacado']);
@@ -66,6 +66,7 @@ public function beforeFilter(Event $event)
         $actividad = $this->Destacado->Actividad->find('list', ['limit' => 200]);
         $this->set(compact('destacado', 'actividad'));
         $this->set('_serialize', ['destacado']);
+        return $this->render('edit');
     }
 
     /**
@@ -78,7 +79,7 @@ public function beforeFilter(Event $event)
     public function edit($id = null)
     {
         $destacado = $this->Destacado->get($id, [
-            'contain' => []
+            'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $destacado = $this->Destacado->patchEntity($destacado, $this->request->data);

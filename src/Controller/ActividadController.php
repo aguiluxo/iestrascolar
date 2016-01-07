@@ -22,8 +22,8 @@ class ActividadController extends AppController
     {
         parent::beforeFilter($event);
         $this->loadModel('Slider');
-         $slider = $this->Slider->find('all', [
-            'order' => ['Slider.orden' => 'asc']
+        $slider = $this->Slider->find('all', [
+            'order' => ['Slider.orden' => 'asc'],
         ]);
         $this->set('slider', $slider);
         $this->set('pagina', 'actividades');
@@ -53,8 +53,16 @@ class ActividadController extends AppController
         $this->set('actividad', $actividad);
         $this->set('_serialize', ['actividad']);
     }
-     public function vistaActividades($id = null) {
-        $this->layout(false);
+    public function vistaActividades($id = null)
+    {
+        $this->viewBuilder()->layout('');
+
+        $actividad = $this->Actividad->get($id, [
+            'contain' => ['Curso', 'Profesor'],
+        ]);
+        $this->set('actividad', $actividad);
+        $this->set('_serialize', ['actividad']);
+
     }
 
     public function calendario()
@@ -101,13 +109,13 @@ class ActividadController extends AppController
             $fecha_ini = date('H:i', strtotime($evento->fecha_ini));
             $fecha_fin = date('H:i', strtotime($evento->fecha_fin));
 
-              $actividad = $this->Actividad->get($evento->id, [
-            'contain' => ['Curso', 'Profesor']
-        ]);
-              $cursos ="";
-              foreach ($actividad->curso as $curso) {
-                  $cursos .= " ".$curso->nombre;
-              }
+            $actividad = $this->Actividad->get($evento->id, [
+                'contain' => ['Curso', 'Profesor'],
+            ]);
+            $cursos = "";
+            foreach ($actividad->curso as $curso) {
+                $cursos .= " " . $curso->nombre;
+            }
             $url = "javascript:modalLaunchActividad({$evento->id}, '{$evento->titulo}','{$evento->descripcion}')";
             $calendario[] = array(
                 'id' => $evento->id,
@@ -116,19 +124,18 @@ class ActividadController extends AppController
                 'end' => strtotime($evento->fecha_fin) . '000',
                 'class' => "event-success",
                 'url' => $url,
-                'cursos' => $cursos
+                'cursos' => $cursos,
             );
         }
         return $calendario;
-            $calendario[] = array(
-                'id' => $evento['Programacion']['id'],
-                'title' => $piloto['Piloto']['nombrecompleto'] . ' - ' . $evento['Programacion']['titulo'] . " ({$fecha_comienzo} - {$fecha_fin})",
-                'start' => strtotime($evento['Programacion']['fecha_comienzo']) . '000',
-                'end' => strtotime($evento['Programacion']['fecha_fin']) . '000',
-                'class' => $this->Programacion->getClaseEventoCalendario($evento['Programacion']['tipo']),
-                'url' => $url
-            );
-
+        $calendario[] = array(
+            'id' => $evento['Programacion']['id'],
+            'title' => $piloto['Piloto']['nombrecompleto'] . ' - ' . $evento['Programacion']['titulo'] . " ({$fecha_comienzo} - {$fecha_fin})",
+            'start' => strtotime($evento['Programacion']['fecha_comienzo']) . '000',
+            'end' => strtotime($evento['Programacion']['fecha_fin']) . '000',
+            'class' => $this->Programacion->getClaseEventoCalendario($evento['Programacion']['tipo']),
+            'url' => $url,
+        );
 
     }
     public function quees()
@@ -139,6 +146,5 @@ class ActividadController extends AppController
             debug($evento);
         }
     }
-
 
 }
