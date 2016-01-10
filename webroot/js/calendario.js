@@ -42,6 +42,9 @@ $(function(){
 	});
 	calendar.view();
 	});
+
+	$('#modalViewActividad').on('hidden.bs.modal', function () {
+})
 })
 
 function modalLaunchActividad(id) {

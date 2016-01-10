@@ -1,25 +1,25 @@
-   <div id="map" data-url="<?=$actividad->direccion?>"></div>
-   <style>      #map {
-        height: 100%;
-      }</style>
-    <script>
+<?php if(!empty($actividad->direccion)) {?>
+   <div id="map" data-address="<?=$actividad->direccion?>" data-lat="<?=$coordenadas['lat']?>" data-lng="<?=$coordenadas['lng']?>"></div>
+   <script>
+   	$('#map').html(' ');
       var map;
       var marker;
-      var address = escape($('#map').data('url'));
-      alert(address)
+      var address= {lat: $('#map').data('lat'), lng: $('#map').data('lng')};
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          street_address: $(map).data('url'),
-          zoom: 8
+          center: address,
+          zoom: 16
         });
 
         marker = new google.maps.Marker({
             map:map,
             draggable:false,
             animation: google.maps.Animation.DROP,
-            center: address
+            position: address,
+            title: $('#map').data('address')
         });
          marker.addListener('click', toggleBounce);
+         marker.setMap(map);
       }
 
       function toggleBounce() {
@@ -30,4 +30,7 @@
           }
         }
     </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6vVqUMviw0jKHC4tqWmEd1o4vDlz1WAU&callback=initMap"> </script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6vVqUMviw0jKHC4tqWmEd1o4vDlz1WAU&callback=initMap"> </script>
+
+<?php } ?>
+

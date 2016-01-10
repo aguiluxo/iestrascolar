@@ -378,6 +378,19 @@ nav.navbar-default .navbar-right .search {
 .circular .cuerpo .objetivos {
   padding: 14px;
 }
+.contenedorFecha p {
+  padding: 15px;
+}
+#map {
+  height: 300px;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 768px;
+    overflow-y: auto;
+  }
+}
 /*Subfooter 	*/
 footer.footer {
   padding: 30px 0;

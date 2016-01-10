@@ -60,6 +60,8 @@ class ActividadController extends AppController
         $actividad = $this->Actividad->get($id, [
             'contain' => ['Curso', 'Profesor'],
         ]);
+        $coordenadas = $this->getMapDataFromAddress($actividad->direccion);
+        $this->set('coordenadas', $coordenadas);
         $this->set('actividad', $actividad);
         $this->set('_serialize', ['actividad']);
 
@@ -147,4 +149,85 @@ class ActividadController extends AppController
         }
     }
 
+    public $data_url = 'http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=';
+
+    public function getMapDataFromAddress($address = null)
+    {
+        if (!$address) {
+            return false;
+        }
+
+        try {
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_URL, $this->data_url . $this->prepareAddress($address));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            $result = curl_exec($ch);
+            curl_close($ch);
+
+        } catch (Exception $e) {
+            throw new GoogleMapManagerException(_('No se han podido obtener los datos del mapa'));
+            return false;
+        }
+        $data = $this->getGeometryDataFromJson($result);
+        return $data;
+    }
+
+    public function prepareAddress($address)
+    {
+        if (!is_string($address)) {
+            if (is_array($address)) {
+                $address = implode(',', $address);
+            } else {
+                $address = strval($address);
+            }
+        }
+        $address = str_replace(' ', '+', $address);
+        return $address;
+    }
+
+/**
+ * Obtener los datos del mapa del JSON
+ * geometry = data->results[0]->geometry
+ */
+    public function getGeometryDataFromJson($string)
+    {
+        $data = json_decode($string);
+        if (json_last_error() == '') {
+            if (empty($data->results[0]->geometry)) {
+                return false;
+            }
+            $geometry = $data->results[0]->geometry;
+            return [
+                'lat' => number_format($geometry->location->lat, 7),
+                'lng' => number_format($geometry->location->lng, 7),
+                'viewport_ne_lat' => number_format($geometry->viewport->northeast->lat, 7),
+                'viewport_ne_lng' => number_format($geometry->viewport->northeast->lng, 7),
+                'viewport_sw_lat' => number_format($geometry->viewport->southwest->lat, 7),
+                'viewport_sw_lng' => number_format($geometry->viewport->southwest->lng, 7),
+            ];
+        } else {
+            return false;
+        }
+    }
+
+/**
+ * Obtener los datos de un mapa en formato "objeto de Javascript"
+ */
+    public function getJSMapData($page_map)
+    {
+        $output = '{';
+
+        $output .= 'lat: ' . $page_map['lat'] . ',';
+        $output .= 'lng: ' . $page_map['lng'] . ',';
+        $output .= 'viewport_ne_lat: ' . $page_map['viewport_ne_lat'] . ',';
+        $output .= 'viewport_ne_lng: ' . $page_map['viewport_ne_lng'] . ',';
+        $output .= 'viewport_sw_lat: ' . $page_map['viewport_sw_lat'] . ',';
+        $output .= 'viewport_sw_lng: ' . $page_map['viewport_sw_lng'];
+
+        $output .= '}';
+        return $output;
+    }
 }
+// llama a getMapDataFromAddress($direccion) y te devuelve un array con las coord. la dierccion se la pasas normal q el ya la convierte con los +
