@@ -20,7 +20,7 @@ class DestacadoController extends AdminController
     public function isAuthorized($user = null)
     {
         // Todos los usuarios registrados pueden añadir actividades
-        if ($this->request->action === "add" || $this->request->action === "index" || $this->request->action === "view" || $this->request->action === "delete") {
+        if ($this->request->action === "add" || $this->request->action === "edit" || $this->request->action === "index" || $this->request->action === "view" || $this->request->action === "delete") {
             return true;
         }
 
