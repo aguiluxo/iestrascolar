@@ -24,13 +24,6 @@ class DestacadoController extends AdminController
             return true;
         }
 
-        //Propietario de actividad puede editarla y borrarla
-        if (in_array($this->request->action, ['edit', 'delete'])) {
-            $actividadId = (int) $this->request->params['pass'][0];
-            if ($this->Actividad->esPropietario($actividadId, $user['id']) || $user['role'] == 'dace') {
-                return true;
-            }
-        }
         return false;
     }
     /**
