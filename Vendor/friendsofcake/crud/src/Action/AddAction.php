@@ -79,10 +79,10 @@ class AddAction extends BaseAction
         ],
         'messages' => [
             'success' => [
-                'text' => 'Successfully created {name}'
+                'text' => 'Creado correctamente {name}'
             ],
             'error' => [
-                'text' => 'Could not create {name}'
+                'text' => 'Error al crear {name}'
             ]
         ],
         'serialize' => []
