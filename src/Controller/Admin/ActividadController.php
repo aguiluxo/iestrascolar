@@ -4,7 +4,6 @@ namespace App\Controller\Admin;
 use Cake\Event\Event;
 use Cake\Mailer\Email;
 use Cake\ORM\TableRegistry;
-use mpdf;
 
 /**
  * Actividad Controller
@@ -57,14 +56,14 @@ class ActividadController extends AdminController
     public function isAuthorized($user = null)
     {
         // Todos los usuarios registrados pueden añadir actividades
-        if ($this->request->action === "add") {
+        if ($this->request->action === "add" || $this->request->action === "index" || $this->request->action === "view") {
             return true;
         }
 
         //Propietario de actividad puede editarla y borrarla
         if (in_array($this->request->action, ['edit', 'delete'])) {
             $actividadId = (int) $this->request->params['pass'][0];
-            if ($this->Actividad->esPropietario($actividadId, $user['id'])) {
+            if ($this->Actividad->esPropietario($actividadId, $user['id']) || $user['role'] == 'dace') {
                 return true;
             }
         }
@@ -78,12 +77,12 @@ class ActividadController extends AdminController
 
             $query = $this->Actividad
                           ->find('search', $this->Actividad->filterParams($this->request->data))
-                          ->contain('Curso');
+                          ->contain('Curso', 'Departamento');
             $this->set('actividad', $this->paginate($query));
 
         } else {
-          $actividad = $this->Actividad->find()->contain('Curso');
-           $this->set('actividad', $this->paginate($actividad));
+            $actividad = $this->Actividad->find()->contain('Curso');
+            $this->set('actividad', $this->paginate($actividad));
         }
         $this->set('cursos', $cursos);
         $this->set('departamentos', $departamentos);
@@ -106,8 +105,9 @@ class ActividadController extends AdminController
 
     public function edit($id = null)
     {
+
         $actividad = $this->Actividad->get($id, [
-            'contain' => ['Curso', 'Profesor'],
+            'contain' => ['Curso', 'Profesor', 'Departamento'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $actividad = $this->Actividad->patchEntity($actividad, $this->request->data);
@@ -130,8 +130,9 @@ class ActividadController extends AdminController
             }
         }
         $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
+        $departamentos = $this->Actividad->Departamento->find('list', ['limit' => 200]);
         $profesores = $this->Actividad->Profesor->find('list', ['limit' => 200]);
-        $this->set(compact('actividad', 'curso', 'profesores'));
+        $this->set(compact('actividad', 'curso', 'profesores', 'departamentos'));
         $this->set('_serialize', ['actividad']);
     }
 
@@ -144,6 +145,16 @@ class ActividadController extends AdminController
         $this->set('_serialize', ['actividad']);
     }
 
+    public function misActividades()
+    {
+        $cursos = $this->Actividad->Curso->find('list', ['limit' => 200]);
+        $departamentos = $this->Actividad->Departamento->find('list', ['limit' => 20]);
+        $actividad = $this->Actividad->find()->contain('Curso', 'Departamento')->where(['user_id' => $this->Auth->User('id')]);
+        $this->set('actividad', $this->paginate($actividad));
+        $this->set('cursos', $cursos);
+        $this->set('departamentos', $departamentos);
+
+    }
     // public function edit($id) {
     //     $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
     //     $profesores = $this->Actividad->Profesor->find('list', ['limit' => 200]);

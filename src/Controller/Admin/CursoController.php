@@ -1,5 +1,6 @@
 <?php
 namespace App\Controller\Admin;
+
 use Cake\Event\Event;
 
 /**
@@ -37,7 +38,7 @@ class CursoController extends AdminController
     public function view($id = null)
     {
         $curso = $this->Curso->get($id, [
-            'contain' => ['Actividad']
+            'contain' => ['Actividad'],
         ]);
         $this->set('curso', $curso);
         $this->set('_serialize', ['curso']);
@@ -54,10 +55,10 @@ class CursoController extends AdminController
         if ($this->request->is('post')) {
             $curso = $this->Curso->patchEntity($curso, $this->request->data);
             if ($this->Curso->save($curso)) {
-                $this->Flash->success(__('The curso has been saved.'));
+                $this->Flash->success(__('El curso se ha guardado correctamente.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The curso could not be saved. Please, try again.'));
+                $this->Flash->error(__('El curso no se ha podido guardar correctamente'));
             }
         }
         $actividad = $this->Curso->Actividad->find('list', ['limit' => 200]);
@@ -75,15 +76,15 @@ class CursoController extends AdminController
     public function edit($id = null)
     {
         $curso = $this->Curso->get($id, [
-            'contain' => ['Actividad']
+            'contain' => ['Actividad'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $curso = $this->Curso->patchEntity($curso, $this->request->data);
             if ($this->Curso->save($curso)) {
-                $this->Flash->success(__('The curso has been saved.'));
+                $this->Flash->success(__('El curso se ha guardado correctamente.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The curso could not be saved. Please, try again.'));
+                $this->Flash->error(__('El curso no se ha podido guardar correctamente'));
             }
         }
         $actividad = $this->Curso->Actividad->find('list', ['limit' => 200]);
@@ -103,9 +104,9 @@ class CursoController extends AdminController
         $this->request->allowMethod(['post', 'delete']);
         $curso = $this->Curso->get($id);
         if ($this->Curso->delete($curso)) {
-            $this->Flash->success(__('The curso has been deleted.'));
+            $this->Flash->success(__('El curso ha sido borrado.'));
         } else {
-            $this->Flash->error(__('The curso could not be deleted. Please, try again.'));
+            $this->Flash->error(__('El curso no se ha podido borrar.'));
         }
         return $this->redirect(['action' => 'index']);
     }

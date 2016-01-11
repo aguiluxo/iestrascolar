@@ -127,6 +127,12 @@ nav.navbar-default .navbar-right .search {
 #bs-example-navbar-collapse-1 {
   padding: 0;
 }
+@media (max-width: 768px) {
+  #bs-example-navbar-collapse-1 {
+    text-align: center;
+    overflow-x: hidden;
+  }
+}
 /* Color principal del diseño */
 #carousel-example-generic {
   margin-bottom: 64px;
@@ -226,6 +232,21 @@ nav.navbar-default .navbar-right .search {
 }
 .carousel-control {
   position: inherit;
+}
+@media (max-width: 1037px) {
+  .carousel-indicators {
+    display: none;
+  }
+  .botonera-slider {
+    top: inherit!important;
+    bottom: 0!important;
+    left: 0!important;
+  }
+}
+@media (max-width: 1007px) {
+  .carousel-caption {
+    display: none;
+  }
 }
 .col-md-4:last-child {
   padding-right: 0;
@@ -353,30 +374,14 @@ nav.navbar-default .navbar-right .search {
   background: none;
   padding: 8px;
 }
-.circular {
-  width: 619px;
-  height: 599px;
-  border: 2px solid #f1c832;
-  margin: 0 auto;
-  border-radius: 452px;
-  background-color: #d6d6d6;
-}
-.circular .titulo {
-  font-family: OswaldRegular;
-  font-size: 41px;
-  color: #f1c832;
-  width: 55%;
-  text-align: center;
-  padding-top: 51px;
-  margin: 0 auto;
-}
-.circular .cuerpo {
-  color: #808080;
+table.listadoActividades {
   font-family: MyriadProRegular;
-  text-align: center;
 }
-.circular .cuerpo .objetivos {
-  padding: 14px;
+table.listadoActividades th {
+  background-color: #f1c832;
+}
+table.listadoActividades th a {
+  color: white;
 }
 .contenedorFecha p {
   padding: 15px;
@@ -446,4 +451,10 @@ footer.footer .descripcion {
 }
 .subfooter .menuFooter a:hover {
   text-decoration: none;
+}
+@media (max-width: 800px) {
+  .row {
+    margin-left: 0!important;
+    margin-right: 0!important;
+  }
 }

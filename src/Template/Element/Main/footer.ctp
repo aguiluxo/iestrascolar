@@ -6,19 +6,20 @@
             <div class="titulo quees">
                 QUÉ ES IESTRASCOLAR
             </div>
-            <p class="descripcion">IESTRASCOLAR es una aplicación desarrollada con el fin de optimizar y controlar las actividades extraescolares en las que participan los diversos cursos que forman este centro.
+            <p class="descripcion">
+            <?=__('IESTRASCOLAR es una aplicación desarrollada con el fin de optimizar y controlar las actividades extraescolares en las que participan los diversos cursos que forman este centro.');?>
 
             </div>
             <div class="col-md-3">
             </div>
              <div class="col-md-3">
             </div>
-             <div class="col-md-3">
+             <div class="col-md-3" data-contacto id="infoContacto">
                 <div class="titulo">
-                INFO DE <b>CONTACTO</b>
+                <?=__('INFO DE <b>CONTACTO</b>')?>
                 </div>
                 <p class="descripcion">
-                    Nos encontramos en la siguiente dirección:
+                   <?=__('Nos encontramos en la siguiente dirección:');?>
                 </p>
                 <p class="descripcion">
  	 	 	 	 	<i class="fa fa-map-marker"></i><span> IES Trassierra</span><br>
@@ -40,11 +41,11 @@
  	 	 	<span>Copyright &copy2015 <b>Álvaro Muñoz</b></span>
             </div>
             <div class="col-sm-6 pull-right menuFooter">
-                <?=$this->Html->link('Inicio', ['controller' => 'Front', 'action' => 'index'])?>
+                <?=$this->Html->link(__('Inicio'), ['controller' => 'Front', 'action' => 'index'])?>
                 <span> | </span>
-                <?=$this->Html->link('Calendario', ['controller' => 'Actividad', 'action' => 'calendario'])?>
+                <?=$this->Html->link(__('Calendario'), ['controller' => 'Actividad', 'action' => 'calendario'])?>
                 <span> | </span>
-                <?=$this->Html->link('Politica Cookies', '#')?>
+                <?=$this->Html->link(__('Politica Cookies'), '#')?>
             </div>
             </div>
         </footer>

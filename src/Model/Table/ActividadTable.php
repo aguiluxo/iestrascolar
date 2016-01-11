@@ -2,9 +2,8 @@
 namespace App\Model\Table;
 
 use App\Model\Entity\Actividad;
-use Cake\ORM\Table;
 use Cake\ORM\Query;
-use Cake\ORM\RulesChecker;
+use Cake\ORM\Table;
 use Cake\Validation\Validator;
 use Search\Manager;
 
@@ -33,41 +32,47 @@ class ActividadTable extends Table
 
         $this->addBehavior('Search.Search');
         $this->addBehavior('Timestamp');
-         $this->addBehavior('Proffer.Proffer', [
-            'imagen' => [    // The name of your upload field
+        $this->addBehavior('Proffer.Proffer', [
+            'imagen' => [// The name of your upload field
                 'root' => WWW_ROOT . 'files', // Customise the root upload folder here, or omit to use the default
-                'dir' => 'imagen_dir',   // The name of the field to store the folder
-                'thumbnailSizes' => [ // Declare your thumbnails
-                    'carousel' => [   // Define the prefix of your thumbnail
+                'dir' => 'imagen_dir', // The name of the field to store the folder
+                'thumbnailSizes' => [// Declare your thumbnails
+                    'carousel' => [// Define the prefix of your thumbnail
                         'w' => 219, // Width
                         'h' => 134, // Height
-                        'crop' => false,  // Crop will crop the image as well as resize it
-                        'jpeg_quality'  => 100,
-                        'png_compression_level' => 9
+                        'crop' => false, // Crop will crop the image as well as resize it
+                        'jpeg_quality' => 100,
+                        'png_compression_level' => 9,
                     ],
 
                     'galeria' => [
                         'w' => '180',
                         'h' => '90',
                         'crop' => false,
-                    ]
+                    ],
                 ],
-                'thumbnailMethod' => 'Gmagick'  // Options are Imagick, Gd or Gmagick
-            ]
+                'thumbnailMethod' => 'Gmagick', // Options are Imagick, Gd or Gmagick
+            ],
         ]);
 
-        $this->hasOne('Destacado',[
+        $this->hasOne('Destacado', [
             'dependent' => true,
             'foreignKey' => 'actividad_id',
-            'dependent' => true
+            'dependent' => true,
         ]);
 
-         $this->belongsTo('Departamento');
+        $this->hasOne('Evaluacion', [
+            'dependent' => true,
+            'foreignKey' => 'actividad_id',
+            'dependent' => true,
+        ]);
 
-         $this->belongsToMany('Curso', [
+        $this->belongsTo('Departamento');
+
+        $this->belongsToMany('Curso', [
             'foreignKey' => 'actividad_id',
             'targetForeignKey' => 'curso_id',
-            'joinTable' => 'actividad_curso'
+            'joinTable' => 'actividad_curso',
         ]);
         $this->belongsToMany('Profesor', [
             'foreignKey' => 'actividad_id',
@@ -104,8 +109,8 @@ class ActividadTable extends Table
         //     ->allowEmpty('fecha_ini');
 
         $validator
-            // ->add('fecha_fin', 'valid', ['rule' => 'datetime'])
-            ->allowEmpty('fecha_fin');
+        // ->add('fecha_fin', 'valid', ['rule' => 'datetime'])
+        ->allowEmpty('fecha_fin');
 
         $validator
             ->add('financiacion', 'valid', ['rule' => 'boolean'])
@@ -135,34 +140,34 @@ class ActividadTable extends Table
                 'after' => true,
                 'field' => [$this->aliasField('titulo'), $this->aliasField('descripcion')],
             ])
-            ->compare('fecha_de',[
+            ->compare('fecha_de', [
                 'field' => $this->aliasField('fecha_ini'),
-                'filterEmpty' => true
+                'filterEmpty' => true,
             ])
-            ->compare('fecha_a',[
+            ->compare('fecha_a', [
                 'operator' => '<=',
                 'field' => $this->aliasField('fecha_ini'),
-                'filterEmpty' => true
+                'filterEmpty' => true,
             ])
             ->value('trimestre', [
                 'field' => $this->aliasField('trimestre'),
-                'filterEmpty' => true
+                'filterEmpty' => true,
             ])
             ->value('departamentos', [
                 'field' => $this->aliasField('departamento_id'),
-                'filterEmpty' => true
+                'filterEmpty' => true,
             ])
             ->callback('cursos', [
                 'callback' => function (Query $query, array $args) {
                     return $query
-                        ->distinct($this->aliasField('id'))
-                        ->matching('Curso', function (Query $query) use ($args) {
-                            return $query
-                                ->where([
-                                    $this->Curso->target()->aliasField('id') .  ' IN'=> $args['cursos']
-                                ]);
-                        });
-                }
+                    ->distinct($this->aliasField('id'))
+                    ->matching('Curso', function (Query $query) use ($args) {
+                        return $query
+                        ->where([
+                            $this->Curso->target()->aliasField('id') . ' IN' => $args['cursos'],
+                        ]);
+                    });
+                },
             ]);
 
         return $search;

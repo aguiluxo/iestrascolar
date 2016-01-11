@@ -19,29 +19,19 @@
           <span class="sr-only">(current)</span>
         </li>
         <li class="<?= ($pagina=='actividades')?'active':''?>">
-          <?= $this->Html->link(__("actividades"), ['controller' => 'Actividad', 'view' => 'index']); ?>
+          <?= $this->Html->link(__("actividades"), ['controller' => 'Actividad', 'action' => 'index']); ?>
         </li>
         <li class="<?= ($pagina=='calendario')?'active':''?>">
           <?= $this->Html->link(__("calendario"), ['controller' => 'Actividad', 'action' => 'calendario']); ?>
         </li>
-        <li class="<?= ($pagina=='contacto')?'active':''?>">
-          <?= $this->Html->link(__("contacto"), ['controller' => 'Actividad', 'view' => 'index']); ?>
+        <li id="contactoMenu" class="<?= ($pagina=='contacto')?'active':''?>">
+          <?= $this->Html->link(__("contacto"), "#"); ?>
         </li>
         <li>
-          <?= $this->Html->link(__("Área privada"), ['controller' => 'Admin', 'view' => 'index']); ?>
+          <?= $this->Html->link(__("Área privada"), ['controller' => 'Admin', 'action' => 'index']); ?>
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <div class="form-group">
-          <?= $this->Form->create('filter',['type' =>'get', 'url' =>['controller' => 'Actividad', 'action' => 'index']]);
-          echo $this->Form->input('search',['label' => false,'type'=>'search','class' => 'form-control search','placeHolder' => __('Buscar...')]);
-          ?>
-        <button type="submit" class="btn-social">
-         <i class="fa fa-search" style="color:white;font-size:12px;"></i>
-        </button>
-        </div>
-      <?= $this->Form->end(); ?>
-    </ul>
+
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </div>

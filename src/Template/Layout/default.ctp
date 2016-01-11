@@ -22,6 +22,8 @@
 
     <?= $this->Html->css('general.css') ?>
 
+    <!-- Algunos efectos Javascript -->
+    <?= $this->Html->script('efectos.js')?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>

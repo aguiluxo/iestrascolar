@@ -17,12 +17,11 @@
                 <?php foreach ($profesor as $profesor): ?>
                 <tr>
                     <td><?= $this->Number->format($profesor->id) ?></td>
-                    <td><?= $profesor->has('departamento') ? $this->Html->link($profesor->departamento->id, ['controller' => 'Departamento', 'action' => 'view', $profesor->departamento->id]) : '' ?></td>
+                    <td><?=$profesor->departamento->nombre?></td>
                     <td><?= h($profesor->nombre) ?></td>
                     <td><?= h($profesor->email) ?></td>
                     <td><?= $this->Number->format($profesor->telefono) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link('', ['action' => 'view', $profesor->id],['class' => 'botones botonVer']) ?>
                         <?= $this->Html->link('', ['action' => 'edit', $profesor->id], ['class' => 'botones botonEditar']) ?>
                         <?= $this->Form->postLink('', ['action' => 'delete', $profesor->id], [
                             'class' => 'botones botonBorrar',
@@ -39,5 +38,5 @@
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('siguiente') . ' >') ?>
         </ul>
-        <p><?= $this->Paginator->counter() ?></p>
+        <p class="col-xs-12"><?= $this->Paginator->counter(__('{{page}} de {{pages}}')) ?></p>
     </div>

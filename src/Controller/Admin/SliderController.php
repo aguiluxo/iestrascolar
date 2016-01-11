@@ -12,6 +12,14 @@ class SliderController extends AdminController
         $this->set('menuActivo', 'slider');
     }
 
+    public function isAuthorized($user = null)
+    {
+        if ($this->request->action === "add" || $this->request->action === "index" || $this->request->action === "edit"
+            || $this->request->action === "delete") {
+            return true;
+        }
+        return false;
+    }
     public function index()
     {
         $this->paginate = [

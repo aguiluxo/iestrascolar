@@ -1,0 +1,9 @@
+table.listadoActividades {
+  font-family: MyriadProRegular;
+}
+table.listadoActividades th {
+  background-color: #f1c832;
+}
+table.listadoActividades th a {
+  color: white;
+}

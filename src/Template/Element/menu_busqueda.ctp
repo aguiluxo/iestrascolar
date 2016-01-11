@@ -20,7 +20,6 @@
 				</div>
 				<div class="col-md-3 contenedorBusquedaTrimestre">
 					<div class="form-group">
-						<span>Tiene Financiación</span>
 						<span>Trimestre:</span>
 						<?php
 							echo $this->Form->radio('trimestre',[
@@ -31,13 +30,13 @@
 						 ?>
 					</div>
 				</div>
-				<div class="col-md-2">
-					<div class="form-group">
+				<div class="col-md-2 pull-left">
+					<div class="form-group pull-left">
 						<?=$this->Munruiz->fecha('fecha_de',['label' => false,'placeholder' => 'Desde...']);?>
 					</div>
 				</div>
-				<div class="col-md-2">
-					<div class="form-group">
+				<div class="col-md-2 pull-right">
+					<div class="form-group pull-right">
 						<?=$this->Munruiz->fecha('fecha_a', ['label' => false, 'placeholder' => 'Hasta...']);?>
 					</div>
 				</div>
@@ -47,7 +46,14 @@
 					<?=$this->element('Utils/submenu_cursos');?>
 				</div>
 				<div class="col-md-6">
-					<?=$this->element('Utils/submenu_departamentos');?>
+					<div class="form-group">
+						<?= $this->Form->input('departamentos', [
+                        	'label' => false,
+                        	'class' => 'form-control',
+                            'options' => $departamentos,
+                            'empty' => 'Seleccione un departamento'
+                            ]); ?>
+					</div>
 				</div>
 			</div>
 			<div class="row">

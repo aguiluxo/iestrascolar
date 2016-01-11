@@ -44,3 +44,9 @@ nav.navbar-default .navbar-right .search {
 #bs-example-navbar-collapse-1 {
   padding: 0;
 }
+@media (max-width: 768px) {
+  #bs-example-navbar-collapse-1 {
+    text-align: center;
+    overflow-x: hidden;
+  }
+}

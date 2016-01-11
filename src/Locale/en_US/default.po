@@ -1,0 +1,1135 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2016-01-11 09:28+0100\n"
+"PO-Revision-Date: 2016-01-11 09:31+0100\n"
+"Language-Team: EMAIL@ADDRESS\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.6\n"
+"Last-Translator: \n"
+"Language: en_US\n"
+
+#: Controller/Admin/ActividadController.php:126
+msgid "La actividad ha sido modificada."
+msgstr "The activity has been modified."
+
+#: Controller/Admin/ActividadController.php:129
+msgid "La actividad no ha podido ser editada. Por favor, prueba de nuevo"
+msgstr "The activity could not be edited. Please try again"
+
+#: Controller/Admin/ActividadController.php:197
+msgid "El siguiente curso ha superado las cinco actividades anuales:"
+msgstr "The next course has exceeded five annual activities:"
+
+#: Controller/Admin/AdminController.php:20
+msgid "No estás autorizado a acceder a esta sección"
+msgstr ""
+
+#: Controller/Admin/CursoController.php:58;84
+msgid "El curso se ha guardado correctamente."
+msgstr ""
+
+#: Controller/Admin/CursoController.php:61;87
+msgid "El curso no se ha podido guardar correctamente"
+msgstr ""
+
+#: Controller/Admin/CursoController.php:107
+msgid "El curso ha sido borrado."
+msgstr ""
+
+#: Controller/Admin/CursoController.php:109
+msgid "El curso no se ha podido borrar."
+msgstr ""
+
+#: Controller/Admin/DepartamentoController.php:57;82
+msgid "El departamento ha sido guardado"
+msgstr ""
+
+#: Controller/Admin/DepartamentoController.php:60
+msgid "El departamento no ha podido ser guardado."
+msgstr ""
+
+#: Controller/Admin/DepartamentoController.php:85
+msgid "El departamento no ha podido ser guardado"
+msgstr ""
+
+#: Controller/Admin/DepartamentoController.php:104
+msgid "El departamento ha sido borrado"
+msgstr ""
+
+#: Controller/Admin/DepartamentoController.php:106
+msgid "El departamento no ha podido ser borrado."
+msgstr ""
+
+#: Controller/Admin/DestacadoController.php:60
+msgid "Se ha destacado la actividad correctamente."
+msgstr ""
+
+#: Controller/Admin/DestacadoController.php:63;90
+msgid "La actividad destacada no se ha podido guardar."
+msgstr ""
+
+#: Controller/Admin/DestacadoController.php:87
+msgid "Se ha destacado correctamente la actividad."
+msgstr ""
+
+#: Controller/Admin/DestacadoController.php:110
+msgid "la actividad ya no está destacada"
+msgstr ""
+
+#: Controller/Admin/DestacadoController.php:112
+msgid "La actividad destacada no se ha podido borrar."
+msgstr ""
+
+#: Controller/Admin/ProfesorController.php:75
+msgid "El profesor ha sido añadido."
+msgstr ""
+
+#: Controller/Admin/ProfesorController.php:78
+msgid "El profesor no ha podido ser añadido. Por favor, prueba de nuevo."
+msgstr ""
+
+#: Controller/Admin/ProfesorController.php:103
+msgid "El profesor ha sido modificado."
+msgstr ""
+
+#: Controller/Admin/ProfesorController.php:106
+msgid "El profesor no ha podido ser modificado. Por favor, prueba de nuevo."
+msgstr ""
+
+#: Controller/Admin/ProfesorController.php:127
+msgid "El profesor ha sido borrado."
+msgstr ""
+
+#: Controller/Admin/ProfesorController.php:129
+msgid "El profesor no ha podido ser borrado."
+msgstr ""
+
+#: Controller/Admin/SliderController.php:43;62
+msgid "El slider ha sido guardado."
+msgstr ""
+
+#: Controller/Admin/SliderController.php:46;65
+msgid "El slider no ha podido ser guardado. Comprueba los datos introducidos."
+msgstr ""
+
+#: Controller/Admin/SliderController.php:77
+msgid "Slider borrado."
+msgstr ""
+
+#: Controller/Admin/SliderController.php:79
+msgid "El slider no ha podido ser borrado."
+msgstr ""
+
+#: Controller/Admin/UsersController.php:30
+msgid "Usuario o contraseña erroneos"
+msgstr ""
+
+#: Model/Table/ProfesorTable.php:100
+msgid "Este nombre ya existe"
+msgstr ""
+
+#: Model/Table/ProfesorTable.php:105
+msgid "Email requerido"
+msgstr ""
+
+#: Model/Table/ProfesorTable.php:109
+msgid "Este email ya está registrado"
+msgstr ""
+
+#: Model/Table/ProfesorTable.php:111
+msgid "Contraseña requerida"
+msgstr ""
+
+#: Model/Table/ProfesorTable.php:115
+msgid "Por favor, introduce un rol válido"
+msgstr ""
+
+#: Template/Actividad/calendario.ctp:16
+msgid "Ant."
+msgstr ""
+
+#: Template/Actividad/calendario.ctp:17
+msgid "Hoy"
+msgstr ""
+
+#: Template/Actividad/calendario.ctp:18
+msgid "Sig."
+msgstr ""
+
+#: Template/Actividad/calendario.ctp:21
+msgid "Año"
+msgstr ""
+
+#: Template/Actividad/calendario.ctp:22
+msgid "Mes"
+msgstr ""
+
+#: Template/Actividad/calendario.ctp:23
+msgid "Semana"
+msgstr ""
+
+#: Template/Actividad/calendario.ctp:24
+msgid "Día"
+msgstr ""
+
+#: Template/Actividad/index.ctp:5
+msgid "titulo"
+msgstr ""
+
+#: Template/Actividad/index.ctp:6
+msgid "trimestre"
+msgstr ""
+
+#: Template/Actividad/index.ctp:7
+msgid "dirección"
+msgstr ""
+
+#: Template/Actividad/index.ctp:8
+msgid "fecha_ini"
+msgstr ""
+
+#: Template/Actividad/index.ctp:9
+msgid "fecha_fin"
+msgstr ""
+
+#: Template/Actividad/view.ctp:3;88;124
+#: Template/Admin/Actividad/view.ctp:3;65;98 Template/Admin/Curso/add.ctp:3
+#: Template/Admin/Curso/edit.ctp:3 Template/Admin/Curso/index.ctp:11
+#: Template/Admin/Curso/view.ctp:3;47 Template/Admin/Departamento/add.ctp:3
+#: Template/Admin/Departamento/edit.ctp:3
+#: Template/Admin/Departamento/view.ctp:3;54;104
+#: Template/Admin/Destacado/add.ctp:3 Template/Admin/Destacado/view.ctp:3
+#: Template/Admin/Profesor/view.ctp:3 Template/Admin/Trimestre/edit.ctp:3
+#: Template/Admin/Trimestre/view.ctp:3 Template/Admin/Users/add.ctp:2
+#: Template/Admin/Users/edit.ctp:2 Template/Admin/Users/index.ctp:2
+#: Template/Admin/Users/view.ctp:2
+msgid "Actions"
+msgstr ""
+
+#: Template/Actividad/view.ctp:4
+msgid "Edit Actividad"
+msgstr ""
+
+#: Template/Actividad/view.ctp:5
+msgid "Delete Actividad"
+msgstr ""
+
+#: Template/Actividad/view.ctp:5;100;144
+#: Template/Admin/Actividad/view.ctp:77;115 Template/Admin/Curso/edit.ctp:7
+#: Template/Admin/Curso/view.ctp:5;70 Template/Admin/Departamento/edit.ctp:7
+#: Template/Admin/Departamento/view.ctp:5;74;130
+#: Template/Admin/Destacado/view.ctp:5 Template/Admin/Slider/index.ctp:34
+#: Template/Admin/Trimestre/edit.ctp:7 Template/Admin/Trimestre/view.ctp:5
+#: Template/Admin/Users/edit.ctp:7 Template/Admin/Users/view.ctp:5
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Actividad/view.ctp:6 Template/Admin/Curso/view.ctp:8
+#: Template/Admin/Departamento/add.ctp:7
+#: Template/Admin/Departamento/edit.ctp:13
+#: Template/Admin/Departamento/view.ctp:10 Template/Admin/Destacado/add.ctp:5
+#: Template/Admin/Destacado/view.ctp:8
+msgid "List Actividad"
+msgstr ""
+
+#: Template/Actividad/view.ctp:7 Template/Admin/Curso/view.ctp:9
+#: Template/Admin/Departamento/add.ctp:8
+#: Template/Admin/Departamento/edit.ctp:14
+#: Template/Admin/Departamento/view.ctp:11 Template/Admin/Destacado/add.ctp:6
+#: Template/Admin/Destacado/view.ctp:9
+msgid "New Actividad"
+msgstr ""
+
+#: Template/Actividad/view.ctp:8 Template/Admin/Destacado/add.ctp:4
+#: Template/Admin/Destacado/view.ctp:6
+msgid "List Destacado"
+msgstr ""
+
+#: Template/Actividad/view.ctp:9 Template/Admin/Destacado/view.ctp:7
+msgid "New Destacado"
+msgstr ""
+
+#: Template/Actividad/view.ctp:10 Template/Admin/Curso/view.ctp:6
+msgid "List Curso"
+msgstr ""
+
+#: Template/Actividad/view.ctp:11 Template/Admin/Curso/view.ctp:7
+msgid "New Curso"
+msgstr ""
+
+#: Template/Actividad/view.ctp:12 Template/Admin/Departamento/add.ctp:5
+#: Template/Admin/Departamento/edit.ctp:11
+#: Template/Admin/Departamento/view.ctp:8
+msgid "List Profesor"
+msgstr ""
+
+#: Template/Actividad/view.ctp:13 Template/Admin/Departamento/add.ctp:6
+#: Template/Admin/Departamento/edit.ctp:12
+#: Template/Admin/Departamento/view.ctp:9
+msgid "New Profesor"
+msgstr ""
+
+#: Template/Actividad/view.ctp:20 Template/Admin/Actividad/view.ctp:12
+#: Template/Admin/Curso/view.ctp:35 Template/Admin/Departamento/view.ctp:89
+msgid "Titulo"
+msgstr ""
+
+#: Template/Actividad/view.ctp:24 Template/Admin/Actividad/view.ctp:16
+#: Template/Admin/Curso/view.ctp:36 Template/Admin/Departamento/view.ctp:90
+msgid "Descripcion"
+msgstr ""
+
+#: Template/Actividad/view.ctp:28 Template/Admin/Curso/view.ctp:42
+#: Template/Admin/Departamento/view.ctp:96
+msgid "Attachment"
+msgstr ""
+
+#: Template/Actividad/view.ctp:32 Template/Admin/Curso/view.ctp:43
+#: Template/Admin/Departamento/view.ctp:97
+msgid "Attachment Dir"
+msgstr ""
+
+#: Template/Actividad/view.ctp:36 Template/Admin/Departamento/view.ctp:98
+msgid "Direccion"
+msgstr ""
+
+#: Template/Actividad/view.ctp:40;85;113
+#: Template/Admin/Actividad/view.ctp:21;62;90
+#: Template/Admin/Curso/view.ctp:20;33
+#: Template/Admin/Departamento/view.ctp:26;43;87
+#: Template/Admin/Destacado/view.ctp:24 Template/Admin/Profesor/view.ctp:30
+#: Template/Admin/Trimestre/view.ctp:14 Template/Admin/Users/view.ctp:18
+msgid "Id"
+msgstr ""
+
+#: Template/Actividad/view.ctp:44 Template/Admin/Curso/view.ctp:34
+#: Template/Admin/Departamento/view.ctp:88
+msgid "User Id"
+msgstr ""
+
+#: Template/Actividad/view.ctp:48 Template/Admin/Actividad/view.ctp:25
+#: Template/Admin/Curso/view.ctp:39 Template/Admin/Departamento/view.ctp:93
+#: Template/Admin/Trimestre/view.ctp:18
+msgid "Trimestre"
+msgstr ""
+
+#: Template/Actividad/view.ctp:52 Template/Admin/Actividad/view.ctp:29
+#: Template/Admin/Curso/view.ctp:37 Template/Admin/Departamento/view.ctp:91
+msgid "Fecha Ini"
+msgstr ""
+
+#: Template/Actividad/view.ctp:56 Template/Admin/Actividad/view.ctp:33
+#: Template/Admin/Curso/view.ctp:38 Template/Admin/Departamento/view.ctp:92
+#: Template/Admin/Trimestre/view.ctp:26
+msgid "Fecha Fin"
+msgstr ""
+
+#: Template/Actividad/view.ctp:60;122 Template/Admin/Actividad/view.ctp:96
+#: Template/Admin/Curso/view.ctp:45
+#: Template/Admin/Departamento/view.ctp:30;52;100
+#: Template/Admin/Destacado/view.ctp:28
+msgid "Created"
+msgstr ""
+
+#: Template/Actividad/view.ctp:64;123 Template/Admin/Actividad/view.ctp:97
+#: Template/Admin/Curso/view.ctp:46
+#: Template/Admin/Departamento/view.ctp:34;53;101
+#: Template/Admin/Destacado/view.ctp:32
+msgid "Modified"
+msgstr ""
+
+#: Template/Actividad/view.ctp:68 Template/Admin/Actividad/view.ctp:45
+#: Template/Admin/Curso/view.ctp:40 Template/Admin/Departamento/view.ctp:94
+msgid "Financiacion"
+msgstr ""
+
+#: Template/Actividad/view.ctp:69;73;77
+#: Template/Admin/Actividad/view.ctp:46;50;54
+msgid "Yes"
+msgstr ""
+
+#: Template/Actividad/view.ctp:69;73;77
+#: Template/Admin/Actividad/view.ctp:46;50;54
+msgid "No"
+msgstr ""
+
+#: Template/Actividad/view.ctp:72 Template/Admin/Actividad/view.ctp:49
+#: Template/Admin/Curso/view.ctp:41 Template/Admin/Departamento/view.ctp:95
+msgid "Esta Evaluada"
+msgstr ""
+
+#: Template/Actividad/view.ctp:76 Template/Admin/Actividad/view.ctp:53
+#: Template/Admin/Curso/view.ctp:44 Template/Admin/Departamento/view.ctp:99
+msgid "Destacada"
+msgstr ""
+
+#: Template/Actividad/view.ctp:81
+msgid "Related Curso"
+msgstr ""
+
+#: Template/Actividad/view.ctp:86;115 Template/Admin/Actividad/view.ctp:63;92
+#: Template/Admin/Curso/view.ctp:16 Template/Admin/Departamento/view.ctp:18;45
+#: Template/Admin/Profesor/edit.ctp:8 Template/Admin/Profesor/view.ctp:17
+msgid "Nombre"
+msgstr ""
+
+#: Template/Actividad/view.ctp:87 Template/Admin/Actividad/view.ctp:64
+#: Template/Admin/Curso/view.ctp:24
+msgid "Alumnos"
+msgstr ""
+
+#: Template/Actividad/view.ctp:96;140 Template/Admin/Actividad/view.ctp:73;111
+#: Template/Admin/Curso/view.ctp:66 Template/Admin/Departamento/view.ctp:70;126
+msgid "View"
+msgstr ""
+
+#: Template/Actividad/view.ctp:98;142 Template/Admin/Actividad/view.ctp:75;113
+#: Template/Admin/Curso/view.ctp:68 Template/Admin/Departamento/view.ctp:72;128
+msgid "Edit"
+msgstr ""
+
+#: Template/Actividad/view.ctp:100;144 Template/Admin/Actividad/view.ctp:77;115
+#: Template/Admin/Curso/edit.ctp:5 Template/Admin/Curso/view.ctp:70
+#: Template/Admin/Departamento/edit.ctp:5
+#: Template/Admin/Departamento/view.ctp:74;130
+#: Template/Admin/Trimestre/edit.ctp:5 Template/Admin/Users/edit.ctp:5
+msgid "Delete"
+msgstr ""
+
+#: Template/Actividad/view.ctp:109 Template/Admin/Departamento/view.ctp:39
+msgid "Related Profesor"
+msgstr ""
+
+#: Template/Actividad/view.ctp:114 Template/Admin/Actividad/view.ctp:91
+#: Template/Admin/Departamento/view.ctp:44
+msgid "Departamento Id"
+msgstr ""
+
+#: Template/Actividad/view.ctp:116 Template/Admin/Departamento/view.ctp:46
+#: Template/Admin/Profesor/view.ctp:21
+msgid "Email"
+msgstr ""
+
+#: Template/Actividad/view.ctp:117 Template/Admin/Departamento/view.ctp:47
+msgid "Password"
+msgstr ""
+
+#: Template/Actividad/view.ctp:118 Template/Admin/Departamento/view.ctp:48
+msgid "Role"
+msgstr ""
+
+#: Template/Actividad/view.ctp:119 Template/Admin/Actividad/view.ctp:93
+#: Template/Admin/Departamento/view.ctp:49 Template/Admin/Profesor/view.ctp:34
+msgid "Telefono"
+msgstr ""
+
+#: Template/Actividad/view.ctp:120 Template/Admin/Actividad/view.ctp:94
+#: Template/Admin/Departamento/view.ctp:50;103
+msgid "Imagen Dir"
+msgstr ""
+
+#: Template/Actividad/view.ctp:121 Template/Admin/Actividad/view.ctp:95
+#: Template/Admin/Departamento/view.ctp:51;102
+#: Template/Admin/Profesor/view.ctp:26 Template/Admin/Slider/edit.ctp:9
+msgid "Imagen"
+msgstr ""
+
+#: Template/Actividad/vista_actividades.ctp:12
+msgid "Fecha de inicio"
+msgstr ""
+
+#: Template/Actividad/vista_actividades.ctp:17
+msgid "Fecha de finalización"
+msgstr ""
+
+#: Template/Admin/Actividad/edit.ctp:24
+msgid "Añadir Actividad"
+msgstr ""
+
+#: Template/Admin/Actividad/edit.ctp:24
+msgid "Editar Actividad"
+msgstr ""
+
+#: Template/Admin/Actividad/edit.ctp:26
+msgid "Título"
+msgstr ""
+
+#: Template/Admin/Actividad/edit.ctp:33 Template/Element/Admin/navbar.ctp:17
+#: Template/Element/Main/footer.ctp:44
+msgid "Inicio"
+msgstr "Home"
+
+#: Template/Admin/Actividad/edit.ctp:44
+msgid "Fin"
+msgstr ""
+
+#: Template/Admin/Actividad/edit.ctp:55
+msgid "Dirección"
+msgstr ""
+
+#: Template/Admin/Actividad/edit.ctp:69 Template/Admin/Profesor/view.ctp:12
+msgid "Departamento"
+msgstr ""
+
+#: Template/Admin/Actividad/edit.ctp:79
+msgid "Descripción"
+msgstr ""
+
+#: Template/Admin/Actividad/edit.ctp:88
+msgid ""
+"Introduce el contenido que quieres que se refleje en el resumen de la "
+"actividad"
+msgstr ""
+
+#: Template/Admin/Actividad/edit.ctp:169 Template/Admin/Curso/edit.ctp:23
+#: Template/Admin/Destacado/edit.ctp:20 Template/Admin/Profesor/edit.ctp:94
+#: Template/Admin/Slider/edit.ctp:59 Template/Admin/Users/add.ctp:21
+msgid "Enviar"
+msgstr ""
+
+#: Template/Admin/Actividad/index.ctp:1
+msgid "Iestrascolar | Listado de actividades"
+msgstr ""
+
+#: Template/Admin/Actividad/index.ctp:21
+#: Template/Admin/Actividad/mis_actividades.ctp:17
+#: Template/Admin/Departamento/index.ctp:15
+#: Template/Admin/Destacado/index.ctp:12 Template/Admin/Profesor/index.ctp:13
+#: Template/Admin/Slider/index.ctp:15 Template/Admin/Trimestre/index.ctp:7
+#: Template/Admin/Users/index.ctp:13
+msgid "Acciones"
+msgstr ""
+
+#: Template/Admin/Actividad/index.ctp:36
+#: Template/Admin/Actividad/mis_actividades.ctp:32
+msgid "Seguro que quieres borrar la actividad # {0}?"
+msgstr ""
+
+#: Template/Admin/Actividad/index.ctp:47
+#: Template/Admin/Actividad/mis_actividades.ctp:43
+#: Template/Admin/Curso/index.ctp:36 Template/Admin/Departamento/index.ctp:36
+#: Template/Admin/Destacado/index.ctp:34 Template/Admin/Profesor/index.ctp:37
+#: Template/Admin/Slider/index.ctp:43
+msgid "anterior"
+msgstr "previous"
+
+#: Template/Admin/Actividad/index.ctp:49
+#: Template/Admin/Actividad/mis_actividades.ctp:45
+#: Template/Admin/Curso/index.ctp:38 Template/Admin/Departamento/index.ctp:38
+#: Template/Admin/Destacado/index.ctp:36 Template/Admin/Profesor/index.ctp:39
+#: Template/Admin/Slider/index.ctp:45
+msgid "siguiente"
+msgstr "next"
+
+#: Template/Admin/Actividad/index.ctp:52
+#: Template/Admin/Actividad/mis_actividades.ctp:48
+#: Template/Admin/Departamento/index.ctp:41
+#: Template/Admin/Profesor/index.ctp:41
+msgid "{{page}} de {{pages}}"
+msgstr "{{page}} of {{pages}}"
+
+#: Template/Admin/Actividad/mis_actividades.ctp:1
+msgid "Iestrascolar | Mis actividades"
+msgstr "Iestrascolar | My activities"
+
+#: Template/Admin/Actividad/view.ctp:4
+msgid "Nueva Actividad"
+msgstr "New Activity"
+
+#: Template/Admin/Actividad/view.ctp:5 Template/Admin/Curso/add.ctp:5
+#: Template/Admin/Curso/edit.ctp:11
+msgid "Lista Actividades"
+msgstr ""
+
+#: Template/Admin/Actividad/view.ctp:37
+msgid "Creada"
+msgstr "Created"
+
+#: Template/Admin/Actividad/view.ctp:41
+msgid "Modificada"
+msgstr "Modified"
+
+#: Template/Admin/Actividad/view.ctp:58
+msgid "Cursos que asistirán"
+msgstr ""
+
+#: Template/Admin/Actividad/view.ctp:86
+msgid "Profesores que asistirán"
+msgstr ""
+
+#: Template/Admin/Curso/add.ctp:4 Template/Admin/Curso/edit.ctp:10
+msgid "Lista Cursos"
+msgstr ""
+
+#: Template/Admin/Curso/add.ctp:11
+msgid "Add Curso"
+msgstr ""
+
+#: Template/Admin/Curso/add.ctp:17 Template/Admin/Departamento/add.ctp:20
+#: Template/Admin/Departamento/edit.ctp:26 Template/Admin/Destacado/add.ctp:20
+#: Template/Admin/Trimestre/edit.ctp:23 Template/Admin/Users/edit.ctp:22
+#: View/Helper/FormHelper.php:1724
+msgid "Submit"
+msgstr ""
+
+#: Template/Admin/Curso/edit.ctp:17
+msgid "Editar Curso"
+msgstr ""
+
+#: Template/Admin/Curso/index.ctp:25
+msgid "Está seguro de que desea borrar # {0}?"
+msgstr ""
+
+#: Template/Admin/Curso/view.ctp:4
+msgid "Edit Curso"
+msgstr ""
+
+#: Template/Admin/Curso/view.ctp:5
+msgid "Delete Curso"
+msgstr ""
+
+#: Template/Admin/Curso/view.ctp:29 Template/Admin/Departamento/view.ctp:83
+msgid "Related Actividad"
+msgstr ""
+
+#: Template/Admin/Departamento/add.ctp:4
+#: Template/Admin/Departamento/edit.ctp:10
+#: Template/Admin/Departamento/view.ctp:6
+msgid "List Departamento"
+msgstr ""
+
+#: Template/Admin/Departamento/add.ctp:14
+msgid "Add Departamento"
+msgstr ""
+
+#: Template/Admin/Departamento/edit.ctp:20
+#: Template/Admin/Departamento/view.ctp:4
+msgid "Edit Departamento"
+msgstr ""
+
+#: Template/Admin/Departamento/index.ctp:1
+msgid "Iestrascolar | Departamentos"
+msgstr ""
+
+#: Template/Admin/Departamento/index.ctp:27
+msgid "Seguro que quieres borrar el departamento # {0}?"
+msgstr ""
+
+#: Template/Admin/Departamento/view.ctp:5
+msgid "Delete Departamento"
+msgstr ""
+
+#: Template/Admin/Departamento/view.ctp:7
+msgid "New Departamento"
+msgstr ""
+
+#: Template/Admin/Departamento/view.ctp:22 Template/Admin/Destacado/view.ctp:20
+msgid "Icono"
+msgstr ""
+
+#: Template/Admin/Destacado/add.ctp:12
+msgid "Add Destacado"
+msgstr ""
+
+#: Template/Admin/Destacado/edit.ctp:7
+msgid "Añadir Destacado"
+msgstr ""
+
+#: Template/Admin/Destacado/edit.ctp:7
+msgid "Editar Destacado"
+msgstr ""
+
+#: Template/Admin/Destacado/index.ctp:25
+msgid "Estás seguro de que deseas borrar # {0}?"
+msgstr ""
+
+#: Template/Admin/Destacado/view.ctp:4
+msgid "Edit Destacado"
+msgstr ""
+
+#: Template/Admin/Destacado/view.ctp:5
+msgid "Delete Destacado"
+msgstr ""
+
+#: Template/Admin/Destacado/view.ctp:16
+msgid "Actividad"
+msgstr ""
+
+#: Template/Admin/Profesor/edit.ctp:6
+msgid "Añadir Profesor"
+msgstr ""
+
+#: Template/Admin/Profesor/edit.ctp:6
+msgid "Editar Profesor"
+msgstr ""
+
+#: Template/Admin/Profesor/edit.ctp:15
+msgid "E-mail"
+msgstr ""
+
+#: Template/Admin/Profesor/edit.ctp:24
+msgid "Clave"
+msgstr ""
+
+#: Template/Admin/Profesor/edit.ctp:33 Template/Admin/Users/add.ctp:15
+msgid "Rol"
+msgstr ""
+
+#: Template/Admin/Profesor/edit.ctp:47
+msgid "Telf"
+msgstr ""
+
+#: Template/Admin/Profesor/index.ctp:28
+msgid "Estas seguro de que deseas borrar # {0}?"
+msgstr ""
+
+#: Template/Admin/Profesor/view.ctp:4
+msgid "Nuevo Profesor"
+msgstr ""
+
+#: Template/Admin/Profesor/view.ctp:5
+msgid "Lista Profesores"
+msgstr ""
+
+#: Template/Admin/Profesor/view.ctp:38
+msgid "Creado"
+msgstr ""
+
+#: Template/Admin/Profesor/view.ctp:42
+msgid "Modificado"
+msgstr ""
+
+#: Template/Admin/Slider/edit.ctp:6
+msgid "Añadir Slider"
+msgstr ""
+
+#: Template/Admin/Slider/edit.ctp:6
+msgid "Editar Slider"
+msgstr ""
+
+#: Template/Admin/Slider/edit.ctp:17
+msgid "Texto para fecha"
+msgstr ""
+
+#: Template/Admin/Slider/edit.ctp:24
+msgid "Texto 1"
+msgstr ""
+
+#: Template/Admin/Slider/edit.ctp:35
+msgid "Texto 2"
+msgstr ""
+
+#: Template/Admin/Slider/edit.ctp:46
+msgid "Texto 3"
+msgstr ""
+
+#: Template/Admin/Trimestre/edit.ctp:10 Template/Admin/Trimestre/view.ctp:6
+msgid "List Trimestre"
+msgstr ""
+
+#: Template/Admin/Trimestre/edit.ctp:16 Template/Admin/Trimestre/view.ctp:4
+msgid "Edit Trimestre"
+msgstr ""
+
+#: Template/Admin/Trimestre/index.ctp:17 Template/Admin/Users/index.ctp:22
+msgid "Ver"
+msgstr ""
+
+#: Template/Admin/Trimestre/index.ctp:18 Template/Admin/Users/index.ctp:23
+msgid "Editar"
+msgstr ""
+
+#: Template/Admin/Trimestre/view.ctp:5
+msgid "Delete Trimestre"
+msgstr ""
+
+#: Template/Admin/Trimestre/view.ctp:7
+msgid "New Trimestre"
+msgstr ""
+
+#: Template/Admin/Trimestre/view.ctp:22
+msgid "Fecha Inicio"
+msgstr ""
+
+#: Template/Admin/Users/add.ctp:4
+msgid "Lista de Usuarios"
+msgstr ""
+
+#: Template/Admin/Users/add.ctp:10
+msgid "Añadir Usuario"
+msgstr ""
+
+#: Template/Admin/Users/add.ctp:12 Template/Admin/Users/index.ctp:12
+#: Template/Admin/Users/view.ctp:14
+msgid "Usuario"
+msgstr ""
+
+#: Template/Admin/Users/add.ctp:13 Template/Admin/Users/login.ctp:38
+msgid "Contraseña"
+msgstr ""
+
+#: Template/Admin/Users/edit.ctp:10 Template/Admin/Users/view.ctp:6
+msgid "List Users"
+msgstr ""
+
+#: Template/Admin/Users/edit.ctp:16 Template/Admin/Users/view.ctp:4
+msgid "Edit User"
+msgstr ""
+
+#: Template/Admin/Users/index.ctp:4 Template/Admin/Users/view.ctp:7
+msgid "New User"
+msgstr ""
+
+#: Template/Admin/Users/index.ctp:32
+msgid "previous"
+msgstr ""
+
+#: Template/Admin/Users/index.ctp:34
+msgid "next"
+msgstr ""
+
+#: Template/Admin/Users/login.ctp:31
+msgid "Nombre de usuario"
+msgstr ""
+
+#: Template/Admin/Users/login.ctp:42
+msgid "Entrar"
+msgstr ""
+
+#: Template/Admin/Users/view.ctp:5
+msgid "Delete User"
+msgstr ""
+
+#: Template/Element/Admin/navbar.ctp:18
+msgid "Slider"
+msgstr ""
+
+#: Template/Element/Admin/navbar.ctp:19
+msgid "Actividades"
+msgstr ""
+
+#: Template/Element/Admin/navbar.ctp:20
+msgid "Destacados"
+msgstr ""
+
+#: Template/Element/Admin/navbar.ctp:21
+msgid "Profesores"
+msgstr ""
+
+#: Template/Element/Admin/navbar.ctp:22
+msgid "Departamentos"
+msgstr ""
+
+#: Template/Element/Admin/navbar.ctp:23
+msgid "Cursos"
+msgstr ""
+
+#: Template/Element/Admin/navbar.ctp:35
+msgid "Mis actividades"
+msgstr ""
+
+#: Template/Element/Admin/navbar.ctp:37
+msgid "Cerrar sesión"
+msgstr ""
+
+#: Template/Element/Main/actividades-proximas.ctp:16
+msgid "<b class=\"cabeceraTitulo\">PRÓXIMOS</b> EVENTOS"
+msgstr ""
+
+#: Template/Element/Main/footer.ctp:10
+msgid ""
+"IESTRASCOLAR es una aplicación desarrollada con el fin de optimizar y "
+"controlar las actividades extraescolares en las que participan los diversos "
+"cursos que forman este centro."
+msgstr ""
+
+#: Template/Element/Main/footer.ctp:19
+msgid "INFO DE <b>CONTACTO</b>"
+msgstr ""
+
+#: Template/Element/Main/footer.ctp:22
+msgid "Nos encontramos en la siguiente dirección:"
+msgstr ""
+
+#: Template/Element/Main/footer.ctp:46
+msgid "Calendario"
+msgstr ""
+
+#: Template/Element/Main/footer.ctp:48
+msgid "Politica Cookies"
+msgstr ""
+
+#: Template/Element/Main/menu.ctp:18
+msgid "inicio"
+msgstr "Home"
+
+#: Template/Element/Main/menu.ctp:22
+msgid "actividades"
+msgstr "Activities"
+
+#: Template/Element/Main/menu.ctp:25
+msgid "calendario"
+msgstr "Calendar"
+
+#: Template/Element/Main/menu.ctp:28
+msgid "contacto"
+msgstr "Contact"
+
+#: Template/Element/Main/menu.ctp:31
+msgid "Área privada"
+msgstr "Private Area"
+
+#: View/Helper/MunruizHelper.php:139;217
+msgid "Fecha"
+msgstr ""
+
+#: Template/Error/error400.ctp:33 Template/Error/error500.ctp:35
+msgid "Error"
+msgstr ""
+
+#: Template/Error/error400.ctp:35
+msgid "The requested address %s was not found on this server."
+msgstr ""
+
+#: Template/Error/error500.ctp:33
+msgid "An Internal Error Has Occurred"
+msgstr ""
+
+#: Controller/Component/AuthComponent.php:454
+msgid "You are not authorized to access that location."
+msgstr ""
+
+#: Controller/Component/CsrfComponent.php:155
+msgid "Missing CSRF token cookie"
+msgstr ""
+
+#: Controller/Component/CsrfComponent.php:159
+msgid "CSRF token mismatch."
+msgstr ""
+
+#: Error/ExceptionRenderer.php:249
+msgid "Not Found"
+msgstr ""
+
+#: Error/ExceptionRenderer.php:251
+msgid "An Internal Error Has Occurred."
+msgstr ""
+
+#: I18n/Number.php:89
+msgid "{0,number,#,###.##} KB"
+msgstr ""
+
+#: I18n/Number.php:91
+msgid "{0,number,#,###.##} MB"
+msgstr ""
+
+#: I18n/Number.php:93
+msgid "{0,number,#,###.##} GB"
+msgstr ""
+
+#: I18n/Number.php:95
+msgid "{0,number,#,###.##} TB"
+msgstr ""
+
+#: I18n/Number.php:87
+msgid "{0,number,integer} Byte"
+msgid_plural "{0,number,integer} Bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:271
+msgid "%s ago"
+msgstr ""
+
+#: I18n/Time.php:272
+msgid "on %s"
+msgstr ""
+
+#: I18n/Time.php:312
+msgid "just now"
+msgstr ""
+
+#: I18n/Time.php:428
+msgid "about a second ago"
+msgstr ""
+
+#: I18n/Time.php:429
+msgid "about a minute ago"
+msgstr ""
+
+#: I18n/Time.php:430
+msgid "about an hour ago"
+msgstr ""
+
+#: I18n/Time.php:431
+msgid "about a day ago"
+msgstr ""
+
+#: I18n/Time.php:432
+msgid "about a week ago"
+msgstr ""
+
+#: I18n/Time.php:433
+msgid "about a year ago"
+msgstr ""
+
+#: I18n/Time.php:442
+msgid "in about a second"
+msgstr ""
+
+#: I18n/Time.php:443
+msgid "in about a minute"
+msgstr ""
+
+#: I18n/Time.php:444
+msgid "in about an hour"
+msgstr ""
+
+#: I18n/Time.php:445
+msgid "in about a day"
+msgstr ""
+
+#: I18n/Time.php:446
+msgid "in about a week"
+msgstr ""
+
+#: I18n/Time.php:447
+msgid "in about a year"
+msgstr ""
+
+#: I18n/Time.php:401
+msgid "{0} year"
+msgid_plural "{0} years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:404
+msgid "{0} month"
+msgid_plural "{0} months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:407
+msgid "{0} week"
+msgid_plural "{0} weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:410
+msgid "{0} day"
+msgid_plural "{0} days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:413
+msgid "{0} hour"
+msgid_plural "{0} hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:416
+msgid "{0} minute"
+msgid_plural "{0} minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:419
+msgid "{0} second"
+msgid_plural "{0} seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: Network/Response.php:1438
+msgid "The requested file was not found"
+msgstr ""
+
+#: ORM/RulesChecker.php:49
+msgid "This value is already in use"
+msgstr ""
+
+#: ORM/RulesChecker.php:83
+msgid "This value does not exist"
+msgstr ""
+
+#: Utility/Text.php:724
+msgid "and"
+msgstr ""
+
+#: Validation/Validator.php:102
+msgid "This field is required"
+msgstr ""
+
+#: Validation/Validator.php:103
+msgid "This field cannot be left empty"
+msgstr ""
+
+#: Validation/Validator.php:663
+msgid "The provided value is invalid"
+msgstr ""
+
+#: View/Helper/FormHelper.php:924
+msgid "New %s"
+msgstr ""
+
+#: View/Helper/FormHelper.php:927
+msgid "Edit %s"
+msgstr ""
+
+#: View/Helper/HtmlHelper.php:770
+msgid "Home"
+msgstr "Home"
+
+#: View/Widget/DateTimeWidget.php:530
+msgid "January"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:531
+msgid "February"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:532
+msgid "March"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:533
+msgid "April"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:534
+msgid "May"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:535
+msgid "June"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:536
+msgid "July"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:537
+msgid "August"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:538
+msgid "September"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:539
+msgid "October"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:540
+msgid "November"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:541
+msgid "December"
+msgstr ""

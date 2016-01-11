@@ -32,8 +32,7 @@
           <?=$session->read('Auth.User.nombre')?>
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><?=$this->Html->link('Mi perfil', ['controller' => 'Users', 'action' => 'profile']);?></li>
-            <li><a href="#">Mis actividades</a></li>
+            <li><?= $this->Html->link(__('Mis actividades'), ['controller' => 'Actividad', 'action' => 'misActividades']) ?></li>
             <li role="separator" class="divider"></li>
             <li><?= $this->Html->link(__('Cerrar sesión'), ['controller' => 'Users', 'action' => 'logout']) ?></li>
           </ul>

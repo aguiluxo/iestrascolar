@@ -1,5 +1,6 @@
 <?php
 namespace App\Controller\Admin;
+
 use Cake\Event\Event;
 
 /**
@@ -10,10 +11,25 @@ use Cake\Event\Event;
 class ProfesorController extends AdminController
 {
 
-public function beforeFilter(Event $event)
+    public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
         $this->set('menuActivo', 'profesores');
+    }
+
+    public function isAuthorized($user = null)
+    {
+        if ($this->request->action === "add" || $this->request->action === "index") {
+            return true;
+        }
+
+        if (in_array($this->request->action, ['edit', 'delete'])) {
+            $profesorId = (int) $this->request->params['pass'][0];
+            if ($this->Profesor->esPropietario($profesorId, $user['id']) || $user['role'] == 'dace') {
+                return true;
+            }
+        }
+        return false;
     }
     /**
      * Index method
@@ -23,7 +39,7 @@ public function beforeFilter(Event $event)
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Departamento']
+            'contain' => ['Departamento'],
         ];
         $this->set('profesor', $this->paginate($this->Profesor));
         $this->set('_serialize', ['profesor']);
@@ -39,7 +55,7 @@ public function beforeFilter(Event $event)
     public function view($id = null)
     {
         $profesor = $this->Profesor->get($id, [
-            'contain' => ['Departamento','Actividad', 'Curso']
+            'contain' => ['Departamento', 'Actividad', 'Curso'],
         ]);
         $this->set('profesor', $profesor);
         $this->set('_serialize', ['profesor']);
@@ -79,7 +95,7 @@ public function beforeFilter(Event $event)
     public function edit($id = null)
     {
         $profesor = $this->Profesor->get($id, [
-            'contain' => ['Curso']
+            'contain' => ['Curso'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $profesor = $this->Profesor->patchEntity($profesor, $this->request->data);

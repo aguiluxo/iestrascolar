@@ -1,6 +1,12 @@
 body {
   margin-top: 100px;
 }
+.message {
+  padding: 15px;
+  background-color: #f39c12;
+  color: white;
+  font-family: Ubuntu;
+}
 .enLinea {
   display: inline;
 }

@@ -66,6 +66,16 @@
                 </div>
               </div>
               <div class="form-group">
+                <label for="descripcionInput" class="col-lg-2 control-label"><?=__('Departamento')?></label>
+                <div class="col-lg-10">
+                    <?= $this->Form->input('departamento_id', [
+                        'options' => $departamentos,
+                        'label' => false,
+                        'class' => 'form-control'
+                    ]); ?>
+                </div>
+              </div>
+              <div class="form-group">
                 <label for="descripcionInput" class="col-lg-2 control-label"><?=__('Descripción')?></label>
                 <div class="col-lg-10">
                   <?=$this->Form->input('descripcion', [

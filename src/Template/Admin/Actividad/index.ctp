@@ -18,6 +18,7 @@
 			<th><?= $this->Paginator->sort('titulo') ?></th>
 			<th><?= $this->Paginator->sort('fecha_ini', ['label' => 'Fecha de inicio']) ?></th>
 			<th><?= $this->Paginator->sort('fecha_fin', ['label' => 'Fecha fin']) ?></th>
+			<th><?= $this->Paginator->sort('esta_evaluada',['label' => __('Evaluada')]) ?></th>
 			<th class="actions"><?= __('Acciones') ?></th>
 		</tr>
 	</thead>
@@ -28,6 +29,10 @@
 			<td><?= h($actividad->titulo) ?></td>
 			<td><?= h($actividad->fecha_ini) ?></td>
 			<td><?= h($actividad->fecha_fin) ?></td>
+			<td><?= $actividad->esta_evaluada?
+			$this->Html->link(__('Sí'),['controller' => 'Evaluacion', 'action' => 'edit', $actividad->id]) :
+			$this->Html->link('No', ['controller' => 'Evaluacion','action' => 'add', $actividad->id]) ?></td>
+
 			<td class="actions">
 				<?= $this->Html->link('', ['action' => 'view', $actividad->id], ['class' => 'botones botonVer']) ?>
 				<?= $this->Html->link('', ['action' => 'edit', $actividad->id],['class' => 'botones botonEditar']) ?>

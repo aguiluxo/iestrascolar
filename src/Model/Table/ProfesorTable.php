@@ -2,7 +2,6 @@
 namespace App\Model\Table;
 
 use App\Model\Entity\Profesor;
-use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
@@ -34,18 +33,18 @@ class ProfesorTable extends Table
         $this->addBehavior('Timestamp');
 
         $this->addBehavior('Proffer.Proffer', [
-            'imagen' => [    // The name of your upload field
+            'imagen' => [// The name of your upload field
                 'root' => WWW_ROOT . 'files', // Customise the root upload folder here, or omit to use the default
-                'dir' => 'imagen_dir',   // The name of the field to store the folder
-                'thumbnailSizes' => [ // Declare your thumbnails
-                    'miniatura' => [   // Define the prefix of your thumbnail
+                'dir' => 'imagen_dir', // The name of the field to store the folder
+                'thumbnailSizes' => [// Declare your thumbnails
+                    'miniatura' => [// Define the prefix of your thumbnail
                         'w' => 50, // Width
                         'h' => 50, // Height
-                        'crop' => false,  // Crop will crop the image as well as resize it
-                        'jpeg_quality'  => 100,
-                        'png_compression_level' => 9
+                        'crop' => false, // Crop will crop the image as well as resize it
+                        'jpeg_quality' => 100,
+                        'png_compression_level' => 9,
                     ],
-                    'estirada' => [     // Define a second thumbnail
+                    'estirada' => [// Define a second thumbnail
                         'w' => '1400',
                         'h' => '370',
                         'crop' => true,
@@ -54,29 +53,28 @@ class ProfesorTable extends Table
                         'w' => '600',
                         'h' => '600',
                         'crop' => false,
-                    ]
+                    ],
                 ],
-                'thumbnailMethod' => 'Gmagick'  // Options are Imagick, Gd or Gmagick
-            ]
+                'thumbnailMethod' => 'Gmagick', // Options are Imagick, Gd or Gmagick
+            ],
         ]);
 
         $this->belongsTo('Departamento', [
-            'foreignKey' => 'departamento_id'
+            'foreignKey' => 'departamento_id',
         ]);
         $this->belongsTo('Users', [
-            'foreignKey' => 'user_id'
+            'foreignKey' => 'user_id',
         ]);
         $this->belongsToMany('Actividad', [
             'foreignKey' => 'profesor_id',
             'targetForeignKey' => 'actividad_id',
-            'joinTable' => 'actividad_profesor'
+            'joinTable' => 'actividad_profesor',
         ]);
         $this->belongsToMany('Curso', [
             'foreignKey' => 'profesor_id',
             'targetForeignKey' => 'curso_id',
-            'joinTable' => 'curso_profesor'
+            'joinTable' => 'curso_profesor',
         ]);
-
 
     }
 
@@ -97,20 +95,25 @@ class ProfesorTable extends Table
             ->notEmpty('nombre');
 
         $validator
+            ->add('nombre', 'unique', [
+                'rule' => 'validateUnique',
+                'message' => __('Este nombre ya existe'),
+                'provider' => 'table']);
+        $validator
             ->add('email', 'valid', ['rule' => 'email'])
             ->requirePresence('email', 'create')
             ->notEmpty('email', __('Email requerido'))
             ->add('email', 'unique', [
                 'rule' => 'validateUnique',
                 'provider' => 'table',
-                'message' => __('Este email ya está registrado')
+                'message' => __('Este email ya está registrado'),
             ]);
         $validator->notEmpty('password', __('Contraseña requerida'));
 
         $validator->add('role', 'inList', [
-                'rule' => ['inList', ['superadmin','admin', 'profesor']],
-                'message' =>  __('Por favor, introduce un rol válido')
-            ]);
+            'rule' => ['inList', ['dace', 'profesor']],
+            'message' => __('Por favor, introduce un rol válido'),
+        ]);
 
         $validator
             ->add('telefono', 'valid', ['rule' => 'numeric'])
@@ -138,5 +141,9 @@ class ProfesorTable extends Table
         $rules->add($rules->existsIn(['departamento_id'], 'Departamento'));
         // $rules->add($rules->existsIn(['user_id'], 'Users'));
         return $rules;
+    }
+    public function esPropietario($profesorId, $userId)
+    {
+        return $this->exists(['Profesor.id' => $profesorId, 'id' => $userId]);
     }
 }

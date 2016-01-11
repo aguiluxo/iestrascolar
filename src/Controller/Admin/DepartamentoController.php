@@ -54,10 +54,10 @@ class DepartamentoController extends AdminController
         if ($this->request->is('post')) {
             $departamento = $this->Departamento->patchEntity($departamento, $this->request->data);
             if ($this->Departamento->save($departamento)) {
-                $this->Flash->success(__('The departamento has been saved.'));
+                $this->Flash->success(__('El departamento ha sido guardado'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The departamento could not be saved. Please, try again.'));
+                $this->Flash->error(__('El departamento no ha podido ser guardado.'));
             }
         }
         $this->set(compact('departamento'));
@@ -79,10 +79,10 @@ class DepartamentoController extends AdminController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $departamento = $this->Departamento->patchEntity($departamento, $this->request->data);
             if ($this->Departamento->save($departamento)) {
-                $this->Flash->success(__('The departamento has been saved.'));
+                $this->Flash->success(__('El departamento ha sido guardado'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The departamento could not be saved. Please, try again.'));
+                $this->Flash->error(__('El departamento no ha podido ser guardado'));
             }
         }
         $this->set(compact('departamento'));
@@ -101,9 +101,9 @@ class DepartamentoController extends AdminController
         $this->request->allowMethod(['post', 'delete']);
         $departamento = $this->Departamento->get($id);
         if ($this->Departamento->delete($departamento)) {
-            $this->Flash->success(__('The departamento has been deleted.'));
+            $this->Flash->success(__('El departamento ha sido borrado'));
         } else {
-            $this->Flash->error(__('The departamento could not be deleted. Please, try again.'));
+            $this->Flash->error(__('El departamento no ha podido ser borrado.'));
         }
         return $this->redirect(['action' => 'index']);
     }

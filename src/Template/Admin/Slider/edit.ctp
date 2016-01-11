@@ -8,14 +8,16 @@
                     <label for="imgInput" class="col-lg-3 control-label">
                     <?= __('Imagen') ?> <i class="fa fa-picture-o"></i></label>
                     <div class="col-lg-9">
-                        <?=$this->Form->input('imagen', ['type' => 'file', 'id' => 'imgInput', 'label' => false])?>
+                        <?=$this->Form->input('imagen', ['type' => 'file', 'id' => 'imgInput', 'class' => 'form-control',
+                        'label' => false])?>
                     </div>
                 </div>
 
               <div class="form-group">
                 <label for="textofechaInput" class="col-lg-3 control-label"><?= __('Texto para fecha') ?></label>
                 <div class="col-lg-9">
-                    <?=$this->Form->input('texto_fecha', ['label' => false, 'id' => 'textofechaInput']);?>
+                    <?=$this->Form->input('texto_fecha', ['label' => false, 'class' => 'form-control',
+                    'id' => 'textofechaInput']);?>
                 </div>
               </div>
                <div class="form-group">
@@ -24,7 +26,8 @@
                     <?=$this->Form->input('texto_tipo', [
                         'label' => false,
                         'id' => 'texto1Input',
-                        'placeHolder' => '18 carácteres máximo'
+                        'placeHolder' => '18 carácteres máximo',
+                        'class' => 'form-control'
                     ]);?>
                 </div>
               </div>
@@ -34,7 +37,8 @@
                     <?=$this->Form->input('texto_info', [
                         'label' => false,
                         'id' => 'texto2Input',
-                        'placeHolder' => '14 carácteres máximo'
+                        'placeHolder' => '14 carácteres máximo',
+                        'class' => 'form-control'
                     ]);?>
                 </div>
               </div>
@@ -44,13 +48,16 @@
                     <?=$this->Form->input('texto_clave', [
                         'label' => false,
                         'id' => 'texto3Input',
-                        'placeHolder' => '14 carácteres máximo'
+                        'placeHolder' => '14 carácteres máximo',
+                        'class' => 'form-control'
                     ]);?>
                 </div>
               </div>
-              <div class="col-lg-12">
-                <button>Cancelar</button>
-                <?=$this->Form->button(__('Enviar'))?>
+              <div class="row">
+                  <div class="col-xs-12">
+                    <button type="reset" class="btn btn-default">Cancelar</button>
+                      <?=$this->Form->button(__('Enviar'), ['class' => 'btn btn-primary'])?>
+                  </div>
               </div>
             </fieldset>
         </div>

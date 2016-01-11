@@ -4,7 +4,7 @@
 			<ol class="carousel-indicators">
 				<?php foreach ($slider as $key => $slide): ?>
 					<li data-target="#carousel-example-generic" data-slide-to="<?=$key?>" class="<?=$key==0?'active':''?> miniatura"
-					style="background-image:url(files/slider/imagen/<?=$slide->imagen_dir;?>/miniatura_<?=$slide->imagen ?>)">
+					style="background-image:url(<?=$this->Url->build('/', true)?>files/slider/imagen/<?=$slide->imagen_dir;?>/miniatura_<?=$slide->imagen ?>)">
 					</li>
 				<?php endforeach ?>
 			</ol>
@@ -15,7 +15,7 @@
 
 			<?php foreach ($slider as $key => $slide): ?>
 				<div id="item<?php echo ($key+1) ?>" class="<?php echo $key==0? 'item active': 'item' ?>"
-				style="background-image:url(files/slider/imagen/<?php echo $slide->imagen_dir;?>/<?php echo
+				style="background-image:url(<?=$this->Url->build('/', true)?>files/slider/imagen/<?php echo $slide->imagen_dir;?>/<?php echo
 				$this->view == 'index'? 'slider_':'normal_';echo $slide->imagen ?>)">
 					<?php if ($slide->texto_fecha !=null ||$slide->texto_tipo != null || $slide->texto_info != null): ?>
 						<div class="carousel-caption">

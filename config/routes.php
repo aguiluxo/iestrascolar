@@ -49,10 +49,9 @@ Router::scope('/', function ($routes) {
      */
     $routes->connect('/', ['controller' => 'Front', 'action' => 'index']);
     $routes->connect('/actividades', ['controller' => 'Actividad', 'action' => 'index']);
-        $routes->connect('/actividades/:action/*', ['controller' => 'Actividad']);
+    $routes->connect('/actividades/:action/*', ['controller' => 'Actividad']);
     $routes->connect('/calendario', ['controller' => 'Actividad', 'action' => 'calendario']);
     $routes->connect('/getProgramacion', ['controller' => 'Actividad', 'action' => 'getProgramacion']);
-
 
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
@@ -69,7 +68,6 @@ Router::scope('/', function ($routes) {
         $routes->connect('/actividades/:action/*', ['controller' => 'Actividad']);
         $routes->connect('/actividades/informeActividades/*', ['controller' => 'Actividad', 'action' => 'generaInforme']);
 
-
         $routes->connect('/usuarios/:action/*', ['controller' => 'Users']);
 
         $routes->connect('/cursos', ['controller' => 'Curso', 'action' => 'index']);
@@ -82,13 +80,14 @@ Router::scope('/', function ($routes) {
         $routes->connect('/departamento/:action/*', ['controller' => 'Departamento']);
 
         $routes->connect('/trimestre', ['controller' => 'Trimestre', 'action' => 'index']);
-        $routes->connect('/trimestre/:action/*', ['controller' => 'Trimestre',]);
+        $routes->connect('/trimestre/:action/*', ['controller' => 'Trimestre']);
 
         $routes->connect('/destacados', ['controller' => 'Destacado', 'action' => 'index']);
-        $routes->connect('/destacados/:action/*', ['controller' => 'Destacado',]);
+        $routes->connect('/destacados/:action/*', ['controller' => 'Destacado']);
 
-        $routes->connect('/slider/:action/*', ['controller' => 'Slider',]);
+        $routes->connect('/evaluacion/:action/*', ['controller' => 'Evaluacion']);
 
+        $routes->connect('/slider/:action/*', ['controller' => 'Slider']);
 
     });
 

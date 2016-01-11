@@ -57,10 +57,10 @@ class DestacadoController extends AdminController
         if ($this->request->is('post')) {
             $destacado = $this->Destacado->patchEntity($destacado, $this->request->data);
             if ($this->Destacado->save($destacado)) {
-                $this->Flash->success(__('The destacado has been saved.'));
+                $this->Flash->success(__('Se ha destacado la actividad correctamente.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The destacado could not be saved. Please, try again.'));
+                $this->Flash->error(__('La actividad destacada no se ha podido guardar.'));
             }
         }
         $actividad = $this->Destacado->Actividad->find('list', ['limit' => 200]);
@@ -84,10 +84,10 @@ class DestacadoController extends AdminController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $destacado = $this->Destacado->patchEntity($destacado, $this->request->data);
             if ($this->Destacado->save($destacado)) {
-                $this->Flash->success(__('The destacado has been saved.'));
+                $this->Flash->success(__('Se ha destacado correctamente la actividad.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The destacado could not be saved. Please, try again.'));
+                $this->Flash->error(__('La actividad destacada no se ha podido guardar.'));
             }
         }
         $actividad = $this->Destacado->Actividad->find('list', ['limit' => 200]);
@@ -107,9 +107,9 @@ class DestacadoController extends AdminController
         $this->request->allowMethod(['post', 'delete']);
         $destacado = $this->Destacado->get($id);
         if ($this->Destacado->delete($destacado)) {
-            $this->Flash->success(__('The destacado has been deleted.'));
+            $this->Flash->success(__('la actividad ya no está destacada'));
         } else {
-            $this->Flash->error(__('The destacado could not be deleted. Please, try again.'));
+            $this->Flash->error(__('La actividad destacada no se ha podido borrar.'));
         }
         return $this->redirect(['action' => 'index']);
     }

@@ -33,9 +33,8 @@ require ROOT . DS . 'vendor' . DS . 'autoload.php';
  */
 require CORE_PATH . 'config' . DS . 'bootstrap.php';
 
-require ROOT . DS . 'vendor' . DS .  'mpdf' . DS . 'mpdf' . DS . 'mpdf.php';
-require ROOT . DS . 'vendor' . DS .  'html2pdf' . DS . 'html2pdf' . DS . 'html2pdf.class.php';
-
+require ROOT . DS . 'vendor' . DS . 'mpdf' . DS . 'mpdf' . DS . 'mpdf.php';
+require ROOT . DS . 'vendor' . DS . 'html2pdf' . DS . 'html2pdf' . DS . 'html2pdf.class.php';
 
 // You can remove this if you are confident you have intl installed.
 if (!extension_loaded('intl')) {
@@ -57,7 +56,6 @@ use Cake\Network\Request;
 use Cake\Routing\DispatcherFactory;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
-
 
 /**
  * Read configuration file and inject configuration into various
@@ -102,7 +100,7 @@ mb_internal_encoding(Configure::read('App.encoding'));
  * Set the default locale. This controls how dates, number and currency is
  * formatted and sets the default language to use for translations.
  */
-ini_set('intl.default_locale', 'en_US');
+ini_set('intl.default_locale', 'es_ES');
 
 /**
  * Register application error and exception handlers.
@@ -205,4 +203,3 @@ DispatcherFactory::add('ControllerFactory');
  */
 Type::build('date')->useLocaleParser();
 Type::build('datetime')->useLocaleParser();
-
