@@ -24,7 +24,7 @@
 					'exact' => false,
 					)); ?>
 				</div>
-				<a href="<?= $this->Url->build(['controller' => 'Actividad', 'action' => 'view', $actividad->id]);?>">
+				<a href="<?= $this->Url->build(['controller' => 'Actividad', 'action' => 'view', $actividad->actividad->id]);?>">
 					<div class="leer-mas">
 						<i class="fa fa-plus"></i>
 					</div>
