@@ -97,7 +97,8 @@ class ActividadController extends AdminController
         }
 
         $curso = $this->Actividad->Curso->find('list', ['limit' => 200]);
-        $this->set(compact('curso'));
+        $departamentos = $this->Actividad->Departamento->find('list', ['limit' => 200]);
+        $this->set(compact('curso', 'departamentos'));
         $profesores = $this->Actividad->Profesor->find('list', ['limit' => 200]);
         $this->set(compact('profesores'));
         return $this->Crud->execute();
