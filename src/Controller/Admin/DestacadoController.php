@@ -16,6 +16,23 @@ class DestacadoController extends AdminController
         parent::beforeFilter($event);
         $this->set('menuActivo', 'destacados');
     }
+
+    public function isAuthorized($user = null)
+    {
+        // Todos los usuarios registrados pueden añadir actividades
+        if ($this->request->action === "add" || $this->request->action === "index" || $this->request->action === "view" || $this->request->action === "delete") {
+            return true;
+        }
+
+        //Propietario de actividad puede editarla y borrarla
+        if (in_array($this->request->action, ['edit', 'delete'])) {
+            $actividadId = (int) $this->request->params['pass'][0];
+            if ($this->Actividad->esPropietario($actividadId, $user['id']) || $user['role'] == 'dace') {
+                return true;
+            }
+        }
+        return false;
+    }
     /**
      * Index method
      *
