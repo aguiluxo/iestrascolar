@@ -92,6 +92,7 @@ class DestacadoController extends AdminController
             'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
+            debug($this->request->data);die();
             $destacado = $this->Destacado->patchEntity($destacado, $this->request->data);
             if ($this->Destacado->save($destacado)) {
                 $this->Flash->success(__('Se ha destacado correctamente la actividad.'));

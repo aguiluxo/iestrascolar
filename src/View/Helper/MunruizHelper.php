@@ -97,31 +97,27 @@ class MunruizHelper extends Helper
     public function selectorIconos($name, $options = array())
     {
         $iconos = [
-            'fa fa-bus',
-            'fa fa-plane',
-            'fa fa-line-chart',
-            'fa fa-superscript',
-            'fa fa-book',
-            'fa fa-language',
-            'fa fa-laptop',
-            'fa fa-headphones',
-            'fa fa-futbol-o',
-            'fa fa-heartbeat',
-            'fa fa-paint-brush',
-            'fa fa-wheelchair',
-            'fa fa-venus-mars',
+            'fa fa-bus' =>'fa fa-bus' ,
+            'fa fa-plane' =>'fa fa-plane' ,
+            'fa fa-line-chart' =>'fa fa-line-chart' ,
+            'fa fa-superscript' =>'fa fa-superscript' ,
+            'fa fa-book' =>'fa fa-book' ,
+            'fa fa-language' =>'fa fa-language' ,
+            'fa fa-laptop' =>'fa fa-laptop' ,
+            'fa fa-headphones' =>'fa fa-headphones' ,
+            'fa fa-futbol-o' =>'fa fa-futbol-o' ,
+            'fa fa-heartbeat' =>'fa fa-heartbeat' ,
+            'fa fa-paint-brush' =>'fa fa-paint-brush' ,
+            'fa fa-wheelchair' =>'fa fa-wheelchair' ,
+            'fa fa-venus-mars' =>'fa fa-venus-mars' ,
         ];
-        foreach ($iconos as $key => $icono) {
-            echo "<div class='col-sm-1 contenedorIcono'>
-                <label class='' for='icono" . $key . "'>
-                    <i class='" . $icono . "'></i>
-                </label>";
-            echo $this->Form->radio($name, [
-                ['value' => $icono, 'text' => '', 'id' => 'icono' . $key, 'label' => false],
-            ]);
-            echo "</div>";
 
-        }
+            echo $this->Form->select($name,
+                ['options' => $iconos],[
+                 'label' => 'Selecciona el icono', 'class' => 'form-control',
+                 'style' => 'width:300px;']
+            );
+
     }
 
     /**
